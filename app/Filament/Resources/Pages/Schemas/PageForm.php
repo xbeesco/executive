@@ -11,12 +11,11 @@ use App\Enums\PageType;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class PageForm
@@ -88,12 +87,12 @@ class PageForm
                                 Select::make('settings.archive_content_type')
                                     ->label('نوع المحتوى')
                                     ->options(ArchiveContentType::class)
-                                    ->hidden(fn($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
+                                    ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
 
                                 Select::make('settings.archive_template')
                                     ->label('قالب الأرشيف')
                                     ->options(ArchiveTemplate::class)
-                                    ->hidden(fn($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
+                                    ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
                             ]),
                     ]),
 
@@ -105,7 +104,7 @@ class PageForm
                             ->blocks([
                                 Block::make('hero')
                                     ->label('بطل الصفحة')
-                                    ->icon('heroicon-o-image')
+                                    ->icon('heroicon-o-photo')
                                     ->schema([
                                         TextInput::make('title')
                                             ->label('العنوان')

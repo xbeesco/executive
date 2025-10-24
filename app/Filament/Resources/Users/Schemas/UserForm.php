@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class UserForm
@@ -33,9 +33,9 @@ class UserForm
                                 TextInput::make('password')
                                     ->label('كلمة المرور')
                                     ->password()
-                                    ->required(fn($context) => $context === 'create')
-                                    ->dehydrateStateUsing(fn($state) => filled($state) ? bcrypt($state) : null)
-                                    ->dehydrated(fn($state) => filled($state))
+                                    ->required(fn ($context) => $context === 'create')
+                                    ->dehydrateStateUsing(fn ($state) => filled($state) ? bcrypt($state) : null)
+                                    ->dehydrated(fn ($state) => filled($state))
                                     ->helperText('اتركه فارغاً إذا كنت لا تريد تغييره')
                                     ->minLength(8)
                                     ->columnSpanFull(),
