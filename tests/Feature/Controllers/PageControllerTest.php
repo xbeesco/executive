@@ -31,4 +31,16 @@ class PageControllerTest extends TestCase
             'slug' => $post->slug,
         ]);
     }
+
+    public function test_draft_page_returns_404(): void
+    {
+        $page = Page::factory()->create([
+            'slug' => 'draft-page',
+            'status' => 'draft',
+        ]);
+
+        $response = $this->get(route('pages.show', $page->slug));
+
+        $response->assertStatus(404);
+    }
 }

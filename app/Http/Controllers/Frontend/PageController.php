@@ -8,17 +8,16 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Service;
 use App\Services\SettingService;
-use Illuminate\Http\Request;
 
 class PageController
 {
     public function show(Page $page)
     {
-        abort_if($page->status !== ContentStatus::PUBLISHED->value, 404);
+        abort_if($page->status !== ContentStatus::PUBLISHED, 404);
 
         if ($page->getPageType() === 'archive') {
             $type = $page->getArchiveContentType();
-            $modelClass = match($type) {
+            $modelClass = match ($type) {
                 'post' => Post::class,
                 'service' => Service::class,
                 'event' => Event::class,
@@ -36,7 +35,7 @@ class PageController
 
     public function showPost(Post $post)
     {
-        abort_if($post->status !== ContentStatus::PUBLISHED->value, 404);
+        abort_if($post->status !== ContentStatus::PUBLISHED, 404);
         $settings = SettingService::get('general', []);
 
         return view('frontend.single', [
@@ -49,7 +48,7 @@ class PageController
 
     public function showService(Service $service)
     {
-        abort_if($service->status !== ContentStatus::PUBLISHED->value, 404);
+        abort_if($service->status !== ContentStatus::PUBLISHED, 404);
         $settings = SettingService::get('general', []);
 
         return view('frontend.single', [
@@ -62,7 +61,7 @@ class PageController
 
     public function showEvent(Event $event)
     {
-        abort_if($event->status !== ContentStatus::PUBLISHED->value, 404);
+        abort_if($event->status !== ContentStatus::PUBLISHED, 404);
         $settings = SettingService::get('general', []);
 
         return view('frontend.single', [

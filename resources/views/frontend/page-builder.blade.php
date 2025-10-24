@@ -1,6 +1,7 @@
 @forelse($blocks ?? [] as $block)
     @php
-        $viewName = "frontend.blocks.{$block['type'] ?? 'text'}";
+        $blockType = $block['type'] ?? 'text';
+        $viewName = "frontend.blocks.{$blockType}";
     @endphp
     @if(view()->exists($viewName))
         @include($viewName, ['block' => $block])
