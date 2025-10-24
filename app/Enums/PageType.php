@@ -10,10 +10,10 @@ enum PageType: string
 
     public function label(): string
     {
-        return match($this) {
-            self::HOMEPAGE => 'الصفحة الرئيسية',
-            self::INNER_PAGE => 'صفحة داخلية',
-            self::ARCHIVE => 'صفحة أرشيف',
+        return match ($this) {
+            self::HOMEPAGE => 'Homepage',
+            self::INNER_PAGE => 'Inner Page',
+            self::ARCHIVE => 'Archive',
         };
     }
 }
