@@ -3,21 +3,23 @@
 namespace App\Filament\Pages;
 
 use App\Models\Setting;
+use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Concerns\InteractsWithSchemas;
+use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Schemas\Schema;
 
-class SettingsPage extends Page implements HasForms
+class SettingsPage extends Page implements HasSchemas
 {
-    use InteractsWithForms;
+    use InteractsWithSchemas;
 
     protected static ?string $navigationLabel = 'الإعدادات';
 
@@ -25,7 +27,16 @@ class SettingsPage extends Page implements HasForms
 
     protected static ?int $navigationSort = 999;
 
+    protected string $view = 'filament.pages.settings-page';
+
     public ?array $data = [];
+
+    protected function getSchemas(): array
+    {
+        return [
+            'form',
+        ];
+    }
 
     public function mount(): void
     {
@@ -207,18 +218,44 @@ class SettingsPage extends Page implements HasForms
             ]);
     }
 
-    public function save(): void
+    protected function getFormActions(): array
     {
-        $data = $this->form->getState();
+        return [
+            Action::make('save')
+                ->label('حفظ الإعدادات')
+                ->color('primary')
+                ->icon('heroicon-o-check')
+                ->action('saveSettings')
+                ->requiresConfirmation()
+                ->modalHeading('تأكيد الحفظ')
+                ->modalDescription('هل أنت متأكد من حفظ هذه الإعدادات؟')
+                ->modalSubmitActionLabel('نعم، احفظ'),
+        ];
+    }
 
-        Setting::setValue('general', $data['general']);
-        Setting::setValue('social_links', $data['social_links']);
-        Setting::setValue('menu', $data['menu']);
-        Setting::setValue('seo_defaults', $data['seo_defaults']);
+    public function saveSettings(): void
+    {
+        try {
+            $data = $this->form->getState();
 
-        $this->notification()
-            ->success()
-            ->title('تم حفظ الإعدادات بنجاح!')
-            ->send();
+            Setting::setValue('general', $data['general']);
+            Setting::setValue('social_links', $data['social_links']);
+            Setting::setValue('menu', $data['menu']);
+            Setting::setValue('seo_defaults', $data['seo_defaults']);
+
+            Notification::make()
+                ->title('تم حفظ الإعدادات بنجاح!')
+                ->body('تم تحديث إعدادات الموقع بنجاح')
+                ->success()
+                ->duration(3000)
+                ->send();
+        } catch (\Exception $e) {
+            Notification::make()
+                ->title('فشل الحفظ')
+                ->body($e->getMessage())
+                ->danger()
+                ->duration(5000)
+                ->send();
+        }
     }
 }
