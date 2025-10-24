@@ -1,3 +1,11 @@
+1- the development srs file @executive-cms-srs.md
+2- you need also to read this executive-cms-views-architecture.md
+after finishing every model you need to do اختبارات تفصيلية تضمن سلامة كل شيئ فيه مع كامل الاحتمالات
+يمكنك استخدام ال curl &  laywright mcp tools  او طريقه تجدها افضل 
+3- يوجد route http://exe-site.test/quick-login  يقوم بتسجيل الدخول المباشر بدون كلمة سر و بالتالي يمكنك استخدماه لعمليات التجريب  بسهوله 
+
+
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
