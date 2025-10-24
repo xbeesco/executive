@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Models\Setting;
+use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -16,14 +17,17 @@ use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class SettingsPage extends Page implements HasSchemas
 {
     use InteractsWithSchemas;
 
-    protected static ?string $navigationLabel = 'الإعدادات';
+    protected static ?string $navigationLabel = 'Site Settings';
 
-    protected static ?string $title = 'إعدادات الموقع';
+    protected static ?string $title = 'Site Settings';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static ?int $navigationSort = 999;
 
@@ -70,42 +74,53 @@ class SettingsPage extends Page implements HasSchemas
     protected function form(Schema $schema): Schema
     {
         return $schema
+            ->statePath('data')
             ->components([
                 Tabs::make('Settings')
                     ->tabs([
-                        Tabs\Tab::make('المعلومات العامة')
+                        Tabs\Tab::make('General Information')
+                            ->label('General Information')
+                            ->icon('heroicon-o-information-circle')
                             ->schema([
-                                Section::make()
+                                Section::make('Basic Site Information')
+                                    ->description('Configure your website\'s basic information and branding')
                                     ->schema([
                                         Grid::make(2)
                                             ->schema([
                                                 TextInput::make('general.site_name')
-                                                    ->label('اسم الموقع')
+                                                    ->label('Site Name')
+                                                    ->helperText('The name of your website')
                                                     ->required()
                                                     ->maxLength(255),
 
                                                 TextInput::make('general.site_email')
-                                                    ->label('البريد الإلكتروني')
+                                                    ->label('Contact Email Address')
+                                                    ->helperText('Primary contact email for your website')
                                                     ->email()
                                                     ->required(),
 
                                                 TextInput::make('general.site_phone')
-                                                    ->label('رقم الهاتف')
+                                                    ->label('Phone Number')
+                                                    ->helperText('Contact phone number (optional)')
                                                     ->tel()
                                                     ->maxLength(20),
 
                                                 TextInput::make('general.site_address')
-                                                    ->label('العنوان')
+                                                    ->label('Business Address')
+                                                    ->helperText('Physical address of your business (optional)')
                                                     ->maxLength(255),
 
                                                 FileUpload::make('general.site_logo')
-                                                    ->label('شعار الموقع')
+                                                    ->label('Site Logo')
+                                                    ->helperText('Upload your website logo (recommended: PNG format)')
                                                     ->image()
                                                     ->disk('public')
-                                                    ->directory('images'),
+                                                    ->directory('images')
+                                                    ->imageEditor(),
 
                                                 FileUpload::make('general.site_favicon')
-                                                    ->label('أيقونة الموقع')
+                                                    ->label('Site Favicon')
+                                                    ->helperText('Small icon displayed in browser tabs (16x16 or 32x32 pixels)')
                                                     ->image()
                                                     ->disk('public')
                                                     ->directory('images'),
@@ -113,104 +128,126 @@ class SettingsPage extends Page implements HasSchemas
                                     ]),
                             ]),
 
-                        Tabs\Tab::make('وسائل التواصل')
+                        Tabs\Tab::make('Social Media Links')
+                            ->label('Social Media Links')
+                            ->icon('heroicon-o-share')
                             ->schema([
-                                Section::make()
+                                Section::make('Social Media Profiles')
+                                    ->description('Add links to your social media profiles')
                                     ->schema([
                                         Grid::make(2)
                                             ->schema([
                                                 TextInput::make('social_links.facebook')
-                                                    ->label('Facebook')
+                                                    ->label('Facebook Page URL')
+                                                    ->helperText('Link to your Facebook business page')
                                                     ->url()
-                                                    ->placeholder('https://facebook.com/...'),
+                                                    ->placeholder('https://facebook.com/yourpage'),
 
                                                 TextInput::make('social_links.twitter')
-                                                    ->label('Twitter')
+                                                    ->label('Twitter Profile URL')
+                                                    ->helperText('Link to your Twitter profile')
                                                     ->url()
-                                                    ->placeholder('https://twitter.com/...'),
+                                                    ->placeholder('https://twitter.com/yourhandle'),
 
                                                 TextInput::make('social_links.instagram')
-                                                    ->label('Instagram')
+                                                    ->label('Instagram Profile URL')
+                                                    ->helperText('Link to your Instagram profile')
                                                     ->url()
-                                                    ->placeholder('https://instagram.com/...'),
+                                                    ->placeholder('https://instagram.com/yourhandle'),
 
                                                 TextInput::make('social_links.linkedin')
-                                                    ->label('LinkedIn')
+                                                    ->label('LinkedIn Profile URL')
+                                                    ->helperText('Link to your LinkedIn company page')
                                                     ->url()
-                                                    ->placeholder('https://linkedin.com/...'),
+                                                    ->placeholder('https://linkedin.com/company/yourcompany'),
                                             ]),
                                     ]),
                             ]),
 
-                        Tabs\Tab::make('القائمة الرئيسية')
+                        Tabs\Tab::make('Navigation Menu')
+                            ->label('Navigation Menu')
+                            ->icon('heroicon-o-bars-3')
                             ->schema([
-                                Section::make()
+                                Section::make('Website Navigation Menu')
+                                    ->description('Configure your website\'s main navigation menu structure')
                                     ->schema([
                                         Repeater::make('menu')
-                                            ->label('')
+                                            ->label('Menu Items')
                                             ->schema([
                                                 TextInput::make('label')
-                                                    ->label('التسمية')
+                                                    ->label('Menu Label')
+                                                    ->helperText('Text displayed in the menu')
                                                     ->required(),
 
                                                 TextInput::make('url')
-                                                    ->label('الرابط')
+                                                    ->label('URL/Link')
+                                                    ->helperText('Page URL or external link')
                                                     ->required()
-                                                    ->placeholder('/about'),
+                                                    ->placeholder('/about-us'),
 
                                                 TextInput::make('icon')
-                                                    ->label('الأيقونة')
+                                                    ->label('Menu Icon')
                                                     ->placeholder('heroicon-o-home')
-                                                    ->helperText('استخدم أسماء Heroicon'),
+                                                    ->helperText('Optional: Use Heroicon class names'),
 
                                                 Repeater::make('children')
-                                                    ->label('العناصر الفرعية')
+                                                    ->label('Dropdown Sub-Items')
                                                     ->schema([
                                                         TextInput::make('label')
-                                                            ->label('التسمية')
+                                                            ->label('Sub-Item Label')
+                                                            ->helperText('Text for dropdown item')
                                                             ->required(),
 
                                                         TextInput::make('url')
-                                                            ->label('الرابط')
+                                                            ->label('Sub-Item URL')
+                                                            ->helperText('Link for this dropdown item')
                                                             ->required(),
 
                                                         TextInput::make('icon')
-                                                            ->label('الأيقونة')
-                                                            ->placeholder('heroicon-o-link'),
+                                                            ->label('Sub-Item Icon')
+                                                            ->placeholder('heroicon-o-link')
+                                                            ->helperText('Optional icon for dropdown item'),
                                                     ])
                                                     ->collapsed()
                                                     ->collapsible()
-                                                    ->addActionLabel('إضافة عنصر فرعي'),
+                                                    ->addActionLabel('Add Dropdown Item'),
                                             ])
                                             ->collapsed()
                                             ->collapsible()
-                                            ->addActionLabel('إضافة عنصر'),
+                                            ->addActionLabel('Add Menu Item')
+                                            ->reorderable(),
                                     ]),
                             ]),
 
-                        Tabs\Tab::make('إعدادات SEO الافتراضية')
+                        Tabs\Tab::make('SEO Defaults')
+                            ->label('SEO Defaults')
+                            ->icon('heroicon-o-magnifying-glass')
                             ->schema([
-                                Section::make()
+                                Section::make('Default SEO Settings')
+                                    ->description('Configure default SEO settings used when pages don\'t have specific SEO data')
                                     ->schema([
                                         TextInput::make('seo_defaults.meta_title')
-                                            ->label('Meta Title الافتراضي')
-                                            ->maxLength(60)
-                                            ->helperText('يُستخدم عندما لا تحدد صفحة meta_title خاص بها'),
+                                            ->label('Default Meta Title')
+                                            ->helperText('Default title used in search results (50-60 characters recommended)')
+                                            ->maxLength(60),
 
                                         Textarea::make('seo_defaults.meta_description')
-                                            ->label('Meta Description الافتراضية')
+                                            ->label('Default Meta Description')
+                                            ->helperText('Default description for search results (150-160 characters recommended)')
                                             ->rows(3)
                                             ->maxLength(160),
 
                                         TextInput::make('seo_defaults.meta_keywords')
-                                            ->label('Meta Keywords الافتراضية')
-                                            ->helperText('كلمات مفتاحية مفصولة بفواصل'),
+                                            ->label('Default Meta Keywords')
+                                            ->helperText('Comma-separated keywords relevant to your website'),
 
                                         FileUpload::make('seo_defaults.og_image')
-                                            ->label('صورة OG الافتراضية')
+                                            ->label('Default Social Media Image')
+                                            ->helperText('Default image for social media sharing (1200x630 pixels recommended)')
                                             ->image()
                                             ->disk('public')
-                                            ->directory('images'),
+                                            ->directory('images')
+                                            ->imageEditor(),
                                     ]),
                             ]),
                     ])
@@ -222,14 +259,15 @@ class SettingsPage extends Page implements HasSchemas
     {
         return [
             Action::make('save')
-                ->label('حفظ الإعدادات')
+                ->label('Save All Settings')
                 ->color('primary')
-                ->icon('heroicon-o-check')
+                ->icon('heroicon-o-check-circle')
                 ->action('saveSettings')
                 ->requiresConfirmation()
-                ->modalHeading('تأكيد الحفظ')
-                ->modalDescription('هل أنت متأكد من حفظ هذه الإعدادات؟')
-                ->modalSubmitActionLabel('نعم، احفظ'),
+                ->modalHeading('Confirm Settings Update')
+                ->modalDescription('Are you sure you want to save all these settings? This will update your website configuration.')
+                ->modalSubmitActionLabel('Yes, Save Settings')
+                ->modalCancelActionLabel('Cancel'),
         ];
     }
 
@@ -244,17 +282,17 @@ class SettingsPage extends Page implements HasSchemas
             Setting::setValue('seo_defaults', $data['seo_defaults']);
 
             Notification::make()
-                ->title('تم حفظ الإعدادات بنجاح!')
-                ->body('تم تحديث إعدادات الموقع بنجاح')
+                ->title('Settings Updated Successfully!')
+                ->body('All site settings have been saved and are now active on your website.')
                 ->success()
-                ->duration(3000)
+                ->duration(4000)
                 ->send();
         } catch (\Exception $e) {
             Notification::make()
-                ->title('فشل الحفظ')
-                ->body($e->getMessage())
+                ->title('Settings Save Failed')
+                ->body('Unable to save settings: '.$e->getMessage())
                 ->danger()
-                ->duration(5000)
+                ->duration(6000)
                 ->send();
         }
     }

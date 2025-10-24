@@ -19,43 +19,43 @@ class PagesTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label('العنوان')
+                    ->label('Title')
                     ->searchable()
                     ->sortable(),
 
                 TextColumn::make('slug')
-                    ->label('الرابط')
+                    ->label('URL Slug')
                     ->copyable()
                     ->sortable(),
 
                 TextColumn::make('settings.page_type')
-                    ->label('النوع')
-                    ->formatStateUsing(fn($state) => PageType::tryFrom($state)?->label() ?? $state)
+                    ->label('Type')
+                    ->formatStateUsing(fn ($state) => PageType::tryFrom($state)?->label() ?? $state)
                     ->badge()
                     ->sortable(),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
-                    ->formatStateUsing(fn($state) => $state->label())
-                    ->badge(fn($state) => $state->color())
+                    ->label('Status')
+                    ->formatStateUsing(fn ($state) => $state->label())
+                    ->badge(fn ($state) => $state->color())
                     ->sortable(),
 
                 ImageColumn::make('featured_image')
-                    ->label('الصورة')
+                    ->label('Image')
                     ->circular(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
+                    ->label('Created At')
                     ->dateTime('Y-m-d H:i')
                     ->sortable(),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->options(ContentStatus::class),
 
                 SelectFilter::make('page_type')
-                    ->label('نوع الصفحة')
+                    ->label('Page Type')
                     ->attribute('settings->page_type')
                     ->options(PageType::class),
             ])

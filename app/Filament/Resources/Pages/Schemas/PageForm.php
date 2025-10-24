@@ -24,132 +24,132 @@ class PageForm
     {
         return $schema
             ->components([
-                Section::make('معلومات أساسية')
-                    ->description('معلومات الصفحة الأساسية')
+                Section::make('Basic Information')
+                    ->description('Basic page information')
                     ->schema([
                         Grid::make(2)
                             ->schema([
                                 TextInput::make('title')
-                                    ->label('العنوان')
+                                    ->label('Title')
                                     ->required()
                                     ->maxLength(255)
                                     ->live(onBlur: true),
 
                                 TextInput::make('slug')
-                                    ->label('الرابط (Slug)')
+                                    ->label('URL Slug')
                                     ->required()
                                     ->unique('pages', 'slug', ignoreRecord: true)
                                     ->maxLength(255)
-                                    ->helperText('يتم إنشاؤه تلقائياً من العنوان'),
+                                    ->helperText('Generated automatically from title'),
 
                                 FileUpload::make('featured_image')
-                                    ->label('الصورة المميزة')
+                                    ->label('Featured Image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('images/pages')
                                     ->columnSpanFull(),
 
                                 Select::make('status')
-                                    ->label('الحالة')
+                                    ->label('Status')
                                     ->options(ContentStatus::class)
                                     ->required(),
                             ]),
                     ]),
 
-                Section::make('نوع الصفحة والإعدادات')
-                    ->description('حدد نوع الصفحة والإعدادات الخاصة بها')
+                Section::make('Page Type & Settings')
+                    ->description('Select page type and its specific settings')
                     ->schema([
                         Grid::make(2)
                             ->schema([
                                 Select::make('settings.page_type')
-                                    ->label('نوع الصفحة')
+                                    ->label('Page Type')
                                     ->options(PageType::class)
                                     ->required()
                                     ->live(),
 
                                 Select::make('settings.header_style')
-                                    ->label('مظهر الرأس')
+                                    ->label('Header Style')
                                     ->options(HeaderStyle::class)
                                     ->required()
                                     ->default(3),
 
                                 Select::make('settings.footer_style')
-                                    ->label('مظهر التذييل')
+                                    ->label('Footer Style')
                                     ->options(FooterStyle::class)
                                     ->required()
                                     ->default(3),
 
                                 Toggle::make('settings.show_title_bar')
-                                    ->label('إظهار شريط العنوان')
+                                    ->label('Show Title Bar')
                                     ->default(true),
 
                                 // Conditional fields for archive pages
                                 Select::make('settings.archive_content_type')
-                                    ->label('نوع المحتوى')
+                                    ->label('Content Type')
                                     ->options(ArchiveContentType::class)
                                     ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
 
                                 Select::make('settings.archive_template')
-                                    ->label('قالب الأرشيف')
+                                    ->label('Archive Template')
                                     ->options(ArchiveTemplate::class)
                                     ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
                             ]),
                     ]),
 
-                Section::make('محتوى الصفحة')
-                    ->description('بناء محتوى الصفحة باستخدام الكتل')
+                Section::make('Page Content')
+                    ->description('Build page content using blocks')
                     ->schema([
                         Builder::make('content')
                             ->label('')
                             ->blocks([
                                 Block::make('hero')
-                                    ->label('بطل الصفحة')
+                                    ->label('Hero Section')
                                     ->icon('heroicon-o-photo')
                                     ->schema([
                                         TextInput::make('title')
-                                            ->label('العنوان')
+                                            ->label('Title')
                                             ->required(),
 
                                         TextInput::make('subtitle')
-                                            ->label('العنوان الفرعي'),
+                                            ->label('Subtitle'),
 
                                         FileUpload::make('image')
-                                            ->label('الصورة')
+                                            ->label('Image')
                                             ->image()
                                             ->disk('public')
                                             ->directory('images/blocks'),
                                     ]),
 
                                 Block::make('text')
-                                    ->label('نص')
+                                    ->label('Text')
                                     ->icon('heroicon-o-document-text')
                                     ->schema([
                                         TextInput::make('text')
-                                            ->label('المحتوى')
+                                            ->label('Content')
                                             ->required(),
                                     ]),
 
                                 Block::make('image')
-                                    ->label('صورة')
+                                    ->label('Image')
                                     ->icon('heroicon-o-photo')
                                     ->schema([
                                         FileUpload::make('image')
-                                            ->label('الصورة')
+                                            ->label('Image')
                                             ->image()
                                             ->disk('public')
                                             ->directory('images/blocks')
                                             ->required(),
 
                                         TextInput::make('caption')
-                                            ->label('التوضيح'),
+                                            ->label('Caption'),
                                     ]),
 
                                 Block::make('services_grid')
-                                    ->label('شبكة الخدمات')
+                                    ->label('Services Grid')
                                     ->icon('heroicon-o-squares-2x2')
                                     ->schema([
                                         Select::make('columns')
-                                            ->label('عدد الأعمدة')
+                                            ->label('Number of Columns')
                                             ->options([
                                                 2 => '2',
                                                 3 => '3',
@@ -159,11 +159,11 @@ class PageForm
                                     ]),
 
                                 Block::make('archive_grid')
-                                    ->label('شبكة المحتوى')
+                                    ->label('Content Grid')
                                     ->icon('heroicon-o-bars-3')
                                     ->schema([
                                         Select::make('columns')
-                                            ->label('عدد الأعمدة')
+                                            ->label('Number of Columns')
                                             ->options([
                                                 2 => '2',
                                                 3 => '3',
@@ -172,7 +172,7 @@ class PageForm
                                             ->default(3),
 
                                         TextInput::make('per_page')
-                                            ->label('عدد العناصر في الصفحة')
+                                            ->label('Items per Page')
                                             ->numeric()
                                             ->default(12),
                                     ]),
@@ -180,28 +180,28 @@ class PageForm
                             ->columnSpanFull(),
                     ]),
 
-                Section::make('معلومات SEO')
-                    ->description('تحسين محركات البحث')
+                Section::make('SEO Information')
+                    ->description('Search Engine Optimization')
                     ->schema([
                         Grid::make(2)
                             ->schema([
                                 TextInput::make('seo.meta_title')
                                     ->label('Meta Title')
                                     ->maxLength(60)
-                                    ->helperText('الطول الأمثل: 50-60 حرف'),
+                                    ->helperText('Optimal length: 50-60 characters'),
 
                                 TextInput::make('seo.meta_keywords')
                                     ->label('Meta Keywords')
-                                    ->helperText('كلمات مفتاحية مفصولة بفواصل'),
+                                    ->helperText('Keywords separated by commas'),
 
                                 TextInput::make('seo.meta_description')
                                     ->label('Meta Description')
                                     ->maxLength(160)
-                                    ->helperText('الطول الأمثل: 150-160 حرف')
+                                    ->helperText('Optimal length: 150-160 characters')
                                     ->columnSpanFull(),
 
                                 FileUpload::make('seo.og_image')
-                                    ->label('صورة OG')
+                                    ->label('OG Image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('images/seo')
