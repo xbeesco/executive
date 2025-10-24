@@ -3,7 +3,7 @@
 after finishing every model you need to do اختبارات تفصيلية تضمن سلامة كل شيئ فيه مع كامل الاحتمالات
 يمكنك استخدام ال curl &  laywright mcp tools  او طريقه تجدها افضل 
 3- يوجد route http://exe-site.test/quick-login  يقوم بتسجيل الدخول المباشر بدون كلمة سر و بالتالي يمكنك استخدماه لعمليات التجريب  بسهوله 
-
+4- بعد تجريب ال model بشكل كامل ومنضبط اعمل commit يكون رسالته مختصره ولا تذكر نفسك فيه 
 
 
 <laravel-boost-guidelines>
