@@ -3,7 +3,6 @@
 namespace App\Filament\Pages;
 
 use App\Models\Setting;
-use BackedEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
@@ -11,18 +10,16 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Pages\Dashboard;
-use Filament\Support\Icons\Heroicon;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Pages\Page;
 
-class SettingsPage extends Dashboard
+class SettingsPage extends Page implements HasForms
 {
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
+    use InteractsWithForms;
 
     protected static ?string $navigationLabel = 'الإعدادات';
-
     protected static ?string $title = 'إعدادات الموقع';
-
     protected static ?int $navigationSort = 999;
 
     public ?array $data = [];
@@ -38,14 +35,14 @@ class SettingsPage extends Dashboard
                 'site_logo' => '',
                 'site_favicon' => '',
             ]),
-            'socialLinks' => Setting::getValue('social_links', [
+            'social_links' => Setting::getValue('social_links', [
                 'facebook' => '',
                 'twitter' => '',
                 'instagram' => '',
                 'linkedin' => '',
             ]),
             'menu' => Setting::getValue('menu', []),
-            'seoDefaults' => Setting::getValue('seo_defaults', [
+            'seo_defaults' => Setting::getValue('seo_defaults', [
                 'meta_title' => '',
                 'meta_description' => '',
                 'meta_keywords' => '',
@@ -56,156 +53,154 @@ class SettingsPage extends Dashboard
         $this->form->fill($this->data);
     }
 
-    public function form(Form $form): Form
+    protected function getFormSchema(): array
     {
-        return $form
-            ->schema([
-                Tabs::make('Settings')
-                    ->tabs([
-                        Tabs\Tab::make('المعلومات العامة')
-                            ->schema([
-                                Section::make()
-                                    ->schema([
-                                        Grid::make(2)
-                                            ->schema([
-                                                TextInput::make('general.site_name')
-                                                    ->label('اسم الموقع')
-                                                    ->required()
-                                                    ->maxLength(255),
+        return [
+            Tabs::make('Settings')
+                ->tabs([
+                    Tabs\Tab::make('المعلومات العامة')
+                        ->schema([
+                            Section::make()
+                                ->schema([
+                                    Grid::make(2)
+                                        ->schema([
+                                            TextInput::make('general.site_name')
+                                                ->label('اسم الموقع')
+                                                ->required()
+                                                ->maxLength(255),
 
-                                                TextInput::make('general.site_email')
-                                                    ->label('البريد الإلكتروني')
-                                                    ->email()
-                                                    ->required(),
+                                            TextInput::make('general.site_email')
+                                                ->label('البريد الإلكتروني')
+                                                ->email()
+                                                ->required(),
 
-                                                TextInput::make('general.site_phone')
-                                                    ->label('رقم الهاتف')
-                                                    ->tel()
-                                                    ->maxLength(20),
+                                            TextInput::make('general.site_phone')
+                                                ->label('رقم الهاتف')
+                                                ->tel()
+                                                ->maxLength(20),
 
-                                                TextInput::make('general.site_address')
-                                                    ->label('العنوان')
-                                                    ->maxLength(255),
+                                            TextInput::make('general.site_address')
+                                                ->label('العنوان')
+                                                ->maxLength(255),
 
-                                                FileUpload::make('general.site_logo')
-                                                    ->label('شعار الموقع')
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('images'),
+                                            FileUpload::make('general.site_logo')
+                                                ->label('شعار الموقع')
+                                                ->image()
+                                                ->disk('public')
+                                                ->directory('images'),
 
-                                                FileUpload::make('general.site_favicon')
-                                                    ->label('أيقونة الموقع')
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('images'),
-                                            ]),
-                                    ]),
-                            ]),
+                                            FileUpload::make('general.site_favicon')
+                                                ->label('أيقونة الموقع')
+                                                ->image()
+                                                ->disk('public')
+                                                ->directory('images'),
+                                        ]),
+                                ]),
+                        ]),
 
-                        Tabs\Tab::make('وسائل التواصل')
-                            ->schema([
-                                Section::make()
-                                    ->schema([
-                                        Grid::make(2)
-                                            ->schema([
-                                                TextInput::make('socialLinks.facebook')
-                                                    ->label('Facebook')
-                                                    ->url()
-                                                    ->placeholder('https://facebook.com/...'),
+                    Tabs\Tab::make('وسائل التواصل')
+                        ->schema([
+                            Section::make()
+                                ->schema([
+                                    Grid::make(2)
+                                        ->schema([
+                                            TextInput::make('social_links.facebook')
+                                                ->label('Facebook')
+                                                ->url()
+                                                ->placeholder('https://facebook.com/...'),
 
-                                                TextInput::make('socialLinks.twitter')
-                                                    ->label('Twitter')
-                                                    ->url()
-                                                    ->placeholder('https://twitter.com/...'),
+                                            TextInput::make('social_links.twitter')
+                                                ->label('Twitter')
+                                                ->url()
+                                                ->placeholder('https://twitter.com/...'),
 
-                                                TextInput::make('socialLinks.instagram')
-                                                    ->label('Instagram')
-                                                    ->url()
-                                                    ->placeholder('https://instagram.com/...'),
+                                            TextInput::make('social_links.instagram')
+                                                ->label('Instagram')
+                                                ->url()
+                                                ->placeholder('https://instagram.com/...'),
 
-                                                TextInput::make('socialLinks.linkedin')
-                                                    ->label('LinkedIn')
-                                                    ->url()
-                                                    ->placeholder('https://linkedin.com/...'),
-                                            ]),
-                                    ]),
-                            ]),
+                                            TextInput::make('social_links.linkedin')
+                                                ->label('LinkedIn')
+                                                ->url()
+                                                ->placeholder('https://linkedin.com/...'),
+                                        ]),
+                                ]),
+                        ]),
 
-                        Tabs\Tab::make('القائمة الرئيسية')
-                            ->schema([
-                                Section::make()
-                                    ->schema([
-                                        Repeater::make('menu')
-                                            ->label('')
-                                            ->schema([
-                                                TextInput::make('label')
-                                                    ->label('التسمية')
-                                                    ->required(),
+                    Tabs\Tab::make('القائمة الرئيسية')
+                        ->schema([
+                            Section::make()
+                                ->schema([
+                                    Repeater::make('menu')
+                                        ->label('')
+                                        ->schema([
+                                            TextInput::make('label')
+                                                ->label('التسمية')
+                                                ->required(),
 
-                                                TextInput::make('url')
-                                                    ->label('الرابط')
-                                                    ->required()
-                                                    ->placeholder('/about'),
+                                            TextInput::make('url')
+                                                ->label('الرابط')
+                                                ->required()
+                                                ->placeholder('/about'),
 
-                                                TextInput::make('icon')
-                                                    ->label('الأيقونة')
-                                                    ->placeholder('heroicon-o-home')
-                                                    ->helperText('استخدم أسماء Heroicon'),
+                                            TextInput::make('icon')
+                                                ->label('الأيقونة')
+                                                ->placeholder('heroicon-o-home')
+                                                ->helperText('استخدم أسماء Heroicon'),
 
-                                                Repeater::make('children')
-                                                    ->label('العناصر الفرعية')
-                                                    ->schema([
-                                                        TextInput::make('label')
-                                                            ->label('التسمية')
-                                                            ->required(),
+                                            Repeater::make('children')
+                                                ->label('العناصر الفرعية')
+                                                ->schema([
+                                                    TextInput::make('label')
+                                                        ->label('التسمية')
+                                                        ->required(),
 
-                                                        TextInput::make('url')
-                                                            ->label('الرابط')
-                                                            ->required(),
+                                                    TextInput::make('url')
+                                                        ->label('الرابط')
+                                                        ->required(),
 
-                                                        TextInput::make('icon')
-                                                            ->label('الأيقونة')
-                                                            ->placeholder('heroicon-o-link'),
-                                                    ])
-                                                    ->collapsed()
-                                                    ->collapsible()
-                                                    ->addActionLabel('إضافة عنصر فرعي'),
-                                            ])
-                                            ->collapsed()
-                                            ->collapsible()
-                                            ->addActionLabel('إضافة عنصر'),
-                                    ]),
-                            ]),
+                                                    TextInput::make('icon')
+                                                        ->label('الأيقونة')
+                                                        ->placeholder('heroicon-o-link'),
+                                                ])
+                                                ->collapsed()
+                                                ->collapsible()
+                                                ->addActionLabel('إضافة عنصر فرعي'),
+                                        ])
+                                        ->collapsed()
+                                        ->collapsible()
+                                        ->addActionLabel('إضافة عنصر'),
+                                ]),
+                        ]),
 
-                        Tabs\Tab::make('إعدادات SEO الافتراضية')
-                            ->schema([
-                                Section::make()
-                                    ->schema([
-                                        TextInput::make('seoDefaults.meta_title')
-                                            ->label('Meta Title الافتراضي')
-                                            ->maxLength(60)
-                                            ->helperText('يُستخدم عندما لا تحدد صفحة meta_title خاص بها'),
+                    Tabs\Tab::make('إعدادات SEO الافتراضية')
+                        ->schema([
+                            Section::make()
+                                ->schema([
+                                    TextInput::make('seo_defaults.meta_title')
+                                        ->label('Meta Title الافتراضي')
+                                        ->maxLength(60)
+                                        ->helperText('يُستخدم عندما لا تحدد صفحة meta_title خاص بها'),
 
-                                        Textarea::make('seoDefaults.meta_description')
-                                            ->label('Meta Description الافتراضية')
-                                            ->rows(3)
-                                            ->maxLength(160),
+                                    Textarea::make('seo_defaults.meta_description')
+                                        ->label('Meta Description الافتراضية')
+                                        ->rows(3)
+                                        ->maxLength(160),
 
-                                        TextInput::make('seoDefaults.meta_keywords')
-                                            ->label('Meta Keywords الافتراضية')
-                                            ->helperText('كلمات مفتاحية مفصولة بفواصل'),
+                                    TextInput::make('seo_defaults.meta_keywords')
+                                        ->label('Meta Keywords الافتراضية')
+                                        ->helperText('كلمات مفتاحية مفصولة بفواصل'),
 
-                                        FileUpload::make('seoDefaults.og_image')
-                                            ->label('صورة OG الافتراضية')
-                                            ->image()
-                                            ->disk('public')
-                                            ->directory('images'),
-                                    ]),
-                            ]),
-                    ])
-                    ->columnSpan('full'),
-            ])
-            ->statePath('data');
+                                    FileUpload::make('seo_defaults.og_image')
+                                        ->label('صورة OG الافتراضية')
+                                        ->image()
+                                        ->disk('public')
+                                        ->directory('images'),
+                                ]),
+                        ]),
+                ])
+                ->columnSpan('full'),
+        ];
     }
 
     public function save(): void
@@ -213,9 +208,9 @@ class SettingsPage extends Dashboard
         $data = $this->form->getState();
 
         Setting::setValue('general', $data['general']);
-        Setting::setValue('social_links', $data['socialLinks']);
+        Setting::setValue('social_links', $data['social_links']);
         Setting::setValue('menu', $data['menu']);
-        Setting::setValue('seo_defaults', $data['seoDefaults']);
+        Setting::setValue('seo_defaults', $data['seo_defaults']);
 
         $this->notification()
             ->success()
