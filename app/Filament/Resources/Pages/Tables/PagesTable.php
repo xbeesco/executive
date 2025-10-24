@@ -2,9 +2,14 @@
 
 namespace App\Filament\Resources\Pages\Tables;
 
+use App\Enums\ContentStatus;
+use App\Enums\PageType;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class PagesTable
@@ -13,10 +18,46 @@ class PagesTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')
+                    ->label('العنوان')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('slug')
+                    ->label('الرابط')
+                    ->copyable()
+                    ->sortable(),
+
+                TextColumn::make('settings.page_type')
+                    ->label('النوع')
+                    ->formatStateUsing(fn($state) => PageType::tryFrom($state)?->label() ?? $state)
+                    ->badge()
+                    ->sortable(),
+
+                TextColumn::make('status')
+                    ->label('الحالة')
+                    ->formatStateUsing(fn($state) => $state->label())
+                    ->badge(fn($state) => $state->color())
+                    ->sortable(),
+
+                ImageColumn::make('featured_image')
+                    ->label('الصورة')
+                    ->circular(),
+
+                TextColumn::make('created_at')
+                    ->label('تاريخ الإنشاء')
+                    ->dateTime('Y-m-d H:i')
+                    ->sortable(),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->label('الحالة')
+                    ->options(ContentStatus::class),
+
+                SelectFilter::make('page_type')
+                    ->label('نوع الصفحة')
+                    ->attribute('settings->page_type')
+                    ->options(PageType::class),
             ])
             ->recordActions([
                 EditAction::make(),
