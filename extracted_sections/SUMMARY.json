@@ -1,0 +1,335 @@
+[
+    {
+        "database_page": 1,
+        "section_name": "about-modern-living-area",
+        "original_file": "homepage-2.php",
+        "original_text": "modern living area",
+        "blade_file": "page-1-about-modern-living-area.blade.php",
+        "lines": "296-458",
+        "size": 6389
+    },
+    {
+        "database_page": 1,
+        "section_name": "pricing-creating-the-art-of",
+        "original_file": "homepage-2.php",
+        "original_text": "Creating the art of",
+        "blade_file": "page-1-pricing-creating-the-art-of.blade.php",
+        "lines": "841-980",
+        "size": 8347
+    },
+    {
+        "database_page": 1,
+        "section_name": "testimonials-hear-from-clients",
+        "original_file": "homepage-2.php",
+        "original_text": "Hear from clients.",
+        "blade_file": "page-1-testimonials-hear-from-clients.blade.php",
+        "lines": "1289-1591",
+        "size": 16929
+    },
+    {
+        "database_page": 1,
+        "section_name": "about-start-your-healthy-life",
+        "original_file": "homepage-3.php",
+        "original_text": "Start your healthy life",
+        "blade_file": "page-1-about-start-your-healthy-life.blade.php",
+        "lines": "431-512",
+        "size": 3523
+    },
+    {
+        "database_page": 1,
+        "section_name": "pricing-different-case",
+        "original_file": "homepage-3.php",
+        "original_text": "Different case,",
+        "blade_file": "page-1-pricing-different-case.blade.php",
+        "lines": "516-730",
+        "size": 9653
+    },
+    {
+        "database_page": 1,
+        "section_name": "services-what-can-we-offer",
+        "original_file": "homepage-3.php",
+        "original_text": "What Can We Offer",
+        "blade_file": "page-1-services-what-can-we-offer.blade.php",
+        "lines": "734-972",
+        "size": 12346
+    },
+    {
+        "database_page": 1,
+        "section_name": "section-we-design-thoughtful",
+        "original_file": "homepage-3.php",
+        "original_text": "We design thoughtful",
+        "blade_file": "page-1-section-we-design-thoughtful.blade.php",
+        "lines": "1060-1120",
+        "size": 3151
+    },
+    {
+        "database_page": 1,
+        "section_name": "about-transforming-dull",
+        "original_file": "homepage-4.php",
+        "original_text": "Transforming dull",
+        "blade_file": "page-1-about-transforming-dull.blade.php",
+        "lines": "331-446",
+        "size": 4883
+    },
+    {
+        "database_page": 1,
+        "section_name": "pricing-what-we-offer-for",
+        "original_file": "homepage-4.php",
+        "original_text": "What we offer for you",
+        "blade_file": "page-1-pricing-what-we-offer-for.blade.php",
+        "lines": "450-635",
+        "size": 7994
+    },
+    {
+        "database_page": 1,
+        "section_name": "services-get-amazing-cleaning",
+        "original_file": "homepage-4.php",
+        "original_text": "Get amazing cleaning",
+        "blade_file": "page-1-services-get-amazing-cleaning.blade.php",
+        "lines": "678-759",
+        "size": 3641
+    },
+    {
+        "database_page": 1,
+        "section_name": "portfolio-see-our-latest-case",
+        "original_file": "homepage-4.php",
+        "original_text": "See our latest case studies",
+        "blade_file": "page-1-portfolio-see-our-latest-case.blade.php",
+        "lines": "763-1001",
+        "size": 10566
+    },
+    {
+        "database_page": 1,
+        "section_name": "pricing-design-without-limits",
+        "original_file": "homepage-4.php",
+        "original_text": "Design without limits",
+        "blade_file": "page-1-pricing-design-without-limits.blade.php",
+        "lines": "1089-1197",
+        "size": 4753
+    },
+    {
+        "database_page": 1,
+        "section_name": "testimonials-heres-what-our",
+        "original_file": "homepage-4.php",
+        "original_text": "Here's what our",
+        "blade_file": "page-1-testimonials-heres-what-our.blade.php",
+        "lines": "1201-1398",
+        "size": 11479
+    },
+    {
+        "database_page": 2,
+        "section_name": "pricing-creating-the",
+        "original_file": "homepage-5.php",
+        "original_text": "Creating the",
+        "blade_file": "page-2-pricing-creating-the.blade.php",
+        "lines": "282-534",
+        "size": 11633
+    },
+    {
+        "database_page": 2,
+        "section_name": "about-the-advantages-of-our",
+        "original_file": "homepage-5.php",
+        "original_text": "The advantages of our",
+        "blade_file": "page-2-about-the-advantages-of-our.blade.php",
+        "lines": "577-616",
+        "size": 1987
+    },
+    {
+        "database_page": 2,
+        "section_name": "portfolio-minimalism",
+        "original_file": "homepage-5.php",
+        "original_text": "minimalism",
+        "blade_file": "page-2-portfolio-minimalism.blade.php",
+        "lines": "699-932",
+        "size": 9493
+    },
+    {
+        "database_page": 2,
+        "section_name": "process-how-organization-works",
+        "original_file": "homepage-5.php",
+        "original_text": "How organization works",
+        "blade_file": "page-2-process-how-organization-works.blade.php",
+        "lines": "936-1049",
+        "size": 5578
+    },
+    {
+        "database_page": 2,
+        "section_name": "pricing-the-best-pricing",
+        "original_file": "homepage-5.php",
+        "original_text": "The best pricing",
+        "blade_file": "page-2-pricing-the-best-pricing.blade.php",
+        "lines": "1098-1243",
+        "size": 6144
+    },
+    {
+        "database_page": 2,
+        "section_name": "pricing-making-your-home",
+        "original_file": "homepage-6.php",
+        "original_text": "Making your home",
+        "blade_file": "page-2-pricing-making-your-home.blade.php",
+        "lines": "650-765",
+        "size": 4933
+    },
+    {
+        "database_page": 2,
+        "section_name": "portfolio-see-our-latest-case-2",
+        "original_file": "homepage-6.php",
+        "original_text": "See Our Latest Case Studies",
+        "blade_file": "page-2-portfolio-see-our-latest-case-2.blade.php",
+        "lines": "769-933",
+        "size": 7142
+    },
+    {
+        "database_page": 2,
+        "section_name": "awards-award-achievement",
+        "original_file": "homepage-6.php",
+        "original_text": "Award & achievement",
+        "blade_file": "page-2-awards-award-achievement.blade.php",
+        "lines": "937-1015",
+        "size": 3199
+    },
+    {
+        "database_page": 2,
+        "section_name": "pricing-choose-plan-for",
+        "original_file": "homepage-6.php",
+        "original_text": "Choose plan for",
+        "blade_file": "page-2-pricing-choose-plan-for.blade.php",
+        "lines": "1497-1613",
+        "size": 5130
+    },
+    {
+        "database_page": 2,
+        "section_name": "about-we-design-thoughtful",
+        "original_file": "homepage-1.php",
+        "original_text": "We design thoughtful",
+        "blade_file": "page-2-about-we-design-thoughtful.blade.php",
+        "lines": "313-454",
+        "size": 5695
+    },
+    {
+        "database_page": 2,
+        "section_name": "pricing-choose-plan-for-house",
+        "original_file": "homepage-1.php",
+        "original_text": "Choose plan for house",
+        "blade_file": "page-2-pricing-choose-plan-for-house.blade.php",
+        "lines": "1107-1221",
+        "size": 5057
+    },
+    {
+        "database_page": 2,
+        "section_name": "about-our-beginning",
+        "original_file": "our-history.html",
+        "original_text": "our beginning",
+        "blade_file": "page-2-about-our-beginning.blade.php",
+        "lines": "411-510",
+        "size": 4699
+    },
+    {
+        "database_page": 3,
+        "section_name": "about-exceptional-designing",
+        "original_file": "homepage-7.php",
+        "original_text": "Exceptional designing",
+        "blade_file": "page-3-about-exceptional-designing.blade.php",
+        "lines": "312-423",
+        "size": 4986
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-what-we-offer-for-2",
+        "original_file": "homepage-7.php",
+        "original_text": "What We Offer For You",
+        "blade_file": "page-3-pricing-what-we-offer-for-2.blade.php",
+        "lines": "427-665",
+        "size": 10726
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-why-choose",
+        "original_file": "homepage-7.php",
+        "original_text": "Why Choose",
+        "blade_file": "page-3-pricing-why-choose.blade.php",
+        "lines": "669-951",
+        "size": 13746
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-examination-package",
+        "original_file": "homepage-7.php",
+        "original_text": "Examination Package",
+        "blade_file": "page-3-pricing-examination-package.blade.php",
+        "lines": "1379-1465",
+        "size": 3743
+    },
+    {
+        "database_page": 3,
+        "section_name": "faq-transforming-dull-spaces",
+        "original_file": "homepage-8.php",
+        "original_text": "Transforming dull spaces",
+        "blade_file": "page-3-faq-transforming-dull-spaces.blade.php",
+        "lines": "269-379",
+        "size": 6638
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-thoughtful-livable-spaces-design",
+        "original_file": "homepage-8.php",
+        "original_text": "Thoughtful livable spaces design",
+        "blade_file": "page-3-pricing-thoughtful-livable-spaces-design.blade.php",
+        "lines": "688-770",
+        "size": 3882
+    },
+    {
+        "database_page": 3,
+        "section_name": "portfolio-selected-case",
+        "original_file": "homepage-8.php",
+        "original_text": "Selected Case",
+        "blade_file": "page-3-portfolio-selected-case.blade.php",
+        "lines": "774-947",
+        "size": 7308
+    },
+    {
+        "database_page": 3,
+        "section_name": "section-join-the-companies-that",
+        "original_file": "homepage-8.php",
+        "original_text": "Join the companies that trust",
+        "blade_file": "page-3-section-join-the-companies-that.blade.php",
+        "lines": "1859-2006",
+        "size": 7543
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-we-design",
+        "original_file": "homepage-9.php",
+        "original_text": "We design",
+        "blade_file": "page-3-pricing-we-design.blade.php",
+        "lines": "297-397",
+        "size": 4296
+    },
+    {
+        "database_page": 3,
+        "section_name": "pricing-what-can-we-offer",
+        "original_file": "homepage-9.php",
+        "original_text": "What Can We Offer",
+        "blade_file": "page-3-pricing-what-can-we-offer.blade.php",
+        "lines": "401-653",
+        "size": 10998
+    },
+    {
+        "database_page": 3,
+        "section_name": "team-meet-designer",
+        "original_file": "homepage-9.php",
+        "original_text": "meet designer",
+        "blade_file": "page-3-team-meet-designer.blade.php",
+        "lines": "657-750",
+        "size": 4831
+    },
+    {
+        "database_page": 3,
+        "section_name": "about-the-advantages-of",
+        "original_file": "homepage-9.php",
+        "original_text": "The advantages of",
+        "blade_file": "page-3-about-the-advantages-of.blade.php",
+        "lines": "823-846",
+        "size": 1280
+    }
+]

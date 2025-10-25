@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Pages\Tables;
 
 use App\Enums\ContentStatus;
 use App\Enums\PageType;
+use App\Filament\Resources\Pages\PageResource;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -63,12 +64,12 @@ class PagesTable
             ])
             ->recordActions([
                 Action::make('view')
-                    ->label('View')
                     ->icon(Heroicon::OutlinedEye)
                     ->url(fn ($record) => route('pages.show', $record->slug))
                     ->openUrlInNewTab(),
                 EditAction::make(),
             ])
+            ->recordUrl(fn ($record) => PageResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
