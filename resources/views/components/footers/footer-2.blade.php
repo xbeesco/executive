@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row g-0">
                 <div class="col-md-12 col-xl-6 pbmit-footer-left">
-                    <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                    <form action="#" method="POST">
                         @csrf
                         <div class="pbmit-newsletter">
                             <h3>Subscribe to Our Newsletter</h3>

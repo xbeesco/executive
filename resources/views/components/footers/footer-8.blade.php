@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-xl-8">
-                    <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                    <form action="#" method="POST">
                         @csrf
                         <div class="pbmit-newsletter">
                             <h3>Subscribe to Our Newsletter</h3>
