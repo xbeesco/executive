@@ -1,0 +1,361 @@
+{
+  "database_pages": [
+    {
+      "page_id": 1,
+      "page_title": "Database Page 1",
+      "total_sections": 13,
+      "sections": [
+        {
+          "order": 1,
+          "block_name": "about-modern-living-area",
+          "block_type": "slider",
+          "blade_file": "page-1-about-modern-living-area.blade.php",
+          "description": "Slider with icons (Living Area, Interior Design, etc.)",
+          "source": "homepage-2.php:296-458"
+        },
+        {
+          "order": 2,
+          "block_name": "pricing-creating-the-art-of",
+          "block_type": "accordion",
+          "blade_file": "page-1-pricing-creating-the-art-of.blade.php",
+          "description": "Accordion/FAQ with text and images",
+          "source": "homepage-2.php:841-980"
+        },
+        {
+          "order": 3,
+          "block_name": "testimonials-hear-from-clients",
+          "block_type": "testimonials",
+          "blade_file": "page-1-testimonials-hear-from-clients.blade.php",
+          "description": "Testimonial cards slider with ratings",
+          "source": "homepage-2.php:1289-1591"
+        },
+        {
+          "order": 4,
+          "block_name": "about-start-your-healthy-life",
+          "block_type": "about",
+          "blade_file": "page-1-about-start-your-healthy-life.blade.php",
+          "description": "About section with images and features",
+          "source": "homepage-3.php:431-512"
+        },
+        {
+          "order": 5,
+          "block_name": "pricing-different-case",
+          "block_type": "services_grid",
+          "blade_file": "page-1-pricing-different-case.blade.php",
+          "description": "Services grid with columns",
+          "source": "homepage-3.php:516-730"
+        },
+        {
+          "order": 6,
+          "block_name": "services-what-can-we-offer",
+          "block_type": "tabs",
+          "blade_file": "page-1-services-what-can-we-offer.blade.php",
+          "description": "Tabbed services interface",
+          "source": "homepage-3.php:734-972"
+        },
+        {
+          "order": 7,
+          "block_name": "section-we-design-thoughtful",
+          "block_type": "before_after",
+          "blade_file": "page-1-section-we-design-thoughtful.blade.php",
+          "description": "Before/After comparison section",
+          "source": "homepage-3.php:1060-1120"
+        },
+        {
+          "order": 8,
+          "block_name": "about-transforming-dull",
+          "block_type": "about",
+          "blade_file": "page-1-about-transforming-dull.blade.php",
+          "description": "About with frame/clock animation",
+          "source": "homepage-4.php:331-446"
+        },
+        {
+          "order": 9,
+          "block_name": "pricing-what-we-offer-for",
+          "block_type": "services_slider",
+          "blade_file": "page-1-pricing-what-we-offer-for.blade.php",
+          "description": "Services slider with navigation",
+          "source": "homepage-4.php:450-635"
+        },
+        {
+          "order": 10,
+          "block_name": "services-get-amazing-cleaning",
+          "block_type": "process",
+          "blade_file": "page-1-services-get-amazing-cleaning.blade.php",
+          "description": "4-step process with static slider",
+          "source": "homepage-4.php:678-759"
+        },
+        {
+          "order": 11,
+          "block_name": "portfolio-see-our-latest-case",
+          "block_type": "portfolio_grid",
+          "blade_file": "page-1-portfolio-see-our-latest-case.blade.php",
+          "description": "Sortable portfolio grid",
+          "source": "homepage-4.php:763-1001"
+        },
+        {
+          "order": 12,
+          "block_name": "pricing-design-without-limits",
+          "block_type": "features_slider",
+          "blade_file": "page-1-pricing-design-without-limits.blade.php",
+          "description": "Features carousel (4 columns)",
+          "source": "homepage-4.php:1089-1197"
+        },
+        {
+          "order": 13,
+          "block_name": "testimonials-heres-what-our",
+          "block_type": "testimonials",
+          "blade_file": "page-1-testimonials-heres-what-our.blade.php",
+          "description": "Testimonials with video/iconbox",
+          "source": "homepage-4.php:1201-1398"
+        }
+      ]
+    },
+    {
+      "page_id": 2,
+      "page_title": "Database Page 2",
+      "total_sections": 12,
+      "sections": [
+        {
+          "order": 1,
+          "block_name": "pricing-creating-the",
+          "block_type": "services_grid",
+          "blade_file": "page-2-pricing-creating-the.blade.php",
+          "description": "Services grid with stretched layout",
+          "source": "homepage-5.php:282-534"
+        },
+        {
+          "order": 2,
+          "block_name": "about-the-advantages-of-our",
+          "block_type": "icon_box",
+          "blade_file": "page-2-about-the-advantages-of-our.blade.php",
+          "description": "Icon box with advantages",
+          "source": "homepage-5.php:577-616"
+        },
+        {
+          "order": 3,
+          "block_name": "portfolio-minimalism",
+          "block_type": "portfolio_grid",
+          "blade_file": "page-2-portfolio-minimalism.blade.php",
+          "description": "Portfolio grid with minimalist style",
+          "source": "homepage-5.php:699-932"
+        },
+        {
+          "order": 4,
+          "block_name": "process-how-organization-works",
+          "block_type": "process",
+          "blade_file": "page-2-process-how-organization-works.blade.php",
+          "description": "Process steps with timeline",
+          "source": "homepage-5.php:936-1049"
+        },
+        {
+          "order": 5,
+          "block_name": "pricing-the-best-pricing",
+          "block_type": "pricing_table",
+          "blade_file": "page-2-pricing-the-best-pricing.blade.php",
+          "description": "Pricing table cards",
+          "source": "homepage-5.php:1098-1243"
+        },
+        {
+          "order": 6,
+          "block_name": "pricing-making-your-home",
+          "block_type": "services",
+          "blade_file": "page-2-pricing-making-your-home.blade.php",
+          "description": "Services with CTA",
+          "source": "homepage-6.php:650-765"
+        },
+        {
+          "order": 7,
+          "block_name": "portfolio-see-our-latest-case-2",
+          "block_type": "portfolio_grid",
+          "blade_file": "page-2-portfolio-see-our-latest-case-2.blade.php",
+          "description": "Portfolio grid variation",
+          "source": "homepage-6.php:769-933"
+        },
+        {
+          "order": 8,
+          "block_name": "awards-award-achievement",
+          "block_type": "awards",
+          "blade_file": "page-2-awards-award-achievement.blade.php",
+          "description": "Awards showcase section",
+          "source": "homepage-6.php:937-1015"
+        },
+        {
+          "order": 9,
+          "block_name": "pricing-choose-plan-for",
+          "block_type": "pricing_table",
+          "blade_file": "page-2-pricing-choose-plan-for.blade.php",
+          "description": "Pricing table (another variant)",
+          "source": "homepage-6.php:1497-1613"
+        },
+        {
+          "order": 10,
+          "block_name": "about-we-design-thoughtful",
+          "block_type": "about",
+          "blade_file": "page-2-about-we-design-thoughtful.blade.php",
+          "description": "About section with list",
+          "source": "homepage-1.php:313-454"
+        },
+        {
+          "order": 11,
+          "block_name": "pricing-choose-plan-for-house",
+          "block_type": "pricing_table",
+          "blade_file": "page-2-pricing-choose-plan-for-house.blade.php",
+          "description": "Pricing table for houses",
+          "source": "homepage-1.php:1107-1221"
+        },
+        {
+          "order": 12,
+          "block_name": "about-our-beginning",
+          "block_type": "history_timeline",
+          "blade_file": "page-2-about-our-beginning.blade.php",
+          "description": "History/Timeline section",
+          "source": "our-history.html:411-510"
+        }
+      ]
+    },
+    {
+      "page_id": 3,
+      "page_title": "Database Page 3",
+      "total_sections": 12,
+      "sections": [
+        {
+          "order": 1,
+          "block_name": "about-exceptional-designing",
+          "block_type": "about",
+          "blade_file": "page-3-about-exceptional-designing.blade.php",
+          "description": "About with feature list",
+          "source": "homepage-7.php:312-423"
+        },
+        {
+          "order": 2,
+          "block_name": "pricing-what-we-offer-for-2",
+          "block_type": "services_grid",
+          "blade_file": "page-3-pricing-what-we-offer-for-2.blade.php",
+          "description": "Services grid (variant 2)",
+          "source": "homepage-7.php:427-665"
+        },
+        {
+          "order": 3,
+          "block_name": "pricing-why-choose",
+          "block_type": "features_grid",
+          "blade_file": "page-3-pricing-why-choose.blade.php",
+          "description": "Why choose us with features",
+          "source": "homepage-7.php:669-951"
+        },
+        {
+          "order": 4,
+          "block_name": "pricing-examination-package",
+          "block_type": "pricing_table",
+          "blade_file": "page-3-pricing-examination-package.blade.php",
+          "description": "Pricing packages table",
+          "source": "homepage-7.php:1379-1465"
+        },
+        {
+          "order": 5,
+          "block_name": "faq-transforming-dull-spaces",
+          "block_type": "hero",
+          "blade_file": "page-3-faq-transforming-dull-spaces.blade.php",
+          "description": "Hero banner with CTA",
+          "source": "homepage-8.php:269-379"
+        },
+        {
+          "order": 6,
+          "block_name": "pricing-thoughtful-livable-spaces-design",
+          "block_type": "services",
+          "blade_file": "page-3-pricing-thoughtful-livable-spaces-design.blade.php",
+          "description": "Services compact",
+          "source": "homepage-8.php:688-770"
+        },
+        {
+          "order": 7,
+          "block_name": "portfolio-selected-case",
+          "block_type": "portfolio_grid",
+          "blade_file": "page-3-portfolio-selected-case.blade.php",
+          "description": "Selected portfolio cases",
+          "source": "homepage-8.php:774-947"
+        },
+        {
+          "order": 8,
+          "block_name": "section-join-the-companies-that",
+          "block_type": "clients_logos",
+          "blade_file": "page-3-section-join-the-companies-that.blade.php",
+          "description": "Client logos section",
+          "source": "homepage-8.php:1859-2006"
+        },
+        {
+          "order": 9,
+          "block_name": "pricing-we-design",
+          "block_type": "services",
+          "blade_file": "page-3-pricing-we-design.blade.php",
+          "description": "Services intro",
+          "source": "homepage-9.php:297-397"
+        },
+        {
+          "order": 10,
+          "block_name": "pricing-what-can-we-offer",
+          "block_type": "services_grid",
+          "blade_file": "page-3-pricing-what-can-we-offer.blade.php",
+          "description": "Services grid (variant 3)",
+          "source": "homepage-9.php:401-653"
+        },
+        {
+          "order": 11,
+          "block_name": "team-meet-designer",
+          "block_type": "team",
+          "blade_file": "page-3-team-meet-designer.blade.php",
+          "description": "Team member cards",
+          "source": "homepage-9.php:657-750"
+        },
+        {
+          "order": 12,
+          "block_name": "about-the-advantages-of",
+          "block_type": "icon_box",
+          "blade_file": "page-3-about-the-advantages-of.blade.php",
+          "description": "Advantages icon box (compact)",
+          "source": "homepage-9.php:823-846"
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "total_pages": 3,
+    "total_sections": 37,
+    "sections_not_found": 2,
+    "success_rate": "94.87%",
+    "block_types": {
+      "about": 5,
+      "accordion": 1,
+      "awards": 1,
+      "before_after": 1,
+      "clients_logos": 1,
+      "features_grid": 1,
+      "features_slider": 1,
+      "hero": 1,
+      "history_timeline": 1,
+      "icon_box": 2,
+      "portfolio_grid": 5,
+      "pricing_table": 5,
+      "process": 2,
+      "services": 3,
+      "services_grid": 5,
+      "services_slider": 1,
+      "slider": 1,
+      "tabs": 1,
+      "team": 1,
+      "testimonials": 2
+    }
+  },
+  "not_found_sections": [
+    {
+      "database_page": 2,
+      "search_text": "We Making home",
+      "source_file": "homepage-5.php"
+    },
+    {
+      "database_page": 3,
+      "search_text": "We Making home",
+      "source_file": "homepage-7.php"
+    }
+  ]
+}
