@@ -36,9 +36,9 @@ class CommentsTable
 
                 TextColumn::make('status')
                     ->label('الحالة')
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
-                    ->color(fn($state) => $state->color())
+                    ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 TextColumn::make('created_at')
@@ -62,15 +62,15 @@ class CommentsTable
                     ->label('الموافقة')
                     ->icon('heroicon-o-check')
                     ->color('success')
-                    ->action(fn($record) => $record->update(['status' => CommentStatus::APPROVED]))
-                    ->visible(fn($record) => $record->status !== CommentStatus::APPROVED),
+                    ->action(fn ($record) => $record->update(['status' => CommentStatus::APPROVED]))
+                    ->visible(fn ($record) => $record->status !== CommentStatus::APPROVED),
 
                 Action::make('reject')
                     ->label('الرفض')
                     ->icon('heroicon-o-x-mark')
                     ->color('danger')
-                    ->action(fn($record) => $record->update(['status' => CommentStatus::REJECTED]))
-                    ->visible(fn($record) => $record->status !== CommentStatus::REJECTED),
+                    ->action(fn ($record) => $record->update(['status' => CommentStatus::REJECTED]))
+                    ->visible(fn ($record) => $record->status !== CommentStatus::REJECTED),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -78,13 +78,13 @@ class CommentsTable
                         ->label('الموافقة على المحدد')
                         ->icon('heroicon-o-check')
                         ->color('success')
-                        ->action(fn($records) => $records->each->update(['status' => CommentStatus::APPROVED])),
+                        ->action(fn ($records) => $records->each->update(['status' => CommentStatus::APPROVED])),
 
                     BulkAction::make('reject')
                         ->label('رفض المحدد')
                         ->icon('heroicon-o-x-mark')
                         ->color('danger')
-                        ->action(fn($records) => $records->each->update(['status' => CommentStatus::REJECTED])),
+                        ->action(fn ($records) => $records->each->update(['status' => CommentStatus::REJECTED])),
 
                     DeleteBulkAction::make(),
                 ]),

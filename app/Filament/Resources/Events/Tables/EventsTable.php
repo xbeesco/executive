@@ -41,9 +41,9 @@ class EventsTable
 
                 TextColumn::make('status')
                     ->label('الحالة')
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
-                    ->color(fn($state) => $state->color())
+                    ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 TextColumn::make('created_at')
@@ -67,8 +67,8 @@ class EventsTable
                     ])
                     ->query(function ($query, array $data) {
                         return $query
-                            ->when($data['start_from'], fn($q, $date) => $q->whereDate('start_date', '>=', $date))
-                            ->when($data['start_until'], fn($q, $date) => $q->whereDate('start_date', '<=', $date));
+                            ->when($data['start_from'], fn ($q, $date) => $q->whereDate('start_date', '>=', $date))
+                            ->when($data['start_until'], fn ($q, $date) => $q->whereDate('start_date', '<=', $date));
                     }),
             ])
             ->recordActions([

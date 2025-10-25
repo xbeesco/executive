@@ -26,13 +26,13 @@ class ServicesTable
                 TextColumn::make('icon')
                     ->label('الأيقونة')
                     ->html()
-                    ->formatStateUsing(fn($state) => $state ? "<i class='{$state}'></i> {$state}" : '-'),
+                    ->formatStateUsing(fn ($state) => $state ? "<i class='{$state}'></i> {$state}" : '-'),
 
                 TextColumn::make('status')
                     ->label('الحالة')
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
-                    ->color(fn($state) => $state->color())
+                    ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 ImageColumn::make('featured_image')

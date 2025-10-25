@@ -15,7 +15,7 @@ class FormControllerTest extends TestCase
     {
         $form = Form::factory()->create(['status' => 'active']);
 
-        $response = $this->post('/forms/' . $form->slug, [
+        $response = $this->post('/forms/'.$form->slug, [
             'name' => 'John Doe',
             'email' => 'john@example.com',
         ]);
@@ -30,7 +30,7 @@ class FormControllerTest extends TestCase
     {
         $form = Form::factory()->create(['status' => 'inactive']);
 
-        $response = $this->post('/forms/' . $form->slug, [
+        $response = $this->post('/forms/'.$form->slug, [
             'name' => 'John Doe',
             'email' => 'john@example.com',
         ]);
@@ -42,7 +42,7 @@ class FormControllerTest extends TestCase
     {
         $form = Form::factory()->create(['status' => 'active']);
 
-        $response = $this->post('/forms/' . $form->slug, [
+        $response = $this->post('/forms/'.$form->slug, [
             // Missing required fields
         ]);
 
@@ -53,7 +53,7 @@ class FormControllerTest extends TestCase
     {
         $form = Form::factory()->create(['status' => 'active']);
 
-        $this->post('/forms/' . $form->slug, [
+        $this->post('/forms/'.$form->slug, [
             'name' => 'John Doe',
             'email' => 'john@example.com',
         ]);

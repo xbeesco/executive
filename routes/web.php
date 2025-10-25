@@ -48,6 +48,7 @@ Route::get('/', function () {
     if ($homePage) {
         return app(PageController::class)->show($homePage);
     }
+
     return view('welcome');
 })->name('home');
 

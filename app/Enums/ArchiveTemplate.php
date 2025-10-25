@@ -17,7 +17,7 @@ enum ArchiveTemplate: string
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::GRID_COL_2 => 'شبكة (عمودين)',
             self::GRID_COL_3 => 'شبكة (ثلاث أعمدة)',
             self::GRID_COL_4 => 'شبكة (أربع أعمدة)',

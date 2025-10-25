@@ -16,7 +16,7 @@ class SettingService
         Setting::setValue($key, $value);
     }
 
-    public static function getGeneral(string $key = null, mixed $default = null): mixed
+    public static function getGeneral(?string $key = null, mixed $default = null): mixed
     {
         $general = self::get('general', []);
 

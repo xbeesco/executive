@@ -20,7 +20,7 @@ class FormController
                 $rules[$field['slug']] = 'nullable';
             }
 
-            $rules[$field['slug']] .= match($field['type'] ?? 'text') {
+            $rules[$field['slug']] .= match ($field['type'] ?? 'text') {
                 'email' => '|email',
                 'number' => '|numeric',
                 default => '',

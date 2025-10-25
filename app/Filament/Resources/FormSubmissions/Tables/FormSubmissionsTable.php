@@ -65,8 +65,8 @@ class FormSubmissionsTable
                 Action::make('markAsRead')
                     ->label('تعليم كمقروء')
                     ->icon('heroicon-o-check')
-                    ->action(fn($record) => $record->update(['read' => true]))
-                    ->visible(fn($record) => !$record->read),
+                    ->action(fn ($record) => $record->update(['read' => true]))
+                    ->visible(fn ($record) => ! $record->read),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

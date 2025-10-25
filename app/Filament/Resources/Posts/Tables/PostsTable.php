@@ -30,9 +30,9 @@ class PostsTable
 
                 TextColumn::make('status')
                     ->label('الحالة')
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
-                    ->color(fn($state) => $state->color())
+                    ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 TextColumn::make('categories.name')

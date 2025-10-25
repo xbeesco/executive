@@ -114,7 +114,7 @@
     {
       "page_id": 2,
       "page_title": "Database Page 2",
-      "total_sections": 12,
+      "total_sections": 13,
       "sections": [
         {
           "order": 1,
@@ -150,6 +150,14 @@
         },
         {
           "order": 5,
+          "block_name": "cta-we-making-home",
+          "block_type": "cta_offer",
+          "blade_file": "cta-we-making-home.blade.php",
+          "description": "CTA offer with phone and rotating text",
+          "source": "homepage-5.php & homepage-7.php"
+        },
+        {
+          "order": 6,
           "block_name": "pricing-the-best-pricing",
           "block_type": "pricing_table",
           "blade_file": "page-2-pricing-the-best-pricing.blade.php",
@@ -157,7 +165,7 @@
           "source": "homepage-5.php:1098-1243"
         },
         {
-          "order": 6,
+          "order": 7,
           "block_name": "pricing-making-your-home",
           "block_type": "services",
           "blade_file": "page-2-pricing-making-your-home.blade.php",
@@ -165,7 +173,7 @@
           "source": "homepage-6.php:650-765"
         },
         {
-          "order": 7,
+          "order": 8,
           "block_name": "portfolio-see-our-latest-case-2",
           "block_type": "portfolio_grid",
           "blade_file": "page-2-portfolio-see-our-latest-case-2.blade.php",
@@ -173,7 +181,7 @@
           "source": "homepage-6.php:769-933"
         },
         {
-          "order": 8,
+          "order": 9,
           "block_name": "awards-award-achievement",
           "block_type": "awards",
           "blade_file": "page-2-awards-award-achievement.blade.php",
@@ -181,7 +189,7 @@
           "source": "homepage-6.php:937-1015"
         },
         {
-          "order": 9,
+          "order": 10,
           "block_name": "pricing-choose-plan-for",
           "block_type": "pricing_table",
           "blade_file": "page-2-pricing-choose-plan-for.blade.php",
@@ -189,7 +197,7 @@
           "source": "homepage-6.php:1497-1613"
         },
         {
-          "order": 10,
+          "order": 11,
           "block_name": "about-we-design-thoughtful",
           "block_type": "about",
           "blade_file": "page-2-about-we-design-thoughtful.blade.php",
@@ -197,7 +205,7 @@
           "source": "homepage-1.php:313-454"
         },
         {
-          "order": 11,
+          "order": 12,
           "block_name": "pricing-choose-plan-for-house",
           "block_type": "pricing_table",
           "blade_file": "page-2-pricing-choose-plan-for-house.blade.php",
@@ -205,7 +213,7 @@
           "source": "homepage-1.php:1107-1221"
         },
         {
-          "order": 12,
+          "order": 13,
           "block_name": "about-our-beginning",
           "block_type": "history_timeline",
           "blade_file": "page-2-about-our-beginning.blade.php",
@@ -320,15 +328,16 @@
   ],
   "statistics": {
     "total_pages": 3,
-    "total_sections": 37,
-    "sections_not_found": 2,
-    "success_rate": "94.87%",
+    "total_sections": 38,
+    "sections_not_found": 0,
+    "success_rate": "100%",
     "block_types": {
       "about": 5,
       "accordion": 1,
       "awards": 1,
       "before_after": 1,
       "clients_logos": 1,
+      "cta_offer": 1,
       "features_grid": 1,
       "features_slider": 1,
       "hero": 1,
@@ -346,16 +355,5 @@
       "testimonials": 2
     }
   },
-  "not_found_sections": [
-    {
-      "database_page": 2,
-      "search_text": "We Making home",
-      "source_file": "homepage-5.php"
-    },
-    {
-      "database_page": 3,
-      "search_text": "We Making home",
-      "source_file": "homepage-7.php"
-    }
-  ]
+  "not_found_sections": []
 }

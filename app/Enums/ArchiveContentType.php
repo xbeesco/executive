@@ -10,7 +10,7 @@ enum ArchiveContentType: string
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::POST => 'المقالات',
             self::SERVICE => 'الخدمات',
             self::EVENT => 'الفعاليات',
@@ -19,7 +19,7 @@ enum ArchiveContentType: string
 
     public function modelClass(): string
     {
-        return match($this) {
+        return match ($this) {
             self::POST => \App\Models\Post::class,
             self::SERVICE => \App\Models\Service::class,
             self::EVENT => \App\Models\Event::class,

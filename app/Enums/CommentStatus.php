@@ -10,7 +10,7 @@ enum CommentStatus: string
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => 'قيد الانتظار',
             self::APPROVED => 'موافق عليه',
             self::REJECTED => 'مرفوض',
@@ -19,7 +19,7 @@ enum CommentStatus: string
 
     public function color(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => 'warning',
             self::APPROVED => 'success',
             self::REJECTED => 'danger',

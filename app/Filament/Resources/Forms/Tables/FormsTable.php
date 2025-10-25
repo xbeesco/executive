@@ -29,8 +29,8 @@ class FormsTable
                 TextColumn::make('status')
                     ->label('الحالة')
                     ->badge()
-                    ->color(fn($state) => $state === 'active' ? 'success' : 'gray')
-                    ->formatStateUsing(fn($state) => $state === 'active' ? 'نشطة' : 'غير نشطة')
+                    ->color(fn ($state) => $state === 'active' ? 'success' : 'gray')
+                    ->formatStateUsing(fn ($state) => $state === 'active' ? 'نشطة' : 'غير نشطة')
                     ->sortable(),
 
                 TextColumn::make('submissions_count')
