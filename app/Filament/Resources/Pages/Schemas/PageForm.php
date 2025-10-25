@@ -5,8 +5,6 @@ namespace App\Filament\Resources\Pages\Schemas;
 use App\Enums\ArchiveContentType;
 use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
-use App\Enums\FooterStyle;
-use App\Enums\HeaderStyle;
 use App\Enums\PageType;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
@@ -56,23 +54,95 @@ class PageForm
                                 ->options(ContentStatus::class)
                                 ->required(),
 
+                            Select::make('settings.header_style')
+                                ->label('Header Style')
+                                ->options([
+                                    3 => 'Header Style 3',
+                                    4 => 'Header Style 4',
+                                    8 => 'Header Style 8',
+                                ])
+                                ->required()
+                                ->default(3),
+
+                            Select::make('settings.header_area_type')
+                                ->label('Header Area Type')
+                                ->options([
+                                    'none' => 'None',
+                                    'slider' => 'Slider',
+                                    'title_bar' => 'Title Bar',
+                                ])
+                                ->required()
+                                ->default('none')
+                                ->live(),
+
+                            Select::make('settings.slider_id')
+                                ->label('Select Slider')
+                                ->placeholder('Choose a slider')
+                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
+
+                            TextInput::make('settings.title_bar_title')
+                                ->label('Title Bar Title')
+                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+
+                            Toggle::make('settings.show_breadcrumbs')
+                                ->label('Show Breadcrumbs')
+                                ->default(true)
+                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+
+                            FileUpload::make('settings.title_bar_bg_image')
+                                ->label('Title Bar Background Image')
+                                ->image()
+                                ->disk('public')
+                                ->directory('images/title-bars')
+                                ->required(fn ($get) => $get('settings.header_area_type') === 'title_bar')
+                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+
+                            Select::make('settings.footer_style')
+                                ->label('Footer Style')
+                                ->options([
+                                    2 => 'Footer Style 2',
+                                    3 => 'Footer Style 3',
+                                    8 => 'Footer Style 8',
+                                ])
+                                ->required()
+                                ->default(2),
+
+                            Select::make('settings.footer_bg_color')
+                                ->label('Footer Background Color')
+                                ->options([
+                                    'secondary' => 'Secondary',
+                                    'light' => 'Light',
+                                    'dark' => 'Dark',
+                                ])
+                                ->required()
+                                ->default('secondary'),
+
+                            Select::make('settings.container_type')
+                                ->label('Container Type')
+                                ->options([
+                                    'container' => 'Container',
+                                    'container-fluid' => 'Container Fluid',
+                                ])
+                                ->default('container'),
+
+                            Toggle::make('settings.show_sidebar')
+                                ->label('Show Sidebar')
+                                ->default(false)
+                                ->live(),
+
+                            Select::make('settings.sidebar_position')
+                                ->label('Sidebar Position')
+                                ->options([
+                                    'left' => 'Left',
+                                    'right' => 'Right',
+                                ])
+                                ->default('right')
+                                ->hidden(fn ($get) => ! $get('settings.show_sidebar')),
+
                             Select::make('settings.page_type')
                                 ->options(PageType::class)
                                 ->required()
                                 ->live(),
-
-                            Select::make('settings.header_style')
-                                ->options(HeaderStyle::class)
-                                ->required()
-                                ->default(3),
-
-                            Select::make('settings.footer_style')
-                                ->options(FooterStyle::class)
-                                ->required()
-                                ->default(3),
-
-                            Toggle::make('settings.show_title_bar')
-                                ->default(true),
 
                             Select::make('settings.archive_content_type')
                                 ->options(ArchiveContentType::class)
