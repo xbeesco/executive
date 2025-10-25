@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Pages\Schemas;
 use App\Enums\ArchiveContentType;
 use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
-use App\Enums\PageType;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
@@ -15,7 +14,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Flex;
+use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -25,148 +25,179 @@ class PageForm
     {
         return $schema
             ->components([
-                Flex::make([
-                    Section::make()
-                        ->schema([
-                            Builder::make('content')
-                                ->blocks(self::getPageBuilderBlocks())
-                                ->collapsible(),
-                        ]),
+                Grid::make(12)
+                    ->schema([
+                        // Content Builder - 9 Columns
+                        Section::make()
+                            ->schema([
+                                Builder::make('content')
+                                    ->blocks(self::getPageBuilderBlocks())
+                                    ->collapsible(),
+                            ])
+                            ->columnSpan(9),
 
-                    Section::make()
-                        ->schema([
-                            TextInput::make('title')
-                                ->required()
-                                ->maxLength(255)
-                                ->live(onBlur: true),
+                        // Sidebar - 3 Columns
+                        Grid::make(1)
+                            ->schema([
+                                // الإعدادات العامة
+                                Fieldset::make('الإعدادات العامة')
+                                    ->schema([
+                                        TextInput::make('title')
+                                            ->label('العنوان')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->live(onBlur: true),
 
-                            TextInput::make('slug')
-                                ->required()
-                                ->unique('pages', 'slug', ignoreRecord: true)
-                                ->maxLength(255),
+                                        TextInput::make('slug')
+                                            ->label('الرابط')
+                                            ->required()
+                                            ->unique('pages', 'slug', ignoreRecord: true)
+                                            ->maxLength(255),
 
-                            FileUpload::make('featured_image')
-                                ->image()
-                                ->disk('public')
-                                ->directory('images/pages'),
+                                        Select::make('status')
+                                            ->label('الحالة')
+                                            ->options(ContentStatus::class)
+                                            ->required(),
 
-                            Select::make('status')
-                                ->options(ContentStatus::class)
-                                ->required(),
+                                        FileUpload::make('featured_image')
+                                            ->label('الصورة المميزة')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('images/pages'),
 
-                            Select::make('settings.header_style')
-                                ->label('Header Style')
-                                ->options([
-                                    3 => 'Header Style 3',
-                                    4 => 'Header Style 4',
-                                    8 => 'Header Style 8',
-                                ])
-                                ->required()
-                                ->default(3),
+                                        Toggle::make('settings.is_archive')
+                                            ->label('صفحة أرشيف')
+                                            ->default(false)
+                                            ->live(),
 
-                            Select::make('settings.header_area_type')
-                                ->label('Header Area Type')
-                                ->options([
-                                    'none' => 'None',
-                                    'slider' => 'Slider',
-                                    'title_bar' => 'Title Bar',
-                                ])
-                                ->required()
-                                ->default('none')
-                                ->live(),
+                                        Select::make('settings.archive_content_type')
+                                            ->label('نوع محتوى الأرشيف')
+                                            ->options(ArchiveContentType::class)
+                                            ->hidden(fn ($get) => ! $get('settings.is_archive')),
 
-                            Select::make('settings.slider_id')
-                                ->label('Select Slider')
-                                ->placeholder('Choose a slider')
-                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
+                                        Select::make('settings.archive_template')
+                                            ->label('قالب الأرشيف')
+                                            ->options(ArchiveTemplate::class)
+                                            ->hidden(fn ($get) => ! $get('settings.is_archive')),
+                                    ]),
 
-                            TextInput::make('settings.title_bar_title')
-                                ->label('Title Bar Title')
-                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+                                // إعدادات التصميم
+                                Fieldset::make('إعدادات التصميم')
+                                    ->schema([
+                                        Select::make('settings.header_style')
+                                            ->label('نمط الهيدر')
+                                            ->options([
+                                                3 => 'Header Style 3',
+                                                4 => 'Header Style 4',
+                                                8 => 'Header Style 8',
+                                            ])
+                                            ->required()
+                                            ->default(3),
 
-                            Toggle::make('settings.show_breadcrumbs')
-                                ->label('Show Breadcrumbs')
-                                ->default(true)
-                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+                                        Select::make('settings.header_area_type')
+                                            ->label('نوع منطقة الهيدر')
+                                            ->options([
+                                                'none' => 'لا شيء',
+                                                'slider' => 'سلايدر',
+                                                'title_bar' => 'شريط العنوان',
+                                            ])
+                                            ->required()
+                                            ->default('none')
+                                            ->live(),
 
-                            FileUpload::make('settings.title_bar_bg_image')
-                                ->label('Title Bar Background Image')
-                                ->image()
-                                ->disk('public')
-                                ->directory('images/title-bars')
-                                ->required(fn ($get) => $get('settings.header_area_type') === 'title_bar')
-                                ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
+                                        Select::make('settings.slider_id')
+                                            ->label('اختر السلايدر')
+                                            ->placeholder('اختر سلايدر')
+                                            ->options([
+                                                'slider-1' => 'Slider 1 - Centered',
+                                                'slider-2' => 'Slider 2 - Left Aligned',
+                                            ])
+                                            ->default('slider-1')
+                                            ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
 
-                            Select::make('settings.footer_style')
-                                ->label('Footer Style')
-                                ->options([
-                                    2 => 'Footer Style 2',
-                                    3 => 'Footer Style 3',
-                                    8 => 'Footer Style 8',
-                                ])
-                                ->required()
-                                ->default(2),
+                                        TextInput::make('settings.title_bar_title')
+                                            ->label('عنوان شريط العنوان')
+                                            ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
 
-                            Select::make('settings.footer_bg_color')
-                                ->label('Footer Background Color')
-                                ->options([
-                                    'secondary' => 'Secondary',
-                                    'light' => 'Light',
-                                    'dark' => 'Dark',
-                                ])
-                                ->required()
-                                ->default('secondary'),
+                                        Toggle::make('settings.show_breadcrumbs')
+                                            ->label('إظهار مسار التنقل')
+                                            ->default(true)
+                                            ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
 
-                            Select::make('settings.container_type')
-                                ->label('Container Type')
-                                ->options([
-                                    'container' => 'Container',
-                                    'container-fluid' => 'Container Fluid',
-                                ])
-                                ->default('container'),
+                                        FileUpload::make('settings.title_bar_bg_image')
+                                            ->label('صورة خلفية شريط العنوان')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('images/title-bars')
+                                            ->required(fn ($get) => $get('settings.header_area_type') === 'title_bar')
+                                            ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
 
-                            Toggle::make('settings.show_sidebar')
-                                ->label('Show Sidebar')
-                                ->default(false)
-                                ->live(),
+                                        Select::make('settings.footer_style')
+                                            ->label('نمط الفوتر')
+                                            ->options([
+                                                2 => 'Footer Style 2',
+                                                3 => 'Footer Style 3',
+                                                8 => 'Footer Style 8',
+                                            ])
+                                            ->required()
+                                            ->default(2),
 
-                            Select::make('settings.sidebar_position')
-                                ->label('Sidebar Position')
-                                ->options([
-                                    'left' => 'Left',
-                                    'right' => 'Right',
-                                ])
-                                ->default('right')
-                                ->hidden(fn ($get) => ! $get('settings.show_sidebar')),
+                                        Select::make('settings.footer_bg_color')
+                                            ->label('لون خلفية الفوتر')
+                                            ->options([
+                                                'secondary' => 'Secondary',
+                                                'light' => 'Light',
+                                                'dark' => 'Dark',
+                                            ])
+                                            ->required()
+                                            ->default('secondary'),
 
-                            Select::make('settings.page_type')
-                                ->options(PageType::class)
-                                ->required()
-                                ->live(),
+                                        Select::make('settings.container_type')
+                                            ->label('نوع الحاوية')
+                                            ->options([
+                                                'container' => 'Container',
+                                                'container-fluid' => 'Container Fluid',
+                                            ])
+                                            ->default('container'),
 
-                            Select::make('settings.archive_content_type')
-                                ->options(ArchiveContentType::class)
-                                ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
+                                        Toggle::make('settings.show_sidebar')
+                                            ->label('إظهار الشريط الجانبي')
+                                            ->default(false)
+                                            ->live(),
 
-                            Select::make('settings.archive_template')
-                                ->options(ArchiveTemplate::class)
-                                ->hidden(fn ($get) => $get('settings.page_type') !== PageType::ARCHIVE->value),
+                                        Select::make('settings.sidebar_position')
+                                            ->label('موضع الشريط الجانبي')
+                                            ->options([
+                                                'left' => 'يسار',
+                                                'right' => 'يمين',
+                                            ])
+                                            ->default('right')
+                                            ->hidden(fn ($get) => ! $get('settings.show_sidebar')),
+                                    ]),
 
-                            TextInput::make('seo.meta_title')
-                                ->maxLength(60),
+                                // إعدادات SEO
+                                Fieldset::make('إعدادات SEO')
+                                    ->schema([
+                                        TextInput::make('seo.meta_title')
+                                            ->label('عنوان Meta')
+                                            ->maxLength(60),
 
-                            TextInput::make('seo.meta_keywords'),
+                                        TextInput::make('seo.meta_keywords')
+                                            ->label('الكلمات المفتاحية'),
 
-                            TextInput::make('seo.meta_description')
-                                ->maxLength(160),
+                                        TextInput::make('seo.meta_description')
+                                            ->label('وصف Meta')
+                                            ->maxLength(160),
 
-                            FileUpload::make('seo.og_image')
-                                ->image()
-                                ->disk('public')
-                                ->directory('images/seo'),
-                        ])
-                        ->grow(false),
-                ])->from('md'),
+                                        FileUpload::make('seo.og_image')
+                                            ->label('صورة Open Graph')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('images/seo'),
+                                    ]),
+                            ])
+                            ->columnSpan(3),
+                    ]),
             ]);
     }
 
