@@ -18,7 +18,9 @@ class FormResource extends Resource
 {
     protected static ?string $model = Form::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
+
+    protected static ?string $navigationLabel = 'Forms';
 
     public static function form(Schema $schema): Schema
     {

@@ -62,7 +62,7 @@
             </svg>
         </div>
         <div class="pbmit-search-outer">
-            <form class="pbmit-site-searchform" action="{{ route('search') }}" method="GET">
+            <form class="pbmit-site-searchform" action="/search" method="GET">
                 <input type="search" class="form-control field searchform-s" name="s" placeholder="Search …">
                 <button type="submit"></button>
             </form>

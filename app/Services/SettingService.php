@@ -11,6 +11,15 @@ class SettingService
         return Setting::getValue($key, $default);
     }
 
+    public static function getAll(): array
+    {
+        return [
+            'general' => self::get('general', []),
+            'social_links' => self::getSocialLinks(),
+            'menu' => self::getMenu(),
+        ];
+    }
+
     public static function set(string $key, mixed $value): void
     {
         Setting::setValue($key, $value);

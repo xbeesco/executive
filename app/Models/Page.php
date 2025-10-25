@@ -30,9 +30,14 @@ class Page extends Model
         ];
     }
 
+    public function isArchive(): bool
+    {
+        return $this->settings['is_archive'] ?? false;
+    }
+
     public function getPageType(): string
     {
-        return $this->settings['page_type'] ?? 'inner_page';
+        return $this->isArchive() ? 'archive' : 'inner_page';
     }
 
     public function getHeaderStyle(): int

@@ -11,7 +11,6 @@ use App\Filament\Resources\FormSubmissions\FormSubmissionResource;
 use App\Filament\Resources\Pages\PageResource;
 use App\Filament\Resources\Posts\PostResource;
 use App\Filament\Resources\Services\ServiceResource;
-use App\Filament\Resources\Settings\SettingResource;
 use App\Filament\Resources\Tags\TagResource;
 use App\Filament\Resources\Users\UserResource;
 use Filament\Http\Middleware\Authenticate;
@@ -45,16 +44,15 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->resources([
                 PageResource::class,
-                PostResource::class,
-                ServiceResource::class,
                 EventResource::class,
+                ServiceResource::class,
+                PostResource::class,
                 CategoryResource::class,
                 TagResource::class,
+                CommentResource::class,
                 FormResource::class,
                 FormSubmissionResource::class,
-                CommentResource::class,
                 UserResource::class,
-                SettingResource::class,
             ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([

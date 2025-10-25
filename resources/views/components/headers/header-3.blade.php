@@ -38,14 +38,14 @@
                     </div>
                     <div class="pbmit-pre-header-right">
                         <ul class="pbmit-contact-info">
-                            @if(!empty($settings['contact']['email']))
-                            <li><i class="pbmit-base-icon-mail-alt"></i> {{ $settings['contact']['email'] }}</li>
+                            @if(!empty($settings['general']['site_email']))
+                            <li><i class="pbmit-base-icon-mail-alt"></i> {{ $settings['general']['site_email'] }}</li>
                             @endif
-                            @if(!empty($settings['contact']['address']))
-                            <li><i class="pbmit-base-icon-location-dot-solid"></i>{{ $settings['contact']['address'] }}</li>
+                            @if(!empty($settings['general']['site_address']))
+                            <li><i class="pbmit-base-icon-location-dot-solid"></i>{{ $settings['general']['site_address'] }}</li>
                             @endif
-                            @if(!empty($settings['contact']['phone']))
-                            <li><i class="pbmit-base-icon-phone-volume-solid-1"></i>{{ $settings['contact']['phone'] }}</li>
+                            @if(!empty($settings['general']['site_phone']))
+                            <li><i class="pbmit-base-icon-phone-volume-solid-1"></i>{{ $settings['general']['site_phone'] }}</li>
                             @endif
                         </ul>
                     </div>
@@ -83,7 +83,20 @@
                                         </svg>
                                     </span>
                                     <ul class="navigation clearfix">
-                                        {!! $settings['menu'] ?? '' !!}
+                                        @foreach(($settings['menu'] ?? []) as $item)
+                                            <li class="menu-item @if(!empty($item['children'])) menu-item-has-children @endif">
+                                                <a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
+                                                @if(!empty($item['children']))
+                                                    <ul class="sub-menu">
+                                                        @foreach($item['children'] as $child)
+                                                            <li class="menu-item">
+                                                                <a href="{{ $child['url'] ?? '#' }}">{{ $child['label'] ?? '' }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

@@ -1,36 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
-    @php
-        $headerStyle = $page->getHeaderStyle();
-        $footerStyle = $page->getFooterStyle();
-        $showTitleBar = $page->settings['show_title_bar'] ?? false;
-        $pageType = $page->getPageType();
-    @endphp
-
-    @include('components.header', ['style' => $headerStyle])
-
-    @if($showTitleBar)
-        @include('components.title-bar', ['title' => $page->title])
+    {{-- Slider Section (if enabled) --}}
+    @if(($pageSettings['header_area_type'] ?? 'none') === 'slider')
+        @include('components.sliders.slider', ['sliderData' => $sliderData ?? []])
     @endif
 
-    <div class="page-content">
-        @switch($pageType)
-            @case('homepage')
-                @include('frontend.page-builder', ['blocks' => $page->content ?? []])
-                @break
-            @case('inner_page')
-                @include('frontend.page-builder', ['blocks' => $page->content ?? []])
-                @break
-            @case('archive')
-                @include('frontend.archive', [
-                    'type' => $page->getArchiveContentType(),
-                    'template' => $page->getArchiveTemplate(),
-                    'items' => $items ?? [],
-                ])
-                @break
-        @endswitch
-    </div>
+    {{-- Title Bar (if enabled) --}}
+    @if(($pageSettings['header_area_type'] ?? 'none') === 'title_bar' || ($pageSettings['show_title_bar'] ?? false))
+        @include('components.title-bar', [
+            'title' => $page->title,
+            'style' => $pageSettings['title_bar_style'] ?? 'style-1',
+            'backgroundImage' => $pageSettings['title_bar_background_image'] ?? '',
+            'showBreadcrumbs' => $pageSettings['show_breadcrumbs'] ?? true
+        ])
+    @endif
 
-    @include('components.footer', ['style' => $footerStyle])
+    {{-- Page Content --}}
+    @if($page->isArchive())
+        {{-- Archive Page --}}
+        @include('frontend.archive', [
+            'type' => $page->getArchiveContentType(),
+            'template' => $page->getArchiveTemplate(),
+            'items' => $items ?? [],
+        ])
+    @else
+        {{-- Regular Page (Homepage or Inner Page) --}}
+        @include('frontend.page-builder', ['blocks' => $page->content ?? []])
+    @endif
 @endsection
