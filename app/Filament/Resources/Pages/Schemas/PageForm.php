@@ -249,7 +249,7 @@ class PageForm
                                     TextInput::make('text')->label('Feature'),
                                     Toggle::make('included')->label('Included')->default(true),
                                 ])
-                                ->simple(),
+                                ->columns(2),
                             TextInput::make('button_text')->label('Button Text')->default('Choose Plan'),
                             Toggle::make('featured')->label('Featured Plan')->default(false),
                         ])
@@ -424,8 +424,7 @@ class PageForm
                                     ]),
                                     TextInput::make('url')->label('URL'),
                                 ])
-                                ->columns(2)
-                                ->simple(),
+                                ->columns(2),
                         ])
                         ->columns(2),
                 ]),
