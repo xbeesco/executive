@@ -74,11 +74,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Header Area (Slider or Title Bar) -->
-    @if(($pageSettings['header_area_type'] ?? 'none') === 'slider')
-        @include('components.sliders.slider', ['sliderId' => $pageSettings['slider_id'] ?? null])
-    @elseif(($pageSettings['header_area_type'] ?? 'none') === 'title_bar')
-        @include('components.title-bar')
-    @endif
 </header>
