@@ -38,7 +38,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-01.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-01">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -63,7 +63,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-02.jpg') }}" class="img-fluid" alt="portfolio-02">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-02.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-02">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -88,7 +88,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-03.jpg') }}" class="img-fluid" alt="portfolio-03">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-03.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-03">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -113,7 +113,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-04.jpg') }}" class="img-fluid" alt="portfolio-04">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-04.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-04">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -138,7 +138,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-05.jpg') }}" class="img-fluid" alt="portfolio-05">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-05.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-05">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -163,7 +163,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-06.jpg') }}" class="img-fluid" alt="portfolio-06">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-06.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-06">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -188,7 +188,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-07.jpg') }}" class="img-fluid" alt="portfolio-07">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-07.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-07">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">
@@ -213,7 +213,7 @@
 							<div class="pbminfotech-post-content">
 								<div class="pbmit-featured-img-wrapper">
 									<div class="pbmit-featured-wrapper">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-08.jpg') }}" class="img-fluid" alt="portfolio-08">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/portfolio/portfolio-08.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-08">
 									</div>
 								</div>
 								<div class="pbminfotech-box-content">

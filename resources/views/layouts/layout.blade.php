@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ $seo['meta_title'] ?? $page->title ?? config('app.name') }}</title>
+    <title>{{ $page->title ?? config('app.name') }}</title>
     <meta name="robots" content="index, follow">
     <meta name="description" content="{{ $seo['meta_description'] ?? '' }}">
     <meta name="keywords" content="{{ $seo['meta_keywords'] ?? '' }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ image($settings['general']['site_favicon'] ?? null) }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ image($settings['general']['site_favicon'] ?? null, 'site_favicon') }}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ $seo['meta_title'] ?? $page->title ?? config('app.name') }}">
     <meta property="og:description" content="{{ $seo['meta_description'] ?? '' }}">
-    <meta property="og:image" content="{{ image($seo['og_image'] ?? null) }}">
+    <meta property="og:image" content="{{ image($seo['og_image'] ?? null, 'og_image') }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
     <!-- CSS -->

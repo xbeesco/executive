@@ -5,12 +5,12 @@
 							<div class="d-xl-block d-flex justify-content-center flex-wrap">
 								<div class="text-center">
 									<div class="pbmit-animation-style1 frame-clock-img">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/frame-clock.png') }}" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/frame-clock.png', 'section_image') }}" class="img-fluid" alt="">
 									</div>	
 								</div>
 								<div class="text-left">
 									<div class="pbmit-animation-style3 home4-about-02-img">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/home4-about-02.jpg') }}" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/home4-about-02.jpg', 'section_image') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 							</div>
@@ -92,7 +92,7 @@
 								</div>
 								<div class="text-center mt-4">
 									<div class="pbmit-animation-style4">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/sign.png') }}" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/sign.png', 'section_image') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 							</div>
@@ -101,12 +101,12 @@
 							<div class="position-relative">
 								<div class="text-md-end text-center pt-xl-5">
 									<div class="pbmit-animation-style2">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/home4-about-01.jpg') }}" class="img-fluid rounded-4" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/home4-about-01.jpg', 'section_image') }}" class="img-fluid rounded-4" alt="">
 									</div>
 								</div>
 								<div class="about-four-lamp-img">
 									<div class="pbmit-animation-style3">
-										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/lamp.png') }}" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/lamp.png', 'section_image') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 							</div>

@@ -1,5 +1,5 @@
 {{-- Title Bar Component --}}
-<div class="pbmit-title-bar-wrapper" style="background-image: url({{ image($pageSettings['title_bar_bg_image'] ?? null) }});">
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ image($pageSettings['title_bar_bg_image'] ?? null, 'title_bar_bg') }});">
     <div class="container">
         <div class="pbmit-title-bar-content">
             <div class="pbmit-title-bar-content-inner">

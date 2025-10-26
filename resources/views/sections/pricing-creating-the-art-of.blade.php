@@ -125,13 +125,13 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="accordion-two-rightbox">
 								<div class="chair-img pbmit-move-sofa">
-									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/chair.png') }}" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/chair.png', 'section_image') }}" alt="">
 								</div>
 								<div class="sofa-img pbmit-move-sofa">
-									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/sofa.png') }}" class="img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/sofa.png', 'section_image') }}" class="img-fluid" alt="">
 								</div>
 								<div class="floor-img">
-									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/floor.png') }}" class="img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/floor.png', 'section_image') }}" class="img-fluid" alt="">
 								</div>
 							</div>
 						</div>

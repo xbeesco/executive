@@ -9,11 +9,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-01.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-01.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-01.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-01.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -24,11 +24,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-02.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-02.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-02.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-02.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -39,11 +39,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-03.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-03.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-03.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-03.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -54,11 +54,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-04.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-04.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-04.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-04.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -69,11 +69,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-05.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-05.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-05.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-05.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -84,11 +84,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-06.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-06.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-06.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-06.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -99,11 +99,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-07.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-07.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-07.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-07.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -114,11 +114,11 @@
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 												<h4 class="pbmit-hide">Client 16</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-08.png') }}" class="img-fluid" alt>
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-08.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-08.png') }}" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-08.png', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>

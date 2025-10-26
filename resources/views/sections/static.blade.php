@@ -137,7 +137,7 @@
                             <div class="pbmit-icon-wrapper">
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-                                        <img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-1/sign.png') }}"
+                                        <img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-1/sign.png', 'section_image') }}"
                                             alt="A. El Sherbiny">
                                     </div>
                                 </div>

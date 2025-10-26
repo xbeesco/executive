@@ -74,16 +74,16 @@
 								<div class="swiper-slider pbmit-static-image">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-01.jpg') }}" alt="Meet Designer">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-01.jpg', 'section_image') }}" alt="Meet Designer">
 										</div>
 										<div class="swiper-slide">
-											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-02.jpg') }}" alt="Finalized layout">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-02.jpg', 'section_image') }}" alt="Finalized layout">
 										</div>
 										<div class="swiper-slide">
-											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-03.jpg') }}" alt="Work in progress">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-03.jpg', 'section_image') }}" alt="Work in progress">
 										</div>
 										<div class="swiper-slide">
-											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-04.jpg') }}" alt="Smooth delivery">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-04.jpg', 'section_image') }}" alt="Smooth delivery">
 										</div>
 									</div>
 								</div>

@@ -43,7 +43,7 @@
 																<div class="pbminfotech-box-img">
 																	<div class="pbmit-featured-img-wrapper">
 																		<div class="pbmit-featured-wrapper">
-																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-01.jpg') }}" class="img-fluid" alt="">
+																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-01.jpg', 'section_image') }}" class="img-fluid" alt="">
 																		</div>
 																	</div>
 																</div>
@@ -75,7 +75,7 @@
 																<div class="pbminfotech-box-img">
 																	<div class="pbmit-featured-img-wrapper">
 																		<div class="pbmit-featured-wrapper">
-																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-02.jpg') }}" class="img-fluid" alt="">
+																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-02.jpg', 'section_image') }}" class="img-fluid" alt="">
 																		</div>
 																	</div>
 																</div>
@@ -107,7 +107,7 @@
 																<div class="pbminfotech-box-img">
 																	<div class="pbmit-featured-img-wrapper">
 																		<div class="pbmit-featured-wrapper">
-																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-03.jpg') }}" class="img-fluid" alt="">
+																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-03.jpg', 'section_image') }}" class="img-fluid" alt="">
 																		</div>
 																	</div>
 																</div>
@@ -139,7 +139,7 @@
 																<div class="pbminfotech-box-img">
 																	<div class="pbmit-featured-img-wrapper">
 																		<div class="pbmit-featured-wrapper">
-																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-04.jpg') }}" class="img-fluid" alt="">
+																			<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/testimonial/reviewer-04.jpg', 'section_image') }}" class="img-fluid" alt="">
 																		</div>
 																	</div>
 																</div>

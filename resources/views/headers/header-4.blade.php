@@ -64,7 +64,7 @@
                     <div class="site-branding">
                         <h1 class="site-title">
                             <a href="{{ url('/') }}">
-                                <img class="logo-img" src="{{ image($settings['general']['site_logo'] ?? null) }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
+                                <img class="logo-img" src="{{ image($settings['general']['site_logo'] ?? null, 'site_logo') }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
                             </a>
                         </h1>
                     </div>

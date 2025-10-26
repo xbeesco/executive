@@ -20,7 +20,7 @@
 						<div class="col-md-6 pbmit-col2">
 							<div class="d-flex justify-content-center">
 								<div class="about-nine-img">
-									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/about-img.webp') }}" class="img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/about-img.webp', 'section_image') }}" class="img-fluid" alt="">
 								</div>
 							</div>
 						</div>

@@ -8,7 +8,7 @@
                     <aside class="widget widget_text">
                         <div class="textwidget">
                             <div class="pbmit-footer-logo">
-                                <img src="{{ image($settings['general']['site_logo'] ?? null) }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
+                                <img src="{{ image($settings['general']['site_logo'] ?? null, 'site_logo') }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
                             </div>
                         </div>
                     </aside>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-md-12 col-xl-6 pbmit-footer-right">
                     <div class="pbmit-footer-bg-image">
-                        <img src="{{ image($settings['footer_newsletter_image'] ?? null) }}" alt="Newsletter">
+                        <img src="{{ image($settings['footer_newsletter_image'] ?? null, 'default_image') }}" alt="Newsletter">
                     </div>
                 </div>
             </div>
