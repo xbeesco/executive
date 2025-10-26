@@ -49,7 +49,10 @@ class SettingsPage extends Page implements HasSchemas
                 'site_phone' => '',
                 'site_address' => '',
                 'site_logo' => '',
+                'site_logo_white' => '',
                 'site_favicon' => '',
+                'action_button_text' => '',
+                'action_button_url' => '',
             ]),
             'social_links' => Setting::getValue('social_links', [
                 'facebook' => '',
@@ -110,13 +113,31 @@ class SettingsPage extends Page implements HasSchemas
                                     ->disk('public')
                                     ->directory('images')
                                     ->imageEditor()
-                                    ->columnSpan(6),
+                                    ->columnSpan(4),
+
+                                FileUpload::make('general.site_logo_white')
+                                    ->label('Site Logo White')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images')
+                                    ->imageEditor()
+                                    ->columnSpan(4),
 
                                 FileUpload::make('general.site_favicon')
                                     ->label('Site Favicon')
                                     ->image()
                                     ->disk('public')
                                     ->directory('images')
+                                    ->columnSpan(4),
+
+                                TextInput::make('general.action_button_text')
+                                    ->label('Action Button Text')
+                                    ->maxLength(50)
+                                    ->columnSpan(6),
+
+                                TextInput::make('general.action_button_url')
+                                    ->label('Action Button URL')
+                                    ->maxLength(255)
                                     ->columnSpan(6),
                             ]),
 

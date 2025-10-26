@@ -103,16 +103,11 @@
                         </nav>
                     </div>
                     <div class="pbmit-right-box d-flex align-items-center">
-                        <div class="pbmit-header-search-btn">
-                            <a href="#" title="Search">
-                                <i class="pbmit-base-icon-search-1"></i>
-                            </a>
-                        </div>
-                        @if(!empty($settings['header_button']))
+                        @if(!empty($settings['general']['action_button_text']))
                         <div class="pbmit-button-box-second">
-                            <a class="pbmit-btn pbmit-btn-outline" href="{{ $settings['header_button']['url'] ?? '#' }}">
+                            <a class="pbmit-btn pbmit-btn-outline" href="{{ $settings['general']['action_button_url'] ?? '#' }}">
                                 <span class="pbmit-button-content-wrapper">
-                                    <span class="pbmit-button-text">{{ $settings['header_button']['text'] ?? 'Book Consult' }}</span>
+                                    <span class="pbmit-button-text">{{ $settings['general']['action_button_text'] }}</span>
                                 </span>
                             </a>
                         </div>

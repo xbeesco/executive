@@ -90,10 +90,9 @@ class PageForm
                                 Select::make('settings.header_style')
                                     ->label('Header Style')
                                     ->options([
-                                        'static' => 'Static (Homepage-1)',
-                                        3 => '1',
-                                        4 => '2',
-                                        8 => '3',
+                                        3 => 'Style 1',
+                                        4 => 'Style 2',
+                                        8 => 'Style 3',
                                     ])
                                     ->required()
                                     ->default(3)
@@ -115,9 +114,8 @@ class PageForm
                                     ->label('Select Slider')
                                     ->placeholder('Choose Slider')
                                     ->options([
-                                        'static' => 'Static (Homepage-1)',
-                                        'slider-1' => 'Slider 1 - Centered',
-                                        'slider-2' => 'Slider 2 - Left Aligned',
+                                        'slider-1' => 'Slider 1',
+                                        'slider-2' => 'Slider 2',
                                     ])
                                     ->default('slider-1')
                                     ->selectablePlaceholder(false)
@@ -148,10 +146,9 @@ class PageForm
                                 Select::make('settings.footer_style')
                                     ->label('Footer Style')
                                     ->options([
-                                        'static' => 'Static (Homepage-1)',
-                                        2 => '1',
-                                        3 => '2',
-                                        8 => '3',
+                                        2 => 'Style 1',
+                                        3 => 'Style 2',
+                                        8 => 'Style 3',
                                     ])
                                     ->required()
                                     ->default(2)

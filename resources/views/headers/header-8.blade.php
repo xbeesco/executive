@@ -52,19 +52,19 @@
                         </div>
                     </div>
                     <div class="pbmit-right-box d-flex align-items-center">
-                        @if(!empty($settings['contact']['phone']))
+                        @if(!empty($settings['general']['site_phone']))
                         <div class="pbmit-header-button">
-                            <a href="tel:{{ str_replace(' ', '', $settings['contact']['phone']) }}">
-                                <span class="pbmit-header-button-text-1">{{ $settings['contact']['phone'] }}</span>
-                                <span class="pbmit-header-button-text-2">tel:{{ str_replace(' ', '', $settings['contact']['phone']) }}</span>
+                            <a href="tel:{{ str_replace(' ', '', $settings['general']['site_phone']) }}">
+                                <span class="pbmit-header-button-text-1">{{ $settings['general']['site_phone'] }}</span>
+                                <span class="pbmit-header-button-text-2">tel:{{ str_replace(' ', '', $settings['general']['site_phone']) }}</span>
                             </a>
                         </div>
                         @endif
-                        @if(!empty($settings['header_button']))
+                        @if(!empty($settings['general']['action_button_text']))
                         <div class="pbmit-button-box-second">
-                            <a class="pbmit-btn pbmit-header-button" href="{{ $settings['header_button']['url'] ?? '#' }}">
+                            <a class="pbmit-btn pbmit-header-button" href="{{ $settings['general']['action_button_url'] ?? '#' }}">
                                 <span class="pbmit-button-content-wrapper">
-                                    <span class="pbmit-button-text">{{ $settings['header_button']['text'] ?? 'Book Consult' }}</span>
+                                    <span class="pbmit-button-text">{{ $settings['general']['action_button_text'] }}</span>
                                 </span>
                             </a>
                         </div>
