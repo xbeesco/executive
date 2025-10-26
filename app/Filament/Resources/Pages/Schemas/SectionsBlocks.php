@@ -16,12 +16,6 @@ class SectionsBlocks
     public static function get(): array
     {
         return [
-            // ═══════════════════════════════════════════════════════════
-            // SECTION 1: Basic Elements (23 blocks)
-            // Names & Icons from PageForm.php + Schema from PageBuilderBlocks.php
-            // ═══════════════════════════════════════════════════════════
-
-            // 1. Hero Section
             Block::make('hero')
                 ->label('Hero')
                 ->icon('heroicon-o-photo')
@@ -33,7 +27,6 @@ class SectionsBlocks
                     TextInput::make('button_url'),
                 ]),
 
-            // 2. Slider Section
             Block::make('slider')
                 ->label('Slider')
                 ->icon('heroicon-o-arrows-right-left')
@@ -50,7 +43,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 3. About Section
             Block::make('about')
                 ->label('About')
                 ->icon('heroicon-o-information-circle')
@@ -68,7 +60,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 4. Services Grid
             Block::make('services_grid')
                 ->label('Services Grid')
                 ->icon('heroicon-o-squares-2x2')
@@ -86,7 +77,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 5. Services Slider
             Block::make('services_slider')
                 ->label('Services Slider')
                 ->icon('heroicon-o-queue-list')
@@ -101,7 +91,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 6. Services
             Block::make('services')
                 ->label('Services')
                 ->icon('heroicon-o-briefcase')
@@ -113,7 +102,6 @@ class SectionsBlocks
                     TextInput::make('button_url'),
                 ]),
 
-            // 7. Pricing Table
             Block::make('pricing_table')
                 ->label('Pricing')
                 ->icon('heroicon-o-currency-dollar')
@@ -137,7 +125,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 8. Portfolio Grid
             Block::make('portfolio_grid')
                 ->label('Portfolio')
                 ->icon('heroicon-o-photo')
@@ -156,7 +143,6 @@ class SectionsBlocks
                         ->defaultItems(6),
                 ]),
 
-            // 9. Testimonials
             Block::make('testimonials')
                 ->label('Testimonials')
                 ->icon('heroicon-o-chat-bubble-left-right')
@@ -176,7 +162,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 10. Process
             Block::make('process')
                 ->label('Process')
                 ->icon('heroicon-o-arrow-path')
@@ -193,7 +178,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 11. History Timeline
             Block::make('history_timeline')
                 ->label('Timeline')
                 ->icon('heroicon-o-clock')
@@ -210,7 +194,6 @@ class SectionsBlocks
                         ->defaultItems(5),
                 ]),
 
-            // 12. Features Grid
             Block::make('features_grid')
                 ->label('Features Grid')
                 ->icon('heroicon-o-star')
@@ -227,7 +210,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 13. Features Slider
             Block::make('features_slider')
                 ->label('Features Slider')
                 ->icon('heroicon-o-star')
@@ -243,7 +225,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 14. Icon Box
             Block::make('icon_box')
                 ->label('Icon Box')
                 ->icon('heroicon-o-cube')
@@ -262,7 +243,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 15. Accordion
             Block::make('accordion')
                 ->label('Accordion')
                 ->icon('heroicon-o-bars-3-bottom-right')
@@ -278,7 +258,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 16. Tabs
             Block::make('tabs')
                 ->label('Tabs')
                 ->icon('heroicon-o-folder-open')
@@ -293,7 +272,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 17. Team
             Block::make('team')
                 ->label('Team')
                 ->icon('heroicon-o-user-group')
@@ -322,7 +300,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // 18. Awards
             Block::make('awards')
                 ->label('Awards')
                 ->icon('heroicon-o-trophy')
@@ -339,7 +316,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // 19. Clients Logos
             Block::make('clients_logos')
                 ->label('Clients')
                 ->icon('heroicon-o-building-office-2')
@@ -356,7 +332,6 @@ class SectionsBlocks
                         ->defaultItems(6),
                 ]),
 
-            // 20. Before/After
             Block::make('before_after')
                 ->label('Before/After')
                 ->icon('heroicon-o-arrows-right-left')
@@ -367,39 +342,7 @@ class SectionsBlocks
                     Textarea::make('description'),
                 ]),
 
-            // 21. Text
-            Block::make('text')
-                ->label('Text')
-                ->icon('heroicon-o-document-text')
-                ->schema([
-                    RichEditor::make('content')->required(),
-                ]),
 
-            // 22. Image
-            Block::make('image')
-                ->label('Image')
-                ->icon('heroicon-o-photo')
-                ->schema([
-                    FileUpload::make('image')->image()->disk('public')->directory('blocks')->required(),
-                    TextInput::make('caption'),
-                    TextInput::make('alt'),
-                ]),
-
-            // 23. Archive Grid
-            Block::make('archive_grid')
-                ->label('Archive')
-                ->icon('heroicon-o-bars-3')
-                ->schema([
-                    Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3),
-                    TextInput::make('per_page')->numeric()->default(12),
-                ]),
-
-            // ═══════════════════════════════════════════════════════════
-            // SECTION 2: Additional Variations (18 blocks)
-            // From PageBuilderBlocks.php - Not used in basic list
-            // ═══════════════════════════════════════════════════════════
-
-            // About Variations
             Block::make('about_variation_2')
                 ->label('About - Variation 2')
                 ->icon('heroicon-o-information-circle')
@@ -450,7 +393,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // Services Grid Variations
             Block::make('services_grid_variation_2')
                 ->label('Services Grid - Variation 2')
                 ->icon('heroicon-o-squares-2x2')
@@ -501,7 +443,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // Services Variations
             Block::make('services_variation_2')
                 ->label('Services - Variation 2')
                 ->icon('heroicon-o-briefcase')
@@ -527,7 +468,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // Portfolio Variations
             Block::make('portfolio_variation_2')
                 ->label('Portfolio - Variation 2')
                 ->icon('heroicon-o-photo')
@@ -577,7 +517,6 @@ class SectionsBlocks
                         ->defaultItems(6),
                 ]),
 
-            // Testimonials Variation
             Block::make('testimonials_variation_2')
                 ->label('Testimonials - Variation 2')
                 ->icon('heroicon-o-chat-bubble-left-right')
@@ -596,7 +535,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // Process Variation
             Block::make('process_variation_2')
                 ->label('Process - Variation 2')
                 ->icon('heroicon-o-arrow-path')
@@ -613,7 +551,6 @@ class SectionsBlocks
                         ->defaultItems(4),
                 ]),
 
-            // Pricing Variations
             Block::make('pricing_variation_2')
                 ->label('Pricing - Variation 2')
                 ->icon('heroicon-o-currency-dollar')
@@ -676,7 +613,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // Icon Box Variation
             Block::make('icon_box_variation_2')
                 ->label('Icon Box - Variation 2')
                 ->icon('heroicon-o-cube')
@@ -693,7 +629,6 @@ class SectionsBlocks
                         ->defaultItems(3),
                 ]),
 
-            // CTA Section (New - Unique)
             Block::make('cta')
                 ->label('Call to Action')
                 ->icon('heroicon-o-megaphone')

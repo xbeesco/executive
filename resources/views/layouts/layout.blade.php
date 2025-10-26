@@ -39,7 +39,7 @@
     <div class="page-wrapper" id="page">
 
         <!-- Header -->
-        @include('components.headers.header-' . ($pageSettings['header_style'] ?? 3))
+        @include('headers.header-' . ($pageSettings['header_style'] ?? 3))
 
         <!-- Page Content -->
         <div class="page-content">
@@ -48,7 +48,7 @@
         <!-- Page Content End -->
 
         <!-- Footer -->
-        @include('components.footers.footer-' . ($pageSettings['footer_style'] ?? 2))
+        @include('footers.footer-' . ($pageSettings['footer_style'] ?? 2))
 
     </div>
     <!-- Page Wrapper End -->
