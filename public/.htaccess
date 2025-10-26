@@ -18,6 +18,12 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
+    # Return 404 for missing static assets without invoking Laravel
+    # Note: This works for files, directories are handled by .htaccess in each folder
+    RewriteCond %{REQUEST_URI} ^/(images|css|js|fonts|storage)/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ - [R=404,L]
+
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f

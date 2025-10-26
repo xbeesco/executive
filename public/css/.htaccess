@@ -1,0 +1,11 @@
+# Disable directory listing
+Options -Indexes
+
+# Return 404 for missing files without showing error page
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If file doesn't exist, return 404
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ - [R=404,L]
+</IfModule>
