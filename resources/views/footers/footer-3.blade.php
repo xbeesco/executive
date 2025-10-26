@@ -15,7 +15,7 @@
                     <aside class="widget">
                         <div class="textwidget">
                             <div class="pbmit-footer-logo">
-                                <img src="{{ $settings['general']['site_favicon'] ?? '/images/favicon.svg' }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
+                                <img src="{{ image($settings['general']['site_favicon'] ?? null) }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
                             </div>
                         </div>
                     </aside>

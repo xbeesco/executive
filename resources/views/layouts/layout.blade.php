@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $settings['general']['site_favicon'] ?? '/images/favicon.png' }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ image($settings['general']['site_favicon'] ?? null) }}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ $seo['meta_title'] ?? $page->title ?? config('app.name') }}">
     <meta property="og:description" content="{{ $seo['meta_description'] ?? '' }}">
-    <meta property="og:image" content="{{ $seo['og_image'] ?? '' }}">
+    <meta property="og:image" content="{{ image($seo['og_image'] ?? null) }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
     <!-- CSS -->

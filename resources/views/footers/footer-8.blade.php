@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12 col-xl-4">
                     <div class="pbmit-footer-logo">
-                        <img src="{{ $settings['general']['site_favicon'] ?? '/images/favicon.svg' }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
+                        <img src="{{ image($settings['general']['site_favicon'] ?? null) }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
                     </div>
                 </div>
                 <div class="col-md-12 col-xl-8">
