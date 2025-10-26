@@ -342,7 +342,6 @@ class SectionsBlocks
                     Textarea::make('description'),
                 ]),
 
-
             Block::make('about_variation_2')
                 ->label('About - Variation 2')
                 ->icon('heroicon-o-information-circle')
@@ -644,6 +643,16 @@ class SectionsBlocks
                             TextInput::make('word'),
                         ])
                         ->defaultItems(4),
+                ]),
+
+            Block::make('static')
+                ->label('Static Content (Homepage-1)')
+                ->icon('heroicon-o-document-text')
+                ->schema([
+                    TextInput::make('note')
+                        ->label('Note')
+                        ->default('This is a static block containing About + Statistics sections from homepage-1.html')
+                        ->disabled(),
                 ]),
         ];
     }

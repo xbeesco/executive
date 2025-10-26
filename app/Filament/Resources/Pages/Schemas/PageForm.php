@@ -6,18 +6,12 @@ use App\Enums\ArchiveContentType;
 use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
 use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-use App\Filament\Resources\Pages\Schemas\SectionsBlocks;
 
 class PageForm
 {
@@ -96,6 +90,7 @@ class PageForm
                                 Select::make('settings.header_style')
                                     ->label('Header Style')
                                     ->options([
+                                        'static' => 'Static (Homepage-1)',
                                         3 => '1',
                                         4 => '2',
                                         8 => '3',
@@ -120,6 +115,7 @@ class PageForm
                                     ->label('Select Slider')
                                     ->placeholder('Choose Slider')
                                     ->options([
+                                        'static' => 'Static (Homepage-1)',
                                         'slider-1' => 'Slider 1 - Centered',
                                         'slider-2' => 'Slider 2 - Left Aligned',
                                     ])
@@ -152,6 +148,7 @@ class PageForm
                                 Select::make('settings.footer_style')
                                     ->label('Footer Style')
                                     ->options([
+                                        'static' => 'Static (Homepage-1)',
                                         2 => '1',
                                         3 => '2',
                                         8 => '3',
