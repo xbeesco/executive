@@ -12,7 +12,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-01.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-01.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -49,7 +49,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-02.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-02.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -86,7 +86,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-03.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-03.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -123,7 +123,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-04.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-04.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -160,7 +160,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-05.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-05.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -197,7 +197,7 @@
 										<div class="pbmit-service-image-wrapper">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-06.jpg" class="img-fluid" alt="service-04">
+													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-06.jpg') }}" class="img-fluid" alt="service-04">
 												</div>
 											</div>
 											<div class="pbmit-service-btn-wrapper">
@@ -230,10 +230,10 @@
 						</div>
 					</div>
 					<div class="clock-img">
-						<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/clock.png" alt="">
+						<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/clock.png') }}" alt="">
 					</div>
 					<div class="frame-img">
-						<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/frame-img-01.png" alt="">
+						<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/frame-img-01.png') }}" alt="">
 					</div>
 				</div>
             </section>

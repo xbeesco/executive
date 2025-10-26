@@ -4,7 +4,7 @@
 						<div class="col-md-12 col-xl-6 pbmit-sticky-col">
 							<div class="service-nine-left-box">
 								<div class="text-start">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service-left-img.jpg" class="service-left-img img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service-left-img.jpg') }}" class="service-left-img img-fluid" alt="">
 								</div>
 								<div class="ihbox-style-23-area">
 									<div class="ihbox-style-23-wrap">
@@ -12,7 +12,7 @@
 											<div class="pbmit-ihbox-box">
 												<div class="pbmit-ihbox-icon">
 													<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img-1.png" class="img-fluid" alt="Join our 5000+ satisfied client">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img-1.png') }}" class="img-fluid" alt="Join our 5000+ satisfied client">
 													</div>
 												</div>
 												<div class="pbmit-content-wrapper">
@@ -59,7 +59,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-01.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-01.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>
@@ -91,7 +91,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-02.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-02.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>
@@ -123,7 +123,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-03.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-03.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>
@@ -155,7 +155,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-04.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-04.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>
@@ -187,7 +187,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-05.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-05.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>
@@ -219,7 +219,7 @@
 												<div class="pbmit-service-image-wrapper">
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-06.jpg" class="img-fluid" alt="">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/service/service-06.jpg') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>

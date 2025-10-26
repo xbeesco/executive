@@ -59,19 +59,19 @@
 									<div class="swiper-wrapper">
 										<!-- Slide1 -->
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-01.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-01.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<!-- Slide2 -->
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-02.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-02.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<!-- Slide3 -->
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-03.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-03.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<!-- Slide4 -->
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-04.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/static-box/sbox-img-04.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>

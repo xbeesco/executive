@@ -30,7 +30,7 @@
 									<p>Artificial Intelligence refers to the development of computer systems that can perform tasks that would typically require human intelligence. It involves the creation of algorithms and models that enable machines to learn, reason, perceive, and make decisions.</p>
 									<p>There are generally two types of AI: Narrow or Weak AI, which is designed to perform specific tasks, and General or Strong AI, which possesses human-level intelligence and can handle a wide range of tasks.</p>
 									<div class="pbmit-animation-style1">
-										<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/sign.png" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/sign.png') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 							</div>

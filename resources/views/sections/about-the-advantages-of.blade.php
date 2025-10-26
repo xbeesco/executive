@@ -15,7 +15,7 @@
 									</div>
 								</div>
 								<div class="mt-5">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/sign.webp" alt="">	
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/sign.webp') }}" alt="">
 								</div>
 							</div>
 						</div>

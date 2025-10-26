@@ -67,12 +67,12 @@
 								</div>
 								<div class="about-three-img1">
 									<div class="pbmit-animation-style7">
-										<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/img01.jpg" class="img-fluid" alt="img01">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/img01.jpg') }}" class="img-fluid" alt="img01">
 									</div>
 								</div>
 								<div class="about-three-img2">
 									<div class="pbmit-animation-style7">
-										<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/img02.jpg" class="img-fluid" alt="img02">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/img02.jpg') }}" class="img-fluid" alt="img02">
 									</div>
 								</div>
 							</div>

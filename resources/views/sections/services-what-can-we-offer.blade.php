@@ -42,7 +42,7 @@
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
 										<div class="col-xl-5 col-md-12 pbmit-tab-img">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img1.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img1.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<div class="col-xl-7 col-md-12 pbmit-tab-list">
 											<h2>Giving your home a new style.</h2>
@@ -81,7 +81,7 @@
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
 										<div class="col-xl-5 pbmit-tab-img">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img2.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img2.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<div class="col-xl-7 pbmit-tab-list">
 											<h2>Giving your home a new style.</h2>
@@ -120,7 +120,7 @@
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
 										<div class="col-xl-5 pbmit-tab-img">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img3.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img3.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<div class="col-xl-7 pbmit-tab-list">
 											<h2>Interior Design Transformations.</h2>
@@ -159,7 +159,7 @@
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
 										<div class="col-xl-5 pbmit-tab-img">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img4.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img4.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<div class="col-xl-7 pbmit-tab-list">
 											<h2>Let's Have A Look At What Creativity</h2>
@@ -198,7 +198,7 @@
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
 										<div class="col-xl-5 pbmit-tab-img">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img5.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img5.jpg') }}" class="img-fluid" alt="">
 										</div>
 										<div class="col-xl-7 pbmit-tab-list">
 											<h2>Strategy - 3D Interior Design.</h2>

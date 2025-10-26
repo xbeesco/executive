@@ -10,7 +10,7 @@
 										<div class="pbmit-heading-desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div>
 									</div>
 									<div class="text-center">
-										<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/lamp.png" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/lamp.png') }}" alt="">
 									</div>
 								</div>
 							</div>

@@ -21,7 +21,7 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-01.jpg" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-01.jpg') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -54,7 +54,7 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-02.jpg" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-02.jpg') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -87,7 +87,7 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-03.jpg" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-03.jpg') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -120,7 +120,7 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-04.jpg" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-04.jpg') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
@@ -153,7 +153,7 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-05.jpg" class="img-fluid" alt="">
+														<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-05.jpg') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>

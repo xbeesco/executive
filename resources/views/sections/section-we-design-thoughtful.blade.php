@@ -52,8 +52,8 @@
 						</div>
 						<div class="col-md-12 col-xl-6">
 							<div class="twentytwenty-container">
-								<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/after.png" alt="Before">
-								<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/before.png" alt="After">
+								<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/after.png') }}" alt="Before">
+								<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/before.png') }}" alt="After">
 							</div>
 						</div>
 					</div>

@@ -4,11 +4,11 @@
 						<div class="col-md-5 width-100-tablet">
 							<div class="about-seven-left-box">
 								<div class="text-start">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-01.jpg" class="img-fluid first-img" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-01.jpg') }}" class="img-fluid first-img" alt="">
 								</div>
 								<div class="about-img-second">
 									<div class="about-img-wrap">
-										<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-02.jpg" class="img-fluid" alt="">
+										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-02.jpg') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 								<div class="fid-style-area">
@@ -75,7 +75,7 @@
 												<div class="pbmit-ihbox-box">
 													<div class="pbmit-ihbox-icon">
 														<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img-1.png" class="img-fluid" alt="Join our 5000+ satisfied client">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img-1.png') }}" class="img-fluid" alt="Join our 5000+ satisfied client">
 														</div>
 													</div>
 													<div class="pbmit-content-wrapper">
@@ -89,7 +89,7 @@
 												<div class="pbmit-ihbox-headingicon">
 													<div class="pbmit-ihbox-icon">
 														<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-															<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img.png" class="img-fluid" alt="Top 10 Agency Use Sustainable Material">
+															<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/ihbox/icon-box-img.png') }}" class="img-fluid" alt="Top 10 Agency Use Sustainable Material">
 														</div>
 													</div>
 													<div class="pbmit-ihbox-contents">

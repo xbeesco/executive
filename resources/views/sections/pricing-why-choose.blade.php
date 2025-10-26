@@ -76,7 +76,7 @@
 											</a>
 										</div>
 										<div class="col-xl-5 col-md-12 pbmit-tab-image-wrap">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-01.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-01.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>
@@ -125,7 +125,7 @@
 											</a>
 										</div>
 										<div class="col-xl-5 col-md-12 pbmit-tab-image-wrap">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-02.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-02.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>
@@ -174,7 +174,7 @@
 											</a>
 										</div>
 										<div class="col-xl-5 col-md-12 pbmit-tab-image-wrap">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-03.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-03.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>
@@ -223,7 +223,7 @@
 											</a>
 										</div>
 										<div class="col-xl-5 col-md-12 pbmit-tab-image-wrap">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-04.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-04.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>
@@ -272,7 +272,7 @@
 											</a>
 										</div>
 										<div class="col-xl-5 col-md-12 pbmit-tab-image-wrap">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-05.jpg" class="img-fluid" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/tab-img/tab-img-05.jpg') }}" class="img-fluid" alt="">
 										</div>
 									</div>
 								</div>

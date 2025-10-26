@@ -9,7 +9,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-icon">
 										<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award01.png" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award01.png') }}" alt="">
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
@@ -23,7 +23,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-icon">
 										<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award02.png" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award02.png') }}" alt="">
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
@@ -37,7 +37,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-icon">
 										<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award03.png" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award03.png') }}" alt="">
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
@@ -51,7 +51,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-icon">
 										<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award04.png" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award04.png') }}" alt="">
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
@@ -65,7 +65,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-icon">
 										<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award05.png" alt="">
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/ihbox/ih-award05.png') }}" alt="">
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">

@@ -4,13 +4,13 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="about-eight-left-box">
 								<div>
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-img-01.jpg" class="about-img-first img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-img-01.jpg') }}" class="about-img-first img-fluid" alt="">
 								</div>
 								<div class="about-img-second">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-02.jpg" class="img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-02.jpg') }}" class="img-fluid" alt="">
 								</div>
 								<div class="frame-img">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/frame-img.png" class="img-fluid" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/frame-img.png') }}" class="img-fluid" alt="">
 								</div>
 							</div>
 						</div>
@@ -34,7 +34,7 @@
 									</li>
 								</ul>
 								<div class="clock-img">
-									<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/clock.png" alt="">
+									<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/clock.png') }}" alt="">
 								</div>
 							</div>
 						</div>

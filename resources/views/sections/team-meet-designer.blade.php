@@ -5,7 +5,7 @@
 						<h2 class="pbmit-title">How organization works</h2>
 					</div>
 					<div class="row">
-						<div class="pbmit-main-static-slider d-flex" style="background-image: url(images/homepage-9/bg/static-box-pattern-img.png);">
+						<div class="pbmit-main-static-slider d-flex" style="background-image: url({{ image(asset('images/homepage-9/bg/static-box-pattern-img.png')) }});">
 							<div class="swiper-static-slide-nav col-md-4">
 								<ul class="pbmit-hover-inner">
 									<li class="pbmit-title-wrapper">
@@ -74,16 +74,16 @@
 								<div class="swiper-slider pbmit-static-image">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-01.jpg" alt="Meet Designer">										
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-01.jpg') }}" alt="Meet Designer">
 										</div>
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-02.jpg" alt="Finalized layout">										
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-02.jpg') }}" alt="Finalized layout">
 										</div>
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-03.jpg" alt="Work in progress">										
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-03.jpg') }}" alt="Work in progress">
 										</div>
 										<div class="swiper-slide">
-											<img src="https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-04.jpg" alt="Smooth delivery">										
+											<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/static-box/static-box-img-04.jpg') }}" alt="Smooth delivery">
 										</div>
 									</div>
 								</div>
