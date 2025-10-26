@@ -24,7 +24,7 @@ class PageController extends Controller
         $pageSettings = $page->settings ?? [];
         $seo = $page->seo ?? [];
 
-        // Get slider data if needed
+        // Get slider data if needed (based on settings)
         $sliderData = [];
         if (($pageSettings['header_area_type'] ?? 'none') === 'slider') {
             // For now, use static data
@@ -41,7 +41,8 @@ class PageController extends Controller
             ];
         }
 
-        // For archive pages
+        // Get archive items if page is archive (based on settings)
+        $items = [];
         if ($page->isArchive()) {
             $type = $page->getArchiveContentType();
 
@@ -51,12 +52,10 @@ class PageController extends Controller
                 'event' => Event::published()->orderBy('start_date', 'desc')->paginate(12),
                 default => Post::published()->orderBy('published_at', 'desc')->paginate(12),
             };
-
-            return view('frontend.page', compact('page', 'items', 'pageSettings', 'settings', 'seo', 'sliderData'));
         }
 
-        // Regular inner page or homepage
-        return view('frontend.page', compact('page', 'pageSettings', 'settings', 'seo', 'sliderData'));
+        // Unified view for all page types (homepage, inner page, archive)
+        return view('layouts.layout', compact('page', 'items', 'pageSettings', 'settings', 'seo', 'sliderData'));
     }
 
     public function showPost(Post $post)
@@ -64,9 +63,10 @@ class PageController extends Controller
         abort_if($post->status !== ContentStatus::PUBLISHED, 404);
 
         $settings = SettingService::getAll();
+        $pageSettings = []; // Empty for posts
         $seo = $post->seo ?? [];
 
-        return view('frontend.post', compact('post', 'settings', 'seo'));
+        return view('layouts.layout', compact('post', 'pageSettings', 'settings', 'seo'));
     }
 
     public function showService(Service $service)
@@ -74,9 +74,10 @@ class PageController extends Controller
         abort_if($service->status !== ContentStatus::PUBLISHED, 404);
 
         $settings = SettingService::getAll();
+        $pageSettings = []; // Empty for services
         $seo = $service->seo ?? [];
 
-        return view('frontend.service', compact('service', 'settings', 'seo'));
+        return view('layouts.layout', compact('service', 'pageSettings', 'settings', 'seo'));
     }
 
     public function showEvent(Event $event)
@@ -84,15 +85,16 @@ class PageController extends Controller
         abort_if($event->status !== ContentStatus::PUBLISHED, 404);
 
         $settings = SettingService::getAll();
+        $pageSettings = []; // Empty for events
         $seo = $event->seo ?? [];
 
-        return view('frontend.event', compact('event', 'settings', 'seo'));
+        return view('layouts.layout', compact('event', 'pageSettings', 'settings', 'seo'));
     }
 
     public function notFound()
     {
         $settings = SettingService::getAll();
 
-        return response()->view('frontend.404', compact('settings'), 404);
+        return response()->view('errors.404', compact('settings'), 404);
     }
 }

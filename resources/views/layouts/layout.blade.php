@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
-    @stack('styles')
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -42,8 +41,25 @@
         @include('headers.header-' . ($pageSettings['header_style'] ?? 3))
 
         <!-- Page Content -->
+        @if(isset($page))
+            @include('partials.header-area')
+        @else
+            @include('partials.title-bar')
+        @endif
+
         <div class="page-content">
-            @yield('content')
+            @if(isset($page))
+                @include('partials.content-area')
+
+            @elseif(isset($post))
+                @include('partials.post-content')
+
+            @elseif(isset($service))
+                @include('partials.service-content')
+
+            @elseif(isset($event))
+                @include('partials.event-content')
+            @endif
         </div>
         <!-- Page Content End -->
 
@@ -96,6 +112,5 @@
     <script src="{{ asset('js/gsap-animation.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
 
-    @stack('scripts')
 </body>
 </html>
