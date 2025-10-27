@@ -18,19 +18,19 @@
 							<div class="about-eight-right-box">
 								<div class="pbmit-col-stretched-right"></div>
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">about Story</h4>
-									<h2 class="pbmit-title">Thoughtful livable spaces design</h2>
-									<div class="pbmit-heading-desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.</div>
+									<h4 class="pbmit-subtitle">Our Excellence</h4>
+									<h2 class="pbmit-title">Premium Executive Workspace Solutions</h2>
+									<div class="pbmit-heading-desc">Every detail of our executive workspaces is meticulously crafted to elevate your business performance, inspire innovation, and reflect the prestige your leadership position demands in today's competitive landscape.</div>
 								</div>
 								<ul class="list-group list-group-borderless">
 									<li class="list-group-item">
-										<span class="pbmit-icon-list-text">Friendly team you can call friends</span>
+										<span class="pbmit-icon-list-text">Dedicated concierge service exclusively for members</span>
 									</li>
 									<li class="list-group-item">
-										<span class="pbmit-icon-list-text">We accept many insurance plans and offer discounts</span>
+										<span class="pbmit-icon-list-text">Flexible membership plans with premium benefits included</span>
 									</li>
 									<li class="list-group-item">
-										<span class="pbmit-icon-list-text">We use energy-saving and waste-reducing methods</span>
+										<span class="pbmit-icon-list-text">Sustainable luxury with eco-conscious design principles</span>
 									</li>
 								</ul>
 								<div class="clock-img">
@@ -51,8 +51,8 @@
 												</div>
 											</div>
 											<div class="pbmit-ihbox-contents">
-												<h2 class="pbmit-element-title">High-quality candidates</h2>
-												<div class="pbmit-heading-desc">2,300,000+ candidates including 750,000+ developers, 170,000+ designers, and thousands more every day.</div>
+												<h2 class="pbmit-element-title">Elite Professional Network</h2>
+												<div class="pbmit-heading-desc">3,500,000+ executives including 850,000+ entrepreneurs, 240,000+ industry leaders, and growing connections every day.</div>
 											</div>
 										</div>
 									</div>
@@ -69,9 +69,9 @@
 											</div>
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">
-													High-Quality Designs
+													World-Class Amenities
 												</h2>
-												<div class="pbmit-heading-desc">2,300,000+ candidates including 750,000+ developers, 170,000+ designers, and thousands more every day.</div>
+												<div class="pbmit-heading-desc">3,500,000+ satisfied members including 850,000+ CEOs, 240,000+ business strategists, and expanding globally every day.</div>
 											</div>
 										</div>
 									</div>

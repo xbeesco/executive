@@ -12,7 +12,7 @@
 														<i class="pbmit-base-icon-play-button-1"></i>
 													</div>
 												</div>
-												<h2 class="pbmit-element-title">Watch our video</h2>
+												<h2 class="pbmit-element-title">Watch our showcase</h2>
 											</a>
 											<div class="pbmit-ihbox-contents"></div>
 										</div>
@@ -23,12 +23,12 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="about-five-rightbox">
 								<div class="pbmit-heading-subheading animation-style2">
-									<h4 class="pbmit-subtitle">since 1986</h4>
-									<h2 class="pbmit-title">The advantages of our company.</h2>
+									<h4 class="pbmit-subtitle">Since 2015</h4>
+									<h2 class="pbmit-title">The distinction of our executive environment.</h2>
 								</div>
 								<div class="about-five-content">
-									<p>Artificial Intelligence refers to the development of computer systems that can perform tasks that would typically require human intelligence. It involves the creation of algorithms and models that enable machines to learn, reason, perceive, and make decisions.</p>
-									<p>There are generally two types of AI: Narrow or Weak AI, which is designed to perform specific tasks, and General or Strong AI, which possesses human-level intelligence and can handle a wide range of tasks.</p>
+									<p>Executive workspace excellence represents the evolution of professional environments where premium design meets strategic functionality. Our approach combines Italian craftsmanship, cutting-edge technology, and personalized services to create spaces that inspire innovation and foster success.</p>
+									<p>We deliver two categories of executive solutions: Premium Private Offices designed for established leaders requiring dedicated spaces, and Flexible Executive Suites offering complete workspace ecosystems with comprehensive business support services and global networking opportunities.</p>
 									<div class="pbmit-animation-style1">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/sign.png', 'section_image') }}" class="img-fluid" alt="">
 									</div>

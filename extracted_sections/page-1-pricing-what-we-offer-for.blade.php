@@ -36,7 +36,7 @@
 													<a href="service-details.html">Transforming Rooms</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>The interior professional worker’s available in the Executive/p>
 												</div>
 											</div>
 										</div>
@@ -69,7 +69,7 @@
 													<a href="service-details.html">Weaving Dreams</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>The interior professional worker’s available in the Executive/p>
 												</div>
 											</div>
 										</div>
@@ -102,7 +102,7 @@
 													<a href="service-details.html">Interior Decorator</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>The interior professional worker’s available in the Executive/p>
 												</div>
 											</div>
 										</div>
@@ -135,7 +135,7 @@
 													<a href="service-details.html">Professional Interior</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>The interior professional worker’s available in the Executive/p>
 												</div>
 											</div>
 										</div>
@@ -168,7 +168,7 @@
 													<a href="service-details.html">Interior Work Plan</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>The interior professional worker’s available in the Executive/p>
 												</div>
 											</div>
 										</div>

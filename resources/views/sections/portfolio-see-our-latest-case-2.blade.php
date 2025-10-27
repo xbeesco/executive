@@ -2,16 +2,16 @@
 				<div class="container-fluid">
 					<div class="pf-six-header-area pbmit-bg-color-blackish">
 						<div class="pbmit-heading-subheading text-center animation-style4">
-							<h2 class="pbmit-title">See Our Latest Case Studies</h2>
+							<h2 class="pbmit-title">Explore Our Executive Workspace Portfolio</h2>
 						</div>
 						<div class="pbmit-sortable-list">
 							<ul class="pbmit-sortable-list-ul">
 							   <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-sortby="*">All</a></li>
-							   <li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Architecture</a></li>
-							   <li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Bedroom</a></li>
-							   <li><a href="#" class="pbmit-sortable-link" data-sortby="furniture">Furniture</a></li>
-							   <li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Interior</a></li>
-							   <li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Kitchen</a></li>
+							   <li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Private Office</a></li>
+							   <li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Meeting Rooms</a></li>
+							   <li><a href="#" class="pbmit-sortable-link" data-sortby="furniture">Luxury Suites</a></li>
+							   <li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Coworking</a></li>
+							   <li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Amenities</a></li>
 							</ul>
 						</div>
 					</div>
@@ -26,10 +26,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Meeting Rooms</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Innovation</a>
+											<a href="portfolio-detail-style-1.html">Executive Hub</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">
@@ -50,10 +50,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Luxury Suites</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Minimalism</a>
+											<a href="portfolio-detail-style-1.html">Premium Office</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">
@@ -74,10 +74,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Coworking</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Lighting</a>
+											<a href="portfolio-detail-style-1.html">Innovation Space</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">
@@ -98,10 +98,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Kitchen</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Amenities</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Bold Tiles</a>
+											<a href="portfolio-detail-style-1.html">Business Lounge</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">
@@ -122,10 +122,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Meeting Rooms</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Clean lines</a>
+											<a href="portfolio-detail-style-1.html">Professional Edge</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">
@@ -146,10 +146,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Architecture</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Private Office</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Integral</a>
+											<a href="portfolio-detail-style-1.html">Elite Suite</a>
 										</h3>
 									</div>
 									<div class="pbmit-portfolio-btn">

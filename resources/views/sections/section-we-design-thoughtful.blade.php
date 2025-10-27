@@ -4,10 +4,10 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="before-after-left-area pbmit-bg-color-blackish">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">since 1986</h4>
-									<h2 class="pbmit-title">We design thoughtful, livable spaces.</h2>
+									<h4 class="pbmit-subtitle">Since 2015</h4>
+									<h2 class="pbmit-title">We craft executive environments where leaders excel.</h2>
 									<div class="pbmit-heading-desc">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+										Empowering business professionals with premium workspace solutions that enhance productivity and reflect their success. Our luxury environments are tailored for executives who demand excellence in every detail.
 									</div>
 								</div>
 								<div class="row pbmit-fid-style-one">
@@ -24,7 +24,7 @@
 													</div>
 												</div>
 												<div class="pbmit-fid-sub">
-													<h3 class="pbmit-fid-title">Clients <br> Satisfactions</h3>
+													<h3 class="pbmit-fid-title">Executive <br> Satisfaction</h3>
 												</div>
 											</div>
 										</div>
@@ -42,7 +42,7 @@
 													</div>
 												</div>
 												<div class="pbmit-fid-sub">
-													<h3 class="pbmit-fid-title">Work <br> Experiences</h3>
+													<h3 class="pbmit-fid-title">Premium <br> Workspaces</h3>
 												</div>
 											</div>
 										</div>

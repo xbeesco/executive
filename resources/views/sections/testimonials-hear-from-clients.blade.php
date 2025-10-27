@@ -5,9 +5,9 @@
 							<div class="col-md-12 col-xl-5">
 								<div class="pbmit-testimonialbox-left">
 									<div class="pbmit-heading-subheading animation-style3">
-										<h2 class="pbmit-title">Hear from clients.</h2>
+										<h2 class="pbmit-title">Hear from our distinguished members.</h2>
 										<div class="pbmit-heading-desc">
-											Lorem ipsum dolor sit amet consectetur elit venenatis dolor sit amet.
+											Industry leaders and successful entrepreneurs share their executive workspace experiences.
 										</div>
 									</div>
 								</div>
@@ -35,11 +35,11 @@
 															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
 														</div>
 														<blockquote class="pbminfotech-testimonial-text">
-															<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+															<p>This workspace has fundamentally transformed how I conduct business. The environment exudes prestige and inspires excellence in every client meeting. My productivity has increased substantially since relocating here.</p>
 														</blockquote>
 														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Olivia Cruz</h3>
-															<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+															<h3 class="pbminfotech-box-title">Alexander Montgomery</h3>
+															<div class="pbminfotech-testimonial-detail">CEO, Investment Firm</div>
 														</div>
 													</div>
 												</div>
@@ -65,11 +65,11 @@
 															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
 														</div>
 														<blockquote class="pbminfotech-testimonial-text">
-															<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+															<p>The sophisticated Italian design combined with cutting-edge technology creates an environment where billion-dollar decisions feel natural. The networking opportunities alone have been worth ten times the membership fee.</p>
 														</blockquote>
 														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Martin Bailey</h3>
-															<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+															<h3 class="pbminfotech-box-title">Victoria Blackwood</h3>
+															<div class="pbminfotech-testimonial-detail">Managing Director, Private Equity</div>
 														</div>
 													</div>
 												</div>
@@ -95,11 +95,11 @@
 															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
 														</div>
 														<blockquote class="pbminfotech-testimonial-text">
-															<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+															<p>Every detail reflects excellence I demand in my operations. From the hand-selected marble finishes to the impeccable five-star service, this is where success meets sophisticated business environments. Truly world-class.</p>
 														</blockquote>
 														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Alex Zender</h3>
-															<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+															<h3 class="pbminfotech-box-title">Marcus Chen</h3>
+															<div class="pbminfotech-testimonial-detail">Chairman, Global Ventures</div>
 														</div>
 													</div>
 												</div>

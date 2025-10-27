@@ -7,7 +7,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-01.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -22,7 +22,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-02.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -37,7 +37,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-03.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -52,7 +52,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-04.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -67,7 +67,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-05.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -82,7 +82,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-06.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -97,7 +97,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-07.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -112,7 +112,7 @@
 									<article class="pbmit-client-style-1 col-md-6 col-lg-3">
 										<div class="pbmit-border-wrapper">
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-												<h4 class="pbmit-hide">Client 16</h4>
+												<h4 class="pbmit-hide">Corporate Partner</h4>
 												<div class="pbmit-client-hover-img">
 													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-08.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
@@ -137,7 +137,7 @@
 												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="120" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">120</span>
 												<span class="pbmit-fid"><span>+</span></span>
 											</h4>
-											<span class="pbmit-fid-title">Join the companies that trust Creatiq to lead their AI transformation.</span>
+											<span class="pbmit-fid-title">Join the enterprises that trust Executive to elevate their business operations.</span>
 										</div>
 									</div>
 								</div>

@@ -3,8 +3,8 @@
 					<div class="row">
 						<div class="col-md-8 col-lg-6">
 							<div class="pbmit-heading-subheading animation-style4">
-								<h4 class="pbmit-subtitle">We provide</h4>
-								<h2 class="pbmit-title">What we offer for you</h2>
+								<h4 class="pbmit-subtitle">Premium Services</h4>
+								<h2 class="pbmit-title">Tailored for Executive Excellence</h2>
 							</div>
 						</div>
 						<div class="col-md-4 col-lg-6 text-end">
@@ -30,17 +30,17 @@
 											</div>
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">Kitchen</a>
+													<a href="#" rel="tag">Executive Suite</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="service-details.html">Transforming Rooms</a>
+													<a href="service-details.html">Private Office Suites</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>Prestigious workspace solutions designed for discerning leaders</p>
 												</div>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
+										<a class="pbmit-service-btn" href="service-details.html" title="Private Office Suites">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>
@@ -63,17 +63,17 @@
 											</div>
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">Kitchen</a>
+													<a href="#" rel="tag">Concierge Services</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="service-details.html">Weaving Dreams</a>
+													<a href="service-details.html">Elite Business Support</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>Professional concierge services tailored to executive demands</p>
 												</div>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="service-details.html" title="Weaving Dreams">
+										<a class="pbmit-service-btn" href="service-details.html" title="Elite Business Support">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>
@@ -96,17 +96,17 @@
 											</div>
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">Kitchen</a>
+													<a href="#" rel="tag">Meeting Facilities</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="service-details.html">Interior Decorator</a>
+													<a href="service-details.html">Boardroom & Conference</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>Premium meeting spaces equipped with cutting-edge technology</p>
 												</div>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="service-details.html" title="Interior Decorator">
+										<a class="pbmit-service-btn" href="service-details.html" title="Boardroom & Conference">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>
@@ -129,17 +129,17 @@
 											</div>
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">Kitchen</a>
+													<a href="#" rel="tag">Premium Amenities</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="service-details.html">Professional Interior</a>
+													<a href="service-details.html">Luxury Business Lounge</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>Exclusive networking spaces with refined hospitality services</p>
 												</div>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+										<a class="pbmit-service-btn" href="service-details.html" title="Luxury Business Lounge">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>
@@ -162,17 +162,17 @@
 											</div>
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">Kitchen</a>
+													<a href="#" rel="tag">Membership Plans</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="service-details.html">Interior Work Plan</a>
+													<a href="service-details.html">Flexible Membership</a>
 												</h3>
 												<div class="pbmit-service-description">
-													<p>The interior professional worker’s available in the xinterio</p>
+													<p>Customizable packages designed for dynamic business leaders</p>
 												</div>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="service-details.html" title="Interior Work Plan">
+										<a class="pbmit-service-btn" href="service-details.html" title="Flexible Membership">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>

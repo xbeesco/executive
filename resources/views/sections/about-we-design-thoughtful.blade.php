@@ -12,7 +12,7 @@
 												</div>
 											</div>
 											<div class="pbmit-ihbox-contents">
-												<h2 class="pbmit-element-title">Best Awarded <br>Company </h2>
+												<h2 class="pbmit-element-title">Award-Winning <br>Excellence</h2>
 											</div>
 											<div class="pbmit-sticky-corner  pbmit-bottom-left-corner">
 												<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -32,10 +32,10 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="about-one-rightbox">
 								<div class="pbmit-heading-subheading animation-style2">
-									<h4 class="pbmit-subtitle">since 1986</h4>
-									<h2 class="pbmit-title">We design thoughtful, liveable spaces.</h2>
+									<h4 class="pbmit-subtitle">Since 2015</h4>
+									<h2 class="pbmit-title">We architect premium, executive-caliber environments.</h2>
 									<div class="pbmit-heading-desc">
-										Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse ultrices gravida risus commodo viverra maecenas.
+										Our design philosophy combines sophisticated aesthetics with strategic functionality, creating distinguished workspaces where executive productivity meets uncompromising luxury and professional excellence thrives.
 									</div>
 								</div>
 								<div class="row g-3">
@@ -52,7 +52,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															Commercial 
+															Executive Suites
 														</h2>
 													</div>
 												</div>
@@ -72,7 +72,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															industrial 
+															Boardrooms
 														</h2>
 													</div>
 												</div>
@@ -92,7 +92,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															Residential
+															Private Offices
 														</h2>
 													</div>
 												</div>
@@ -112,7 +112,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															Corporate 
+															Event Venues
 														</h2>
 													</div>
 												</div>

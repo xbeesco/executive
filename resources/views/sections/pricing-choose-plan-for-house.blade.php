@@ -7,7 +7,7 @@
 									<div class="pbmit-ptable-col col-md-6">
 										<div class="pbmit-pricing-table-box">
 											<div class="pbmit-head-wrap">
-												<h3 class="pbminfotech-ptable-heading">Basic Plan</h3>
+												<h3 class="pbminfotech-ptable-heading">Professional</h3>
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
@@ -19,17 +19,17 @@
 											</div>
 											<div class="pbmit-ptable-inner">
 												<div class="pbmit-ptable-lines-w">
-													<div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-													<div class="pbmit-ptable-line">Access to design features</div>
-													<div class="pbmit-ptable-line">Limited library of decorative items</div>
-													<div class="pbmit-ptable-line">Email support</div>
-													<div class="pbmit-ptable-line">Monthly updates</div>
+													<div class="pbmit-ptable-line">Solo entrepreneurs &amp; consultants</div>
+													<div class="pbmit-ptable-line">Premium workspace essentials</div>
+													<div class="pbmit-ptable-line">Standard meeting room access</div>
+													<div class="pbmit-ptable-line">Business support</div>
+													<div class="pbmit-ptable-line">Weekly amenities</div>
 												</div>
 												<div class="pbminfotech-ptable-btn">
 													<div class="pbmit-button">
 														<a class="pbmit-button-inner" href="about-mask-img">
 															<span class="pbmit-button-wrapper">
-																<span class="pbmit-button-text">Purchase Now</span>
+																<span class="pbmit-button-text">Select Plan</span>
 															</span>
 														</a>
 													</div>
@@ -41,7 +41,7 @@
 									<div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-6">
 										<div class="pbmit-pricing-table-box">
 											<div class="pbmit-head-wrap">
-												<h3 class="pbminfotech-ptable-heading">Advance</h3>
+												<h3 class="pbminfotech-ptable-heading">Executive Suite</h3>
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
@@ -53,17 +53,17 @@
 											</div>
 											<div class="pbmit-ptable-inner">
 												<div class="pbmit-ptable-lines-w">
-													<div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-													<div class="pbmit-ptable-line">Access to design features</div>
-													<div class="pbmit-ptable-line">Limited library of decorative items</div>
-													<div class="pbmit-ptable-line">Email support</div>
-													<div class="pbmit-ptable-line">Monthly updates</div>
+													<div class="pbmit-ptable-line">Business leaders &amp; growing teams</div>
+													<div class="pbmit-ptable-line">Luxury workspace with concierge</div>
+													<div class="pbmit-ptable-line">Priority meeting &amp; event spaces</div>
+													<div class="pbmit-ptable-line">Dedicated support</div>
+													<div class="pbmit-ptable-line">Daily refreshments</div>
 												</div>
 												<div class="pbminfotech-ptable-btn">
 													<div class="pbmit-button">
 														<a class="pbmit-button-inner" href="about-mask-img">
 															<span class="pbmit-button-wrapper">
-																<span class="pbmit-button-text">Purchase Now</span>
+																<span class="pbmit-button-text">Select Plan</span>
 															</span>
 														</a>
 													</div>
@@ -80,32 +80,32 @@
 						<div class="col-md-12 col-xl-5">
 							<div class="pricing-one-rightbox">
 								<div class="pbmit-heading-subheading animation-style2">
-									<h4 class="pbmit-subtitle">Pricing Plan</h4>
-									<h2 class="pbmit-title">Choose plan for house interior</h2>
+									<h4 class="pbmit-subtitle">Membership Plans</h4>
+									<h2 class="pbmit-title">Choose your executive workspace</h2>
 								</div>
 								<ul class="list-group list-group-borderless">
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-check-mark"></i>
 										</span>
-										<span class="pbmit-icon-list-text">Get 30 day free trial</span>
+										<span class="pbmit-icon-list-text">Get 30 day trial period</span>
 									</li>
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-wallet"></i>
 										</span>
-										<span class="pbmit-icon-list-text">No any hidden fees pay</span>
+										<span class="pbmit-icon-list-text">Transparent pricing policy</span>
 									</li>
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-clock"></i>
 										</span>
-										<span class="pbmit-icon-list-text">You can cancel anytime</span>
+										<span class="pbmit-icon-list-text">Flexible membership terms</span>
 									</li>
 								</ul>
 								<a class="pbmit-btn pbmit-btn-outline" href="our-history.html">
 									<span class="pbmit-button-content-wrapper">
-										<span class="pbmit-button-text">More Price</span>
+										<span class="pbmit-button-text">View All Plans</span>
 									</span>
 								</a>
 							</div>

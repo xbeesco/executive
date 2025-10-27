@@ -4,10 +4,10 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="about-three-left-area">
 								<div class="pbmit-heading-subheading animation-style2">
-									<h4 class="pbmit-subtitle">What we do</h4>
-									<h2 class="pbmit-title">Start your healthy life today with us</h2>
+									<h4 class="pbmit-subtitle">Executive Wellness</h4>
+									<h2 class="pbmit-title">Start your balanced executive lifestyle today</h2>
 									<div class="pbmit-heading-desc">
-										There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.
+										We understand that peak performance requires holistic well-being. Our workspace integrates comprehensive wellness amenities with business functionality, creating environments where health and productivity coexist harmoniously.
 									</div>
 								</div>
 								<div class="row">
@@ -19,7 +19,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														Branches Across The World 25+
+														Global Locations Across 25+ Cities
 													</h2>
 												</div>
 											</div>
@@ -33,7 +33,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														2.9K+ Parcel Delivered By Team
+														5,000+ Distinguished Members Served
 													</h2>
 												</div>
 											</div>
@@ -58,7 +58,7 @@
 												</div>
 												<h4 class="pbmit-fid-inner">
 													<span class="pbmit-fid-before"></span>
-													<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="1995" data-interval="10" data-before="" data-before-style="" data-after="" data-after-style="">1995</span>
+													<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="2015" data-interval="10" data-before="" data-before-style="" data-after="" data-after-style="">2015</span>
 													<span class="pbmit-fid"></span>
 												</h4>
 											</div>

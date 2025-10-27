@@ -1,8 +1,8 @@
             <section class="pbmit-element-static-box-style-2">
 				<div class="container">
 					<div class="pbmit-heading-subheading text-center animation-style2">
-						<h4 class="pbmit-subtitle">Simple Steps</h4>
-						<h2 class="pbmit-title">Get amazing cleaning in <br> 4 simple steps</h2>
+						<h4 class="pbmit-subtitle">Premium Process</h4>
+						<h2 class="pbmit-title">Experience luxury workspace in <br> 4 seamless steps</h2>
 					</div>
 					<div class="row">
 						<div class="pbmit-main-static-slider d-flex align-items-center justify-content-between">
@@ -14,9 +14,9 @@
 										</div>
 										<div class="pbmit-content-box">
 											<div class="pbmit-static-box-title">
-												<h5>We visit you at home</h5>
+												<h5>Executive consultation</h5>
 											</div>
-											<div class="pbmit-static-box-desc">We offer competitive and affordable rates for our interior design services.</div>
+											<div class="pbmit-static-box-desc">We understand your vision and business needs for the perfect workspace.</div>
 										</div>
 									</li>
 									<li class="pbmit-title-wrapper">
@@ -25,9 +25,9 @@
 										</div>
 										<div class="pbmit-content-box">
 											<div class="pbmit-static-box-title">
-												<h5>Preliminary computer designs</h5>
+												<h5>Bespoke design presentation</h5>
 											</div>
-											<div class="pbmit-static-box-desc">We offer competitive and affordable rates for our interior design services.</div>
+											<div class="pbmit-static-box-desc">Premium concepts tailored to elevate your professional environment.</div>
 										</div>
 									</li>
 									<li class="pbmit-title-wrapper">
@@ -36,9 +36,9 @@
 										</div>
 										<div class="pbmit-content-box">
 											<div class="pbmit-static-box-title">
-												<h5>Work in progress</h5>
+												<h5>Masterful implementation</h5>
 											</div>
-											<div class="pbmit-static-box-desc">We offer competitive and affordable rates for our interior design services.</div>
+											<div class="pbmit-static-box-desc">Expert craftsmanship brings your luxury workspace vision to reality.</div>
 										</div>
 									</li>
 									<li class="pbmit-title-wrapper">
@@ -47,9 +47,9 @@
 										</div>
 										<div class="pbmit-content-box">
 											<div class="pbmit-static-box-title">
-												<h5>Start the design process</h5>
+												<h5>Elevate your business</h5>
 											</div>
-											<div class="pbmit-static-box-desc">We offer competitive and affordable rates for our interior design services.</div>
+											<div class="pbmit-static-box-desc">Step into your refined executive space and inspire excellence daily.</div>
 										</div>
 									</li>
 								</ul>

@@ -5,9 +5,9 @@
 							<div class="pbmit-sticky-col">
 								<div class="ihbox-six-left-area">
 									<div class="pbmit-heading-subheading animation-style4">
-										<h4 class="pbmit-subtitle">Why  Choose Us?</h4>
-										<h2 class="pbmit-title">Making your home so beautiful, you'll never want to leave</h2>
-										<div class="pbmit-heading-desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</div>
+										<h4 class="pbmit-subtitle">Why Choose Executive?</h4>
+										<h2 class="pbmit-title">Crafting your workspace so inspiring, success becomes inevitable</h2>
+										<div class="pbmit-heading-desc">Since 2015, we've been delivering premium workspace solutions tailored for discerning business leaders who demand excellence.</div>
 									</div>
 									<div class="text-center">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/lamp.png', 'section_image') }}" alt="">
@@ -27,9 +27,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													Latest technologies
+													Smart Infrastructure
 												</h2>
-												<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+												<div class="pbmit-heading-desc">Advanced systems optimizing your executive environment.</div>
 											</div>
 										</div>
 									</article>
@@ -42,9 +42,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													High-Quality Designs
+													Bespoke Interiors
 												</h2>
-												<div class="pbmit-heading-desc">We create the complete set of project information.</div>
+												<div class="pbmit-heading-desc">Luxury design reflecting your executive status.</div>
 											</div>
 										</div>
 									</article>
@@ -57,9 +57,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													Free Support
+													Concierge Service
 												</h2>
-												<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+												<div class="pbmit-heading-desc">Dedicated support ensuring seamless workspace operations.</div>
 											</div>
 										</div>
 									</article>
@@ -72,9 +72,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													Access control
+													Premium Security
 												</h2>
-												<div class="pbmit-heading-desc">We create the complete set of project information.</div>
+												<div class="pbmit-heading-desc">Enterprise-grade protection for your business assets.</div>
 											</div>
 										</div>
 									</article>
@@ -87,9 +87,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													Transparent Pricing
+													Flexible Memberships
 												</h2>
-												<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+												<div class="pbmit-heading-desc">Tailored packages matching your professional requirements.</div>
 											</div>
 										</div>
 									</article>
@@ -102,9 +102,9 @@
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">
-													5 Years Warranty
+													Excellence Guarantee
 												</h2>
-												<div class="pbmit-heading-desc">We create the complete set of project information.</div>
+												<div class="pbmit-heading-desc">Commitment to maintaining exceptional workspace standards.</div>
 											</div>
 										</div>
 									</article>

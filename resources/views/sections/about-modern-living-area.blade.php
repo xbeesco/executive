@@ -16,12 +16,12 @@
 											</div>
 											<div class="pbmit-title-wrap">
 												<h2 class="pbmit-element-title">
-													Modern Living Area
+													Premium Executive Offices
 												</h2>
 											</div>
 										</div>
 										<div class="pbmit-content-wrapper">
-											<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+											<div class="pbmit-heading-desc">Meticulously designed spaces that embody sophistication and professionalism.</div>
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">
@@ -47,12 +47,12 @@
 											</div>
 											<div class="pbmit-title-wrap">
 												<h2 class="pbmit-element-title">
-													Interior Design
+													Luxury Workspace Solutions
 												</h2>
 											</div>
 										</div>
 										<div class="pbmit-content-wrapper">
-											<div class="pbmit-heading-desc">We create the complete set of project information.</div>
+											<div class="pbmit-heading-desc">Comprehensive business environments tailored for distinguished leaders.</div>
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">
@@ -78,12 +78,12 @@
 											</div>
 											<div class="pbmit-title-wrap">
 												<h2 class="pbmit-element-title">
-													3D Design Layouts
+													Elite Executive Network
 												</h2>
 											</div>
 										</div>
 										<div class="pbmit-content-wrapper">
-											<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+											<div class="pbmit-heading-desc">Join an exclusive community of visionary CEOs and industry leaders.</div>
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">
@@ -109,12 +109,12 @@
 											</div>
 											<div class="pbmit-title-wrap">
 												<h2 class="pbmit-element-title">
-													Remodel Spaces
+													Prime Business Districts
 												</h2>
 											</div>
 										</div>
 										<div class="pbmit-content-wrapper">
-											<div class="pbmit-heading-desc">We create the complete set of project information.</div>
+											<div class="pbmit-heading-desc">Strategically located in prestigious financial and business centers.</div>
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">
@@ -140,12 +140,12 @@
 											</div>
 											<div class="pbmit-title-wrap">
 												<h2 class="pbmit-element-title">
-													Particular Solutions
+													Bespoke Business Services
 												</h2>
 											</div>
 										</div>
 										<div class="pbmit-content-wrapper">
-											<div class="pbmit-heading-desc">Iterative methods of developing the corporate strategy.</div>
+											<div class="pbmit-heading-desc">Tailored solutions designed for high-performing professionals.</div>
 										</div>
 									</div>
 									<div class="pbmit-ihbox-btn">

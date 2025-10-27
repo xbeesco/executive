@@ -20,7 +20,7 @@
 													<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="25" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">25</span>
 													<span class="pbmit-fid"><span>+</span></span>
 												</h4>
-												<h3 class="pbmit-fid-title">Years of <br>experience</h3>
+												<h3 class="pbmit-fid-title">Years of <br>Excellence</h3>
 											</div>
 										</div>
 									</div>
@@ -30,10 +30,10 @@
 						<div class="col-md-7 width-100-tablet">
 							<div class="about-seven-right-box">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">What we do</h4>
-									<h2 class="pbmit-title">Exceptional designing for exceptional spaces.</h2>
+									<h4 class="pbmit-subtitle">Our Distinction</h4>
+									<h2 class="pbmit-title">Exceptional workspaces for exceptional leaders.</h2>
 									<div class="pbmit-heading-desc">
-										There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form words which don't look even.
+										We curate premium executive environments where sophisticated design meets cutting-edge technology, creating distinguished workspaces that elevate your professional presence and enhance organizational performance.
 									</div>
 								</div>
 								<div class="pbmit-ihbox-style-1-new">
@@ -46,7 +46,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															Exceptional Craftsmanship Every Time
+															Bespoke Luxury Workspace Solutions
 														</h2>
 													</div>
 												</div>
@@ -60,7 +60,7 @@
 													</div>
 													<div class="pbmit-ihbox-contents">
 														<h2 class="pbmit-element-title">
-															High-Quality Materials Used Always
+															Premium Materials and Expert Crafting
 														</h2>
 													</div>
 												</div>
@@ -79,7 +79,7 @@
 														</div>
 													</div>
 													<div class="pbmit-content-wrapper">
-														<h2 class="pbmit-element-title">Join our 5000+ satisfied client</h2>
+														<h2 class="pbmit-element-title">Join our 5000+ distinguished members</h2>
 													</div>
 												</div>
 											</div>
@@ -93,7 +93,7 @@
 														</div>
 													</div>
 													<div class="pbmit-ihbox-contents">
-														<h2 class="pbmit-element-title">Top 10 Agency Use Sustainable Material</h2>
+														<h2 class="pbmit-element-title">Award-Winning Executive Workspace Design</h2>
 													</div>
 												</div>
 											</div>

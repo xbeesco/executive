@@ -13,7 +13,7 @@
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
-                                    <h2 class="pbmit-element-title">Best Awarded <br>Company </h2>
+                                    <h2 class="pbmit-element-title">Premium Executive <br>Workspace </h2>
                                 </div>
                                 <div class="pbmit-sticky-corner  pbmit-bottom-left-corner">
                                     <svg width="30" height="30" viewBox="0 0 30 30"
@@ -35,11 +35,11 @@
             <div class="col-md-12 col-xl-6">
                 <div class="about-one-rightbox">
                     <div class="pbmit-heading-subheading animation-style2">
-                        <h4 class="pbmit-subtitle">since 1986</h4>
-                        <h2 class="pbmit-title">We design thoughtful, liveable spaces.</h2>
+                        <h4 class="pbmit-subtitle">since 2010</h4>
+                        <h2 class="pbmit-title">We craft inspiring spaces for business leaders.</h2>
                         <div class="pbmit-heading-desc">
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum
-                            suspendisse ultrices gravida risus commodo viverra maecenas.
+                            Where executive excellence meets luxury design creating prestigious workspaces that elevate
+                            professional success and foster strategic collaboration among industry leaders.
                         </div>
                     </div>
                     <div class="row g-3">
@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="pbmit-ihbox-contents">
                                             <h2 class="pbmit-element-title">
-                                                Commercial
+                                                Executive Suites
                                             </h2>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="pbmit-ihbox-contents">
                                             <h2 class="pbmit-element-title">
-                                                industrial
+                                                Private Offices
                                             </h2>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="pbmit-ihbox-contents">
                                             <h2 class="pbmit-element-title">
-                                                Residential
+                                                Meeting Rooms
                                             </h2>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="pbmit-ihbox-contents">
                                             <h2 class="pbmit-element-title">
-                                                Corporate
+                                                Business Lounges
                                             </h2>
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                 <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
                                     <i class="pbmit-xinterio-icon pbmit-xinterio-icon-offer"></i>
                                 </div>
-                                <span class="pbmit-fid-title">Happy Client Review</span>
+                                <span class="pbmit-fid-title">Executive Members</span>
                             </div>
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>
@@ -185,7 +185,7 @@
                                 <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
                                     <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
                                 </div>
-                                <span class="pbmit-fid-title">Work Departments</span>
+                                <span class="pbmit-fid-title">Premium Amenities</span>
                             </div>
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>
@@ -207,7 +207,7 @@
                                 <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
                                     <i class="pbmit-xinterio-icon pbmit-xinterio-icon-client"></i>
                                 </div>
-                                <span class="pbmit-fid-title">Our Happy Client</span>
+                                <span class="pbmit-fid-title">Business Leaders</span>
                             </div>
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>
@@ -229,7 +229,7 @@
                                 <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
                                     <i class="pbmit-xinterio-icon pbmit-xinterio-icon-conversation"></i>
                                 </div>
-                                <span class="pbmit-fid-title">Staff members</span>
+                                <span class="pbmit-fid-title">Concierge Services</span>
                             </div>
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>

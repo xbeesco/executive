@@ -18,10 +18,10 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="about-four-center-area">
 								<div class="pbmit-heading-subheading text-center animation-style4">
-									<h4 class="pbmit-subtitle">since 1986</h4>
-									<h2 class="pbmit-title">Transforming dull spaces into Instagram-worthy masterpieces</h2>
+									<h4 class="pbmit-subtitle">Since 2015</h4>
+									<h2 class="pbmit-title">Transforming business environments into executive sanctuaries</h2>
 									<div class="pbmit-heading-desc">
-										Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse ultrices gravida risus commodo viverra maecenas.
+										We elevate professional spaces through meticulous design and premium amenities, creating distinguished environments where business excellence flourishes and executive presence commands attention.
 									</div>
 								</div>
 								<div class="row">
@@ -35,7 +35,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														Commercial 
+														Executive Suites
 													</h2>
 												</div>
 											</div>
@@ -51,7 +51,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														industrial 
+														Meeting Rooms
 													</h2>
 												</div>
 											</div>
@@ -67,7 +67,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														Residential 
+														Private Offices
 													</h2>
 												</div>
 											</div>
@@ -83,7 +83,7 @@
 												</div>
 												<div class="pbmit-ihbox-contents">
 													<h2 class="pbmit-element-title">
-														Corporate 
+														Event Spaces
 													</h2>
 												</div>
 											</div>

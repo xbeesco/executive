@@ -16,7 +16,7 @@
 													</div>
 												</div>
 												<div class="pbmit-content-wrapper">
-													<h2 class="pbmit-element-title">Join our 5000+ satisfied client</h2>
+													<h2 class="pbmit-element-title">Join our 2500+ executive members</h2>
 												</div>
 											</div>
 										</div>
@@ -49,8 +49,8 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="service-nine-right-box">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">Our Service</h4>
-									<h2 class="pbmit-title">What Can We Offer</h2>
+									<h4 class="pbmit-subtitle">Premium Offerings</h4>
+									<h2 class="pbmit-title">Executive Benefits</h2>
 								</div>
 								<div class="row">
 									<article class="pbmit-service-style-7 pbmit-ele-service col-md-6">
@@ -68,17 +68,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Executive</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">Transforming Rooms</a>
+														<a href="service-details.html">Private Office Suites</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>Premium dedicated offices designed for business leadership</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
+											<a class="pbmit-service-btn" href="service-details.html" title="Private Office Suites">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>
@@ -100,17 +100,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Boardroom</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">Weaving Dreams</a>
+														<a href="service-details.html">Conference Facilities</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>State-of-the-art meeting rooms with advanced technology</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="Weaving Dreams">
+											<a class="pbmit-service-btn" href="service-details.html" title="Conference Facilities">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>
@@ -132,17 +132,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Concierge</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">Interior Decorator</a>
+														<a href="service-details.html">Business Concierge</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>Dedicated support services for all your professional needs</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="Interior Decorator">
+											<a class="pbmit-service-btn" href="service-details.html" title="Business Concierge">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>
@@ -164,17 +164,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Networking</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">Professional Interior</a>
+														<a href="service-details.html">Executive Networking</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>Connect with industry leaders through exclusive events</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+											<a class="pbmit-service-btn" href="service-details.html" title="Executive Networking">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>
@@ -196,17 +196,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Amenities</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">Interior Work Plan</a>
+														<a href="service-details.html">Premium Amenities</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>Five-star facilities including lounge and dining areas</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="Interior Work Plan">
+											<a class="pbmit-service-btn" href="service-details.html" title="Premium Amenities">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>
@@ -228,17 +228,17 @@
 												</div>
 												<div class="pbmit-content-box">
 													<div class="pbmit-serv-cat">
-														<a href="#" rel="tag">Kitchen</a>
+														<a href="#" rel="tag">Technology</a>
 													</div>
 													<h3 class="pbmit-service-title">
-														<a href="service-details.html">2D/3D Layouts</a>
+														<a href="service-details.html">Tech Infrastructure</a>
 													</h3>
 													<div class="pbmit-service-description">
-														<p>The interior professional worker&#8217;s available in the xinterio</p>
+														<p>High-speed connectivity and secure IT infrastructure</p>
 													</div>
 												</div>
 											</div>
-											<a class="pbmit-service-btn" href="service-details.html" title="2D/3D Layouts">
+											<a class="pbmit-service-btn" href="service-details.html" title="Tech Infrastructure">
 												<span class="pbmit-button-icon">
 													<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 												</span>

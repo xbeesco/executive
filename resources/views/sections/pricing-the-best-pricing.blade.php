@@ -5,11 +5,11 @@
 							<div class="pbmit-sticky-col">
 								<div class="pricing-five-head-area">
 									<div class="pbmit-heading-subheading animation-style4">
-										<h4 class="pbmit-subtitle">Pricing Plan</h4>
-										<h2 class="pbmit-title">The best pricing to help you!</h2>
+										<h4 class="pbmit-subtitle">Membership Plans</h4>
+										<h2 class="pbmit-title">Premium workspace for visionary leaders!</h2>
 										<div class="pbmit-heading-desc">
-											We carefully screen all of our cleaners, so you can rest assured that your home would receive the absolute highest quality of service providing. 
-										</div>	
+											We meticulously curate every executive workspace, so you can rest assured that your business would experience the absolute highest caliber of professional environment.
+										</div>
 									</div>
 								</div>
 							</div>
@@ -20,12 +20,12 @@
 									<div class="pbmit-ptable-col col-md-12">
 										<div class="pbmit-pricing-table-box">
 											<div class="pbmit-head-wrap">
-												<h3 class="pbminfotech-ptable-heading">Basic Plan</h3>
+												<h3 class="pbminfotech-ptable-heading">Executive Start</h3>
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
 														<div class="pbminfotech-ptable-symbol">$</div>
-														<div class="pbminfotech-ptable-price">299</div>
+														<div class="pbminfotech-ptable-price">899</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/mo</div>
 												</div>
@@ -33,22 +33,22 @@
 											<div class="pbmit-ptable-inner">
 												<div class="pbmit-ptable-lines-w">
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Individuals &amp; small projects
+														<i class="fa ti-check"></i>Entrepreneurs &amp; solo executives
 													</div>
-													<div class="pbmit-ptable-line">Access to design features</div>
-													<div class="pbmit-ptable-line">Limited library of decorative items</div>
+													<div class="pbmit-ptable-line">Access to premium office suites</div>
+													<div class="pbmit-ptable-line">Curated collection of luxury amenities</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Email support
+														<i class="fa ti-check"></i>Concierge support
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Monthly updates
+														<i class="fa ti-check"></i>Business networking
 													</div>
 												</div>
 												<div class="pbminfotech-ptable-btn">
 													<div class="pbmit-button">
 														<a class="pbmit-button-inner" href="#">
 															<span class="pbmit-button-wrapper">
-																<span class="pbmit-button-text">Purchase Now</span>
+																<span class="pbmit-button-text">Reserve Your Space</span>
 															</span>
 														</a>
 													</div>
@@ -59,12 +59,12 @@
 									<div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-12">
 										<div class="pbmit-pricing-table-box">
 											<div class="pbmit-head-wrap">
-												<h3 class="pbminfotech-ptable-heading">Advance Plan</h3>
+												<h3 class="pbminfotech-ptable-heading">Leadership Elite</h3>
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
 														<div class="pbminfotech-ptable-symbol">$</div>
-														<div class="pbminfotech-ptable-price">345</div>
+														<div class="pbminfotech-ptable-price">1,499</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/mo</div>
 												</div>
@@ -72,26 +72,26 @@
 											<div class="pbmit-ptable-inner">
 												<div class="pbmit-ptable-lines-w">
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Individuals &amp; small projects
+														<i class="fa ti-check"></i>Growing teams &amp; senior leaders
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Access to design features
+														<i class="fa ti-check"></i>Priority access to boardrooms
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Limited library of decorative items
+														<i class="fa ti-check"></i>Exclusive portfolio of premium services
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Email support
+														<i class="fa ti-check"></i>Dedicated account manager
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Monthly updates
+														<i class="fa ti-check"></i>VIP event invitations
 													</div>
 												</div>
 												<div class="pbminfotech-ptable-btn">
 													<div class="pbmit-button">
 														<a class="pbmit-button-inner" href="#">
 															<span class="pbmit-button-wrapper">
-																<span class="pbmit-button-text">Purchase Now</span>
+																<span class="pbmit-button-text">Reserve Your Space</span>
 															</span>
 														</a>
 													</div>
@@ -102,12 +102,12 @@
 									<div class="pbmit-ptable-col col-md-12">
 										<div class="pbmit-pricing-table-box">
 											<div class="pbmit-head-wrap">
-												<h3 class="pbminfotech-ptable-heading">Premium Plan</h3>
+												<h3 class="pbminfotech-ptable-heading">Chairman Suite</h3>
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
 														<div class="pbminfotech-ptable-symbol">$</div>
-														<div class="pbminfotech-ptable-price">540</div>
+														<div class="pbminfotech-ptable-price">2,999</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/ mo</div>
 												</div>
@@ -115,22 +115,22 @@
 											<div class="pbmit-ptable-inner">
 												<div class="pbmit-ptable-lines-w">
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Individuals &amp; small projects
+														<i class="fa ti-check"></i>C-Suite executives &amp; enterprise teams
 													</div>
-													<div class="pbmit-ptable-line">Access to design features</div>
-													<div class="pbmit-ptable-line">Limited library of decorative items</div>
+													<div class="pbmit-ptable-line">Unlimited access to all facilities</div>
+													<div class="pbmit-ptable-line">Complete suite of executive amenities</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Email support
+														<i class="fa ti-check"></i>White-glove concierge
 													</div>
 													<div class="pbmit-ptable-line">
-														<i class="fa ti-check"></i>Monthly updates
+														<i class="fa ti-check"></i>Strategic partnerships
 													</div>
 												</div>
 												<div class="pbminfotech-ptable-btn">
 													<div class="pbmit-button">
 														<a class="pbmit-button-inner" href="#">
 															<span class="pbmit-button-wrapper">
-																<span class="pbmit-button-text">Purchase Now</span>
+																<span class="pbmit-button-text">Reserve Your Space</span>
 															</span>
 														</a>
 													</div>

@@ -10,7 +10,7 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Executive Office</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
 														<a href="portfolio-detail-style-1.html">Innovation</a>
@@ -30,7 +30,7 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Premium Furnishing</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
 														<a href="portfolio-detail-style-1.html">Minimalism</a>
@@ -50,7 +50,7 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Workspace Design</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
 														<a href="portfolio-detail-style-1.html">Lighting</a>
@@ -70,10 +70,10 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Kitchen</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Conference Room</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Bold Tiles</a>
+														<a href="portfolio-detail-style-1.html">Bold Finishes</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">
@@ -90,10 +90,10 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Private Suite</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Clean lines</a>
+														<a href="portfolio-detail-style-1.html">Clean Lines</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">
@@ -110,10 +110,10 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Architecture</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Corporate Space</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Integral</a>
+														<a href="portfolio-detail-style-1.html">Seamless</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">
@@ -130,10 +130,10 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Business Suite</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Functionality</a>
+														<a href="portfolio-detail-style-1.html">Productivity</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">
@@ -150,10 +150,10 @@
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">Luxury Lounge</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Terracotta</a>
+														<a href="portfolio-detail-style-1.html">Sophistication</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">

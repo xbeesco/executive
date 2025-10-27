@@ -5,10 +5,10 @@
 							<div class="col-md-12 col-lg-3 pbmit-servicebox-left">
 								<div>
 									<div class="pbmit-heading-subheading animation-style2">
-										<h4 class="pbmit-subtitle">since 1986</h4>
-										<h2 class="pbmit-title">Different case, need different services.</h2>
+										<h4 class="pbmit-subtitle">Since 2015</h4>
+										<h2 class="pbmit-title">Different needs, exceptional solutions.</h2>
 										<div class="pbmit-heading-desc">
-											Lorem ipsum dolor sit amet consectetur elit venenatis dolor sit amet.
+											Tailored workspace solutions designed for every stage of your professional journey.
 										</div>
 									</div>
 									<div class="service-arrow swiper-btn-custom d-inline-flex flex-row-reverse"></div>
@@ -37,10 +37,10 @@
 														</div>
 													<div class="pbmit-content-box">
 														<div class="pbmit-serv-cat">
-															<a href="#" rel="tag">Kitchen</a>
+															<a href="#" rel="tag">Private Office</a>
 														</div>
 														<h3 class="pbmit-service-title">
-															<a href="service-details.html">Transforming Rooms</a>
+															<a href="service-details.html">Executive Suites</a>
 														</h3>
 													</div>
 												</div>
@@ -68,10 +68,10 @@
 														</div>
 													<div class="pbmit-content-box">
 														<div class="pbmit-serv-cat">
-															<a href="#" rel="tag">Interior</a>
+															<a href="#" rel="tag">Boardrooms</a>
 														</div>
 														<h3 class="pbmit-service-title">
-															<a href="service-details.html">Weaving Dreams</a>
+															<a href="service-details.html">Meeting Sanctuaries</a>
 														</h3>
 													</div>
 												</div>
@@ -99,10 +99,10 @@
 														</div>
 													<div class="pbmit-content-box">
 														<div class="pbmit-serv-cat">
-															<a href="#" rel="tag">Bedroom</a>
+															<a href="#" rel="tag">Event Space</a>
 														</div>
 														<h3 class="pbmit-service-title">
-															<a href="service-details.html">Interior Decorator</a>
+															<a href="service-details.html">Corporate Pavilions</a>
 														</h3>
 													</div>
 												</div>

@@ -13,8 +13,8 @@ class SettingsSeeder extends Seeder
             [
                 'key' => 'general',
                 'value' => [
-                    'site_name' => 'Xinterio',
-                    'site_email' => 'info@xinterio.com',
+                    'site_name' => 'Executive',
+                    'site_email' => 'info@executive.com',
                     'site_phone' => '+1(212) 255-511',
                     'site_address' => 'Chicago HQ Estica cop, Macomb, MI 48042',
                     'site_logo' => 'https://xinterio-demo.pbminfotech.com/html-demo/images/logo.svg',

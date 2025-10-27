@@ -1,7 +1,7 @@
             <section class="ihbox-sec-six">
 				<div class="container">
 					<div class="pbmit-heading-title">
-						<h2 class="pbmit-title">Award & achievement</h2>
+						<h2 class="pbmit-title">Awards & Recognition</h2>
 					</div>
 					<div class="row g-0 pt-3">
 						<div class="pbmit-col-20">
@@ -13,7 +13,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
-										<h2 class="pbmit-element-title">Top 5 Interior Design Inspiration 2023</h2>
+										<h2 class="pbmit-element-title">Top 5 Executive Workspace Provider 2023</h2>
 									</div>
 								</div>
 							</div>
@@ -27,7 +27,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
-										<h2 class="pbmit-element-title">Top 10 Agency Use Sustainable Material</h2>
+										<h2 class="pbmit-element-title">Premier Luxury Business Environment Award</h2>
 									</div>
 								</div>
 							</div>
@@ -41,7 +41,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
-										<h2 class="pbmit-element-title">Winner Best CGI Artist 2022</h2>
+										<h2 class="pbmit-element-title">Best Executive Membership Experience 2022</h2>
 									</div>
 								</div>
 							</div>
@@ -55,7 +55,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
-										<h2 class="pbmit-element-title">Global Award Site of year 2023 </h2>
+										<h2 class="pbmit-element-title">Global Workspace Excellence Award 2023</h2>
 									</div>
 								</div>
 							</div>
@@ -69,7 +69,7 @@
 										</div>
 									</div>
 									<div class="pbmit-ihbox-contents">
-										<h2 class="pbmit-element-title">Expert  Interior Design Inspiration 2023</h2>
+										<h2 class="pbmit-element-title">Distinguished Executive Services Leader 2023</h2>
 									</div>
 								</div>
 							</div>

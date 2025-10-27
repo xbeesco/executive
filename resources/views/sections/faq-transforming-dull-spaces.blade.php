@@ -4,12 +4,12 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="accordion-eight-left-box">
 								<div class="pbmit-heading animation-style4">
-									<h2 class="pbmit-title">Transforming dull spaces into Instagram-worthy masterpieces</h2>
+									<h2 class="pbmit-title">Transforming ordinary offices into distinguished executive environments</h2>
 								</div>
 								<div class="pbmit-desc">
 									<p>
-										<span class="pbmit-drop-cap"><span class="pbmit-drop-cap-letter">T</span></span>
-										here are many variations of passages of Lorem Ipsum available, but he majority have suffered alteration in some form, by injected humour, Founded in 2004 by Mardiva and Lumyono, the studio evolved over time into an award-winning design practice operating in Berlin. Formed by a
+										<span class="pbmit-drop-cap"><span class="pbmit-drop-cap-letter">S</span></span>
+										ince 2015, Executive Workspace has been dedicated to creating exceptional business environments that inspire success and reflect professional excellence. Our award-winning team specializes in crafting luxury workspaces tailored to the unique needs of business leaders and
 									</p>
 								</div>
 							</div>
@@ -33,15 +33,15 @@
 														</svg>
 													</span>
 												</span>
-												<span class="pbmit-accordion-title"> 
+												<span class="pbmit-accordion-title">
 													<span>01</span>
-													Creativity
+													Innovation
 												</span>
 											</button>
 										</h2>
 										<div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<P>From the earliest conceptual sketches to the final touches on a completed project every step of our journey has been marked by a limits of creativity and craftsmanship.</P>
+												<P>From initial strategic planning to the final executive details, every workspace transformation embodies cutting-edge innovation and superior craftsmanship designed to elevate business performance and inspire professional excellence.</P>
 											</div>
 										</div>
 									</div>
@@ -63,14 +63,14 @@
 												</span>
 												<span class="pbmit-accordion-title">
 													<span>02</span>
-													Quality
+													Premium Excellence
 												</span>
 											</button>
 										</h2>
-										<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" 
+										<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
 										data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<p>From the earliest conceptual sketches to the final touches on a completed project every step of our journey has been marked by a limits of creativity and craftsmanship.</p>
+												<p>Our commitment to premium materials, meticulous attention to detail, and uncompromising standards ensures that every executive workspace reflects the highest level of luxury and professionalism that discerning business leaders demand.</p>
 											</div>
 										</div>
 									</div>
@@ -92,14 +92,14 @@
 												</span>
 												<span class="pbmit-accordion-title">
 													<span>03</span>
-													Client-Centric
+													Executive-Focused
 												</span>
 											</button>
 										</h2> 
-										<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" 
+										<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
 										data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<p>From the earliest conceptual sketches to the final touches on a completed project every step of our journey has been marked by a limits of creativity and craftsmanship.</p>
+												<p>We understand that successful executives require environments that enhance productivity, reflect corporate prestige, and provide the perfect balance of functionality and sophistication for conducting high-level business operations.</p>
 											</div>
 										</div>                         
 									</div>              

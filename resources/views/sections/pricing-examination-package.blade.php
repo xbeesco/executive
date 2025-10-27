@@ -4,8 +4,8 @@
 						<div class="col-md-12 col-xl-4">
 							<div class="about-us-left-box pbmit-bg-color-global">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h2 class="pbmit-title">Frequently <br> Asked Questions.</h2>
-									<div class="pbmit-heading-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ullamcorper ligula.</div>
+									<h2 class="pbmit-title">Executive <br> Member Support.</h2>
+									<div class="pbmit-heading-desc">Dedicated assistance for business leaders seeking premium workspace solutions and professional services.</div>
 								</div>
 								<div class="w-100 mb-md-0 mb-3">
 									<div class="pbmit-shape-square">
@@ -16,7 +16,7 @@
 									<div class="pbmit-btn-wrap">
 										<a class="pbmit-btn" href="faq.html">
 											<span class="pbmit-button-content-wrapper">
-												<span class="pbmit-button-text">View All Questions</span>
+												<span class="pbmit-button-text">View All Services</span>
 											</span>
 										</a>
 									</div>
@@ -26,34 +26,34 @@
 						<div class="col-md-12 col-xl-4">
 							<div class="about-us-center-box pbmit-bg-color-blackish">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h2 class="pbmit-title">Monthly Medical <br>Examination Package</h2>
-									<div class="pbmit-heading-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ullamcorper ligula.</div>
+									<h2 class="pbmit-title">Premium Executive <br>Membership Package</h2>
+									<div class="pbmit-heading-desc">Exclusive access to luxury workspaces, concierge services, and premium business amenities worldwide.</div>
 								</div>
 								<ul class="list-group list-group-borderless">
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="ti-check"></i>
 										</span>
-										<span class="pbmit-icon-list-text">Experienced, time-served engineers</span>
+										<span class="pbmit-icon-list-text">Dedicated executive concierge team</span>
 									</li>
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="ti-check"></i>
 										</span>
-										<span class="pbmit-icon-list-text">Commitment to customer service</span>
+										<span class="pbmit-icon-list-text">24/7 premium workspace accessibility</span>
 									</li>
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
 											<i aria-hidden="true" class="ti-check"></i>
 										</span>
-										<span class="pbmit-icon-list-text">Flexible with any structure of the building</span>
+										<span class="pbmit-icon-list-text">Flexible membership across global locations</span>
 									</li>
 								</ul>
 								<div class="pbmit-btn-style-text">
 									<div class="pbmit-btn-wrap">
 										<a class="pbmit-btn" href="contact-us.html">
 											<span class="pbmit-button-content-wrapper">
-												<span class="pbmit-button-text">See Pricing plans</span>
+												<span class="pbmit-button-text">Explore Membership Tiers</span>
 											</span>
 										</a>
 									</div>
@@ -63,8 +63,8 @@
 						<div class="col-md-12 col-xl-4">
 							<div class="about-us-right-box pbmit-bg-color-light-3">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h2 class="pbmit-title">Browse Our <br>Design Catelogue</h2>
-									<div class="pbmit-heading-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ullamcorper ligula.</div>
+									<h2 class="pbmit-title">Discover Our <br>Luxury Workspaces</h2>
+									<div class="pbmit-heading-desc">Explore our portfolio of prestigious locations designed for discerning business professionals.</div>
 								</div>
 								<div class="w-100 mb-md-0 mb-3">
 									<div class="pbmit-shape-square">
@@ -75,7 +75,7 @@
 									<div class="pbmit-btn-wrap">
 										<a class="pbmit-btn" href="portfolio-grid-col-3.html">
 											<span class="pbmit-button-content-wrapper">
-												<span class="pbmit-button-text">View All project</span>
+												<span class="pbmit-button-text">View All Locations</span>
 											</span>
 										</a>
 									</div>

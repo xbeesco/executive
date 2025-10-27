@@ -4,10 +4,10 @@
 						<div class="col-md-3 pbmit-col1">
 							<div class="about-nine-left-box">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">Welcome to design studio</h4>
-									<h2 class="pbmit-title">We design thoughtful, livable spaces.</h2>
+									<h4 class="pbmit-subtitle">Welcome to Executive Excellence</h4>
+									<h2 class="pbmit-title">We craft sophisticated, executive spaces.</h2>
 									<div class="pbmit-heading-desc">
-										We carefully screen all of our cleaners, so you can rest assured that your home would receive the absolute highest quality of service providing. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc. 
+										We carefully curate all workspace environments, so you can rest assured that your business would receive the absolute highest quality of executive service. Premium amenities combined with professional excellence for discerning leaders.
 									</div>
 								</div>
 								<a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
@@ -36,9 +36,9 @@
 											</div>
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">
-													Transparent Pricing  
+													Transparent Pricing
 												</h2>
-												<div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design.</div>
+												<div class="pbmit-heading-desc">We offer competitive and premium rates for our executive workspace solutions.</div>
 											</div>
 										</div>
 									</div>
@@ -53,9 +53,9 @@
 											</div>
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">
-													Professional Team 
+													Professional Team
 												</h2>
-												<div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design.</div>
+												<div class="pbmit-heading-desc">Our experienced staff delivers exceptional service for executive professionals.</div>
 											</div>
 										</div>
 									</div>
@@ -70,9 +70,9 @@
 											</div>
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">
-													Award winning 
+													Award Winning
 												</h2>
-												<div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design.</div>
+												<div class="pbmit-heading-desc">Recognized excellence in luxury workspace design and business hospitality.</div>
 											</div>
 										</div>
 									</div>
@@ -87,9 +87,9 @@
 											</div>
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">
-													Latest technologies
+													Latest Technologies
 												</h2>
-												<div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design.</div>
+												<div class="pbmit-heading-desc">State-of-the-art amenities and smart workspace solutions for modern executives.</div>
 											</div>
 										</div>
 									</div>

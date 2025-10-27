@@ -3,16 +3,16 @@
 					<div class="row">
 						<div class="col-md-12 col-xl-7">
 							<div class="pbmit-heading-subheading">
-								<h2 class="pbmit-title">See our latest case studies</h2>
+								<h2 class="pbmit-title">Explore our executive projects</h2>
 							</div>
 							<div class="pbmit-sortable-list pbmit-sortable-list-style-2">
 								<ul class="pbmit-sortable-list-ul">
 									<li><a href="#" class="pbmit-sortable-link pbmit-selected" data-sortby="*">All</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Architecture</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Bedroom</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="furniture">Furniture</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Interior</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Kitchen</a></li>
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Executive Suites</a></li>
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Private Offices</a></li>
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="furniture">Boardrooms</a></li>
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Reception Areas</a></li>
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Business Lounges</a></li>
 								</ul>
 							</div>
 						</div>
@@ -25,7 +25,7 @@
 											<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="460" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">460</span>
 											<span class="pbmit-fid"><span>+</span></span>
 										</h4>
-										<span class="pbmit-fid-title">Professional and Experienced <br> staff ready to help you</span>
+										<span class="pbmit-fid-title">Executive Workspace Solutions <br> delivered for elite clients</span>
 									</div>
 								</div>
 							</div>
@@ -44,10 +44,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Private Offices</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Innovation</a>
+											<a href="portfolio-detail-style-1.html">Executive Retreat</a>
 										</h3>
 									</div>
 								</div>
@@ -69,10 +69,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Boardrooms</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Minimalism</a>
+											<a href="portfolio-detail-style-1.html">Premium Elegance</a>
 										</h3>
 									</div>
 								</div>
@@ -94,10 +94,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Reception Areas</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Lighting</a>
+											<a href="portfolio-detail-style-1.html">Grand Entrance</a>
 										</h3>
 									</div>
 								</div>
@@ -119,10 +119,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Kitchen</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Business Lounges</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Bold Tiles</a>
+											<a href="portfolio-detail-style-1.html">Elite Ambiance</a>
 										</h3>
 									</div>
 								</div>
@@ -144,10 +144,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Private Offices</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Clean lines</a>
+											<a href="portfolio-detail-style-1.html">Power Presence</a>
 										</h3>
 									</div>
 								</div>
@@ -169,10 +169,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Architecture</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Executive Suites</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Integral</a>
+											<a href="portfolio-detail-style-1.html">Strategic Hub</a>
 										</h3>
 									</div>
 								</div>
@@ -194,10 +194,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Reception Areas</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Functionality</a>
+											<a href="portfolio-detail-style-1.html">Leadership Space</a>
 										</h3>
 									</div>
 								</div>
@@ -219,10 +219,10 @@
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
 										<div class="pbmit-port-cat">
-											<a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+											<a href="portfolio-grid-col-3.html" rel="tag">Boardrooms</a>
 										</div>
 										<h3 class="pbmit-portfolio-title">
-											<a href="portfolio-detail-style-1.html">Terracotta</a>
+											<a href="portfolio-detail-style-1.html">Decision Center</a>
 										</h3>
 									</div>
 								</div>

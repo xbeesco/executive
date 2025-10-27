@@ -13,7 +13,7 @@
 														<i class="pbmit-base-icon-play-button-1"></i>
 													</div>
 												</div>
-												<h2 class="pbmit-element-title">Watch our video</h2>
+												<h2 class="pbmit-element-title">Experience excellence</h2>
 											</a>
 											<div class="pbmit-ihbox-contents"></div>
 										</div>
@@ -36,7 +36,7 @@
 															</div>
 															<div class="pbminfotech-box-desc">
 																<blockquote class="pbminfotech-testimonial-text">
-																	<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+																	<p>The executive workspace exceeded all expectations. Premium amenities and impeccable service created the perfect environment for our business operations. A truly professional experience worth every investment.</p>
 																</blockquote>
 															</div>
 															<div class="pbminfotech-box-author d-flex align-items-center">
@@ -48,8 +48,8 @@
 																	</div>
 																</div>
 																<div class="pbmit-auther-content">
-																	<h3 class="pbminfotech-box-title">Olivia Cruz</h3>
-																	<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+																	<h3 class="pbminfotech-box-title">Victoria Sterling</h3>
+																	<div class="pbminfotech-testimonial-detail">Chief Executive Officer</div>
 																</div>
 															</div>
 														</div>
@@ -68,7 +68,7 @@
 															</div>
 															<div class="pbminfotech-box-desc">
 																<blockquote class="pbminfotech-testimonial-text">
-																	<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+																	<p>Outstanding luxury workspace that transformed how we conduct business. The sophisticated atmosphere and premium facilities provided our leadership team with an environment that inspires excellence and productivity.</p>
 																</blockquote>
 															</div>
 															<div class="pbminfotech-box-author d-flex align-items-center">
@@ -80,8 +80,8 @@
 																	</div>
 																</div>
 																<div class="pbmit-auther-content">
-																	<h3 class="pbminfotech-box-title">Martin Bailey</h3>
-																	<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+																	<h3 class="pbminfotech-box-title">Marcus Wellington</h3>
+																	<div class="pbminfotech-testimonial-detail">Managing Director</div>
 																</div>
 															</div>
 														</div>
@@ -100,7 +100,7 @@
 															</div>
 															<div class="pbminfotech-box-desc">
 																<blockquote class="pbminfotech-testimonial-text">
-																	<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+																	<p>Exceptional attention to detail and world-class service. This executive workspace delivers everything a modern business leader needs. From private offices to prestigious meeting rooms, it's the benchmark for luxury.</p>
 																</blockquote>
 															</div>
 															<div class="pbminfotech-box-author d-flex align-items-center">
@@ -112,8 +112,8 @@
 																	</div>
 																</div>
 																<div class="pbmit-auther-content">
-																	<h3 class="pbminfotech-box-title">Alex Zender</h3>
-																	<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+																	<h3 class="pbminfotech-box-title">Alexander Thornton</h3>
+																	<div class="pbminfotech-testimonial-detail">Senior Partner</div>
 																</div>
 															</div>
 														</div>
@@ -132,7 +132,7 @@
 															</div>
 															<div class="pbminfotech-box-desc">
 																<blockquote class="pbminfotech-testimonial-text">
-																	<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+																	<p>Unparalleled professional workspace experience. The premium services and elegant design perfectly complement our corporate image. Every client meeting here reinforces our commitment to excellence and success.</p>
 																</blockquote>
 															</div>
 															<div class="pbminfotech-box-author d-flex align-items-center">
@@ -144,8 +144,8 @@
 																	</div>
 																</div>
 																<div class="pbmit-auther-content">
-																	<h3 class="pbminfotech-box-title">Robert Gold</h3>
-																	<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+																	<h3 class="pbminfotech-box-title">Richard Blackwood</h3>
+																	<div class="pbminfotech-testimonial-detail">Chief Financial Officer</div>
 																</div>
 															</div>
 														</div>
@@ -161,8 +161,8 @@
 							<div class="testimonial-four-rightbox">
 								<div class="pbmit-col-stretched-right"></div>
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">Client feedback</h4>
-									<h2 class="pbmit-title">Here's what our satisfied clients are saying</h2>
+									<h4 class="pbmit-subtitle">Executive testimonials</h4>
+									<h2 class="pbmit-title">Trusted by business leaders worldwide</h2>
 								</div>
 								<div class="ihbox-style-2-area">
 									<div class="pbmit-ihbox-style-2">
@@ -184,7 +184,7 @@
 														</div>
 													</div>
 													<h4 class="pbmit-element-heading">
-														2,488 Rating
+														3,247 Reviews
 													</h4>
 												</div>
 											</div>

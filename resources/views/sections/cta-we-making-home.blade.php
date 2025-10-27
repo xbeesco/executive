@@ -23,15 +23,15 @@
         <div class="row">
             <div class="col-md-12 col-xl-8">
                 <div class="pbmit-heading-subheading animation-style4">
-                    <h4 class="pbmit-subtitle">LIMITED PERIOD OFFER</h4>
-                    <h2 class="pbmit-title">We Making  home so <span id="js-rotating">beautiful, attractive, gorgeous, appealing</span> you'll never want to leave</h2>
+                    <h4 class="pbmit-subtitle">EXCLUSIVE MEMBERSHIP OFFER</h4>
+                    <h2 class="pbmit-title">We create executive spaces so <span id="js-rotating">distinguished, impressive, sophisticated, prestigious</span> you'll elevate your business</h2>
                 </div>
             </div>
             <div class="col-md-12 col-xl-4">
                 <div class="d-flex justify-content-center">
                     <div class="pbmit-ihbox-style-21">
                         <div class="pbmit-ihbox-contents">
-                        <h2 class="pbmit-element-title">New Offer</h2>
+                        <h2 class="pbmit-element-title">Premium Access</h2>
                         </div>
                         <div class="pbmit-ihbox-content-area"></div>
                     </div>

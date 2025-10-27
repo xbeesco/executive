@@ -4,8 +4,8 @@
 						<div class="col-md-12 col-xl-6">
 							<div class="accordion-two-area">
 								<div class="pbmit-heading-subheading animation-style3">
-									<h4 class="pbmit-subtitle">What We do</h4>
-									<h2 class="pbmit-title">Creating the art of stylish living.</h2>
+									<h4 class="pbmit-subtitle">Executive Excellence</h4>
+									<h2 class="pbmit-title">Creating the art of professional distinction.</h2>
 								</div>
 								<div class="accordion" id="accordionExample1">
 									<div class="accordion-item active">
@@ -25,13 +25,13 @@
 													</span>
 												</span>
 												<span class="pbmit-accordion-title">
-													What is 3D design and how it work?
+													What defines our luxury workspace experience?
 												</span>
 											</button>
 										</h2>
 										<div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<P>The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development.</P>
+												<P>Our workspaces feature premium Italian leather furnishings, hand-crafted executive desks, and cutting-edge technology seamlessly integrated into timeless architectural design for distinguished professionals.</P>
 											</div>
 										</div>
 									</div>
@@ -52,14 +52,14 @@
 													</span>
 												</span>
 												<span class="pbmit-accordion-title">
-													How interior design is cost?
+													What exclusive amenities distinguish our offering?
 												</span>
 											</button>
 										</h2>
-										<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" 
+										<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
 										data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<p>The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development.</p>
+												<p>Distinguished members enjoy 24/7 personal concierge service, executive chef-prepared gourmet dining, private wellness facilities, chauffeur services, and fiber optic connectivity with premium espresso bars in every suite.</p>
 											</div>
 										</div>
 									</div>
@@ -80,14 +80,14 @@
 													</span>
 												</span>
 												<span class="pbmit-accordion-title">
-													How much time I will spend on planning?
+													How do we ensure privacy and security?
 												</span>
 											</button>
-										</h2> 
-										<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" 
+										</h2>
+										<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
 										data-bs-parent="#accordionExample1">
 											<div class="accordion-body">
-												<p>The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development.</p>
+												<p>We implement biometric access control, 24/7 AI-powered surveillance, encrypted communication systems, soundproofed offices with white noise generators, and dedicated IT security specialists monitoring all systems for absolute confidentiality.</p>
 											</div>
 										</div>                         
 									</div>      

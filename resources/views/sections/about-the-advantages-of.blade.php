@@ -5,13 +5,13 @@
 						<div class="col-md-12 col-xl-6 pbmit-col2">
 							<div class="pbmit-bg-color-blackish about-us-content">
 								<div class="pbmit-heading-subheading animation-style4">
-									<h4 class="pbmit-subtitle">since 1986</h4>
-									<h2 class="pbmit-title">The advantages of <br> our company.</h2>
+									<h4 class="pbmit-subtitle">Since 2015</h4>
+									<h2 class="pbmit-title">The distinction of <br> our executive platform.</h2>
 									<div class="pbmit-heading-desc">
-										Artificial Intelligence refers to the development of computer systems that can perform tasks that would typically require human intelligence. It involves the creation of algorithms and models that enable machines to learn, reason, perceive, and make decisions.
+										Executive workspace leadership represents the transformation of professional environments into strategic business assets. We architect premium spaces where Italian design excellence merges with enterprise technology, creating distinguished environments that amplify executive productivity and organizational distinction.
 										<br>
 										<br>
-										There are generally two types of AI: Narrow or Weak AI, which is designed to perform specific tasks, and General or Strong AI, which possesses human-level intelligence and can handle a wide range of tasks.
+										Our portfolio encompasses two refined categories: Private Executive Suites tailored for C-level executives demanding absolute privacy and prestige, and Collaborative Executive Centers providing comprehensive business infrastructure with concierge services and global networking ecosystems for high-growth organizations.
 									</div>
 								</div>
 								<div class="mt-5">

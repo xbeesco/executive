@@ -14,8 +14,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2015</p>
-										<h3 class="pbmit-timeline-title">Our Beginning</h3>
-										<p class="pbmit-timeline-desc">Interior designers are independent business people.</p>
+										<h3 class="pbmit-timeline-title">Our Foundation</h3>
+										<p class="pbmit-timeline-desc">Launch of premier executive workspace concept in flagship location.</p>
 									</div>
 								</div>
 								<!-- Slide2 -->
@@ -29,8 +29,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2017</p>
-										<h3 class="pbmit-timeline-title">Research</h3>
-										<p class="pbmit-timeline-desc">We are master of Research & innovation idea.</p>
+										<h3 class="pbmit-timeline-title">Global Expansion</h3>
+										<p class="pbmit-timeline-desc">Established presence in 10 international business capitals worldwide.</p>
 									</div>
 								</div>
 								<!-- Slide3 -->
@@ -44,8 +44,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2019</p>
-										<h3 class="pbmit-timeline-title">Communication</h3>
-										<p class="pbmit-timeline-desc">We develop the full cycle of project details for clients.</p>
+										<h3 class="pbmit-timeline-title">Premium Services</h3>
+										<p class="pbmit-timeline-desc">Launched comprehensive concierge and wellness program suite.</p>
 									</div>
 								</div>
 								<!-- Slide4 -->
@@ -59,8 +59,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2021</p>
-										<h3 class="pbmit-timeline-title">budget</h3>
-										<p class="pbmit-timeline-desc">The cost of interior decoration is also significant factor.</p>
+										<h3 class="pbmit-timeline-title">Technology Integration</h3>
+										<p class="pbmit-timeline-desc">Deployed enterprise-grade security and smart office automation systems.</p>
 									</div>
 								</div>
 								<!-- Slide5 -->
@@ -74,8 +74,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2022</p>
-										<h3 class="pbmit-timeline-title">Social Media</h3>
-										<p class="pbmit-timeline-desc">We do all types of the interior designing, decoration & furnishing.</p>
+										<h3 class="pbmit-timeline-title">Member Network</h3>
+										<p class="pbmit-timeline-desc">Achieved 5000+ distinguished members across our global portfolio.</p>
 									</div>
 								</div>
 								<!-- Slide6 -->
@@ -89,8 +89,8 @@
 									</div>
 									<div class="pbmit-same-height steps-content_wrap">
 										<p class="pbmit-timeline-year">2023</p>
-										<h3 class="pbmit-timeline-title">Result</h3>
-										<p class="pbmit-timeline-desc">Our creative 3D artists are always ready to translate your designs</p>
+										<h3 class="pbmit-timeline-title">Industry Leadership</h3>
+										<p class="pbmit-timeline-desc">Recognized as premier executive workspace provider with multiple awards.</p>
 									</div>
 								</div>
 							</div>
