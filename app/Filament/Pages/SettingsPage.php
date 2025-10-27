@@ -2,11 +2,13 @@
 
 namespace App\Filament\Pages;
 
+use App\Models\Page as PageModel;
 use App\Models\Setting;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -61,6 +63,7 @@ class SettingsPage extends Page implements HasSchemas
                 'default_image' => '',
                 'action_button_text' => '',
                 'action_button_url' => '',
+                'homepage_id' => '',
             ]),
             'branding' => Setting::getValue('branding', [
                 'site_logo' => '',
@@ -113,6 +116,20 @@ class SettingsPage extends Page implements HasSchemas
                                     ->email()
                                     ->required()
                                     ->columnSpan(6),
+
+                                Select::make('general.homepage_id')
+                                    ->label('Homepage')
+                                    ->helperText('Select which page should be displayed as the homepage (leave empty for default homepage)')
+                                    ->options(function () {
+                                        return PageModel::query()
+                                            ->published()
+                                            ->orderBy('title')
+                                            ->pluck('title', 'id');
+                                    })
+                                    ->searchable()
+                                    ->preload()
+                                    ->nullable()
+                                    ->columnSpan(12),
 
                                 TextInput::make('general.site_phone')
                                     ->label('Phone Number')

@@ -44,6 +44,18 @@ Route::get('/{page:slug}', [PageController::class, 'show'])->name('pages.show');
 
 // Home page fallback (final fallback before 404)
 Route::get('/', function () {
+    // Check if a custom homepage is set in settings
+    $generalSettings = \App\Models\Setting::getValue('general', []);
+    $homepageId = $generalSettings['homepage_id'] ?? null;
+
+    if ($homepageId) {
+        $homePage = \App\Models\Page::find($homepageId);
+        if ($homePage && $homePage->status === \App\Enums\ContentStatus::PUBLISHED) {
+            return app(PageController::class)->show($homePage);
+        }
+    }
+
+    // Fallback to 'home' slug page
     $homePage = \App\Models\Page::where('slug', 'home')->first();
     if ($homePage) {
         return app(PageController::class)->show($homePage);
