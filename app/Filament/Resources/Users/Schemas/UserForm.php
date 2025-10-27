@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -12,35 +12,51 @@ class UserForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات المستخدم')
-                    ->description('المعلومات الأساسية للمستخدم')
+                // Main Content Section - 8 Columns
+                Section::make('User Information')
+                    ->description('Basic user account information')
                     ->schema([
-                        Grid::make(2)
+                        Fieldset::make('Account Details')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('name')
-                                    ->label('الاسم')
+                                    ->label('Name')
                                     ->required()
-                                    ->maxLength(255),
+                                    ->maxLength(255)
+                                    ->columnSpan(2),
 
                                 TextInput::make('email')
-                                    ->label('البريد الإلكتروني')
+                                    ->label('Email Address')
                                     ->email()
                                     ->required()
                                     ->unique('users', 'email', ignoreRecord: true)
-                                    ->maxLength(255),
+                                    ->maxLength(255)
+                                    ->columnSpan(2),
 
                                 TextInput::make('password')
-                                    ->label('كلمة المرور')
+                                    ->label('Password')
                                     ->password()
                                     ->required(fn ($context) => $context === 'create')
                                     ->dehydrateStateUsing(fn ($state) => filled($state) ? bcrypt($state) : null)
                                     ->dehydrated(fn ($state) => filled($state))
-                                    ->helperText('اتركه فارغاً إذا كنت لا تريد تغييره')
+                                    ->helperText('Leave blank if you do not want to change it')
                                     ->minLength(8)
-                                    ->columnSpanFull(),
+                                    ->columnSpan(2),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(8),
+
+                // Sidebar Section - 4 Columns
+                Section::make('User Settings')
+                    ->schema([
+                        Fieldset::make('Additional Information')
+                            ->schema([
+                                // Placeholder for future user settings
+                            ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

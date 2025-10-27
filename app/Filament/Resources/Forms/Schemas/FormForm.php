@@ -8,7 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -17,211 +17,221 @@ class FormForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات أساسية')
-                    ->description('المعلومات الأساسية للاستمارة')
-                    ->schema([
-                        Grid::make(2)
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('العنوان')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->live(onBlur: true),
-
-                                TextInput::make('slug')
-                                    ->label('الرابط (Slug)')
-                                    ->required()
-                                    ->unique('forms', 'slug', ignoreRecord: true)
-                                    ->maxLength(255)
-                                    ->helperText('يتم إنشاؤه تلقائياً من العنوان'),
-
-                                Textarea::make('description')
-                                    ->label('الوصف')
-                                    ->rows(3)
-                                    ->columnSpanFull()
-                                    ->helperText('وصف مختصر للاستمارة'),
-
-                                Select::make('status')
-                                    ->label('الحالة')
-                                    ->options([
-                                        'active' => 'نشطة',
-                                        'inactive' => 'غير نشطة',
-                                    ])
-                                    ->required()
-                                    ->default('active'),
-                            ]),
-                    ]),
-
-                Section::make('حقول الاستمارة')
-                    ->description('بناء حقول الاستمارة')
+                // Main Content Section - 8 Columns
+                Section::make('Form Fields')
+                    ->description('Build your form using field blocks')
                     ->schema([
                         Builder::make('fields')
                             ->label('')
                             ->blocks([
                                 Block::make('text')
-                                    ->label('حقل نصي')
+                                    ->label('Text Field')
                                     ->icon('heroicon-o-pencil')
                                     ->schema([
                                         TextInput::make('name')
-                                            ->label('اسم الحقل')
+                                            ->label('Field Name')
                                             ->required()
-                                            ->helperText('مثال: full_name'),
+                                            ->helperText('Example: full_name'),
 
                                         TextInput::make('label')
-                                            ->label('التسمية')
+                                            ->label('Label')
                                             ->required(),
 
                                         TextInput::make('placeholder')
-                                            ->label('النص التوضيحي'),
+                                            ->label('Placeholder'),
 
                                         Toggle::make('required')
-                                            ->label('مطلوب')
+                                            ->label('Required')
                                             ->default(false),
 
                                         Select::make('width')
-                                            ->label('العرض')
+                                            ->label('Width')
                                             ->options([
-                                                'full' => 'كامل',
-                                                'half' => 'نصف',
+                                                'full' => 'Full',
+                                                'half' => 'Half',
                                             ])
                                             ->default('full'),
                                     ]),
 
                                 Block::make('email')
-                                    ->label('بريد إلكتروني')
+                                    ->label('Email Field')
                                     ->icon('heroicon-o-envelope')
                                     ->schema([
                                         TextInput::make('name')
-                                            ->label('اسم الحقل')
+                                            ->label('Field Name')
                                             ->required()
                                             ->default('email'),
 
                                         TextInput::make('label')
-                                            ->label('التسمية')
+                                            ->label('Label')
                                             ->required(),
 
                                         TextInput::make('placeholder')
-                                            ->label('النص التوضيحي'),
+                                            ->label('Placeholder'),
 
                                         Toggle::make('required')
-                                            ->label('مطلوب')
+                                            ->label('Required')
                                             ->default(true),
 
                                         Select::make('width')
-                                            ->label('العرض')
+                                            ->label('Width')
                                             ->options([
-                                                'full' => 'كامل',
-                                                'half' => 'نصف',
+                                                'full' => 'Full',
+                                                'half' => 'Half',
                                             ])
                                             ->default('full'),
                                     ]),
 
                                 Block::make('textarea')
-                                    ->label('نص طويل')
+                                    ->label('Textarea Field')
                                     ->icon('heroicon-o-bars-3-bottom-left')
                                     ->schema([
                                         TextInput::make('name')
-                                            ->label('اسم الحقل')
+                                            ->label('Field Name')
                                             ->required(),
 
                                         TextInput::make('label')
-                                            ->label('التسمية')
+                                            ->label('Label')
                                             ->required(),
 
                                         TextInput::make('placeholder')
-                                            ->label('النص التوضيحي'),
+                                            ->label('Placeholder'),
 
                                         Toggle::make('required')
-                                            ->label('مطلوب')
+                                            ->label('Required')
                                             ->default(false),
                                     ]),
 
                                 Block::make('number')
-                                    ->label('رقم')
+                                    ->label('Number Field')
                                     ->icon('heroicon-o-hashtag')
                                     ->schema([
                                         TextInput::make('name')
-                                            ->label('اسم الحقل')
+                                            ->label('Field Name')
                                             ->required(),
 
                                         TextInput::make('label')
-                                            ->label('التسمية')
+                                            ->label('Label')
                                             ->required(),
 
                                         TextInput::make('placeholder')
-                                            ->label('النص التوضيحي'),
+                                            ->label('Placeholder'),
 
                                         Toggle::make('required')
-                                            ->label('مطلوب')
+                                            ->label('Required')
                                             ->default(false),
 
                                         Select::make('width')
-                                            ->label('العرض')
+                                            ->label('Width')
                                             ->options([
-                                                'full' => 'كامل',
-                                                'half' => 'نصف',
+                                                'full' => 'Full',
+                                                'half' => 'Half',
                                             ])
                                             ->default('half'),
                                     ]),
 
                                 Block::make('select')
-                                    ->label('قائمة منسدلة')
+                                    ->label('Select Dropdown')
                                     ->icon('heroicon-o-list-bullet')
                                     ->schema([
                                         TextInput::make('name')
-                                            ->label('اسم الحقل')
+                                            ->label('Field Name')
                                             ->required(),
 
                                         TextInput::make('label')
-                                            ->label('التسمية')
+                                            ->label('Label')
                                             ->required(),
 
                                         Textarea::make('options')
-                                            ->label('الخيارات')
+                                            ->label('Options')
                                             ->required()
-                                            ->helperText('خيار واحد في كل سطر'),
+                                            ->helperText('One option per line'),
 
                                         Toggle::make('required')
-                                            ->label('مطلوب')
+                                            ->label('Required')
                                             ->default(false),
 
                                         Select::make('width')
-                                            ->label('العرض')
+                                            ->label('Width')
                                             ->options([
-                                                'full' => 'كامل',
-                                                'half' => 'نصف',
+                                                'full' => 'Full',
+                                                'half' => 'Half',
                                             ])
                                             ->default('full'),
                                     ]),
                             ])
-                            ->columnSpanFull()
-                            ->addActionLabel('إضافة حقل'),
-                    ]),
+                            ->collapsible()
+                            ->addActionLabel('Add Field'),
+                    ])
+                    ->columnSpan(8),
 
-                Section::make('إعدادات الاستمارة')
-                    ->description('إعدادات الإرسال والبريد الإلكتروني')
+                // Sidebar Section - 4 Columns
+                Section::make('Form Settings')
                     ->schema([
-                        Grid::make(2)
+                        // Basic Information
+                        Fieldset::make('Basic Information')
+                            ->columns(2)
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->columnSpan(2),
+
+                                TextInput::make('slug')
+                                    ->label('Slug')
+                                    ->required()
+                                    ->unique('forms', 'slug', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->helperText('Auto-generated from title')
+                                    ->columnSpan(2),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->rows(3)
+                                    ->helperText('Brief form description')
+                                    ->columnSpan(2),
+
+                                Select::make('status')
+                                    ->label('Status')
+                                    ->options([
+                                        'active' => 'Active',
+                                        'inactive' => 'Inactive',
+                                    ])
+                                    ->required()
+                                    ->default('active'),
+                            ]),
+
+                        // Form Configuration
+                        Fieldset::make('Form Configuration')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('settings.submit_button_text')
-                                    ->label('نص زر الإرسال')
-                                    ->default('إرسال'),
+                                    ->label('Submit Button Text')
+                                    ->default('Submit')
+                                    ->columnSpan(2),
 
                                 TextInput::make('settings.success_message')
-                                    ->label('رسالة النجاح')
-                                    ->default('تم إرسال الاستمارة بنجاح'),
+                                    ->label('Success Message')
+                                    ->default('Form submitted successfully')
+                                    ->columnSpan(2),
 
                                 TextInput::make('settings.redirect_url')
-                                    ->label('رابط التحويل')
-                                    ->helperText('اختياري: رابط التحويل بعد الإرسال'),
+                                    ->label('Redirect URL')
+                                    ->helperText('Optional: redirect after submission')
+                                    ->columnSpan(2),
 
                                 TextInput::make('settings.email_to')
-                                    ->label('إرسال إلى البريد الإلكتروني')
+                                    ->label('Send Email To')
                                     ->email()
-                                    ->helperText('اختياري: إرسال نسخة من الاستمارة'),
+                                    ->helperText('Optional: send form copy via email')
+                                    ->columnSpan(2),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

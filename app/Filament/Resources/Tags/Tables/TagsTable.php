@@ -15,25 +15,34 @@ class TagsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label('الاسم')
+                    ->label('Name')
                     ->searchable()
                     ->sortable(),
 
                 TextColumn::make('slug')
-                    ->label('الرابط')
+                    ->label('Slug')
                     ->copyable()
-                    ->sortable(),
-
-                TextColumn::make('posts_count')
-                    ->label('عدد المقالات')
-                    ->counts('posts')
-                    ->sortable(),
-
-                TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
                     ->sortable()
                     ->toggleable(),
+
+                TextColumn::make('posts_count')
+                    ->label('Posts')
+                    ->counts('posts')
+                    ->sortable()
+                    ->badge()
+                    ->color('success'),
+
+                TextColumn::make('created_at')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

@@ -5,7 +5,7 @@ namespace App\Filament\Resources\Categories\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -14,39 +14,52 @@ class CategoryForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات التصنيف')
-                    ->description('المعلومات الأساسية للتصنيف')
+                // Main Content Section - 8 Columns
+                Section::make('Category Information')
+                    ->description('Basic information about the category')
                     ->schema([
-                        Grid::make(2)
+                        Fieldset::make('Details')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('name')
-                                    ->label('الاسم')
+                                    ->label('Name')
                                     ->required()
                                     ->maxLength(255)
-                                    ->live(onBlur: true),
+                                    ->live(onBlur: true)
+                                    ->columnSpan(2),
 
                                 TextInput::make('slug')
-                                    ->label('الرابط (Slug)')
+                                    ->label('Slug')
                                     ->required()
                                     ->unique('categories', 'slug', ignoreRecord: true)
                                     ->maxLength(255)
-                                    ->helperText('يتم إنشاؤه تلقائياً من الاسم'),
+                                    ->helperText('Auto-generated from name')
+                                    ->columnSpan(2),
 
                                 Textarea::make('description')
-                                    ->label('الوصف')
-                                    ->rows(3)
-                                    ->columnSpanFull(),
+                                    ->label('Description')
+                                    ->rows(4)
+                                    ->columnSpan(2),
+                            ]),
+                    ])
+                    ->columnSpan(8),
 
+                // Sidebar Section - 4 Columns
+                Section::make('Category Settings')
+                    ->schema([
+                        Fieldset::make('Hierarchy')
+                            ->schema([
                                 Select::make('parent_id')
-                                    ->label('التصنيف الأب')
+                                    ->label('Parent Category')
                                     ->relationship('parent', 'name')
                                     ->searchable()
                                     ->preload()
-                                    ->helperText('اختر تصنيف أب إذا كان هذا تصنيف فرعي')
-                                    ->columnSpanFull(),
+                                    ->helperText('Select a parent if this is a sub-category'),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

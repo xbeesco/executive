@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Tags\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -12,26 +12,42 @@ class TagForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات الوسم')
-                    ->description('المعلومات الأساسية للوسم')
+                // Main Content Section - 8 Columns
+                Section::make('Tag Information')
+                    ->description('Basic information about the tag')
                     ->schema([
-                        Grid::make(2)
+                        Fieldset::make('Details')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('name')
-                                    ->label('الاسم')
+                                    ->label('Name')
                                     ->required()
                                     ->maxLength(255)
-                                    ->live(onBlur: true),
+                                    ->live(onBlur: true)
+                                    ->columnSpan(2),
 
                                 TextInput::make('slug')
-                                    ->label('الرابط (Slug)')
+                                    ->label('Slug')
                                     ->required()
                                     ->unique('tags', 'slug', ignoreRecord: true)
                                     ->maxLength(255)
-                                    ->helperText('يتم إنشاؤه تلقائياً من الاسم'),
+                                    ->helperText('Auto-generated from name')
+                                    ->columnSpan(2),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(8),
+
+                // Sidebar Section - 4 Columns
+                Section::make('Tag Settings')
+                    ->schema([
+                        Fieldset::make('Statistics')
+                            ->schema([
+                                // Placeholder for future settings or stats
+                            ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

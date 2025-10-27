@@ -17,62 +17,81 @@ class PostsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('featured_image')
+                    ->label('Image')
+                    ->circular()
+                    ->size(40),
+
                 TextColumn::make('title')
-                    ->label('العنوان')
+                    ->label('Title')
                     ->searchable()
                     ->sortable()
-                    ->limit(50),
+                    ->limit(50)
+                    ->description(fn ($record) => $record->excerpt ? \Str::limit($record->excerpt, 60) : null),
 
                 TextColumn::make('author.name')
-                    ->label('الكاتب')
+                    ->label('Author')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
                     ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 TextColumn::make('categories.name')
-                    ->label('التصنيفات')
+                    ->label('Categories')
                     ->badge()
                     ->separator(',')
-                    ->limitList(2),
+                    ->limitList(2)
+                    ->toggleable(),
 
                 TextColumn::make('tags.name')
-                    ->label('الوسوم')
+                    ->label('Tags')
                     ->badge()
                     ->color('gray')
                     ->separator(',')
-                    ->limitList(3),
-
-                ImageColumn::make('featured_image')
-                    ->label('الصورة')
-                    ->circular(),
+                    ->limitList(3)
+                    ->toggleable(),
 
                 TextColumn::make('published_at')
-                    ->label('تاريخ النشر')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Published')
+                    ->dateTime('M d, Y')
                     ->sortable()
                     ->toggleable(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
-                    ->options(ContentStatus::class),
+                    ->label('Status')
+                    ->options(ContentStatus::class)
+                    ->multiple(),
 
                 SelectFilter::make('author')
-                    ->label('الكاتب')
+                    ->label('Author')
                     ->relationship('author', 'name')
-                    ->searchable(),
+                    ->searchable()
+                    ->preload(),
+
+                SelectFilter::make('categories')
+                    ->label('Category')
+                    ->relationship('categories', 'name')
+                    ->searchable()
+                    ->preload(),
             ])
             ->recordActions([
                 EditAction::make(),

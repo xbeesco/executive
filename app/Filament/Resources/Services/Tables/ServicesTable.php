@@ -17,38 +17,54 @@ class ServicesTable
     {
         return $table
             ->columns([
+                ImageColumn::make('featured_image')
+                    ->label('Image')
+                    ->circular()
+                    ->size(40),
+
                 TextColumn::make('title')
-                    ->label('العنوان')
+                    ->label('Title')
                     ->searchable()
                     ->sortable()
-                    ->limit(50),
+                    ->limit(50)
+                    ->description(fn ($record) => $record->excerpt ? \Str::limit($record->excerpt, 60) : null),
 
                 TextColumn::make('icon')
-                    ->label('الأيقونة')
+                    ->label('Icon')
                     ->html()
-                    ->formatStateUsing(fn ($state) => $state ? "<i class='{$state}'></i> {$state}" : '-'),
+                    ->formatStateUsing(fn ($state) => $state ? "<i class='{$state}'></i>" : '-')
+                    ->alignCenter(),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
                     ->color(fn ($state) => $state->color())
                     ->sortable(),
 
-                ImageColumn::make('featured_image')
-                    ->label('الصورة')
-                    ->circular(),
+                TextColumn::make('features')
+                    ->label('Features')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => is_array($state) ? count($state) . ' features' : '0 features')
+                    ->toggleable(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
-                    ->options(ContentStatus::class),
+                    ->label('Status')
+                    ->options(ContentStatus::class)
+                    ->multiple(),
             ])
             ->recordActions([
                 EditAction::make(),

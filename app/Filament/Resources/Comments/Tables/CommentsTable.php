@@ -19,54 +19,64 @@ class CommentsTable
         return $table
             ->columns([
                 TextColumn::make('post.title')
-                    ->label('المقالة')
+                    ->label('Post')
                     ->searchable()
                     ->sortable()
                     ->limit(40),
 
                 TextColumn::make('author_name')
-                    ->label('الاسم')
+                    ->label('Author')
                     ->searchable()
                     ->sortable(),
 
                 TextColumn::make('content')
-                    ->label('التعليق')
+                    ->label('Comment')
                     ->limit(50)
-                    ->searchable(),
+                    ->searchable()
+                    ->description(fn ($record) => $record->author_email),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
                     ->color(fn ($state) => $state->color())
                     ->sortable(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
-                    ->sortable(),
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
-                    ->options(CommentStatus::class),
+                    ->label('Status')
+                    ->options(CommentStatus::class)
+                    ->multiple(),
 
                 SelectFilter::make('post')
-                    ->label('المقالة')
+                    ->label('Post')
                     ->relationship('post', 'title')
-                    ->searchable(),
+                    ->searchable()
+                    ->preload(),
             ])
             ->recordActions([
                 EditAction::make(),
                 Action::make('approve')
-                    ->label('الموافقة')
+                    ->label('Approve')
                     ->icon('heroicon-o-check')
                     ->color('success')
                     ->action(fn ($record) => $record->update(['status' => CommentStatus::APPROVED]))
                     ->visible(fn ($record) => $record->status !== CommentStatus::APPROVED),
 
                 Action::make('reject')
-                    ->label('الرفض')
+                    ->label('Reject')
                     ->icon('heroicon-o-x-mark')
                     ->color('danger')
                     ->action(fn ($record) => $record->update(['status' => CommentStatus::REJECTED]))
@@ -75,13 +85,13 @@ class CommentsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     BulkAction::make('approve')
-                        ->label('الموافقة على المحدد')
+                        ->label('Approve Selected')
                         ->icon('heroicon-o-check')
                         ->color('success')
                         ->action(fn ($records) => $records->each->update(['status' => CommentStatus::APPROVED])),
 
                     BulkAction::make('reject')
-                        ->label('رفض المحدد')
+                        ->label('Reject Selected')
                         ->icon('heroicon-o-x-mark')
                         ->color('danger')
                         ->action(fn ($records) => $records->each->update(['status' => CommentStatus::REJECTED])),

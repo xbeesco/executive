@@ -6,7 +6,7 @@ use App\Enums\CommentStatus;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -15,66 +15,72 @@ class CommentForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات المعلق')
-                    ->description('معلومات الشخص الذي ترك التعليق')
+                // Main Content Section - 8 Columns
+                Section::make('Comment Content')
+                    ->description('The comment text and content')
                     ->schema([
-                        Grid::make(2)
+                        Fieldset::make('Comment')
+                            ->schema([
+                                Textarea::make('content')
+                                    ->label('Comment')
+                                    ->required()
+                                    ->rows(5),
+                            ]),
+                    ])
+                    ->columnSpan(8),
+
+                // Sidebar Section - 4 Columns
+                Section::make('Comment Settings')
+                    ->schema([
+                        // Author Information
+                        Fieldset::make('Author Information')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('author_name')
-                                    ->label('الاسم')
+                                    ->label('Name')
                                     ->required()
-                                    ->maxLength(255),
+                                    ->maxLength(255)
+                                    ->columnSpan(2),
 
                                 TextInput::make('author_email')
-                                    ->label('البريد الإلكتروني')
+                                    ->label('Email')
                                     ->email()
                                     ->required()
                                     ->maxLength(255),
 
                                 TextInput::make('author_website')
-                                    ->label('الموقع الإلكتروني')
+                                    ->label('Website')
                                     ->url()
-                                    ->maxLength(255)
-                                    ->columnSpanFull(),
+                                    ->maxLength(255),
                             ]),
-                    ]),
 
-                Section::make('محتوى التعليق')
-                    ->description('نص التعليق')
-                    ->schema([
-                        Textarea::make('content')
-                            ->label('التعليق')
-                            ->required()
-                            ->rows(5)
-                            ->columnSpanFull(),
-                    ]),
-
-                Section::make('الحالة والارتباطات')
-                    ->description('حالة التعليق والمقالة المرتبطة')
-                    ->schema([
-                        Grid::make(2)
+                        // Status & Associations
+                        Fieldset::make('Status & Associations')
                             ->schema([
                                 Select::make('status')
-                                    ->label('الحالة')
+                                    ->label('Status')
                                     ->options(CommentStatus::class)
                                     ->required()
                                     ->default(CommentStatus::PENDING->value),
 
                                 Select::make('post_id')
-                                    ->label('المقالة')
+                                    ->label('Post')
                                     ->relationship('post', 'title')
                                     ->searchable()
+                                    ->preload()
                                     ->required(),
 
                                 Select::make('parent_id')
-                                    ->label('رد على تعليق')
+                                    ->label('Reply to Comment')
                                     ->relationship('parent', 'author_name')
                                     ->searchable()
-                                    ->helperText('اختر تعليق إذا كان هذا رد على تعليق آخر')
-                                    ->columnSpanFull(),
+                                    ->preload()
+                                    ->helperText('Select a comment if this is a reply'),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

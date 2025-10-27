@@ -6,7 +6,7 @@ use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -15,41 +15,48 @@ class FormSubmissionForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات الرد')
-                    ->description('معلومات الرد على الاستمارة')
+                // Main Content Section - 8 Columns
+                Section::make('Submitted Data')
+                    ->description('Data submitted from the form')
                     ->schema([
-                        Grid::make(2)
+                        KeyValue::make('data')
+                            ->label('')
+                            ->disabled(),
+                    ])
+                    ->columnSpan(8),
+
+                // Sidebar Section - 4 Columns
+                Section::make('Submission Details')
+                    ->schema([
+                        // Form Information
+                        Fieldset::make('Form Information')
                             ->schema([
                                 Select::make('form_id')
-                                    ->label('الاستمارة')
+                                    ->label('Form')
                                     ->relationship('form', 'title')
                                     ->disabled()
                                     ->required(),
 
                                 Toggle::make('read')
-                                    ->label('تم القراءة')
+                                    ->label('Mark as Read')
                                     ->default(false),
+                            ]),
 
+                        // Technical Details
+                        Fieldset::make('Technical Details')
+                            ->schema([
                                 TextInput::make('ip_address')
-                                    ->label('عنوان IP')
+                                    ->label('IP Address')
                                     ->disabled(),
 
                                 TextInput::make('user_agent')
                                     ->label('User Agent')
-                                    ->disabled()
-                                    ->columnSpanFull(),
+                                    ->disabled(),
                             ]),
-                    ]),
-
-                Section::make('البيانات المرسلة')
-                    ->description('البيانات التي تم إرسالها من الاستمارة')
-                    ->schema([
-                        KeyValue::make('data')
-                            ->label('')
-                            ->disabled()
-                            ->columnSpanFull(),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

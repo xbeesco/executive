@@ -10,7 +10,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -19,145 +19,157 @@ class PostForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات أساسية')
-                    ->schema([
-                        Grid::make(2)
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('العنوان')
-                                    ->required()
-                                    ->live(onBlur: true),
-
-                                TextInput::make('slug')
-                                    ->label('الرابط')
-                                    ->required()
-                                    ->unique('posts', 'slug', ignoreRecord: true),
-
-                                Textarea::make('excerpt')
-                                    ->label('الملخص')
-                                    ->rows(3)
-                                    ->columnSpanFull(),
-
-                                Select::make('author_id')
-                                    ->label('الكاتب')
-                                    ->relationship('author', 'name')
-                                    ->searchable()
-                                    ->required(),
-
-                                Select::make('status')
-                                    ->label('الحالة')
-                                    ->options(ContentStatus::class)
-                                    ->required(),
-
-                                FileUpload::make('featured_image')
-                                    ->label('الصورة المميزة')
-                                    ->image()
-                                    ->disk('public')
-                                    ->directory('images/posts'),
-                            ]),
-                    ]),
-
-                Section::make('التصنيفات والوسوم')
-                    ->schema([
-                        Grid::make(2)
-                            ->schema([
-                                Select::make('categories')
-                                    ->label('التصنيفات')
-                                    ->relationship('categories', 'name')
-                                    ->multiple()
-                                    ->searchable(),
-
-                                Select::make('tags')
-                                    ->label('الوسوم')
-                                    ->relationship('tags', 'name')
-                                    ->multiple()
-                                    ->searchable()
-                                    ->createOptionForm([
-                                        TextInput::make('name')
-                                            ->label('اسم الوسم')
-                                            ->required(),
-                                    ]),
-                            ]),
-                    ]),
-
-                Section::make('محتوى المقالة')
+                // Main Content Section - 8 Columns
+                Section::make('Post Content')
                     ->schema([
                         Builder::make('content')
                             ->label('')
                             ->blocks([
                                 Block::make('text')
-                                    ->label('نص')
+                                    ->label('Text Block')
                                     ->icon('heroicon-o-document-text')
                                     ->schema([
                                         Textarea::make('text')
-                                            ->label('المحتوى')
+                                            ->label('Content')
                                             ->required()
                                             ->rows(5),
                                     ]),
 
                                 Block::make('image')
-                                    ->label('صورة')
+                                    ->label('Image Block')
                                     ->icon('heroicon-o-photo')
                                     ->schema([
                                         FileUpload::make('image')
-                                            ->label('الصورة')
+                                            ->label('Image')
                                             ->image()
                                             ->disk('public')
                                             ->directory('images/blocks')
                                             ->required(),
 
                                         TextInput::make('caption')
-                                            ->label('التوضيح'),
+                                            ->label('Caption'),
                                     ]),
 
                                 Block::make('quote')
-                                    ->label('اقتباس')
-                                    ->icon('heroicon-o-quote')
+                                    ->label('Quote Block')
+                                    ->icon('heroicon-o-chat-bubble-left-right')
                                     ->schema([
                                         Textarea::make('text')
-                                            ->label('النص')
+                                            ->label('Quote Text')
                                             ->required(),
 
                                         TextInput::make('author')
-                                            ->label('المؤلف'),
+                                            ->label('Author'),
                                     ]),
                             ])
-                            ->columnSpanFull(),
-                    ]),
+                            ->collapsible(),
+                    ])
+                    ->columnSpan(8),
 
-                Section::make('معلومات النشر')
+                // Sidebar Section - 4 Columns
+                Section::make('Post Settings')
                     ->schema([
-                        Grid::make(1)
+                        // Basic Information
+                        Fieldset::make('Basic Information')
+                            ->columns(2)
                             ->schema([
-                                DateTimePicker::make('published_at')
-                                    ->label('تاريخ النشر'),
-                            ]),
-                    ]),
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->columnSpan(2),
 
-                Section::make('معلومات SEO')
-                    ->schema([
-                        Grid::make(2)
+                                TextInput::make('slug')
+                                    ->label('Slug')
+                                    ->required()
+                                    ->unique('posts', 'slug', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->columnSpan(2),
+
+                                Textarea::make('excerpt')
+                                    ->label('Excerpt')
+                                    ->rows(3)
+                                    ->maxLength(500)
+                                    ->columnSpan(2),
+
+                                Select::make('status')
+                                    ->label('Status')
+                                    ->options(ContentStatus::class)
+                                    ->required()
+                                    ->selectablePlaceholder(false),
+
+                                DateTimePicker::make('published_at')
+                                    ->label('Publish Date')
+                                    ->native(false),
+
+                                FileUpload::make('featured_image')
+                                    ->label('Featured Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/posts')
+                                    ->columnSpan(2),
+                            ]),
+
+                        // Author & Categories
+                        Fieldset::make('Classification')
+                            ->schema([
+                                Select::make('author_id')
+                                    ->label('Author')
+                                    ->relationship('author', 'name')
+                                    ->searchable()
+                                    ->required(),
+
+                                Select::make('categories')
+                                    ->label('Categories')
+                                    ->relationship('categories', 'name')
+                                    ->multiple()
+                                    ->searchable()
+                                    ->preload(),
+
+                                Select::make('tags')
+                                    ->label('Tags')
+                                    ->relationship('tags', 'name')
+                                    ->multiple()
+                                    ->searchable()
+                                    ->preload()
+                                    ->createOptionForm([
+                                        TextInput::make('name')
+                                            ->label('Tag Name')
+                                            ->required(),
+                                    ]),
+                            ]),
+
+                        // SEO Settings
+                        Fieldset::make('SEO Settings')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('seo.meta_title')
-                                    ->label('Meta Title'),
+                                    ->label('Meta Title')
+                                    ->maxLength(60)
+                                    ->columnSpan(2),
 
                                 TextInput::make('seo.meta_keywords')
-                                    ->label('Meta Keywords'),
+                                    ->label('Meta Keywords')
+                                    ->columnSpan(2),
 
                                 Textarea::make('seo.meta_description')
                                     ->label('Meta Description')
                                     ->rows(2)
-                                    ->columnSpanFull(),
+                                    ->maxLength(160)
+                                    ->columnSpan(2),
 
                                 FileUpload::make('seo.og_image')
-                                    ->label('صورة OG')
+                                    ->label('Open Graph Image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('images/seo')
-                                    ->columnSpanFull(),
+                                    ->columnSpan(2),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

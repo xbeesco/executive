@@ -15,21 +15,37 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label('الاسم')
+                    ->label('Name')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->description(fn ($record) => $record->email),
 
                 TextColumn::make('email')
-                    ->label('البريد الإلكتروني')
+                    ->label('Email Address')
                     ->searchable()
                     ->sortable()
-                    ->copyable(),
+                    ->copyable()
+                    ->toggleable(),
+
+                TextColumn::make('posts_count')
+                    ->label('Posts')
+                    ->counts('posts')
+                    ->sortable()
+                    ->badge()
+                    ->color('info')
+                    ->toggleable(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

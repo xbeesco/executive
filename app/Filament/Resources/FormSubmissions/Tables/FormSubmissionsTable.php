@@ -19,12 +19,12 @@ class FormSubmissionsTable
         return $table
             ->columns([
                 TextColumn::make('form.title')
-                    ->label('الاستمارة')
+                    ->label('Form')
                     ->searchable()
                     ->sortable(),
 
                 IconColumn::make('read')
-                    ->label('تم القراءة')
+                    ->label('Read')
                     ->boolean()
                     ->trueIcon('heroicon-o-check-circle')
                     ->falseIcon('heroicon-o-x-circle')
@@ -33,9 +33,10 @@ class FormSubmissionsTable
                     ->sortable(),
 
                 TextColumn::make('ip_address')
-                    ->label('عنوان IP')
+                    ->label('IP Address')
                     ->copyable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
 
                 TextColumn::make('user_agent')
                     ->label('User Agent')
@@ -44,27 +45,35 @@ class FormSubmissionsTable
                     ->toggleable(),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإرسال')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Submitted At')
+                    ->dateTime('M d, Y H:i')
                     ->sortable(),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('form')
-                    ->label('الاستمارة')
+                    ->label('Form')
                     ->relationship('form', 'title')
-                    ->searchable(),
+                    ->searchable()
+                    ->preload(),
 
                 TernaryFilter::make('read')
-                    ->label('تم القراءة')
-                    ->placeholder('الكل')
-                    ->trueLabel('تم القراءة')
-                    ->falseLabel('لم يُقرأ'),
+                    ->label('Read Status')
+                    ->placeholder('All')
+                    ->trueLabel('Read')
+                    ->falseLabel('Unread'),
             ])
             ->recordActions([
                 EditAction::make(),
                 Action::make('markAsRead')
-                    ->label('تعليم كمقروء')
+                    ->label('Mark as Read')
                     ->icon('heroicon-o-check')
+                    ->color('success')
                     ->action(fn ($record) => $record->update(['read' => true]))
                     ->visible(fn ($record) => ! $record->read),
             ])

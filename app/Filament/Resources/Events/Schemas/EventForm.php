@@ -10,7 +10,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -19,167 +19,174 @@ class EventForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(12)
             ->components([
-                Section::make('معلومات أساسية')
-                    ->description('المعلومات الأساسية للفعالية')
-                    ->schema([
-                        Grid::make(2)
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('العنوان')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->live(onBlur: true),
-
-                                TextInput::make('slug')
-                                    ->label('الرابط (Slug)')
-                                    ->required()
-                                    ->unique('events', 'slug', ignoreRecord: true)
-                                    ->maxLength(255)
-                                    ->helperText('يتم إنشاؤه تلقائياً من العنوان'),
-
-                                Textarea::make('description')
-                                    ->label('الوصف')
-                                    ->rows(3)
-                                    ->columnSpanFull()
-                                    ->helperText('وصف مختصر للفعالية'),
-
-                                Select::make('status')
-                                    ->label('الحالة')
-                                    ->options(ContentStatus::class)
-                                    ->required()
-                                    ->default(ContentStatus::DRAFT->value),
-
-                                FileUpload::make('featured_image')
-                                    ->label('الصورة المميزة')
-                                    ->image()
-                                    ->disk('public')
-                                    ->directory('images/events')
-                                    ->columnSpanFull(),
-                            ]),
-                    ]),
-
-                Section::make('التواريخ والمكان')
-                    ->description('معلومات التوقيت والمكان')
-                    ->schema([
-                        Grid::make(2)
-                            ->schema([
-                                DateTimePicker::make('start_date')
-                                    ->label('تاريخ البداية')
-                                    ->required()
-                                    ->native(false),
-
-                                DateTimePicker::make('end_date')
-                                    ->label('تاريخ النهاية')
-                                    ->native(false)
-                                    ->after('start_date'),
-
-                                TextInput::make('location')
-                                    ->label('الموقع')
-                                    ->maxLength(255)
-                                    ->placeholder('القاهرة، مصر'),
-
-                                TextInput::make('max_attendees')
-                                    ->label('الحد الأقصى للحضور')
-                                    ->numeric()
-                                    ->minValue(1)
-                                    ->placeholder('100'),
-                            ]),
-                    ]),
-
-                Section::make('محتوى الفعالية')
-                    ->description('بناء محتوى الفعالية باستخدام الكتل')
+                // Main Content Section - 8 Columns
+                Section::make('Event Content')
+                    ->description('Build event content using blocks')
                     ->schema([
                         Builder::make('content')
                             ->label('')
                             ->blocks([
                                 Block::make('text')
-                                    ->label('نص')
+                                    ->label('Text Block')
                                     ->icon('heroicon-o-document-text')
                                     ->schema([
                                         Textarea::make('text')
-                                            ->label('المحتوى')
+                                            ->label('Content')
                                             ->required()
                                             ->rows(5),
                                     ]),
 
                                 Block::make('image')
-                                    ->label('صورة')
+                                    ->label('Image Block')
                                     ->icon('heroicon-o-photo')
                                     ->schema([
                                         FileUpload::make('image')
-                                            ->label('الصورة')
+                                            ->label('Image')
                                             ->image()
                                             ->disk('public')
                                             ->directory('images/blocks')
                                             ->required(),
 
                                         TextInput::make('caption')
-                                            ->label('التوضيح'),
+                                            ->label('Caption'),
                                     ]),
 
                                 Block::make('quote')
-                                    ->label('اقتباس')
+                                    ->label('Quote Block')
                                     ->icon('heroicon-o-chat-bubble-left-right')
                                     ->schema([
                                         Textarea::make('text')
-                                            ->label('النص')
+                                            ->label('Quote Text')
                                             ->required()
                                             ->rows(3),
 
                                         TextInput::make('author')
-                                            ->label('المؤلف'),
+                                            ->label('Author'),
                                     ]),
 
                                 Block::make('agenda')
-                                    ->label('جدول الأعمال')
+                                    ->label('Agenda Item')
                                     ->icon('heroicon-o-calendar')
                                     ->schema([
                                         TextInput::make('time')
-                                            ->label('الوقت')
+                                            ->label('Time')
                                             ->placeholder('10:00 AM'),
 
                                         TextInput::make('title')
-                                            ->label('العنوان')
+                                            ->label('Title')
                                             ->required(),
 
                                         Textarea::make('description')
-                                            ->label('الوصف')
+                                            ->label('Description')
                                             ->rows(2),
                                     ]),
                             ])
-                            ->columnSpanFull(),
-                    ]),
+                            ->collapsible(),
+                    ])
+                    ->columnSpan(8),
 
-                Section::make('معلومات SEO')
-                    ->description('تحسين محركات البحث')
+                // Sidebar Section - 4 Columns
+                Section::make('Event Settings')
                     ->schema([
-                        Grid::make(2)
+                        // Basic Information
+                        Fieldset::make('Basic Information')
+                            ->columns(2)
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->columnSpan(2),
+
+                                TextInput::make('slug')
+                                    ->label('Slug')
+                                    ->required()
+                                    ->unique('events', 'slug', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->helperText('Auto-generated from title')
+                                    ->columnSpan(2),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->rows(3)
+                                    ->helperText('Brief event description')
+                                    ->columnSpan(2),
+
+                                Select::make('status')
+                                    ->label('Status')
+                                    ->options(ContentStatus::class)
+                                    ->required()
+                                    ->selectablePlaceholder(false)
+                                    ->default(ContentStatus::DRAFT->value),
+
+                                FileUpload::make('featured_image')
+                                    ->label('Featured Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/events')
+                                    ->columnSpan(2),
+                            ]),
+
+                        // Date & Location
+                        Fieldset::make('Date & Location')
+                            ->columns(2)
+                            ->schema([
+                                DateTimePicker::make('start_date')
+                                    ->label('Start Date')
+                                    ->required()
+                                    ->native(false),
+
+                                DateTimePicker::make('end_date')
+                                    ->label('End Date')
+                                    ->native(false)
+                                    ->after('start_date'),
+
+                                TextInput::make('location')
+                                    ->label('Location')
+                                    ->maxLength(255)
+                                    ->placeholder('Cairo, Egypt'),
+
+                                TextInput::make('max_attendees')
+                                    ->label('Max Attendees')
+                                    ->numeric()
+                                    ->minValue(1)
+                                    ->placeholder('100'),
+                            ]),
+
+                        // SEO Settings
+                        Fieldset::make('SEO Settings')
+                            ->columns(2)
                             ->schema([
                                 TextInput::make('seo.meta_title')
                                     ->label('Meta Title')
                                     ->maxLength(60)
-                                    ->helperText('الطول الأمثل: 50-60 حرف'),
+                                    ->helperText('Optimal: 50-60 characters')
+                                    ->columnSpan(2),
 
                                 TextInput::make('seo.meta_keywords')
                                     ->label('Meta Keywords')
-                                    ->helperText('كلمات مفتاحية مفصولة بفواصل'),
+                                    ->helperText('Comma separated keywords')
+                                    ->columnSpan(2),
 
                                 Textarea::make('seo.meta_description')
                                     ->label('Meta Description')
                                     ->rows(2)
                                     ->maxLength(160)
-                                    ->helperText('الطول الأمثل: 150-160 حرف')
-                                    ->columnSpanFull(),
+                                    ->helperText('Optimal: 150-160 characters')
+                                    ->columnSpan(2),
 
                                 FileUpload::make('seo.og_image')
-                                    ->label('صورة OG')
+                                    ->label('Open Graph Image')
                                     ->image()
                                     ->disk('public')
                                     ->directory('images/seo')
-                                    ->columnSpanFull(),
+                                    ->columnSpan(2),
                             ]),
-                    ]),
+                    ])
+                    ->columnSpan(4),
             ]);
     }
 }

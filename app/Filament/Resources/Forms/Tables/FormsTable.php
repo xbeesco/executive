@@ -16,41 +16,52 @@ class FormsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label('العنوان')
+                    ->label('Title')
                     ->searchable()
                     ->sortable()
-                    ->limit(50),
+                    ->limit(50)
+                    ->description(fn ($record) => $record->description ? \Str::limit($record->description, 60) : null),
 
                 TextColumn::make('slug')
-                    ->label('الرابط')
+                    ->label('Slug')
                     ->copyable()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->badge()
                     ->color(fn ($state) => $state === 'active' ? 'success' : 'gray')
-                    ->formatStateUsing(fn ($state) => $state === 'active' ? 'نشطة' : 'غير نشطة')
+                    ->formatStateUsing(fn ($state) => ucfirst($state))
                     ->sortable(),
 
                 TextColumn::make('submissions_count')
-                    ->label('عدد الردود')
+                    ->label('Submissions')
                     ->counts('submissions')
-                    ->sortable(),
+                    ->sortable()
+                    ->badge()
+                    ->color('info'),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->options([
-                        'active' => 'نشطة',
-                        'inactive' => 'غير نشطة',
-                    ]),
+                        'active' => 'Active',
+                        'inactive' => 'Inactive',
+                    ])
+                    ->multiple(),
             ])
             ->recordActions([
                 EditAction::make(),

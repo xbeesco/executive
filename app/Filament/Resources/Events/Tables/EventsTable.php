@@ -6,6 +6,7 @@ use App\Enums\ContentStatus;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
@@ -17,53 +18,73 @@ class EventsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('featured_image')
+                    ->label('Image')
+                    ->circular()
+                    ->size(40),
+
                 TextColumn::make('title')
-                    ->label('العنوان')
+                    ->label('Title')
                     ->searchable()
                     ->sortable()
-                    ->limit(50),
+                    ->limit(50)
+                    ->description(fn ($record) => $record->description ? \Str::limit($record->description, 60) : null),
 
                 TextColumn::make('location')
-                    ->label('الموقع')
+                    ->label('Location')
                     ->searchable()
-                    ->limit(30),
+                    ->limit(30)
+                    ->toggleable(),
 
                 TextColumn::make('start_date')
-                    ->label('تاريخ البداية')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Start Date')
+                    ->dateTime('M d, Y H:i')
                     ->sortable(),
 
                 TextColumn::make('end_date')
-                    ->label('تاريخ النهاية')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('End Date')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(),
 
                 TextColumn::make('status')
-                    ->label('الحالة')
+                    ->label('Status')
                     ->formatStateUsing(fn ($state) => $state->label())
                     ->badge()
                     ->color(fn ($state) => $state->color())
                     ->sortable(),
 
+                TextColumn::make('max_attendees')
+                    ->label('Max Attendees')
+                    ->numeric()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label('الحالة')
-                    ->options(ContentStatus::class),
+                    ->label('Status')
+                    ->options(ContentStatus::class)
+                    ->multiple(),
 
                 Filter::make('start_date')
-                    ->label('تاريخ البداية')
+                    ->label('Start Date')
                     ->form([
                         \Filament\Forms\Components\DatePicker::make('start_from')
-                            ->label('من'),
+                            ->label('From'),
                         \Filament\Forms\Components\DatePicker::make('start_until')
-                            ->label('إلى'),
+                            ->label('Until'),
                     ])
                     ->query(function ($query, array $data) {
                         return $query

@@ -15,29 +15,40 @@ class CategoriesTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label('الاسم')
-                    ->searchable()
-                    ->sortable(),
-
-                TextColumn::make('slug')
-                    ->label('الرابط')
-                    ->copyable()
-                    ->sortable(),
-
-                TextColumn::make('parent.name')
-                    ->label('التصنيف الأب')
+                    ->label('Name')
                     ->searchable()
                     ->sortable()
-                    ->default('-'),
+                    ->description(fn ($record) => $record->description ? \Str::limit($record->description, 60) : null),
+
+                TextColumn::make('slug')
+                    ->label('Slug')
+                    ->copyable()
+                    ->sortable()
+                    ->toggleable(),
+
+                TextColumn::make('parent.name')
+                    ->label('Parent Category')
+                    ->searchable()
+                    ->sortable()
+                    ->default('-')
+                    ->toggleable(),
 
                 TextColumn::make('posts_count')
-                    ->label('عدد المقالات')
+                    ->label('Posts')
                     ->counts('posts')
-                    ->sortable(),
+                    ->sortable()
+                    ->badge()
+                    ->color('success'),
 
                 TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('Y-m-d H:i')
+                    ->label('Created')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                TextColumn::make('updated_at')
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
