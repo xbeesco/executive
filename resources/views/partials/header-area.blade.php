@@ -1,8 +1,8 @@
 {{-- Header Area: Slider or Title Bar (based on settings) --}}
 
 @if(($pageSettings['header_area_type'] ?? 'none') === 'slider')
-    {{-- Slider --}}
-    @include('components.sliders.slider', ['sliderId' => $pageSettings['slider_id'] ?? 'slider-1'])
+    {{-- Slider (based on header_style) --}}
+    @include('components.sliders.slider', ['headerStyle' => $pageSettings['header_style'] ?? 3])
 
 @elseif(($pageSettings['header_area_type'] ?? 'none') === 'title_bar')
     {{-- Title Bar --}}

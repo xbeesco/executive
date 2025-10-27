@@ -1,4 +1,4 @@
-<footer class="site-footer footer-style-8 pbmit-bg-color-{{ $pageSettings['footer_bg_color'] ?? 'secondary' }}">
+<footer class="site-footer footer-style-3 pbmit-bg-color-secondary">
     <!-- Newsletter Area -->
     <div class="pbmit-footer-big-area">
         <div class="container">
@@ -74,7 +74,15 @@
                 <div class="col-md-4">
                     <aside class="widget pbmit-two-column-menu">
                         <h2 class="widget-title">Useful Link</h2>
-                        {!! $settings['footer_menu_1'] ?? '' !!}
+                        @if(!empty($settings['footer_menu_1']) && is_array($settings['footer_menu_1']))
+                        <ul>
+                            @foreach($settings['footer_menu_1'] as $item)
+                            <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
+                            @endforeach
+                        </ul>
+                        @elseif(!empty($settings['footer_menu_1']))
+                        {!! $settings['footer_menu_1'] !!}
+                        @endif
                     </aside>
                 </div>
 
@@ -82,9 +90,19 @@
                 <div class="col-md-4">
                     <div class="widget widget_text">
                         <h2 class="widget-title">Working Time</h2>
+                        @if(!empty($settings['working_hours']) && is_array($settings['working_hours']))
                         <div class="pbmit-timelist-wrapper">
-                            {!! $settings['working_hours'] ?? '' !!}
+                            <ul class="pbmit-timelist-list">
+                                @foreach($settings['working_hours'] as $time)
+                                <li><span class="pbmit-timelist-li-title">{{ $time['day'] ?? '' }}</span><span class="pbmit-timelist-li-value">{{ $time['hours'] ?? '' }}</span></li>
+                                @endforeach
+                            </ul>
                         </div>
+                        @elseif(!empty($settings['working_hours']))
+                        <div class="pbmit-timelist-wrapper">
+                            {!! $settings['working_hours'] !!}
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -98,15 +116,27 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="pbmit-footer-copyright-text-area">
-                            Copyright © {{ date('Y') }} <a href="{{ url('/') }}">{{ $settings['general']['site_name'] ?? config('app.name') }}</a> All Rights Reserved.
+                            @php
+                                $siteName = $settings['general']['site_name'] ?? config('app.name');
+                                $copyright = $settings['footer_copyright'] ?? 'Copyright © ' . date('Y') . ' {{site_name}}, All Rights Reserved.';
+                                echo str_replace('{{site_name}}', $siteName, $copyright);
+                            @endphp
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="pbmit-footer-menu-area">
                             <div class="menu-footer-menu-container">
+                                @if(!empty($settings['footer_bottom_menu']) && is_array($settings['footer_bottom_menu']))
                                 <ul class="pbmit-footer-menu">
-                                    {!! $settings['footer_bottom_menu'] ?? '' !!}
+                                    @foreach($settings['footer_bottom_menu'] as $item)
+                                    <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
+                                    @endforeach
                                 </ul>
+                                @elseif(!empty($settings['footer_bottom_menu']))
+                                <ul class="pbmit-footer-menu">
+                                    {!! $settings['footer_bottom_menu'] !!}
+                                </ul>
+                                @endif
                             </div>
                         </div>
                     </div>

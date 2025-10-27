@@ -1,102 +1,38 @@
-<div class="pbmit-slider-area pbmit-slider-one">
+<div class="pbmit-slider-area pbmit-slider-three">
     <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false"
         data-columns="1" data-margin="0" data-effect="fade">
         <div class="swiper-wrapper">
-            <!-- Slide1 -->
+            @foreach(($pageSettings['slider_items'] ?? []) as $index => $slide)
+            <!-- Slide{{ $index + 1 }} -->
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
                     <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-01.jpg'), 'slider_demo1_01') }});"></div>
+                        style="background-image: url({{ image($slide['background_image'] ?? null, 'slider_item_bg') }});"></div>
                     <div class="container">
-                        <div class="row text-center">
-                            <div class="col-md-12">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-lg-7"></div>
+                            <div class="col-md-12 col-lg-5 pbmit-right-col">
                                 <div class="pbmit-slider-content">
-                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">
-                                        barcelona,spain</h5>
-                                    <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                        Clamp Guard 52 <br> Luxurious Apartments
-                                    </h2>
-                                    <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                        <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
+                                    <h2 class="pbmit-title transform-left transform-delay-3">{!! nl2br(e($slide['title'] ?? '')) !!}</h2>
+                                    @if(!empty($slide['description']))
+                                    <p class="pbmit-desc transform-left transform-delay-4">{!! nl2br(e($slide['description'])) !!}</p>
+                                    @endif
+                                    @if(!empty($slide['button_text']))
+                                    <div class="pbmit-button-wrap transform-left transform-delay-5">
+                                        <a class="pbmit-btn pbmit-btn-global" href="{{ $slide['button_url'] ?? '#' }}">
                                             <span class="pbmit-button-content-wrapper">
-                                                <span class="pbmit-button-text">Appeal To</span>
+                                                <span class="pbmit-button-text">{{ $slide['button_text'] }}</span>
                                             </span>
                                         </a>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Slide2 -->
-            <div class="swiper-slide">
-                <div class="pbmit-slider-item">
-                    <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-02.jpg'), 'slider_demo1_02') }});"></div>
-                    <div class="container">
-                        <div class="row text-center">
-                            <div class="col-md-12">
-                                <div class="pbmit-slider-content">
-                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">Xinterio
-                                        features</h5>
-                                    <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                        Design Spaces To <br> Make Wonderful Living
-                                    </h2>
-                                    <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                        <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
-                                            <span class="pbmit-button-content-wrapper">
-                                                <span class="pbmit-button-text">Take Counsel</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Slide3 -->
-            <div class="swiper-slide">
-                <div class="pbmit-slider-item">
-                    <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-03.jpg'), 'slider_demo1_03') }});"></div>
-                    <div class="container">
-                        <div class="row text-center">
-                            <div class="col-md-12">
-                                <div class="pbmit-slider-content">
-                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">Design
-                                        Business</h5>
-                                    <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                        What are the steps <br> to remodelling a house?
-                                    </h2>
-                                    <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                        <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
-                                            <span class="pbmit-button-content-wrapper">
-                                                <span class="pbmit-button-text">Take Counsel</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pbmit-slider-dots-corner">
-            <div class="pbmit-sticky-corner pbmit-top-right-corner">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg"
-                    data-stylerecorder="true">
-                    <path d="M20 20V0C20 16 16 20 0 20H20Z" fill="red" data-stylerecorder="true"></path>
-                </svg>
-            </div>
-            <div class="pbmit-sticky-corner pbmit-bottom-left-corner">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg"
-                    data-stylerecorder="true">
-                    <path d="M20 20V0C20 16 16 20 0 20H20Z" fill="red" data-stylerecorder="true"></path>
-                </svg>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

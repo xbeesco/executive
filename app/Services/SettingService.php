@@ -13,10 +13,21 @@ class SettingService
 
     public static function getAll(): array
     {
+        $general = self::get('general', []);
+        $branding = self::get('branding', []);
+
+        // Merge branding into general for backwards compatibility
+        $general = array_merge($general, $branding);
+
         return [
-            'general' => self::get('general', []),
+            'general' => $general,
             'social_links' => self::getSocialLinks(),
             'menu' => self::getMenu(),
+            'footer_menu_1' => self::get('footer_menu_1', []),
+            'footer_menu_2' => self::get('footer_menu_2', []),
+            'footer_bottom_menu' => self::get('footer_bottom_menu', []),
+            'working_hours' => self::get('working_hours', []),
+            'footer_copyright' => self::get('footer_copyright', 'Copyright © '.date('Y').' {{site_name}}, All Rights Reserved.'),
         ];
     }
 

@@ -27,3 +27,4 @@ executive-cms-views-architecture.md
 website
 original*/
 *.md
+.playwright-mcp

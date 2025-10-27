@@ -7,7 +7,9 @@ use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
@@ -110,15 +112,51 @@ class PageForm
                                     ->selectablePlaceholder(false)
                                     ->live(),
 
-                                Select::make('settings.slider_id')
-                                    ->label('Select Slider')
-                                    ->placeholder('Choose Slider')
-                                    ->options([
-                                        'slider-1' => 'Slider 1',
-                                        'slider-2' => 'Slider 2',
+                                Repeater::make('settings.slider_items')
+                                    ->label('Slider Items')
+                                    ->columnspan(2)
+                                    ->schema([
+                                        TextInput::make('title')
+                                            ->label('Main Title')
+                                            ->required()
+                                            ->maxLength(255),
+
+                                        FileUpload::make('background_image')
+                                            ->label('Background Image')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('images/sliders')
+                                            ->helperText('Optional - If empty, a placeholder image will be used'),
+
+                                        TextInput::make('sub_title')
+                                            ->label('Sub Title')
+                                            ->maxLength(255)
+                                            ->helperText('Required only for Style 2 and Style 3'),
+
+                                        TextInput::make('title_small')
+                                            ->label('Small Title')
+                                            ->maxLength(255)
+                                            ->helperText('Required only for Style 3'),
+
+                                        Textarea::make('description')
+                                            ->label('Description')
+                                            ->rows(3)
+                                            ->maxLength(500)
+                                            ->helperText('Required only for Style 1 and Style 2'),
+
+                                        TextInput::make('button_text')
+                                            ->label('Button Text')
+                                            ->maxLength(100),
+
+                                        TextInput::make('button_url')
+                                            ->label('Button URL')
+                                            ->url()
+                                            ->maxLength(255),
                                     ])
-                                    ->default('slider-1')
-                                    ->selectablePlaceholder(false)
+                                    ->minItems(2)
+                                    ->maxItems(3)
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')
                                     ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
 
                                 TextInput::make('settings.title_bar_title')

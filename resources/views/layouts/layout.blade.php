@@ -42,7 +42,12 @@
 
         <!-- Page Content -->
         @if(isset($page))
-            @include('partials.header-area')
+            @php
+                $headerStyle = $pageSettings['header_style'] ?? 3;
+            @endphp
+            @if(!in_array($headerStyle, [3, 8]))
+                @include('partials.header-area')
+            @endif
         @else
             @include('partials.title-bar')
         @endif
