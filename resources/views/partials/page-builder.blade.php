@@ -1,12 +1,13 @@
 @forelse($blocks ?? [] as $block)
     @php
         $blockType = $block['type'] ?? 'text';
-        $viewName = "sections.{$blockType}";
+        $mapper = app(\App\Services\BlockViewMapper::class);
+        $viewName = $mapper->getViewName($blockType);
     @endphp
     @if(view()->exists($viewName))
         @include($viewName, ['block' => $block])
     @else
-        <!-- Block type "{!! $block['type'] ?? 'unknown' !!}" not found -->
+        <!-- Block type "{{ $blockType }}" mapped to "{{ $viewName }}" not found -->
     @endif
 @empty
     <!-- No content blocks to display -->
