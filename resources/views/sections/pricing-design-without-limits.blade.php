@@ -1,6 +1,6 @@
             <section>
 				<div class="container p-0">
-					<div class="ihbox-style-10-bg-area pbmit-bg-color-light-2">
+					<div class="ihbox-style-10-bg-area pbmit-bg-color-light-2" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/pattern-bg-01.png', 'section_background') }}')">
 						<div class="pbmit-heading-subheading text-center animation-style2">
 							<h4 class="pbmit-subtitle">Why Executive Professionals Choose Us</h4>
 							<h2 class="pbmit-title">Excellence without compromise, success <br> guaranteed.</h2>

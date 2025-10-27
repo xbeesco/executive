@@ -1,4 +1,4 @@
-<section class="about-us-five-bg fadeIn animated animated-slow">
+<section class="about-us-five-bg fadeIn animated animated-slow" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/about-us-bg.jpg', 'section_background') }}')">
     <div class="ihbox-style-area">
         <div class="pbmit-ihbox pbmit-ihbox-style-18">
             <div class="pbmit-ihbox-headingicon d-flex align-items-center">

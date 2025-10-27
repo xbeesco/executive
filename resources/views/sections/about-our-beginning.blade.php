@@ -6,7 +6,7 @@
 								<!-- Slide1 -->
 								<div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-01.jpg'), 'section_image') }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-01.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>
@@ -21,7 +21,7 @@
 								<!-- Slide2 -->
 								<div class="pbmit-timeline-wrapper swiper-slide">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-02.jpg'), 'section_image') }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-02.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>
@@ -36,7 +36,7 @@
 								<!-- Slide3 -->
 								<div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-03.jpg'), 'section_image') }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-03.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>
@@ -51,7 +51,7 @@
 								<!-- Slide4 -->
 								<div class="pbmit-timeline-wrapper swiper-slide">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-04.jpg'), 'section_image') }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-04.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>
@@ -66,7 +66,7 @@
 								<!-- Slide5 -->
 								<div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-05.jpg'), 'section_image') }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-05.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>
@@ -81,7 +81,7 @@
 								<!-- Slide6 -->
 								<div class="pbmit-timeline-wrapper swiper-slide">
 									<div class="pbmit-same-height steps-media pbmit-feature-image">
-									   	<img src="{{ image(asset('images/history/time-line-06.jpg')) }}" class="img-fluid" alt="">									
+									   	<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/history/time-line-06.jpg', 'section_image') }}" class="img-fluid" alt="">									
 									</div>
 									<div class="steps-dot">
 										<i class="steps-dot-line"></i>

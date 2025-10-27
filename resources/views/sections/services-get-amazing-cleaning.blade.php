@@ -1,4 +1,4 @@
-            <section class="pbmit-element-static-box-style-2">
+            <section class="pbmit-element-static-box-style-2" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/step-bg.png', 'section_background') }}')">
 				<div class="container">
 					<div class="pbmit-heading-subheading text-center animation-style2">
 						<h4 class="pbmit-subtitle">Premium Process</h4>

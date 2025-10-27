@@ -6,7 +6,7 @@
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
                     <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-01.jpg'), 'slider_demo1_01') }});"></div>
+                        style="background-image: url({{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/banner-slider-img/demo1-slide-01.jpg', 'slider_demo1_01') }});"></div>
                     <div class="container">
                         <div class="row text-center">
                             <div class="col-md-12">
@@ -33,7 +33,7 @@
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
                     <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-02.jpg'), 'slider_demo1_02') }});"></div>
+                        style="background-image: url({{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/banner-slider-img/demo1-slide-02.jpg', 'slider_demo1_02') }});"></div>
                     <div class="container">
                         <div class="row text-center">
                             <div class="col-md-12">
@@ -60,7 +60,7 @@
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
                     <div class="pbmit-slider-bg"
-                        style="background-image: url({{ image(asset('images/banner-slider-img/demo1-slide-03.jpg'), 'slider_demo1_03') }});"></div>
+                        style="background-image: url({{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/banner-slider-img/demo1-slide-03.jpg', 'slider_demo1_03') }});"></div>
                     <div class="container">
                         <div class="row text-center">
                             <div class="col-md-12">

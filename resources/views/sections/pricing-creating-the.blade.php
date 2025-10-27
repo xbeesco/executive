@@ -25,7 +25,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-12 col-lg-9 service-five-right-col">
+							<div class="col-md-12 col-lg-9 service-five-right-col" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/about-company-bg.png', 'section_background') }}')">
 								<div class="swiper-slider" data-arrows-class="service-five-arrow" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="true" data-columns="2.6" data-margin="30" data-effect="slide">
 									<div class="swiper-wrapper">
 										<!-- Slide1 -->

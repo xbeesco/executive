@@ -5,7 +5,7 @@
 						<h2 class="pbmit-title">Our Executive Service Process</h2>
 					</div>
 					<div class="row">
-						<div class="pbmit-main-static-slider d-flex" style="background-image: url({{ image(asset('images/homepage-9/bg/static-box-pattern-img.png')) }});">
+						<div class="pbmit-main-static-slider d-flex" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/bg/static-box-pattern-img.png', 'section_background') }}');">
 							<div class="swiper-static-slide-nav col-md-4">
 								<ul class="pbmit-hover-inner">
 									<li class="pbmit-title-wrapper">

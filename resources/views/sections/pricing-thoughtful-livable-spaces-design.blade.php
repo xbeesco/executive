@@ -15,7 +15,7 @@
 							</div>
 						</div>
 						<div class="col-md-12 col-xl-6 position-relative">
-							<div class="about-eight-right-box">
+							<div class="about-eight-right-box" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/bg/about-pattern-bg.png', 'section_background') }}')">
 								<div class="pbmit-col-stretched-right"></div>
 								<div class="pbmit-heading-subheading animation-style4">
 									<h4 class="pbmit-subtitle">Our Excellence</h4>

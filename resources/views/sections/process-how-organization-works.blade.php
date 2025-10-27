@@ -7,7 +7,7 @@
 					<div class="pbmit-element-posts-wrapper row g-0">
 						<article class="pbmit-static-box-style-1">
 							<div class="pbmit-staticbox-wrapper">
-								<div class="pbmit-bg-imgbox" style="background-image: url(images/homepage-5/static-box/sbox-img-01.jpg)">
+								<div class="pbmit-bg-imgbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-01.jpg', 'section_background') }}')">
 									<div class="pbmit-img">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-01.jpg', 'section_image') }}" alt="">		
 									</div>
@@ -33,7 +33,7 @@
 						</article>
 						<article class="pbmit-static-box-style-1">
 							<div class="pbmit-staticbox-wrapper">
-								<div class="pbmit-bg-imgbox" style="background-image: url(images/homepage-5/static-box/sbox-img-02.jpg)">
+								<div class="pbmit-bg-imgbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-02.jpg', 'section_background') }}')">
 									<div class="pbmit-img">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-02.jpg', 'section_image') }}" alt="">		
 									</div>
@@ -59,7 +59,7 @@
 						</article>
 						<article class="pbmit-static-box-style-1">
 							<div class="pbmit-staticbox-wrapper">
-								<div class="pbmit-bg-imgbox" style="background-image: url(images/homepage-5/static-box/sbox-img-03.jpg)">
+								<div class="pbmit-bg-imgbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-03.jpg', 'section_background') }}')">
 									<div class="pbmit-img">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-03.jpg', 'section_image') }}" alt="">		
 									</div>
@@ -85,7 +85,7 @@
 						</article>
 						<article class="pbmit-static-box-style-1">
 							<div class="pbmit-staticbox-wrapper">
-								<div class="pbmit-bg-imgbox" style="background-image: url(images/homepage-5/static-box/sbox-img-04.jpg)">
+								<div class="pbmit-bg-imgbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-04.jpg', 'section_background') }}')">
 									<div class="pbmit-img">
 										<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/static-box/sbox-img-04.jpg', 'section_image') }}" alt="">		
 									</div>

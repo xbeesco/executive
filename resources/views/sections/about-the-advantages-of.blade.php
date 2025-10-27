@@ -1,4 +1,4 @@
-			<section class="about-us-nine-bg">
+			<section class="about-us-nine-bg" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/bg/bg-img-01.jpg', 'section_background') }}')">
 				<div class="container p-0">
 					<div class="row g-0">
 						<div class="col-md-12 col-xl-6 pbmit-col1"></div>

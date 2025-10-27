@@ -1,4 +1,4 @@
-            <section class="pbmit-sticky-section pricing-five-bg pbminfotech-ele-ptable-style-2">
+            <section class="pbmit-sticky-section pricing-five-bg pbminfotech-ele-ptable-style-2" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/pattern-bg-03.png', 'section_background') }}')">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-xl-4">
@@ -24,7 +24,7 @@
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
-														<div class="pbminfotech-ptable-symbol">$</div>
+														<div class="pbminfotech-ptable-symbol">EGP</div>
 														<div class="pbminfotech-ptable-price">899</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/mo</div>
@@ -63,7 +63,7 @@
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
-														<div class="pbminfotech-ptable-symbol">$</div>
+														<div class="pbminfotech-ptable-symbol">EGP</div>
 														<div class="pbminfotech-ptable-price">1,499</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/mo</div>
@@ -106,7 +106,7 @@
 												<div class="pbminfotech-sep"></div>
 												<div class="pbmit-price-wrapper">
 													<div class="pbmit-ptable-price-w">
-														<div class="pbminfotech-ptable-symbol">$</div>
+														<div class="pbminfotech-ptable-symbol">EGP</div>
 														<div class="pbminfotech-ptable-price">2,999</div>
 													</div>
 													<div class="pbminfotech-ptable-frequency">/ mo</div>

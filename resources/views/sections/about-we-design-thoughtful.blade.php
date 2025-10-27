@@ -2,7 +2,7 @@
 				<div class="container">
 					<div class="row g-0">
 						<div class="col-md-12 col-xl-6">
-							<div class="about-one-leftbox">
+							<div class="about-one-leftbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-1/about-mask-img.jpg', 'section_background') }}')">
 								<div class="ihbox-style-area">
 									<div class="pbmit-ihbox-style-12">
 										<div class="pbmit-ihbox-headingicon">

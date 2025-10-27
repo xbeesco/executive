@@ -12,7 +12,6 @@
 									<li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Private Offices</a></li>
 									<li><a href="#" class="pbmit-sortable-link" data-sortby="furniture">Boardrooms</a></li>
 									<li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Reception Areas</a></li>
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Business Lounges</a></li>
 								</ul>
 							</div>
 						</div>

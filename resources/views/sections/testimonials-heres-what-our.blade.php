@@ -3,7 +3,7 @@
 					<div class="row g-0">
 						<div class="col-md-12 col-xl-7">
 							<div class="testimonial-four-box pbmit-col-stretched-left">
-								<div class="testimonial-four-bg"></div>
+								<div class="testimonial-four-bg" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/testimonial-bg-01.jpg', 'section_background') }}')"></div>
 								<div class="ihbox-style-area pbmit-iconbox-20-new">
 									<div class="pbmit-ihbox-style-20">
 										<div class="pbmit-ihbox-headingicon">
@@ -158,7 +158,7 @@
 							</div>
 						</div>
 						<div class="col-md-12 col-xl-5 pbmit-col-stretched-yes pbmit-col-right">
-							<div class="testimonial-four-rightbox">
+							<div class="testimonial-four-rightbox" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/pattern-bg-02.png', 'section_background') }}')">
 								<div class="pbmit-col-stretched-right"></div>
 								<div class="pbmit-heading-subheading animation-style4">
 									<h4 class="pbmit-subtitle">Executive testimonials</h4>

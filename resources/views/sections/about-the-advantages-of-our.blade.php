@@ -1,8 +1,8 @@
-            <section class="about-five-bg">
+            <section class="about-five-bg" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/about-company-bg.png', 'section_background') }}')">
 				<div class="container">
 					<div class="row g-0">
 						<div class="col-md-12 col-xl-6">
-							<div class="about-five-left-box">
+							<div class="about-five-left-box" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/about-company-img.jpg', 'section_background') }}')">
 								<div class="ihbox-style-area">
 									<div class="pbmit-ihbox-style-20">
 										<div class="pbmit-ihbox-headingicon">

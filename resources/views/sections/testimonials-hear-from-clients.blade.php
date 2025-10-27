@@ -19,7 +19,7 @@
 										<article class="pbmit-testimonial-style-2 swiper-slide">
 											<div class="pbminfotech-post-item">
 												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image:url('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-01.jpg', 'section_image')">
+													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-01.jpg', 'section_background') }}')">
 														<div class="pbmit-featured-img-wrapper">
 															<div class="pbmit-featured-wrapper">
 																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-01.jpg', 'section_image') }}" class="img-fluid" alt="">
@@ -49,7 +49,7 @@
 										<article class="pbmit-testimonial-style-2 swiper-slide">
 											<div class="pbminfotech-post-item">
 												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image:url('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-02.jpg', 'section_image')">
+													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-02.jpg', 'section_background') }}')">
 														<div class="pbmit-featured-img-wrapper">
 															<div class="pbmit-featured-wrapper">
 																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-02.jpg', 'section_image') }}" class="img-fluid" alt="">
@@ -79,7 +79,7 @@
 										<article class="pbmit-testimonial-style-2 swiper-slide">
 											<div class="pbminfotech-post-item">
 												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image:url('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-03.jpg', 'section_image')">
+													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-03.jpg', 'section_background') }}')">
 														<div class="pbmit-featured-img-wrapper">
 															<div class="pbmit-featured-wrapper">
 																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-03.jpg', 'section_image') }}" class="img-fluid" alt="">
@@ -109,7 +109,7 @@
 										<article class="pbmit-testimonial-style-2 swiper-slide">
 											<div class="pbminfotech-post-item">
 												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image:url('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-04.jpg', 'section_image')">
+													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-04.jpg', 'section_background') }}')">
 														<div class="pbmit-featured-img-wrapper">
 															<div class="pbmit-featured-wrapper">
 																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-04.jpg', 'section_image') }}" class="img-fluid" alt="">
