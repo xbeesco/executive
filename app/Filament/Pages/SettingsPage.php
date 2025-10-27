@@ -117,9 +117,17 @@ class SettingsPage extends Page implements HasSchemas
                                     ->required()
                                     ->columnSpan(6),
 
+                                TextInput::make('general.site_phone')
+                                    ->label('Phone Number')
+                                    ->maxLength(20)
+                                    ->columnSpan(6),
+
+                                TextInput::make('general.site_address')
+                                    ->label('Business Address')
+                                    ->columnSpan(6),
+
                                 Select::make('general.homepage_id')
                                     ->label('Homepage')
-                                    ->helperText('Select which page should be displayed as the homepage (leave empty for default homepage)')
                                     ->options(function () {
                                         return PageModel::query()
                                             ->published()
@@ -129,16 +137,6 @@ class SettingsPage extends Page implements HasSchemas
                                     ->searchable()
                                     ->preload()
                                     ->nullable()
-                                    ->columnSpan(12),
-
-                                TextInput::make('general.site_phone')
-                                    ->label('Phone Number')
-                                    ->maxLength(20)
-                                    ->columnSpan(6),
-
-                                Textarea::make('general.site_address')
-                                    ->label('Business Address')
-                                    ->rows(2)
                                     ->columnSpan(6),
 
                                 FileUpload::make('general.default_image')
@@ -155,17 +153,31 @@ class SettingsPage extends Page implements HasSchemas
                             ->icon('heroicon-o-photo')
                             ->columns(12)
                             ->schema([
-                                FileUpload::make('branding.site_logo')
-                                    ->label('Site Logo')
+                                FileUpload::make('branding.site_favicon')
+                                    ->label('Site Favicon')
+                                    ->downloadable()
                                     ->image()
                                     ->disk('public')
                                     ->directory('images')
                                     ->imageEditor()
-                                    ->helperText('Main logo used in headers and footers')
+                                    ->circleCropper()
+                                    ->imagePreviewHeight('100')
+                                    ->avatar()
+                                    ->helperText('Browser tab icon')
+                                    ->columnSpan(4),
+                                FileUpload::make('branding.site_logo')
+                                    ->label('Site Logo')
+                                    ->downloadable()
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images')
+                                    ->imageEditor()
+                                    ->helperText('used in headers and footers')
                                     ->columnSpan(4),
 
                                 FileUpload::make('branding.site_logo_white')
                                     ->label('Site Logo White')
+                                    ->downloadable()
                                     ->image()
                                     ->disk('public')
                                     ->directory('images')
@@ -173,14 +185,6 @@ class SettingsPage extends Page implements HasSchemas
                                     ->helperText('White version of logo for dark backgrounds')
                                     ->columnSpan(4),
 
-                                FileUpload::make('branding.site_favicon')
-                                    ->label('Site Favicon')
-                                    ->image()
-                                    ->disk('public')
-                                    ->directory('images')
-                                    ->imageEditor()
-                                    ->helperText('Browser tab icon')
-                                    ->columnSpan(4),
                             ]),
 
                         Tabs\Tab::make('Social Media Links')
@@ -221,39 +225,45 @@ class SettingsPage extends Page implements HasSchemas
                                 Repeater::make('menu')
                                     ->label('Navigation Menu Items')
                                     ->columns(12)
+                                    ->grid(2)
                                     ->schema([
                                         TextInput::make('label')
-                                            ->label('Menu Label')
+                                            ->label('Label')
                                             ->required()
                                             ->columnSpan(6),
 
                                         TextInput::make('url')
-                                            ->label('URL/Link')
+                                            ->label('Link')
                                             ->required()
                                             ->placeholder('/about-us')
                                             ->columnSpan(6),
 
                                         Repeater::make('children')
                                             ->label('Dropdown Sub-Items')
+                                            ->disableLabel()
                                             ->columns(12)
                                             ->schema([
                                                 TextInput::make('label')
-                                                    ->label('Sub-Item Label')
+                                                    ->label('Label')
                                                     ->required()
                                                     ->columnSpan(6),
 
                                                 TextInput::make('url')
-                                                    ->label('Sub-Item URL')
+                                                    ->label('Link')
                                                     ->required()
                                                     ->columnSpan(6),
                                             ])
                                             ->collapsed()
                                             ->collapsible()
+                                            ->cloneable()
+                                           ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Sub Menu')
                                             ->addActionLabel('Add Dropdown Item')
                                             ->columnSpan(12),
                                     ])
+                                    ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Menu')
                                     ->collapsed()
                                     ->collapsible()
+                                    ->cloneable()
                                     ->addActionLabel('Add Menu Item')
                                     ->reorderable()
                                     ->columnSpan(12),
@@ -261,13 +271,11 @@ class SettingsPage extends Page implements HasSchemas
                                 TextInput::make('general.action_button_text')
                                     ->label('Action Button Text')
                                     ->maxLength(50)
-                                    ->helperText('Text for the call-to-action button in header')
                                     ->columnSpan(6),
 
                                 TextInput::make('general.action_button_url')
                                     ->label('Action Button URL')
                                     ->maxLength(255)
-                                    ->helperText('Link for the call-to-action button')
                                     ->columnSpan(6),
                             ]),
 
@@ -276,11 +284,6 @@ class SettingsPage extends Page implements HasSchemas
                             ->icon('heroicon-o-rectangle-group')
                             ->columns(12)
                             ->schema([
-                                Textarea::make('footer_copyright')
-                                    ->label('Copyright Text')
-                                    ->rows(2)
-                                    ->helperText('Use {{site_name}} for dynamic site name. Example: Copyright © 2024 {{site_name}}, All Rights Reserved.')
-                                    ->columnSpan(12),
 
                                 Repeater::make('footer_menu_1')
                                     ->label('Footer Menu 1')
@@ -298,8 +301,9 @@ class SettingsPage extends Page implements HasSchemas
                                     ])
                                     ->collapsed()
                                     ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Menu')
                                     ->addActionLabel('Add Menu Item')
-                                    ->helperText('First footer menu column (used in footer styles 2, 3, and 8)')
                                     ->columnSpan(6),
 
                                 Repeater::make('footer_menu_2')
@@ -318,8 +322,10 @@ class SettingsPage extends Page implements HasSchemas
                                     ])
                                     ->collapsed()
                                     ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Menu')
                                     ->addActionLabel('Add Menu Item')
-                                    ->helperText('Second footer menu column (used in footer styles 2 and 3)')
+                                    ->helperText('used in footer styles 2 and 3')
                                     ->columnSpan(6),
 
                                 Repeater::make('footer_bottom_menu')
@@ -338,8 +344,10 @@ class SettingsPage extends Page implements HasSchemas
                                     ])
                                     ->collapsed()
                                     ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Menu')
                                     ->addActionLabel('Add Menu Item')
-                                    ->helperText('Bottom footer menu (Terms, Privacy, etc.) - Used in footer style 8')
+                                    ->helperText('Used in footer style 8')
                                     ->columnSpan(6),
 
                                 Repeater::make('working_hours')
@@ -360,9 +368,17 @@ class SettingsPage extends Page implements HasSchemas
                                     ])
                                     ->collapsed()
                                     ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(fn (array $state): ?string => $state['day'] ?? 'New Entry')
                                     ->addActionLabel('Add Working Hours')
-                                    ->helperText('Working hours list - Used in footer style 8')
+                                    ->helperText('Used in footer style 8')
                                     ->columnSpan(6),
+                                Textarea::make('footer_copyright')
+                                    ->label('Copyright Text')
+                                    ->rows(2)
+                                    ->helperText('Use {{site_name}} for dynamic site name.')
+                                    ->columnSpan(12),
+
                             ]),
 
                         Tabs\Tab::make('SEO Defaults')

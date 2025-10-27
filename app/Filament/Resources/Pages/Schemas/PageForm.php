@@ -27,6 +27,8 @@ class PageForm
                     ->schema([
                         Builder::make('content')
                             ->blocks(SectionsBlocks::get())
+                            ->cloneable()
+                            ->collapsed()
                             ->collapsible(),
                     ])
                     ->columnSpan(8),
@@ -155,6 +157,8 @@ class PageForm
                                     ])
                                     ->minItems(2)
                                     ->maxItems(3)
+                                    ->collapsed()
+                                    ->cloneable()
                                     ->collapsible()
                                     ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')
                                     ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
