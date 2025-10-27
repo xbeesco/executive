@@ -45,7 +45,7 @@
             @php
                 $headerStyle = $pageSettings['header_style'] ?? 3;
             @endphp
-            @if(!in_array($headerStyle, [3, 8]))
+            @if(!in_array($headerStyle, [3, 4, 8]))
                 @include('partials.header-area')
             @endif
         @else

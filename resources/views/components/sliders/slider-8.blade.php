@@ -1,24 +1,30 @@
-<div class="pbmit-slider-area pbmit-slider-three">
-    <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
+<div class="pbmit-slider-area pbmit-slider-eight">
+    <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="true" data-columns="1" data-margin="0" data-effect="slide">
         <div class="swiper-wrapper">
             @foreach(($pageSettings['slider_items'] ?? []) as $index => $slide)
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
                     <div class="pbmit-slider-bg" style="background-image: url({{ image($slide['background_image'] ?? null, 'slider_item_bg') }});"></div>
                     <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-lg-7"></div>
-                            <div class="col-md-12 col-lg-5 pbmit-right-col">
+                        <div class="row text-center">
+                            <div class="col-md-12">
                                 <div class="pbmit-slider-content">
-                                    @if(!empty($slide['title']))
-                                    <h2 class="pbmit-title transform-left transform-delay-3">{!! nl2br(e($slide['title'])) !!}</h2>
-                                    @endif
                                     @if(!empty($slide['subtitle']))
-                                    <p class="pbmit-desc transform-left transform-delay-4">{!! nl2br(e($slide['subtitle'])) !!}</p>
+                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">{{ $slide['subtitle'] }}</h5>
+                                    @endif
+                                    @if(!empty($slide['title']))
+                                    <h2 class="pbmit-title transform-left transform-delay-2">
+                                        {!! nl2br(e($slide['title'])) !!}
+                                    </h2>
+                                    @endif
+                                    @if(!empty($slide['description']))
+                                    <h4 class="pbmit-title-small transform-left transform-delay-3">
+                                        {!! nl2br(e($slide['description'])) !!}
+                                    </h4>
                                     @endif
                                     @if(!empty($slide['button_text']) && !empty($slide['button_url']))
-                                    <div class="pbmit-button-wrap transform-left transform-delay-5">
-                                        <a class="pbmit-btn pbmit-btn-global" href="{{ $slide['button_url'] }}">
+                                    <div class="pbmit-button-wrap transform-delay-4">
+                                        <a class="pbmit-btn pbmit-btn-blackish" href="{{ $slide['button_url'] }}">
                                             <span class="pbmit-button-content-wrapper">
                                                 <span class="pbmit-button-text">{{ $slide['button_text'] }}</span>
                                             </span>
