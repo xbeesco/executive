@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Schemas;
+namespace App\Services\Schemas;
 
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;

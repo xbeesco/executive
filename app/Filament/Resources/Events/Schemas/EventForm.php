@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Events\Schemas;
 
 use App\Enums\ContentStatus;
-use App\Filament\Resources\Schemas\ContentBlocksSchema;
+use App\Services\Schemas\ContentBlocksSchema;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
