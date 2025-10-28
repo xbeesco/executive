@@ -2,7 +2,6 @@
 <section class="site-content blog-details">
     <div class="container">
         <div class="row">
-            {{-- Main Content Area --}}
             <div class="col-lg-9 blog-right-col">
                 <div class="row">
                     <div class="col-md-12">
