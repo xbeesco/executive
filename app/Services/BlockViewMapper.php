@@ -79,6 +79,16 @@ class BlockViewMapper
         // Dynamic Content Components
         'posts_grid' => 'sections.posts-grid',
         'events_grid' => 'sections.events-grid',
+
+        // Content Blocks (for single pages - no section wrappers)
+        'content_text' => 'sections.content.content_text',
+        'content_image' => 'sections.content.content_image',
+        'content_gallery' => 'sections.content.content_gallery',
+        'content_list' => 'sections.content.content_list',
+        'content_quote' => 'sections.content.content_quote',
+        'content_accordion' => 'sections.content.content_accordion',
+        'content_video' => 'sections.content.content_video',
+        'content_divider' => 'sections.content.content_divider',
     ];
 
     /**
