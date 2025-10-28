@@ -665,7 +665,7 @@ class SectionsBlocks
                         ->toolbarButtons([
                             ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
                             ['h1', 'h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
-                            ['blockquote', 'codeBlock', 'code' , 'details', 'bulletList', 'orderedList'],
+                            ['blockquote', 'codeBlock', 'code', 'details', 'bulletList', 'orderedList'],
                             ['textColor', 'highlight', 'horizontalRule', 'clearFormatting'],
                             ['undo', 'redo'],
                         ])
@@ -686,6 +686,35 @@ class SectionsBlocks
                         ->default('section-xl')
                         ->required()
                         ->selectablePlaceholder(false),
+                ]),
+
+            Block::make('posts_grid')
+                ->label('Posts Grid (Sortable)')
+                ->icon('heroicon-o-document-text')
+                ->schema([
+                    TextInput::make('title')
+                        ->label('Section Title')
+                        ->placeholder('Optional section title'),
+                    Select::make('columns')
+                        ->label('Columns')
+                        ->options([2 => '2', 3 => '3', 4 => '4'])
+                        ->default(3),
+                    Toggle::make('show_sortable')
+                        ->label('Show Category Filter')
+                        ->default(true),
+                ]),
+
+            Block::make('events_grid')
+                ->label('Events Grid')
+                ->icon('heroicon-o-calendar')
+                ->schema([
+                    TextInput::make('title')
+                        ->label('Section Title')
+                        ->placeholder('Optional section title'),
+                    Select::make('columns')
+                        ->label('Columns')
+                        ->options([2 => '2', 3 => '3', 4 => '4'])
+                        ->default(3),
                 ]),
         ];
     }

@@ -75,6 +75,10 @@ class BlockViewMapper
         // Utility Components
         'text_content' => 'sections.text-content',
         'spacer' => 'sections.spacer',
+
+        // Dynamic Content Components
+        'posts_grid' => 'sections.posts-grid',
+        'events_grid' => 'sections.events-grid',
     ];
 
     /**

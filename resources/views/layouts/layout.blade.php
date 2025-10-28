@@ -108,11 +108,13 @@
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/circle-progress.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('js/masonry.min.js') }}"></script>
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/gsap.js') }}"></script>
     <script src="{{ asset('js/ScrollTrigger.js') }}"></script>
     <script src="{{ asset('js/SplitText.js') }}"></script>
     <script src="{{ asset('js/magnetic.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('js/morphext.min.js') }}"></script>
     <script src="{{ asset('js/gsap-animation.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
