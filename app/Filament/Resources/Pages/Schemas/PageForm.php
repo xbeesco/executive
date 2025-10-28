@@ -127,8 +127,7 @@ class PageForm
                                             ->label('Background Image')
                                             ->image()
                                             ->disk('public')
-                                            ->directory('images/sliders')
-                                            ->helperText('Optional - If empty, a placeholder image will be used'),
+                                            ->directory('images/sliders'),
 
                                         TextInput::make('sub_title')
                                             ->label('Sub Title')
@@ -141,8 +140,10 @@ class PageForm
 
                                         Textarea::make('description')
                                             ->label('Description')
-                                            ->rows(3)
                                             ->maxLength(500)
+                                            ->trim()
+                                            ->rows(1)
+                                            ->autosize()
                                             ->helperText('Required only for Style 1 and Style 2'),
 
                                         TextInput::make('button_text')
