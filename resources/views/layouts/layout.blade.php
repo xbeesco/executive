@@ -48,8 +48,6 @@
             @if(!in_array($headerStyle, [3, 4, 8]))
                 @include('partials.header-area')
             @endif
-        @else
-            @include('partials.title-bar')
         @endif
 
         <div class="page-content">

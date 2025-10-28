@@ -6,6 +6,7 @@ use App\Models\Page as PageModel;
 use App\Models\Setting;
 use BackedEnum;
 use Filament\Actions\Action;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -88,6 +89,9 @@ class SettingsPage extends Page implements HasSchemas
                 'meta_keywords' => '',
                 'og_image' => '',
             ]),
+            'sidebar_post' => $ensureArray(Setting::getValue('sidebar_post', []), []),
+            'sidebar_service' => $ensureArray(Setting::getValue('sidebar_service', []), []),
+            'sidebar_event' => $ensureArray(Setting::getValue('sidebar_event', []), []),
         ];
 
         $this->form->fill($this->data);
@@ -256,7 +260,7 @@ class SettingsPage extends Page implements HasSchemas
                                             ->collapsed()
                                             ->collapsible()
                                             ->cloneable()
-                                           ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Sub Menu')
+                                            ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Sub Menu')
                                             ->addActionLabel('Add Dropdown Item')
                                             ->columnSpan(12),
                                     ])
@@ -409,6 +413,165 @@ class SettingsPage extends Page implements HasSchemas
                                     ->imageEditor()
                                     ->columnSpan(6),
                             ]),
+
+                        Tabs\Tab::make('Singles Sidebar')
+                            ->label('Singles Sidebar')
+                            ->icon('heroicon-o-view-columns')
+                            ->columns(12)
+                            ->schema([
+                                Repeater::make('sidebar_post')
+                                    ->label('Posts Sidebar Widgets')
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                                    ->schema([
+                                        Select::make('type')
+                                            ->label('Widget Type')
+                                            ->options([
+                                                'search' => 'Search',
+                                                'services_list' => 'Our Services List',
+                                                'recent_items' => 'Recent Posts',
+                                                'categories' => 'Categories',
+                                                'tags' => 'Tags',
+                                                'newsletter' => 'Newsletter / Call to Action',
+                                            ])
+                                            ->required()
+                                            ->reactive()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('title')
+                                            ->label('Widget Title')
+                                            ->required()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('count')
+                                            ->label('Items Count')
+                                            ->numeric()
+                                            ->default(5)
+                                            ->minValue(1)
+                                            ->maxValue(20)
+                                            ->helperText('For Recent Posts, Services List and Tags')
+                                            ->columnSpan(2),
+
+                                        Select::make('enabled')
+                                            ->label('Status')
+                                            ->options([
+                                                true => 'Enabled',
+                                                false => 'Disabled',
+                                            ])
+                                            ->default(true)
+                                            ->columnSpan(2),
+
+                                        Fieldset::make('Newsletter Widget Data')
+                                            ->schema([
+                                                TextInput::make('data.subtitle')
+                                                    ->label('Subtitle')
+                                                    ->default('Ready to start learn ?'),
+
+                                                TextInput::make('data.cta_text')
+                                                    ->label('CTA Text')
+                                                    ->default('Sign up now!'),
+
+                                                TextInput::make('data.phone')
+                                                    ->label('Phone'),
+
+                                                TextInput::make('data.button_text')
+                                                    ->label('Button Text')
+                                                    ->default('Register now'),
+
+                                                TextInput::make('data.button_link')
+                                                    ->label('Button Link')
+                                                    ->url(),
+                                            ])
+                                            ->visible(fn ($get) => $get('type') === 'newsletter')
+                                            ->columnSpan(12),
+                                    ])
+                                    ->defaultItems(0)
+                                    ->columnSpan(12),
+
+                                Repeater::make('sidebar_service')
+                                    ->label('Services Sidebar Widgets')
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                                    ->schema([
+                                        Select::make('type')
+                                            ->label('Widget Type')
+                                            ->options([
+                                                'search' => 'Search',
+                                                'services_list' => 'Our Services List',
+                                                'recent_items' => 'Recent Services',
+                                                'newsletter' => 'Newsletter / Call to Action',
+                                            ])
+                                            ->required()
+                                            ->reactive()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('title')
+                                            ->label('Widget Title')
+                                            ->required()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('count')
+                                            ->label('Items Count')
+                                            ->numeric()
+                                            ->default(5)
+                                            ->minValue(1)
+                                            ->maxValue(20)
+                                            ->columnSpan(2),
+
+                                        Select::make('enabled')
+                                            ->label('Status')
+                                            ->options([
+                                                true => 'Enabled',
+                                                false => 'Disabled',
+                                            ])
+                                            ->default(true)
+                                            ->columnSpan(2),
+                                    ])
+                                    ->defaultItems(0)
+                                    ->columnSpan(12),
+
+                                Repeater::make('sidebar_event')
+                                    ->label('Events Sidebar Widgets')
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                                    ->schema([
+                                        Select::make('type')
+                                            ->label('Widget Type')
+                                            ->options([
+                                                'search' => 'Search',
+                                                'services_list' => 'Our Services List',
+                                                'recent_items' => 'Upcoming Events',
+                                                'newsletter' => 'Newsletter / Call to Action',
+                                            ])
+                                            ->required()
+                                            ->reactive()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('title')
+                                            ->label('Widget Title')
+                                            ->required()
+                                            ->columnSpan(4),
+
+                                        TextInput::make('count')
+                                            ->label('Items Count')
+                                            ->numeric()
+                                            ->default(5)
+                                            ->minValue(1)
+                                            ->maxValue(20)
+                                            ->columnSpan(2),
+
+                                        Select::make('enabled')
+                                            ->label('Status')
+                                            ->options([
+                                                true => 'Enabled',
+                                                false => 'Disabled',
+                                            ])
+                                            ->default(true)
+                                            ->columnSpan(2),
+                                    ])
+                                    ->defaultItems(0)
+                                    ->columnSpan(12),
+                            ]),
                     ])
                     ->columnSpan('full'),
             ]);
@@ -458,6 +621,9 @@ class SettingsPage extends Page implements HasSchemas
             Setting::setValue('working_hours', $data['working_hours'] ?? []);
             Setting::setValue('footer_copyright', $data['footer_copyright'] ?? '');
             Setting::setValue('seo_defaults', $data['seo_defaults']);
+            Setting::setValue('sidebar_post', $data['sidebar_post'] ?? []);
+            Setting::setValue('sidebar_service', $data['sidebar_service'] ?? []);
+            Setting::setValue('sidebar_event', $data['sidebar_event'] ?? []);
 
             Notification::make()
                 ->title('Settings Updated Successfully!')
