@@ -71,6 +71,10 @@ class BlockViewMapper
         'clients_logos' => 'sections.section-join-the-companies-that',
         'team' => 'sections.team-meet-designer',
         'static' => 'sections.static',
+
+        // Utility Components
+        'text_content' => 'sections.text-content',
+        'spacer' => 'sections.spacer',
     ];
 
     /**

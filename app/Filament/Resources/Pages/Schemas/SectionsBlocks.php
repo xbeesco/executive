@@ -654,6 +654,39 @@ class SectionsBlocks
                         ->default('This is a static block containing About + Statistics sections from homepage-1.html')
                         ->disabled(),
                 ]),
+
+            Block::make('text_content')
+                ->label('Text Content')
+                ->icon('heroicon-o-document-text')
+                ->schema([
+                    RichEditor::make('content')
+                        ->label('Content')
+                        ->required()
+                        ->toolbarButtons([
+                            ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                            ['h1', 'h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
+                            ['blockquote', 'codeBlock', 'code' , 'details', 'bulletList', 'orderedList'],
+                            ['textColor', 'highlight', 'horizontalRule', 'clearFormatting'],
+                            ['undo', 'redo'],
+                        ])
+                        ->columnSpan(2),
+                ]),
+
+            Block::make('spacer')
+                ->label('Spacer')
+                ->icon('heroicon-o-arrows-up-down')
+                ->schema([
+                    Select::make('size')
+                        ->label('Spacer Size')
+                        ->options([
+                            'section-lgb' => 'Small',
+                            'section-lgt' => 'Medium',
+                            'section-lgx' => 'Large',
+                        ])
+                        ->default('section-xl')
+                        ->required()
+                        ->selectablePlaceholder(false),
+                ]),
         ];
     }
 }
