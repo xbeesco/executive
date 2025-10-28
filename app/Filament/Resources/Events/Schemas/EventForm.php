@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\Events\Schemas;
 
 use App\Enums\ContentStatus;
+use App\Filament\Resources\Schemas\ContentBlocksSchema;
 use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -26,64 +26,11 @@ class EventForm
                     ->description('Build event content using blocks')
                     ->schema([
                         Builder::make('content')
-                            ->label('')
-                            ->blocks([
-                                Block::make('text')
-                                    ->label('Text Block')
-                                    ->icon('heroicon-o-document-text')
-                                    ->schema([
-                                        Textarea::make('text')
-                                            ->label('Content')
-                                            ->required()
-                                            ->rows(5),
-                                    ]),
-
-                                Block::make('image')
-                                    ->label('Image Block')
-                                    ->icon('heroicon-o-photo')
-                                    ->schema([
-                                        FileUpload::make('image')
-                                            ->label('Image')
-                                            ->image()
-                                            ->disk('public')
-                                            ->directory('images/blocks')
-                                            ->required(),
-
-                                        TextInput::make('caption')
-                                            ->label('Caption'),
-                                    ]),
-
-                                Block::make('quote')
-                                    ->label('Quote Block')
-                                    ->icon('heroicon-o-chat-bubble-left-right')
-                                    ->schema([
-                                        Textarea::make('text')
-                                            ->label('Quote Text')
-                                            ->required()
-                                            ->rows(3),
-
-                                        TextInput::make('author')
-                                            ->label('Author'),
-                                    ]),
-
-                                Block::make('agenda')
-                                    ->label('Agenda Item')
-                                    ->icon('heroicon-o-calendar')
-                                    ->schema([
-                                        TextInput::make('time')
-                                            ->label('Time')
-                                            ->placeholder('10:00 AM'),
-
-                                        TextInput::make('title')
-                                            ->label('Title')
-                                            ->required(),
-
-                                        Textarea::make('description')
-                                            ->label('Description')
-                                            ->rows(2),
-                                    ]),
-                            ])
-                            ->collapsible(),
+                            ->label('Event Content Builder')
+                            ->blocks(ContentBlocksSchema::getContentBlocks())
+                            ->collapsible()
+                            ->blockNumbers(false)
+                            ->helperText('Use content blocks to build your event details. These blocks render without section wrappers.'),
                     ])
                     ->columnSpan(8),
 
