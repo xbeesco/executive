@@ -74,5 +74,5 @@
             </div>
         </div>
     </div>
-    @include('components.sliders.slider-8')
+    @include('sliders.slider-8')
 </header>

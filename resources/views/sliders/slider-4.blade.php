@@ -9,8 +9,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="pbmit-slider-content">
-                                    @if(!empty($slide['subtitle']))
-                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">{{ $slide['subtitle'] }}</h5>
+                                    @if(!empty($slide['sub_title']))
+                                    <h5 class="pbmit-sub-title transform-top transform-delay-1">{{ $slide['sub_title'] }}</h5>
                                     @endif
                                     @if(!empty($slide['title']))
                                     <h2 class="pbmit-title transform-bottom-1 transform-delay-2">

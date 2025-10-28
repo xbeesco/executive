@@ -1,100 +1,41 @@
-<footer class="site-footer footer-style-2 pbmit-bg-color-light">
-    <div class="footer-wrap pbmit-footer-widget-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xl-4">
-                    <aside class="widget widget_text">
-                        <div class="textwidget">
-                            <div class="pbmit-footer-logo">
-                                <img src="{{ image($settings['general']['site_logo'] ?? null, 'site_logo') }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
-                            </div>
-                        </div>
-                    </aside>
-                    <aside class="widget">
-                        <div class="pbmit-contact-widget-lines">
-                            @if(!empty($settings['general']['site_address']))
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-address">{{ $settings['general']['site_address'] }}</div>
-                            @endif
-                            @if(!empty($settings['general']['site_phone']))
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">{{ $settings['general']['site_phone'] }}</div>
-                            @endif
-                            @if(!empty($settings['general']['site_email']))
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-email">{{ $settings['general']['site_email'] }}</div>
-                            @endif
-                        </div>
-                    </aside>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <aside class="pbmit-two-column-menu widget">
-                        @if(!empty($settings['footer_menu_1']) && is_array($settings['footer_menu_1']))
-                        <ul>
-                            @foreach($settings['footer_menu_1'] as $item)
-                            <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
-                            @endforeach
-                        </ul>
-                        @elseif(!empty($settings['footer_menu_1']))
-                        {!! $settings['footer_menu_1'] !!}
-                        @endif
-                    </aside>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <aside class="pbmit-two-column-menu widget">
-                        @if(!empty($settings['footer_menu_2']) && is_array($settings['footer_menu_2']))
-                        <ul>
-                            @foreach($settings['footer_menu_2'] as $item)
-                            <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
-                            @endforeach
-                        </ul>
-                        @elseif(!empty($settings['footer_menu_2']))
-                        {!! $settings['footer_menu_2'] !!}
-                        @endif
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="site-footer footer-style-3 pbmit-bg-color-secondary">
+    <!-- Newsletter Area -->
     <div class="pbmit-footer-big-area">
         <div class="container">
-            <div class="row g-0">
-                <div class="col-md-12 col-xl-6 pbmit-footer-left">
+            <div class="row">
+                <div class="col-md-12 col-xl-4">
+                    <div class="pbmit-footer-logo">
+                        <img src="{{ image($settings['general']['site_logo_white'] ?? null, 'site_logo_white') }}" alt="{{ $settings['general']['site_name'] ?? config('app.name') }}">
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-8">
                     <form action="#" method="POST">
                         @csrf
                         <div class="pbmit-newsletter">
                             <h3>Subscribe to Our Newsletter</h3>
                             <div class="pbmit-footer-email-button">
-                                <input type="email" name="email" placeholder="Your email address" required>
+                                <input type="email" class="form-control" name="email" placeholder="Enter Your Email Address" required>
                                 <button class="pbmit-btn" type="submit">
                                     <span class="pbmit-button-content-wrapper">
-                                        <span class="pbmit-button-text">Subscribe</span>
+                                        <span class="pbmit-button-text">Subscribe Now</span>
                                     </span>
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-12 col-xl-6 pbmit-footer-right">
-                    <div class="pbmit-footer-bg-image">
-                        <img src="{{ asset('images/footer-mailchip-img.png') }}" alt="Newsletter">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="pbmit-footer-text-area">
+
+    <!-- Footer Widget Area -->
+    <div class="pbmit-footer-widget-area">
         <div class="container">
-            <div class="pbmit-footer-text-inner">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="pbmit-footer-copyright-text-area">
-                            @php
-                                $siteName = $settings['general']['site_name'] ?? config('app.name');
-                                $copyright = $settings['footer_copyright'] ?? 'Copyright � ' . date('Y') . ' {{site_name}}, All Rights Reserved.';
-                                echo str_replace('{{site_name}}', $siteName, $copyright);
-                            @endphp
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="pbmit-footer-social-area">
+            <div class="row">
+                <!-- Social Links -->
+                <div class="col-md-4">
+                    <aside class="widget widget_text">
+                        <div class="textwidget">
                             <ul class="pbmit-social-links">
                                 @if(!empty($settings['social_links']['facebook']))
                                 <li class="pbmit-social-li pbmit-social-facebook">
@@ -125,6 +66,78 @@
                                 </li>
                                 @endif
                             </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Menu Links -->
+                <div class="col-md-4">
+                    <aside class="widget pbmit-two-column-menu">
+                        <h2 class="widget-title">Useful Link</h2>
+                        @if(!empty($settings['footer_menu_1']) && is_array($settings['footer_menu_1']))
+                        <ul>
+                            @foreach($settings['footer_menu_1'] as $item)
+                            <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
+                            @endforeach
+                        </ul>
+                        @elseif(!empty($settings['footer_menu_1']))
+                        {!! $settings['footer_menu_1'] !!}
+                        @endif
+                    </aside>
+                </div>
+
+                <!-- Working Time -->
+                <div class="col-md-4">
+                    <div class="widget widget_text">
+                        <h2 class="widget-title">Working Time</h2>
+                        @if(!empty($settings['working_hours']) && is_array($settings['working_hours']))
+                        <div class="pbmit-timelist-wrapper">
+                            <ul class="pbmit-timelist-list">
+                                @foreach($settings['working_hours'] as $time)
+                                <li><span class="pbmit-timelist-li-title">{{ $time['day'] ?? '' }}</span><span class="pbmit-timelist-li-value">{{ $time['hours'] ?? '' }}</span></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @elseif(!empty($settings['working_hours']))
+                        <div class="pbmit-timelist-wrapper">
+                            {!! $settings['working_hours'] !!}
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Copyright -->
+    <div class="pbmit-footer-text-area">
+        <div class="container">
+            <div class="pbmit-footer-text-inner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pbmit-footer-copyright-text-area">
+                            @php
+                                $siteName = $settings['general']['site_name'] ?? config('app.name');
+                                $copyright = $settings['footer_copyright'] ?? 'Copyright © ' . date('Y') . ' {{site_name}}, All Rights Reserved.';
+                                echo str_replace('{{site_name}}', $siteName, $copyright);
+                            @endphp
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pbmit-footer-menu-area">
+                            <div class="menu-footer-menu-container">
+                                @if(!empty($settings['footer_bottom_menu']) && is_array($settings['footer_bottom_menu']))
+                                <ul class="pbmit-footer-menu">
+                                    @foreach($settings['footer_bottom_menu'] as $item)
+                                    <li><a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a></li>
+                                    @endforeach
+                                </ul>
+                                @elseif(!empty($settings['footer_bottom_menu']))
+                                <ul class="pbmit-footer-menu">
+                                    {!! $settings['footer_bottom_menu'] !!}
+                                </ul>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

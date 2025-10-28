@@ -120,5 +120,5 @@
             </div>
         </div>
     </div>
-    @include('components.sliders.slider-4')
+    @include('sliders.slider-4')
 </header>

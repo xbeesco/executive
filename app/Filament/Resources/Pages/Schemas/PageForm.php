@@ -94,9 +94,9 @@ class PageForm
                                 Select::make('settings.header_style')
                                     ->label('Header Style')
                                     ->options([
-                                        3 => 'Style 1',
-                                        4 => 'Style 2',
-                                        8 => 'Style 3',
+                                        3 => '1',
+                                        4 => '2',
+                                        8 => '3',
                                     ])
                                     ->required()
                                     ->default(3)
@@ -132,8 +132,7 @@ class PageForm
 
                                         TextInput::make('sub_title')
                                             ->label('Sub Title')
-                                            ->maxLength(255)
-                                            ->helperText('Required only for Style 2 and Style 3'),
+                                            ->maxLength(255),
 
                                         TextInput::make('title_small')
                                             ->label('Small Title')
@@ -188,9 +187,9 @@ class PageForm
                                 Select::make('settings.footer_style')
                                     ->label('Footer Style')
                                     ->options([
-                                        2 => 'Style 1',
-                                        3 => 'Style 2',
-                                        8 => 'Style 3',
+                                        1 => '1',
+                                        2 => '2',
+                                        3 => '3',
                                     ])
                                     ->required()
                                     ->default(2)

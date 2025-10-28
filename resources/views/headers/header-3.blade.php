@@ -98,11 +98,6 @@
                     </nav>
                 </div>
                 <div class="pbmit-right-box d-flex align-items-center">
-                    <div class="pbmit-header-search-btn">
-                        <a href="#" title="Search">
-                            <i class="pbmit-base-icon-search-1"></i>
-                        </a>
-                    </div>
                     @if(!empty($settings['general']['action_button_text']) && !empty($settings['general']['action_button_url']))
                     <div class="pbmit-button-box-second">
                         <a class="pbmit-btn pbmit-btn-outline" href="{{ $settings['general']['action_button_url'] }}">
@@ -116,5 +111,5 @@
             </div>
         </div>
     </div>
-    @include('components.sliders.slider-3')
+    @include('sliders.slider-3')
 </header>
