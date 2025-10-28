@@ -127,24 +127,18 @@ class PageForm
                                             ->label('Background Image')
                                             ->image()
                                             ->disk('public')
-                                            ->directory('images/sliders'),
+                                            ->directory('sliders'),
 
                                         TextInput::make('sub_title')
                                             ->label('Sub Title')
                                             ->maxLength(255),
-
-                                        TextInput::make('title_small')
-                                            ->label('Small Title')
-                                            ->maxLength(255)
-                                            ->helperText('Required only for Style 3'),
 
                                         Textarea::make('description')
                                             ->label('Description')
                                             ->maxLength(500)
                                             ->trim()
                                             ->rows(1)
-                                            ->autosize()
-                                            ->helperText('Required only for Style 1 and Style 2'),
+                                            ->autosize(),
 
                                         TextInput::make('button_text')
                                             ->label('Button Text')
@@ -157,7 +151,6 @@ class PageForm
                                     ])
                                     ->minItems(2)
                                     ->maxItems(3)
-                                    ->collapsed()
                                     ->cloneable()
                                     ->collapsible()
                                     ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')

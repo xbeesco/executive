@@ -42,7 +42,7 @@ return [
     */
 
     // Generic slider item placeholder
-    'slider_item_bg' => 'banner-slider-img/demo1-slide-01.jpg',
+    'slider_item_bg' => 'banner-slider-img/demo1-slide-04.jpg',
 
     // Legacy slider placeholders (kept for backward compatibility)
     'slider_demo1_01' => 'banner-slider-img/demo1-slide-01.jpg',
@@ -55,6 +55,9 @@ return [
     'slider_demo4_03' => 'banner-slider-img/demo4-slide-3.jpg',
     'slider_demo8_01' => 'banner-slider-img/demo8-slide-1.jpg',
     'slider_demo8_02' => 'banner-slider-img/demo8-slide-2.jpg',
+    'slider_demo8' => 'banner-slider-img/demo6-slide-02.jpg',
+    
+    
 
     /*
     |--------------------------------------------------------------------------

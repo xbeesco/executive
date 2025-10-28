@@ -4,7 +4,7 @@
             @foreach(($pageSettings['slider_items'] ?? []) as $index => $slide)
             <div class="swiper-slide">
                 <div class="pbmit-slider-item">
-                    <div class="pbmit-slider-bg" style="background-image: url({{ image($slide['background_image'] ?? null, 'slider_item_bg') }});"></div>
+                    <div class="pbmit-slider-bg" style="background-image: url({{ image($slide['background_image'] ?? null, 'slider_demo3_01') }});"></div>
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-lg-7"></div>

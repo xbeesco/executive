@@ -8,8 +8,7 @@
 								</div>
 								<div class="pbmit-desc">
 									<p>
-										<span class="pbmit-drop-cap"><span class="pbmit-drop-cap-letter">S</span></span>
-										ince 2015, Executive Workspace has been dedicated to creating exceptional business environments that inspire success and reflect professional excellence. Our award-winning team specializes in crafting luxury workspaces tailored to the unique needs of business leaders and
+										Since 2025, Executive Workspace has been dedicated to creating exceptional business environments that inspire success and reflect professional excellence. Our award-winning team specializes in crafting luxury workspaces tailored to the unique needs of business leaders and
 									</p>
 								</div>
 							</div>
