@@ -22,4 +22,18 @@ class EditPage extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    protected function getFormActions(): array
+    {
+        return [
+            $this->getSaveFormAction(),
+            Action::make('view')
+                ->label('View')
+                ->icon(Heroicon::OutlinedEye)
+                ->url(fn () => route('pages.show', $this->record->slug))
+                ->openUrlInNewTab()
+                ->color('gray'),
+            $this->getCancelFormAction(),
+        ];
+    }
 }
