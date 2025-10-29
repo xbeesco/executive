@@ -108,7 +108,6 @@ class PageForm
                                     ->options([
                                         'none' => 'None',
                                         'slider' => 'Slider',
-                                        'title_bar' => 'Title Bar',
                                     ])
                                     ->required()
                                     ->default('none')
@@ -156,28 +155,6 @@ class PageForm
                                     ->collapsible()
                                     ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')
                                     ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
-
-                                TextInput::make('settings.title_bar_title')
-                                    ->label('Title Bar Title')
-                                    ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
-
-                                Select::make('settings.show_breadcrumbs')
-                                    ->label('Show Breadcrumbs')
-                                    ->options([
-                                        0 => 'No',
-                                        1 => 'Yes',
-                                    ])
-                                    ->default(1)
-                                    ->selectablePlaceholder(false)
-                                    ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
-
-                                FileUpload::make('settings.title_bar_bg_image')
-                                    ->label('Title Bar Background Image')
-                                    ->image()
-                                    ->disk('public')
-                                    ->directory('images/title-bars')
-                                    ->required(fn ($get) => $get('settings.header_area_type') === 'title_bar')
-                                    ->hidden(fn ($get) => $get('settings.header_area_type') !== 'title_bar'),
 
                                 Select::make('settings.footer_style')
                                     ->label('Footer Style')
