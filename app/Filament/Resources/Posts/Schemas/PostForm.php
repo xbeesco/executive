@@ -80,17 +80,27 @@ class PostForm
 
                         // Author & Categories
                         Fieldset::make('Classification')
+                            ->columns(1)
                             ->schema([
                                 Select::make('author_id')
                                     ->label('Author')
                                     ->relationship('author', 'name')
                                     ->searchable()
-                                    ->required(),
+                                    ->preload()
+                                    ->required()
+                                    ->default(fn () => auth()->id()),
 
-                                Select::make('categories')
-                                    ->label('Categories')
-                                    ->relationship('categories', 'name')
-                                    ->multiple()
+                                Select::make('category_id')
+                                    ->label('Category')
+                                    ->options(function () {
+                                        return \App\Models\Category::query()
+                                            ->get()
+                                            ->mapWithKeys(function ($category) {
+                                                $label = $category->parent_id ? '  └─ '.$category->name : $category->name;
+
+                                                return [$category->id => $label];
+                                            });
+                                    })
                                     ->searchable()
                                     ->preload(),
 
