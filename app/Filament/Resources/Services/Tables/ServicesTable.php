@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Services\Tables;
 
 use App\Enums\ContentStatus;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -20,7 +22,9 @@ class ServicesTable
                 ImageColumn::make('featured_image')
                     ->label('Image')
                     ->circular()
-                    ->size(40),
+                    ->size(40)
+                    ->disk('public')
+                    ->visibility('public'),
 
                 TextColumn::make('title')
                     ->label('Title')
@@ -45,7 +49,7 @@ class ServicesTable
                 TextColumn::make('features')
                     ->label('Features')
                     ->badge()
-                    ->formatStateUsing(fn ($state) => is_array($state) ? count($state) . ' features' : '0 features')
+                    ->formatStateUsing(fn ($state) => is_array($state) ? count($state).' features' : '0 features')
                     ->toggleable(),
 
                 TextColumn::make('created_at')
@@ -67,8 +71,29 @@ class ServicesTable
                     ->multiple(),
             ])
             ->recordActions([
+                Action::make('view')
+                    ->icon(Heroicon::OutlinedEye)
+                    ->url(fn ($record) => route('services.show', $record->slug))
+                    ->openUrlInNewTab(),
                 EditAction::make(),
+                Action::make('clone')
+                    ->icon(Heroicon::OutlinedDocumentDuplicate)
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        $timestamp = now()->timestamp;
+                        $clonedData = $record->replicate();
+                        $clonedData->title = $record->title.'-copy-'.$timestamp;
+                        $clonedData->slug = $record->slug.'-'.$timestamp;
+                        $clonedData->save();
+
+                        \Filament\Notifications\Notification::make()
+                            ->success()
+                            ->title('Service Cloned')
+                            ->body('The service has been successfully cloned.')
+                            ->send();
+                    }),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Services\ServiceResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

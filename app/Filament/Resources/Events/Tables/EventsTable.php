@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Events\Tables;
 
 use App\Enums\ContentStatus;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
@@ -21,7 +23,9 @@ class EventsTable
                 ImageColumn::make('featured_image')
                     ->label('Image')
                     ->circular()
-                    ->size(40),
+                    ->size(40)
+                    ->disk('public')
+                    ->visibility('public'),
 
                 TextColumn::make('title')
                     ->label('Title')
@@ -93,8 +97,29 @@ class EventsTable
                     }),
             ])
             ->recordActions([
+                Action::make('view')
+                    ->icon(Heroicon::OutlinedEye)
+                    ->url(fn ($record) => route('events.show', $record->slug))
+                    ->openUrlInNewTab(),
                 EditAction::make(),
+                Action::make('clone')
+                    ->icon(Heroicon::OutlinedDocumentDuplicate)
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        $timestamp = now()->timestamp;
+                        $clonedData = $record->replicate();
+                        $clonedData->title = $record->title.'-copy-'.$timestamp;
+                        $clonedData->slug = $record->slug.'-'.$timestamp;
+                        $clonedData->save();
+
+                        \Filament\Notifications\Notification::make()
+                            ->success()
+                            ->title('Event Cloned')
+                            ->body('The event has been successfully cloned.')
+                            ->send();
+                    }),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Events\EventResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

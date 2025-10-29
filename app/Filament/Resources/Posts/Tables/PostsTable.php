@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Posts\Tables;
 
 use App\Enums\ContentStatus;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -20,14 +22,15 @@ class PostsTable
                 ImageColumn::make('featured_image')
                     ->label('Image')
                     ->circular()
-                    ->size(40),
+                    ->size(40)
+                    ->disk('public')
+                    ->visibility('public'),
 
                 TextColumn::make('title')
                     ->label('Title')
                     ->searchable()
                     ->sortable()
-                    ->limit(50)
-                    ->description(fn ($record) => $record->excerpt ? \Str::limit($record->excerpt, 60) : null),
+                    ->limit(50),
 
                 TextColumn::make('author.name')
                     ->label('Author')
@@ -94,8 +97,38 @@ class PostsTable
                     ->preload(),
             ])
             ->recordActions([
+                Action::make('view')
+                    ->icon(Heroicon::OutlinedEye)
+                    ->url(fn ($record) => route('posts.show', $record->slug))
+                    ->openUrlInNewTab(),
                 EditAction::make(),
+                Action::make('clone')
+                    ->icon(Heroicon::OutlinedDocumentDuplicate)
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        $timestamp = now()->timestamp;
+                        $clonedData = $record->replicate();
+                        $clonedData->title = $record->title.'-copy-'.$timestamp;
+                        $clonedData->slug = $record->slug.'-'.$timestamp;
+                        $clonedData->save();
+
+                        // Clone relationships
+                        if ($record->categories()->exists()) {
+                            $clonedData->categories()->sync($record->categories->pluck('id'));
+                        }
+
+                        if ($record->tags()->exists()) {
+                            $clonedData->tags()->sync($record->tags->pluck('id'));
+                        }
+
+                        \Filament\Notifications\Notification::make()
+                            ->success()
+                            ->title('Post Cloned')
+                            ->body('The post has been successfully cloned with all categories and tags.')
+                            ->send();
+                    }),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Posts\PostResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

@@ -4,7 +4,6 @@ namespace App\Filament\Resources\Pages\Tables;
 
 use App\Enums\ContentStatus;
 use App\Enums\PageType;
-use App\Filament\Resources\Pages\PageResource;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -21,6 +20,13 @@ class PagesTable
     {
         return $table
             ->columns([
+                ImageColumn::make('featured_image')
+                    ->label('Image')
+                    ->circular()
+                    ->size(40)
+                    ->disk('public')
+                    ->visibility('public'),
+
                 TextColumn::make('title')
                     ->label('Title')
                     ->searchable()
@@ -43,10 +49,6 @@ class PagesTable
                     ->badge(fn ($state) => $state->color())
                     ->sortable(),
 
-                ImageColumn::make('featured_image')
-                    ->label('Image')
-                    ->circular(),
-
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime('Y-m-d H:i')
@@ -68,8 +70,24 @@ class PagesTable
                     ->url(fn ($record) => route('pages.show', $record->slug))
                     ->openUrlInNewTab(),
                 EditAction::make(),
+                Action::make('clone')
+                    ->icon(Heroicon::OutlinedDocumentDuplicate)
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        $timestamp = now()->timestamp;
+                        $clonedData = $record->replicate();
+                        $clonedData->title = $record->title.'-copy-'.$timestamp;
+                        $clonedData->slug = $record->slug.'-'.$timestamp;
+                        $clonedData->save();
+
+                        \Filament\Notifications\Notification::make()
+                            ->success()
+                            ->title('Page Cloned')
+                            ->body('The page has been successfully cloned.')
+                            ->send();
+                    }),
             ])
-            ->recordUrl(fn ($record) => PageResource::getUrl('edit', ['record' => $record]))
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Pages\PageResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
