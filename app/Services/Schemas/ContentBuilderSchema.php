@@ -2,6 +2,7 @@
 
 namespace App\Services\Schemas;
 
+use App\Services\Icons\FlaticonList;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -140,9 +141,12 @@ class ContentBuilderSchema
                                 ->label('Item Text')
                                 ->required(),
 
-                            TextInput::make('icon')
-                                ->label('Icon Class (Optional)')
-                                ->helperText('FontAwesome or Bootstrap icon class'),
+                            Select::make('icon')
+                                ->label('Icon (Optional)')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                         ])
                         ->collapsible()
                         ->itemLabel(fn (array $state): ?string => $state['text'] ?? null)
@@ -177,9 +181,12 @@ class ContentBuilderSchema
                                 ->label('Title')
                                 ->required(),
 
-                            TextInput::make('icon')
-                                ->label('Icon Class (Optional)')
-                                ->helperText('FontAwesome or Bootstrap icon class'),
+                            Select::make('icon')
+                                ->label('Icon (Optional)')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
 
                             RichEditor::make('content')
                                 ->label('Content')
@@ -339,7 +346,12 @@ class ContentBuilderSchema
                     FileUpload::make('image')->image()->disk('public')->directory('blocks'),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('text'),
                         ])
                         ->columns(2)
@@ -356,7 +368,12 @@ class ContentBuilderSchema
                     FileUpload::make('image')->image()->disk('public')->directory('blocks'),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('text'),
                         ])
                         ->columns(2),
@@ -373,7 +390,12 @@ class ContentBuilderSchema
                     Repeater::make('list_items')
                         ->schema([
                             TextInput::make('text'),
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                         ])
                         ->columns(2)
                         ->defaultItems(4),
@@ -389,7 +411,12 @@ class ContentBuilderSchema
                     FileUpload::make('image')->image()->disk('public')->directory('blocks'),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('text'),
                         ])
                         ->columns(2)
@@ -405,7 +432,12 @@ class ContentBuilderSchema
                     Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3),
                     Repeater::make('services')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -422,7 +454,12 @@ class ContentBuilderSchema
                     Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3),
                     Repeater::make('services')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -439,7 +476,12 @@ class ContentBuilderSchema
                     Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3),
                     Repeater::make('services')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -455,7 +497,12 @@ class ContentBuilderSchema
                     Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3),
                     Repeater::make('services')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -505,7 +552,12 @@ class ContentBuilderSchema
                     RichEditor::make('content'),
                     Repeater::make('services')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -712,7 +764,12 @@ class ContentBuilderSchema
                             TextInput::make('number'),
                             TextInput::make('title'),
                             Textarea::make('description'),
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                         ])
                         ->columns(2)
                         ->defaultItems(4),
@@ -728,7 +785,12 @@ class ContentBuilderSchema
                             TextInput::make('number'),
                             TextInput::make('title'),
                             Textarea::make('description'),
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                         ])
                         ->columns(2)
                         ->defaultItems(4),
@@ -757,7 +819,12 @@ class ContentBuilderSchema
                     TextInput::make('title'),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                             FileUpload::make('image')->image()->disk('public')->directory('blocks'),
@@ -774,7 +841,12 @@ class ContentBuilderSchema
                     Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(4),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -787,11 +859,21 @@ class ContentBuilderSchema
                 ->schema([
                     TextInput::make('title'),
                     Textarea::make('description'),
-                    TextInput::make('icon'),
+                    Select::make('icon')
+                        ->label('Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->allowHtml()
+                        ->placeholder('Select an icon'),
                     FileUpload::make('image')->image()->disk('public')->directory('blocks'),
                     Repeater::make('features')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -807,7 +889,12 @@ class ContentBuilderSchema
                     Textarea::make('description'),
                     Repeater::make('advantages')
                         ->schema([
-                            TextInput::make('icon'),
+                            Select::make('icon')
+                                ->label('Icon')
+                                ->options(FlaticonList::getSelectOptions())
+                                ->searchable()
+                                ->allowHtml()
+                                ->placeholder('Select an icon'),
                             TextInput::make('title'),
                             Textarea::make('description'),
                         ])
@@ -921,7 +1008,12 @@ class ContentBuilderSchema
                     TextInput::make('subtitle'),
                     TextInput::make('title'),
                     TextInput::make('phone'),
-                    TextInput::make('phone_icon'),
+                    Select::make('phone_icon')
+                        ->label('Phone Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->allowHtml()
+                        ->placeholder('Select an icon'),
                     TextInput::make('badge_text'),
                     Repeater::make('rotating_words')
                         ->label('Rotating Words')
