@@ -53,6 +53,7 @@ class UsersTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Users\UserResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

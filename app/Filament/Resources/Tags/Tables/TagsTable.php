@@ -50,6 +50,7 @@ class TagsTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Tags\TagResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

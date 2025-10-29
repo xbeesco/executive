@@ -58,6 +58,7 @@ class CategoriesTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->recordUrl(fn ($record) => \App\Filament\Resources\Categories\CategoryResource::getUrl('edit', ['record' => $record]))
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
