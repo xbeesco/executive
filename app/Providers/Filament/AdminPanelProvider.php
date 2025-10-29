@@ -4,7 +4,6 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\SettingsPage;
 use App\Filament\Resources\Categories\CategoryResource;
-use App\Filament\Resources\Comments\CommentResource;
 use App\Filament\Resources\Events\EventResource;
 use App\Filament\Resources\Forms\FormResource;
 use App\Filament\Resources\FormSubmissions\FormSubmissionResource;
@@ -49,7 +48,6 @@ class AdminPanelProvider extends PanelProvider
                 PostResource::class,
                 CategoryResource::class,
                 TagResource::class,
-                CommentResource::class,
                 FormResource::class,
                 FormSubmissionResource::class,
                 UserResource::class,
