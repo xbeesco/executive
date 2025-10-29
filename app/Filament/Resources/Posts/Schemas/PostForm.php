@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Posts\Schemas;
 
 use App\Enums\ContentStatus;
-use App\Services\Schemas\ContentBlocksSchema;
+use App\Services\Schemas\ContentBuilderSchema;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
@@ -26,10 +26,10 @@ class PostForm
                     ->schema([
                         Builder::make('content')
                             ->label('Post Content Builder')
-                            ->blocks(ContentBlocksSchema::getContentBlocks())
+                            ->blocks(ContentBuilderSchema::getBlocks())
                             ->collapsible()
                             ->blockNumbers(false)
-                            ->helperText('Use content blocks to build your post. These blocks render without section wrappers.'),
+                            ->helperText('Use content blocks to build your post.'),
                     ])
                     ->columnSpan(8),
 

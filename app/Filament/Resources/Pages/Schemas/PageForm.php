@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Pages\Schemas;
 use App\Enums\ArchiveContentType;
 use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
+use App\Services\Schemas\ContentBuilderSchema;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -26,7 +27,7 @@ class PageForm
                 Section::make('Page Content')
                     ->schema([
                         Builder::make('content')
-                            ->blocks(SectionsBlocks::get())
+                            ->blocks(ContentBuilderSchema::getBlocks())
                             ->cloneable()
                             ->collapsed()
                             ->collapsible(),

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Events\Schemas;
 
 use App\Enums\ContentStatus;
-use App\Services\Schemas\ContentBlocksSchema;
+use App\Services\Schemas\ContentBuilderSchema;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
@@ -27,10 +27,10 @@ class EventForm
                     ->schema([
                         Builder::make('content')
                             ->label('Event Content Builder')
-                            ->blocks(ContentBlocksSchema::getContentBlocks())
+                            ->blocks(ContentBuilderSchema::getBlocks())
                             ->collapsible()
                             ->blockNumbers(false)
-                            ->helperText('Use content blocks to build your event details. These blocks render without section wrappers.'),
+                            ->helperText('Use content blocks to build your event details.'),
                     ])
                     ->columnSpan(8),
 

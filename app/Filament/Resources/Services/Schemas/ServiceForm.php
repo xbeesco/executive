@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Services\Schemas;
 
 use App\Enums\ContentStatus;
-use App\Services\Schemas\ContentBlocksSchema;
+use App\Services\Schemas\ContentBuilderSchema;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -27,10 +27,10 @@ class ServiceForm
                     ->schema([
                         Builder::make('content')
                             ->label('Service Content Builder')
-                            ->blocks(ContentBlocksSchema::getContentBlocks())
+                            ->blocks(ContentBuilderSchema::getBlocks())
                             ->collapsible()
                             ->blockNumbers(false)
-                            ->helperText('Use content blocks to build your service description. These blocks render without section wrappers.'),
+                            ->helperText('Use content blocks to build your service description.'),
                     ])
                     ->columnSpan(8),
 
