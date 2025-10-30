@@ -30,7 +30,7 @@
                                             @endphp
                                             @if($categoryModel)
                                             <div class="pbmit-port-cat">
-                                                <a href="{{ route('portfolio.category', $categoryModel->slug) }}" rel="tag">{{ $categoryModel->name }}</a>
+                                                <a href="#" rel="tag">{{ $categoryModel->name }}</a>
                                             </div>
                                             @endif
                                             @endif
