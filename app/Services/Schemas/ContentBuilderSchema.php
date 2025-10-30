@@ -2,6 +2,7 @@
 
 namespace App\Services\Schemas;
 
+use App\Models\Category;
 use App\Services\Icons\FlaticonList;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
@@ -869,9 +870,10 @@ class ContentBuilderSchema
                                     ->placeholder('Search and select an icon')
                                     ->columnSpan(8),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('Private Office')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -954,9 +956,10 @@ class ContentBuilderSchema
                                     ->placeholder('01')
                                     ->columnSpan(6),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('Executive Suite')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -1021,9 +1024,10 @@ class ContentBuilderSchema
                                     ->placeholder('01')
                                     ->columnSpan(4),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('Offices')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(8),
 
@@ -1147,9 +1151,10 @@ class ContentBuilderSchema
                                     ->imageEditor()
                                     ->columnSpan(12),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('Executive')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -1992,9 +1997,10 @@ class ContentBuilderSchema
                                     ->required()
                                     ->columnSpan(6),
 
-                                TextInput::make('category')
-                                    ->label('Category Slug')
-                                    ->helperText('Must match one of the category slugs above')
+                                Select::make('category')
+                                    ->label('Category')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -2050,9 +2056,10 @@ class ContentBuilderSchema
                                     ->required()
                                     ->columnSpan(12),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('Executive Office')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -2235,9 +2242,10 @@ class ContentBuilderSchema
                                     ->required()
                                     ->columnSpan(12),
 
-                                TextInput::make('category')
+                                Select::make('category')
                                     ->label('Category')
-                                    ->placeholder('C-Suite Office')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
