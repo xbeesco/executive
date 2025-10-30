@@ -32,18 +32,16 @@
                                         </span>
                                         <ul class="navigation clearfix">
                                             @foreach(($settings['menu'] ?? []) as $item)
-                                                <li class="menu-item @if(!empty($item['children'])) menu-item-has-children @endif">
-                                                    <a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
-                                                    @if(!empty($item['children']))
-                                                        <ul class="sub-menu">
-                                                            @foreach($item['children'] as $child)
-                                                                <li class="menu-item">
-                                                                    <a href="{{ $child['url'] ?? '#' }}">{{ $child['label'] ?? '' }}</a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
-                                                </li>
+                                            <li class="dropdown @if(!empty($item['children'])) @endif">
+                                                <a href="{{ $item['url'] ?? '#' }}">{{ $item['label'] ?? '' }}</a>
+                                                @if(!empty($item['children']))
+                                                <ul>
+                                                    @foreach($item['children'] as $child)
+                                                    <li><a href="{{ $child['url'] ?? '#' }}">{{ $child['label'] ?? '' }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                                @endif
+                                            </li>
                                             @endforeach
                                         </ul>
                                     </div>
