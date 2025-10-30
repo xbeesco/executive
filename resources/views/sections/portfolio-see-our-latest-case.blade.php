@@ -6,11 +6,14 @@
 								<h2 class="pbmit-title">{{ $data['title'] ?? 'Explore our executive projects' }}</h2>
 							</div>
 							@if(($data['enable_sorting'] ?? true) && !empty($data['categories']))
+							@php
+								$categories = \App\Models\Category::whereIn('slug', $data['categories'])->get();
+							@endphp
 							<div class="pbmit-sortable-list pbmit-sortable-list-style-2">
 								<ul class="pbmit-sortable-list-ul">
 									<li><a href="#" class="pbmit-sortable-link pbmit-selected" data-sortby="*">All</a></li>
-									@foreach($data['categories'] ?? [] as $category)
-									<li><a href="#" class="pbmit-sortable-link" data-sortby="{{ $category['slug'] }}">{{ $category['name'] }}</a></li>
+									@foreach($categories as $category)
+									<li><a href="#" class="pbmit-sortable-link" data-sortby="{{ $category->slug }}">{{ $category->name }}</a></li>
 									@endforeach
 								</ul>
 							</div>
@@ -46,10 +49,15 @@
 								</div>
 								<div class="pbminfotech-box-content">
 									<div class="pbminfotech-titlebox">
-										@if(!empty($item['category_label']))
+										@if(!empty($item['category']))
+										@php
+											$categoryModel = \App\Models\Category::where('slug', $item['category'])->first();
+										@endphp
+										@if($categoryModel)
 										<div class="pbmit-port-cat">
-											<a href="{{ $item['link'] ?? '#' }}" rel="tag">{{ $item['category_label'] }}</a>
+											<a href="{{ route('portfolio.category', $categoryModel->slug) }}" rel="tag">{{ $categoryModel->name }}</a>
 										</div>
+										@endif
 										@endif
 										<h3 class="pbmit-portfolio-title">
 											<a href="{{ $item['link'] ?? '#' }}">{{ $item['title'] ?? 'Project ' . $loop->iteration }}</a>

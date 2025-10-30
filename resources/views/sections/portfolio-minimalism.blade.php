@@ -24,9 +24,16 @@
                                 <div class="pbmit-content-box-inner">
                                     <div class="pbmit-titlebox-wrap">
                                         <div class="pbmit-titlebox">
+                                            @if(!empty($item['category']))
+                                            @php
+                                                $categoryModel = \App\Models\Category::where('slug', $item['category'])->first();
+                                            @endphp
+                                            @if($categoryModel)
                                             <div class="pbmit-port-cat">
-                                                <a href="{{ $item['category_link'] ?? '#' }}" rel="tag">{{ $item['category'] ?? '' }}</a>
+                                                <a href="{{ route('portfolio.category', $categoryModel->slug) }}" rel="tag">{{ $categoryModel->name }}</a>
                                             </div>
+                                            @endif
+                                            @endif
                                             <h3 class="pbmit-portfolio-title">
                                                 <a href="{{ $item['link'] ?? '#' }}">{{ $item['title'] ?? '' }}</a>
                                             </h3>

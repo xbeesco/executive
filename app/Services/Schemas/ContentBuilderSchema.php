@@ -1960,24 +1960,13 @@ class ContentBuilderSchema
                         ->default(true)
                         ->columnSpan(12),
 
-                    Repeater::make('categories')
-                        ->label('Filter Categories')
-                        ->schema([
-                            Grid::make(12)->schema([
-                                TextInput::make('name')
-                                    ->label('Category Name')
-                                    ->required()
-                                    ->columnSpan(6),
-
-                                TextInput::make('slug')
-                                    ->label('Category Slug')
-                                    ->required()
-                                    ->columnSpan(6),
-                            ]),
-                        ])
-                        ->defaultItems(4)
-                        ->columnSpan(12)
-                        ->collapsed(),
+                    Select::make('categories')
+                        ->label('Portfolio Categories')
+                        ->options(Category::pluck('name', 'slug'))
+                        ->multiple()
+                        ->searchable()
+                        ->helperText('Select categories for portfolio filtering')
+                        ->columnSpan(12),
 
                     Repeater::make('items')
                         ->label('Portfolio Items')
@@ -2001,11 +1990,6 @@ class ContentBuilderSchema
                                     ->label('Category')
                                     ->options(Category::pluck('name', 'slug'))
                                     ->searchable()
-                                    ->required()
-                                    ->columnSpan(6),
-
-                                TextInput::make('category_label')
-                                    ->label('Category Display Name')
                                     ->required()
                                     ->columnSpan(6),
 
@@ -2069,11 +2053,6 @@ class ContentBuilderSchema
                                     ->required()
                                     ->columnSpan(6),
 
-                                TextInput::make('category_link')
-                                    ->label('Category Link URL')
-                                    ->placeholder('portfolio-grid-col-3.html')
-                                    ->columnSpan(6),
-
                                 TextInput::make('link')
                                     ->label('Portfolio Link URL')
                                     ->placeholder('portfolio-detail-style-1.html')
@@ -2121,28 +2100,13 @@ class ContentBuilderSchema
                         ->default('4')
                         ->columnSpan(6),
 
-                    Repeater::make('categories')
-                        ->label('Sortable Categories')
-                        ->schema([
-                            Grid::make(12)->schema([
-                                TextInput::make('label')
-                                    ->label('Category Label')
-                                    ->placeholder('Private Office')
-                                    ->required()
-                                    ->columnSpan(8),
-
-                                TextInput::make('slug')
-                                    ->label('Category Slug (data-sortby)')
-                                    ->placeholder('architecture')
-                                    ->required()
-                                    ->columnSpan(4),
-                            ]),
-                        ])
-                        ->columnSpan(12)
-                        ->collapsible()
-                        ->itemLabel(fn (array $state): ?string => $state['label'] ?? 'Category')
-                        ->defaultItems(5)
-                        ->minItems(1),
+                    Select::make('categories')
+                        ->label('Portfolio Categories')
+                        ->options(Category::pluck('name', 'slug'))
+                        ->multiple()
+                        ->searchable()
+                        ->helperText('Select categories for portfolio filtering')
+                        ->columnSpan(12),
 
                     Repeater::make('items')
                         ->label('Portfolio Items')
@@ -2157,16 +2121,10 @@ class ContentBuilderSchema
                                     ->required()
                                     ->columnSpan(12),
 
-                                TextInput::make('category_slug')
-                                    ->label('Category Slug (must match category slug above)')
-                                    ->placeholder('architecture')
-                                    ->required()
-                                    ->helperText('Used for filtering - must match one of the category slugs defined above')
-                                    ->columnSpan(6),
-
-                                TextInput::make('category_display')
-                                    ->label('Category Display Name')
-                                    ->placeholder('Private Office')
+                                Select::make('category')
+                                    ->label('Category')
+                                    ->options(Category::pluck('name', 'slug'))
+                                    ->searchable()
                                     ->required()
                                     ->columnSpan(6),
 
@@ -2253,11 +2211,6 @@ class ContentBuilderSchema
                                     ->label('Title')
                                     ->placeholder('Leadership Hub')
                                     ->required()
-                                    ->columnSpan(6),
-
-                                TextInput::make('category_link')
-                                    ->label('Category Link URL')
-                                    ->placeholder('#')
                                     ->columnSpan(6),
 
                                 TextInput::make('link')

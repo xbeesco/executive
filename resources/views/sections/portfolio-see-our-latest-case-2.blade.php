@@ -19,13 +19,16 @@
             </div>
 
             @if($showSortable && !empty($categories))
+                @php
+                    $categoriesModels = \App\Models\Category::whereIn('slug', $categories)->get();
+                @endphp
                 <div class="pbmit-sortable-list">
                     <ul class="pbmit-sortable-list-ul">
                         <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-sortby="*">All</a></li>
-                        @foreach($categories as $category)
+                        @foreach($categoriesModels as $category)
                             <li>
-                                <a href="#" class="pbmit-sortable-link" data-sortby="{{ $category['slug'] ?? '' }}">
-                                    {{ $category['label'] ?? '' }}
+                                <a href="#" class="pbmit-sortable-link" data-sortby="{{ $category->slug }}">
+                                    {{ $category->name }}
                                 </a>
                             </li>
                         @endforeach
@@ -38,8 +41,8 @@
             @foreach($items as $index => $item)
                 @php
                     $itemImage = $item['image'] ?? null;
-                    $categorySlug = $item['category_slug'] ?? '';
-                    $categoryDisplay = $item['category_display'] ?? '';
+                    $itemCategory = $item['category'] ?? '';
+                    $categoryModel = $itemCategory ? \App\Models\Category::where('slug', $itemCategory)->first() : null;
                     $itemTitle = $item['title'] ?? '';
                     $itemLink = $item['link'] ?? '#';
                     $buttonIcon = $item['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow';
@@ -49,7 +52,7 @@
                     $fallbackImage = "https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-6/portfolio/portfolio-{$imageNumber}.jpg";
                 @endphp
 
-                <article class="pbmit-ele pbmit-portfolio-style-5 {{ $categorySlug }} {{ $colClass }}">
+                <article class="pbmit-ele pbmit-portfolio-style-5 {{ $itemCategory }} {{ $colClass }}">
                     <div class="pbminfotech-post-content">
                         <div class="pbmit-featured-img-wrapper">
                             <div class="pbmit-featured-wrapper">
@@ -58,9 +61,11 @@
                         </div>
                         <div class="pbminfotech-box-content">
                             <div class="pbminfotech-titlebox">
+                                @if($categoryModel)
                                 <div class="pbmit-port-cat">
-                                    <a href="{{ $itemLink }}" rel="tag">{{ $categoryDisplay }}</a>
+                                    <a href="{{ route('portfolio.category', $categoryModel->slug) }}" rel="tag">{{ $categoryModel->name }}</a>
                                 </div>
+                                @endif
                                 <h3 class="pbmit-portfolio-title">
                                     <a href="{{ $itemLink }}">{{ $itemTitle }}</a>
                                 </h3>
