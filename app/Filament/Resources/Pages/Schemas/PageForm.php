@@ -12,6 +12,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -206,6 +207,11 @@ class PageForm
                                     ->default('right')
                                     ->selectablePlaceholder(false)
                                     ->hidden(fn ($get) => ! $get('settings.show_sidebar')),
+
+                                Toggle::make('settings.use_demo_sections')
+                                    ->label('ُEnabe Demo Version of Sections')
+                                    ->columnSpan(2)
+                                    ->default(false),
                             ]),
 
                         // SEO Settings

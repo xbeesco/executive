@@ -60,6 +60,11 @@ class Page extends Model
         return $this->settings['archive_content_type'] ?? 'post';
     }
 
+    public function useDemoSections(): bool
+    {
+        return $this->settings['use_demo_sections'] ?? false;
+    }
+
     public function scopePublished($query)
     {
         return $query->where('status', ContentStatus::PUBLISHED->value);

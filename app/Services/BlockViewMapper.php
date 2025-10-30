@@ -66,6 +66,7 @@ class BlockViewMapper
         // Other Components
         'before_after' => 'sections.section-we-design-thoughtful',
         'awards' => 'sections.awards-award-achievement',
+        'awards-award-achievement' => 'sections.awards-award-achievement',
         'cta' => 'sections.cta-we-making-home',
         'history_timeline' => 'sections.about-our-beginning',
         'clients_logos' => 'sections.section-join-the-companies-that',
@@ -93,10 +94,21 @@ class BlockViewMapper
 
     /**
      * Get the view name for a given block type.
+     *
+     * @param  string  $blockType  The type of block to get the view for
+     * @param  bool|null  $useDemoSections  Whether to use demo sections (static) instead of dynamic sections
+     * @return string The view name
      */
-    public function getViewName(string $blockType): string
+    public function getViewName(string $blockType, ?bool $useDemoSections = null): string
     {
-        return self::$mapping[$blockType] ?? "sections.{$blockType}";
+        $viewName = self::$mapping[$blockType] ?? "sections.{$blockType}";
+
+        // If using demo sections, replace 'sections.' with 'sections-static.'
+        if ($useDemoSections === true) {
+            $viewName = str_replace('sections.', 'sections-static.', $viewName);
+        }
+
+        return $viewName;
     }
 
     /**
