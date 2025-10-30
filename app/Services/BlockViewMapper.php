@@ -71,7 +71,6 @@ class BlockViewMapper
         'history_timeline' => 'sections.about-our-beginning',
         'clients_logos' => 'sections.section-join-the-companies-that',
         'team' => 'sections.team-meet-designer',
-        'static' => 'sections.static',
 
         // Utility Components
         'text_content' => 'sections.text-content',

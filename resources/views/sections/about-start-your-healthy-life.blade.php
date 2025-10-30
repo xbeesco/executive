@@ -50,7 +50,7 @@
                                     </div>
                                     <h4 class="pbmit-fid-inner">
                                         <span class="pbmit-fid-before"></span>
-                                        <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="2015" data-interval="10">2015</span>
+                                        <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $block['data']['year'] ?? '2015' }}" data-interval="10">{{ $block['data']['year'] ?? '2015' }}</span>
                                         <span class="pbmit-fid"></span>
                                     </h4>
                                 </div>

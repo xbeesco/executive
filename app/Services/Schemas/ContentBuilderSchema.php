@@ -13,6 +13,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 
 class ContentBuilderSchema
 {
@@ -47,6 +48,33 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-document-text')
                 ->columns(12)
                 ->schema([
+                    Select::make('section_size')
+                        ->label('Section Padding')
+                        ->options([
+                            'section-lgb' => 'Small',
+                            'section-lgt' => 'Medium',
+                            'section-lgx' => 'Large',
+                            'section-xl' => 'Extra Large',
+                        ])
+                        ->default('section-xl')
+                        ->required()
+                        ->selectablePlaceholder(false)
+                        ->helperText('Choose the vertical padding for this section')
+                        ->columnSpan(6),
+
+                    Select::make('max_width')
+                        ->label('Content Width')
+                        ->options([
+                            'narrow' => 'Narrow (70%)',
+                            'medium' => 'Medium (85%)',
+                            'full' => 'Full Width',
+                        ])
+                        ->default('full')
+                        ->required()
+                        ->selectablePlaceholder(false)
+                        ->helperText('Choose the maximum width for content')
+                        ->columnSpan(6),
+
                     RichEditor::make('content')
                         ->label('Content')
                         ->required()
@@ -475,6 +503,13 @@ class ContentBuilderSchema
                         ->image()
                         ->disk('public')
                         ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    TextInput::make('year')
+                        ->label('Started Year')
+                        ->numeric()
+                        ->default('2015')
                         ->columnSpan(12),
 
                     Repeater::make('features')
@@ -1235,12 +1270,118 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('services_variation_2')
-                ->label('Services - Variation 2')
+                ->label('Services - Variation 2 (Thoughtful Livable Spaces)')
+                ->icon('heroicon-o-briefcase')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    RichEditor::make('content')->columnSpan(12),
-                    FileUpload::make('image')->image()->disk('public')->directory('blocks')->columnSpan(12),
+                    // Left Section - Images
+                    FileUpload::make('left_image_1')
+                        ->label('Left Section - Main Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
+
+                    FileUpload::make('left_image_2')
+                        ->label('Left Section - Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
+
+                    FileUpload::make('left_image_frame')
+                        ->label('Left Section - Frame/Overlay Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    // Right Section - Background and Content
+                    FileUpload::make('right_background_pattern')
+                        ->label('Right Section - Background Pattern')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Our Excellence')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('Premium Executive Workspace Solutions')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->placeholder('Every detail of our executive workspaces is meticulously crafted...')
+                        ->rows(3)
+                        ->columnSpan(12),
+
+                    Repeater::make('list_items')
+                        ->label('List Items')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('text')
+                                    ->label('List Item Text')
+                                    ->placeholder('Dedicated concierge service exclusively for members')
+                                    ->required()
+                                    ->columnSpan(12),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'List Item')
+                        ->defaultItems(3)
+                        ->minItems(1),
+
+                    FileUpload::make('clock_image')
+                        ->label('Clock/Decorative Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    // Bottom Section - Icon Boxes
+                    Repeater::make('icon_boxes')
+                        ->label('Bottom Icon Boxes')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                Select::make('icon')
+                                    ->label('Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->required()
+                                    ->columnSpan(6)
+                                    ->default('pbmit-xinterio-icon-compass')
+                                    ->placeholder('Search and select an icon'),
+
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->placeholder('Elite Professional Network')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->placeholder('3,500,000+ executives including 850,000+ entrepreneurs...')
+                                    ->rows(2)
+                                    ->columnSpan(12),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Icon Box')
+                        ->defaultItems(2)
+                        ->minItems(1),
                 ]),
 
             Block::make('services_variation_3')
@@ -1321,32 +1462,91 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-currency-dollar')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->label('Section Title')->columnSpan(12),
+                    FileUpload::make('background_image')
+                        ->label('Background Pattern Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->default('Membership Plans')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Premium workspace for visionary leaders!')
+                        ->columnSpan(6),
+
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->rows(3)
+                        ->columnSpan(12),
+
                     Repeater::make('plans')
                         ->label('Pricing Plans')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('name')->label('Plan Name')->required()->columnSpan(6),
-                                TextInput::make('price')->label('Price')->required()->columnSpan(3),
-                                TextInput::make('period')->label('Period')->default('month')->columnSpan(3),
-                                Toggle::make('featured')->label('Featured Plan')->default(false)->columnSpan(12),
+                                TextInput::make('name')
+                                    ->label('Plan Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('price')
+                                    ->label('Price')
+                                    ->required()
+                                    ->columnSpan(3),
+
+                                TextInput::make('currency')
+                                    ->label('Currency Symbol')
+                                    ->default('EGP')
+                                    ->columnSpan(3),
+
+                                TextInput::make('period')
+                                    ->label('Period')
+                                    ->default('/mo')
+                                    ->columnSpan(6),
+
+                                Toggle::make('featured')
+                                    ->label('Featured Plan')
+                                    ->default(false)
+                                    ->columnSpan(6),
+
                                 Repeater::make('features')
                                     ->label('Features')
                                     ->schema([
                                         Grid::make(12)->schema([
-                                            TextInput::make('text')->label('Feature')->required()->columnSpan(9),
-                                            Toggle::make('included')->label('Included')->default(true)->columnSpan(3),
+                                            TextInput::make('text')
+                                                ->label('Feature Text')
+                                                ->required()
+                                                ->columnSpan(9),
+
+                                            Toggle::make('has_icon')
+                                                ->label('Show Checkmark Icon')
+                                                ->default(true)
+                                                ->columnSpan(3),
                                         ]),
                                     ])
                                     ->columnSpan(12)
-                                    ->collapsible()
+                                    ->collapsed()
                                     ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
                                     ->defaultItems(5),
-                                TextInput::make('button_text')->label('Button Text')->default('Choose Plan')->columnSpan(12),
+
+                                TextInput::make('button_text')
+                                    ->label('Button Text')
+                                    ->default('Reserve Your Space')
+                                    ->columnSpan(6),
+
+                                TextInput::make('button_link')
+                                    ->label('Button Link')
+                                    ->default('#')
+                                    ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
-                        ->collapsible()
+                        ->collapsed()
                         ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
                         ->defaultItems(3),
                 ]),
@@ -1356,32 +1556,121 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-currency-dollar')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Repeater::make('plans')
+                    FileUpload::make('background_image')
+                        ->label('Background Pattern Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    TextInput::make('currency')
+                        ->label('Currency Symbol')
+                        ->default('EGP')
+                        ->columnSpan(4),
+
+                    TextInput::make('subtitle')
+                        ->label('Sidebar Subtitle')
+                        ->default('Membership Plans')
+                        ->columnSpan(4),
+
+                    TextInput::make('title')
+                        ->label('Sidebar Title')
+                        ->default('Choose plan for your business')
+                        ->columnSpan(4),
+
+                    Repeater::make('benefits')
+                        ->label('Sidebar Benefits')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('name')->required()->columnSpan(6),
-                                TextInput::make('price')->required()->columnSpan(3),
-                                TextInput::make('period')->default('month')->columnSpan(3),
-                                Toggle::make('featured')->default(false)->columnSpan(12),
-                                Repeater::make('features')
-                                    ->schema([
-                                        Grid::make(12)->schema([
-                                            TextInput::make('text')->required()->columnSpan(9),
-                                            Toggle::make('included')->default(true)->columnSpan(3),
-                                        ]),
-                                    ])
-                                    ->columnSpan(12)
-                                    ->collapsible()
-                                    ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
-                                    ->defaultItems(5),
-                                TextInput::make('button_text')->default('Get Started')->columnSpan(12),
+                                Select::make('icon')
+                                    ->label('Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->required()
+                                    ->default('pbmit-xinterio-icon-check-mark')
+                                    ->columnSpan(12),
+
+                                TextInput::make('text')
+                                    ->label('Benefit Text')
+                                    ->required()
+                                    ->columnSpan(12),
                             ]),
                         ])
                         ->columnSpan(12)
-                        ->collapsible()
-                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Benefit')
                         ->defaultItems(3),
+
+                    TextInput::make('button_text')
+                        ->label('Sidebar Button Text')
+                        ->default('View All Plans')
+                        ->columnSpan(6),
+
+                    TextInput::make('button_link')
+                        ->label('Sidebar Button Link')
+                        ->url()
+                        ->default('#')
+                        ->columnSpan(6),
+
+                    Repeater::make('plans')
+                        ->label('Pricing Plans')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('name')
+                                    ->label('Plan Name')
+                                    ->required()
+                                    ->placeholder('Professional')
+                                    ->columnSpan(6),
+
+                                TextInput::make('price')
+                                    ->label('Price')
+                                    ->required()
+                                    ->numeric()
+                                    ->placeholder('27')
+                                    ->columnSpan(3),
+
+                                TextInput::make('period')
+                                    ->label('Period')
+                                    ->default('/Mo')
+                                    ->columnSpan(3),
+
+                                Toggle::make('featured')
+                                    ->label('Featured Plan')
+                                    ->default(false)
+                                    ->columnSpan(12),
+
+                                Repeater::make('features')
+                                    ->label('Plan Features')
+                                    ->schema([
+                                        Grid::make(12)->schema([
+                                            TextInput::make('text')
+                                                ->label('Feature')
+                                                ->required()
+                                                ->columnSpan(12),
+                                        ]),
+                                    ])
+                                    ->columnSpan(12)
+                                    ->collapsed()
+                                    ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
+                                    ->defaultItems(5),
+
+                                TextInput::make('button_text')
+                                    ->label('Button Text')
+                                    ->default('Join Now')
+                                    ->columnSpan(6),
+
+                                TextInput::make('button_link')
+                                    ->label('Button Link')
+                                    ->url()
+                                    ->default('#')
+                                    ->columnSpan(6),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
+                        ->defaultItems(2),
                 ]),
 
             Block::make('pricing_variation_3')
@@ -1389,30 +1678,117 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-currency-dollar')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Repeater::make('plans')
+                    FileUpload::make('background_image')
+                        ->label('Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    // Right Section (Content)
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->default('Membership Plans')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Choose your executive workspace')
+                        ->columnSpan(6),
+
+                    Repeater::make('features')
+                        ->label('Features List')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('name')->required()->columnSpan(6),
-                                TextInput::make('price')->required()->columnSpan(6),
-                                Repeater::make('features')
-                                    ->schema([
-                                        Grid::make(12)->schema([
-                                            TextInput::make('text')->required()->columnSpan(9),
-                                            Toggle::make('included')->default(true)->columnSpan(3),
-                                        ]),
-                                    ])
-                                    ->columnSpan(12)
-                                    ->collapsible()
-                                    ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
-                                    ->defaultItems(5),
-                                TextInput::make('button_text')->default('Choose Plan')->columnSpan(12),
+                                Select::make('icon')
+                                    ->label('Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->default('pbmit-xinterio-icon-check-mark')
+                                    ->columnSpan(6),
+
+                                TextInput::make('text')
+                                    ->label('Feature Text')
+                                    ->required()
+                                    ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
-                        ->collapsible()
-                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
                         ->defaultItems(3),
+
+                    TextInput::make('button_text')
+                        ->label('Button Text')
+                        ->default('View All Plans')
+                        ->columnSpan(6),
+
+                    TextInput::make('button_link')
+                        ->label('Button Link')
+                        ->default('#')
+                        ->columnSpan(6),
+
+                    // Pricing Plans (Left Section)
+                    Repeater::make('plans')
+                        ->label('Pricing Plans')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('name')
+                                    ->label('Plan Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('price')
+                                    ->label('Price')
+                                    ->required()
+                                    ->columnSpan(3),
+
+                                TextInput::make('currency')
+                                    ->label('Currency')
+                                    ->default('EGP')
+                                    ->columnSpan(3),
+
+                                TextInput::make('period')
+                                    ->label('Period')
+                                    ->default('/Mo')
+                                    ->columnSpan(6),
+
+                                Toggle::make('featured')
+                                    ->label('Featured Plan')
+                                    ->default(false)
+                                    ->columnSpan(6),
+
+                                Repeater::make('features')
+                                    ->label('Plan Features')
+                                    ->schema([
+                                        Grid::make(12)->schema([
+                                            TextInput::make('text')
+                                                ->label('Feature Text')
+                                                ->required()
+                                                ->columnSpan(12),
+                                        ]),
+                                    ])
+                                    ->columnSpan(12)
+                                    ->collapsed()
+                                    ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
+                                    ->defaultItems(5),
+
+                                TextInput::make('button_text')
+                                    ->label('Button Text')
+                                    ->default('Select Plan')
+                                    ->columnSpan(6),
+
+                                TextInput::make('button_link')
+                                    ->label('Button Link')
+                                    ->default('#')
+                                    ->columnSpan(6),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
+                        ->defaultItems(2),
                 ]),
 
             Block::make('pricing_variation_4')
@@ -1549,21 +1925,94 @@ class ContentBuilderSchema
 
             Block::make('portfolio_grid')
                 ->label('Portfolio Grid')
+                ->icon('heroicon-o-photo')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3)->columnSpan(6),
-                    Toggle::make('sortable')->default(true)->columnSpan(6),
-                    Repeater::make('items')
-                        ->schema([
-                            TextInput::make('title'),
-                            TextInput::make('category'),
-                            FileUpload::make('image')->image()->disk('public')->directory('blocks'),
-                            TextInput::make('link'),
-                        ])
-                        ->columns(2)
-                        ->defaultItems(6)
+                    TextInput::make('title')
+                        ->label('Main Title')
+                        ->default('Explore our executive projects')
+                        ->required()
                         ->columnSpan(12),
+
+                    TextInput::make('stat_number')
+                        ->label('Statistics Number')
+                        ->numeric()
+                        ->default('460')
+                        ->columnSpan(4),
+
+                    TextInput::make('stat_suffix')
+                        ->label('Statistics Suffix')
+                        ->default('+')
+                        ->columnSpan(2),
+
+                    TextInput::make('stat_description')
+                        ->label('Statistics Description')
+                        ->default('Executive Workspace Solutions delivered for elite clients')
+                        ->columnSpan(6),
+
+                    Toggle::make('enable_sorting')
+                        ->label('Enable Category Filtering')
+                        ->default(true)
+                        ->columnSpan(12),
+
+                    Repeater::make('categories')
+                        ->label('Filter Categories')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('name')
+                                    ->label('Category Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('slug')
+                                    ->label('Category Slug')
+                                    ->required()
+                                    ->columnSpan(6),
+                            ]),
+                        ])
+                        ->defaultItems(4)
+                        ->columnSpan(12)
+                        ->collapsed(),
+
+                    Repeater::make('items')
+                        ->label('Portfolio Items')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                FileUpload::make('image')
+                                    ->label('Portfolio Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->required()
+                                    ->columnSpan(12),
+
+                                TextInput::make('title')
+                                    ->label('Project Title')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('category')
+                                    ->label('Category Slug')
+                                    ->helperText('Must match one of the category slugs above')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('category_label')
+                                    ->label('Category Display Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('link')
+                                    ->label('Project Link')
+                                    ->url()
+                                    ->default('#')
+                                    ->columnSpan(6),
+                            ]),
+                        ])
+                        ->defaultItems(8)
+                        ->columnSpan(12)
+                        ->collapsed(),
                 ]),
 
             Block::make('portfolio_variation_2')
@@ -1821,23 +2270,116 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-chat-bubble-left-ellipsis')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Textarea::make('description')->columnSpan(12),
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Hear from our distinguished members.')
+                        ->columnSpan(6),
+
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->default('Industry leaders and successful entrepreneurs share their executive workspace experiences.')
+                        ->rows(2)
+                        ->columnSpan(6),
+
+                    TextInput::make('rating')
+                        ->label('Overall Rating')
+                        ->numeric()
+                        ->default('4.82')
+                        ->columnSpan(6),
+
+                    TextInput::make('total_reviews')
+                        ->label('Total Reviews Text')
+                        ->default('2,488 Rating')
+                        ->columnSpan(6),
+
                     Repeater::make('testimonials')
+                        ->label('Testimonials')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('author_name')->required()->columnSpan(6),
-                                TextInput::make('author_position')->columnSpan(6),
-                                TextInput::make('author_location')->columnSpan(6),
-                                Select::make('rating')->options([1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5'])->default(5)->columnSpan(6),
-                                FileUpload::make('author_image')->image()->disk('public')->directory('blocks')->columnSpan(12),
-                                Textarea::make('content')->required()->rows(3)->columnSpan(12),
+                                TextInput::make('author_name')
+                                    ->label('Author Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('author_position')
+                                    ->label('Author Position')
+                                    ->columnSpan(6),
+
+                                Select::make('rating')
+                                    ->label('Rating')
+                                    ->options([
+                                        '1' => '1 Star',
+                                        '2' => '2 Stars',
+                                        '3' => '3 Stars',
+                                        '4' => '4 Stars',
+                                        '5' => '5 Stars',
+                                    ])
+                                    ->default('5')
+                                    ->columnSpan(6),
+
+                                FileUpload::make('author_image')
+                                    ->label('Author Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(6),
+
+                                FileUpload::make('author_background_image')
+                                    ->label('Author Background Image')
+                                    ->helperText('Background image for the testimonial card')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(12),
+
+                                Textarea::make('content')
+                                    ->label('Testimonial Content')
+                                    ->required()
+                                    ->rows(4)
+                                    ->columnSpan(12),
                             ]),
                         ])
                         ->columnSpan(12)
-                        ->collapsible()
+                        ->collapsed()
                         ->itemLabel(fn (array $state): ?string => $state['author_name'] ?? 'Testimonial')
-                        ->defaultItems(3),
+                        ->defaultItems(4),
+
+                    Repeater::make('client_logos')
+                        ->label('Client Logos')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('name')
+                                    ->label('Client Name')
+                                    ->columnSpan(6),
+
+                                FileUpload::make('logo_color')
+                                    ->label('Colored Logo')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(6),
+
+                                FileUpload::make('logo_white')
+                                    ->label('White Logo')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(6),
+
+                                TextInput::make('link')
+                                    ->label('Client Link (Optional)')
+                                    ->url()
+                                    ->columnSpan(6),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Client Logo')
+                        ->defaultItems(6),
                 ]),
 
             Block::make('testimonials_variation_2')
@@ -1845,20 +2387,94 @@ class ContentBuilderSchema
                 ->icon('heroicon-o-chat-bubble-left-ellipsis')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Textarea::make('description')->columnSpan(12),
+                    FileUpload::make('background_image')
+                        ->label('Left Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
+                        ->columnSpan(6),
+
+                    FileUpload::make('pattern_image')
+                        ->label('Right Pattern Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
+                        ->columnSpan(6),
+
+                    TextInput::make('video_url')
+                        ->label('Video URL')
+                        ->url()
+                        ->columnSpan(6),
+
+                    TextInput::make('video_title')
+                        ->label('Video Title')
+                        ->default('Experience excellence')
+                        ->columnSpan(6),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->default('Executive testimonials')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Trusted by business leaders worldwide')
+                        ->columnSpan(6),
+
+                    TextInput::make('rating')
+                        ->label('Overall Rating')
+                        ->numeric()
+                        ->default('4.82')
+                        ->columnSpan(6),
+
+                    TextInput::make('total_reviews')
+                        ->label('Total Reviews')
+                        ->default('3,247 Reviews')
+                        ->columnSpan(6),
+
                     Repeater::make('testimonials')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('author_name')->required()->columnSpan(6),
-                                TextInput::make('author_position')->columnSpan(6),
-                                Select::make('rating')->options([1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5'])->default(5)->columnSpan(12),
-                                FileUpload::make('author_image')->image()->disk('public')->directory('blocks')->columnSpan(12),
-                                Textarea::make('content')->required()->rows(3)->columnSpan(12),
+                                TextInput::make('author_name')
+                                    ->label('Author Name')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('author_position')
+                                    ->label('Author Position')
+                                    ->columnSpan(6),
+
+                                Select::make('rating')
+                                    ->label('Rating')
+                                    ->options([
+                                        '1' => '1 Star',
+                                        '2' => '2 Stars',
+                                        '3' => '3 Stars',
+                                        '4' => '4 Stars',
+                                        '5' => '5 Stars',
+                                    ])
+                                    ->default('5')
+                                    ->columnSpan(12),
+
+                                FileUpload::make('author_image')
+                                    ->label('Author Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(12),
+
+                                Textarea::make('content')
+                                    ->label('Testimonial Content')
+                                    ->required()
+                                    ->rows(4)
+                                    ->columnSpan(12),
                             ]),
                         ])
                         ->columnSpan(12)
-                        ->collapsible()
+                        ->collapsed()
                         ->itemLabel(fn (array $state): ?string => $state['author_name'] ?? 'Testimonial')
                         ->defaultItems(3),
                 ]),
@@ -1867,62 +2483,165 @@ class ContentBuilderSchema
                 ->label('Process Steps')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')
+                    FileUpload::make('background_image')
+                        ->label('Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
                         ->columnSpan(12),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->maxLength(255)
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->maxLength(255)
+                        ->columnSpan(6),
+
                     Repeater::make('steps')
+                        ->label('Process Steps')
                         ->schema([
-                            TextInput::make('number'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
-                            Select::make('icon')
-                                ->label('Icon')
-                                ->options(FlaticonList::getSelectOptions())
-                                ->searchable()
-                                ->allowHtml()
-                                ->placeholder('Select an icon'),
+                            TextInput::make('number')
+                                ->label('Step Number')
+                                ->maxLength(50)
+                                ->required()
+                                ->columnSpan(3),
+
+                            TextInput::make('title')
+                                ->label('Step Title')
+                                ->maxLength(255)
+                                ->required()
+                                ->columnSpan(9),
+
+                            Textarea::make('description')
+                                ->label('Step Description')
+                                ->rows(3)
+                                ->columnSpan(12),
+
+                            FileUpload::make('image')
+                                ->label('Step Image')
+                                ->image()
+                                ->disk('public')
+                                ->directory('images/sections')
+                                ->imageEditor()
+                                ->required()
+                                ->columnSpan(12),
                         ])
-                        ->columns(2)
+                        ->columns(12)
                         ->columnSpan(12)
-                        ->defaultItems(4),
+                        ->defaultItems(4)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['title'] ?? null),
                 ]),
 
             Block::make('process_variation_2')
                 ->label('Process - Variation 2')
+                ->icon('heroicon-o-arrow-path')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Repeater::make('steps')
-                        ->schema([
-                            TextInput::make('number'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
-                            Select::make('icon')
-                                ->label('Icon')
-                                ->options(FlaticonList::getSelectOptions())
-                                ->searchable()
-                                ->allowHtml()
-                                ->placeholder('Select an icon'),
-                        ])
-                        ->columns(2)
-                        ->defaultItems(4)
+                    FileUpload::make('background_image')
+                        ->label('Background Pattern Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('images/sections')
+                        ->imageEditor()
                         ->columnSpan(12),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->default('Excellence Since 1986')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Our Executive Service Process')
+                        ->columnSpan(6),
+
+                    Repeater::make('steps')
+                        ->label('Process Steps')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('number')
+                                    ->label('Step Number')
+                                    ->default('01')
+                                    ->columnSpan(3),
+
+                                TextInput::make('title')
+                                    ->label('Step Title')
+                                    ->required()
+                                    ->columnSpan(9),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->required()
+                                    ->rows(4)
+                                    ->columnSpan(12),
+
+                                FileUpload::make('image')
+                                    ->label('Step Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(12),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Step')
+                        ->defaultItems(4),
                 ]),
 
             Block::make('history_timeline')
                 ->label('Timeline')
+                ->icon('heroicon-o-clock')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Repeater::make('events')
-                        ->schema([
-                            TextInput::make('year'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
-                            FileUpload::make('image')->image()->disk('public')->directory('blocks'),
-                        ])
-                        ->columns(2)
-                        ->defaultItems(5)
+                    TextInput::make('title')
+                        ->label('Section Title (Optional)')
                         ->columnSpan(12),
+
+                    Repeater::make('events')
+                        ->label('Timeline Events')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('year')
+                                    ->label('Year')
+                                    ->required()
+                                    ->placeholder('2015')
+                                    ->columnSpan(6),
+
+                                TextInput::make('title')
+                                    ->label('Event Title')
+                                    ->required()
+                                    ->placeholder('Our Foundation')
+                                    ->columnSpan(6),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->required()
+                                    ->rows(2)
+                                    ->placeholder('Launch of premier executive workspace...')
+                                    ->columnSpan(12),
+
+                                FileUpload::make('image')
+                                    ->label('Event Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->required()
+                                    ->columnSpan(12),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => ($state['year'] ?? '').' - '.($state['title'] ?? 'Event'))
+                        ->defaultItems(6)
+                        ->minItems(1),
                 ]),
 
             Block::make('features_grid')
@@ -2366,31 +3085,97 @@ class ContentBuilderSchema
 
             Block::make('team')
                 ->label('Team Members')
+                ->icon('heroicon-o-user-group')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->default('Excellence Redefined')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->default('Your Executive Journey')
+                        ->columnSpan(6),
+
                     Repeater::make('members')
+                        ->label('Team Members')
                         ->schema([
-                            TextInput::make('name'),
-                            TextInput::make('position'),
-                            FileUpload::make('image')->image()->disk('public')->directory('blocks'),
-                            TextInput::make('email'),
-                            TextInput::make('phone'),
-                            Repeater::make('social_links')
-                                ->schema([
-                                    Select::make('platform')->options([
-                                        'facebook' => 'Facebook',
-                                        'twitter' => 'Twitter',
-                                        'linkedin' => 'LinkedIn',
-                                        'instagram' => 'Instagram',
-                                    ]),
-                                    TextInput::make('url'),
-                                ])
-                                ->columns(2),
+                            Grid::make(12)->schema([
+                                TextInput::make('number')
+                                    ->label('Member Number')
+                                    ->default('01')
+                                    ->columnSpan(3),
+
+                                TextInput::make('name')
+                                    ->label('Name')
+                                    ->required()
+                                    ->columnSpan(9),
+
+                                TextInput::make('position')
+                                    ->label('Position')
+                                    ->columnSpan(12),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->rows(3)
+                                    ->columnSpan(12),
+
+                                FileUpload::make('image')
+                                    ->label('Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(6),
+
+                                FileUpload::make('background_image')
+                                    ->label('Background Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/sections')
+                                    ->imageEditor()
+                                    ->columnSpan(6),
+
+                                TextInput::make('button_text')
+                                    ->label('Button Text')
+                                    ->default('Learn More')
+                                    ->columnSpan(6),
+
+                                TextInput::make('button_link')
+                                    ->label('Button Link')
+                                    ->default('#')
+                                    ->columnSpan(6),
+
+                                Repeater::make('social_links')
+                                    ->label('Social Links')
+                                    ->schema([
+                                        Grid::make(12)->schema([
+                                            Select::make('platform')
+                                                ->label('Platform')
+                                                ->options([
+                                                    'facebook' => 'Facebook',
+                                                    'twitter' => 'Twitter',
+                                                    'linkedin' => 'LinkedIn',
+                                                    'instagram' => 'Instagram',
+                                                ])
+                                                ->columnSpan(6),
+
+                                            TextInput::make('url')
+                                                ->label('URL')
+                                                ->url()
+                                                ->columnSpan(6),
+                                        ]),
+                                    ])
+                                    ->columnSpan(12)
+                                    ->collapsed()
+                                    ->itemLabel(fn (array $state): ?string => $state['platform'] ?? 'Social Link'),
+                            ]),
                         ])
-                        ->columns(2)
-                        ->defaultItems(3)
-                        ->columnSpan(12),
+                        ->columnSpan(12)
+                        ->collapsed()
+                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Member')
+                        ->defaultItems(4),
                 ]),
 
             Block::make('awards')
@@ -2652,17 +3437,6 @@ class ContentBuilderSchema
                         ->columnSpan(12),
                 ]),
 
-            Block::make('static')
-                ->label('Static Content (Homepage-1)')
-                ->columns(12)
-                ->schema([
-                    TextInput::make('note')
-                        ->label('Note')
-                        ->default('This is a static block containing About + Statistics sections from homepage-1.html')
-                        ->disabled()
-                        ->columnSpan(12),
-                ]),
-
             Block::make('posts_grid')
                 ->label('Dynamic Content Grid')
                 ->icon('heroicon-o-document-text')
@@ -2697,19 +3471,30 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('events_grid')
-                ->label('Events Grid (Legacy)')
+                ->label('Dynamic Content Grid (Legacy)')
                 ->icon('heroicon-o-calendar')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')
-                        ->label('Section Title')
-                        ->placeholder('Optional section title')
-                        ->columnSpan(12),
+                    Select::make('content_type')
+                        ->label('Content Type')
+                        ->options([
+                            'posts' => 'Posts',
+                            'events' => 'Events',
+                            'services' => 'Services',
+                        ])
+                        ->default('events')
+                        ->required()
+                        ->columnSpan(6),
 
                     Select::make('columns')
                         ->label('Columns')
                         ->options([2 => '2', 3 => '3', 4 => '4'])
                         ->default(3)
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Section Title (Optional)')
+                        ->placeholder('Leave empty if not needed')
                         ->columnSpan(12),
                 ]),
         ];

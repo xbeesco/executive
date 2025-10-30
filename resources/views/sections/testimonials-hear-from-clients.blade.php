@@ -5,138 +5,51 @@
 							<div class="col-md-12 col-xl-5">
 								<div class="pbmit-testimonialbox-left">
 									<div class="pbmit-heading-subheading animation-style3">
-										<h2 class="pbmit-title">Hear from our distinguished members.</h2>
-										<div class="pbmit-heading-desc">
-											Industry leaders and successful entrepreneurs share their executive workspace experiences.
-										</div>
+										<h2 class="pbmit-title">{{ $block['data']['title'] ?? 'Hear from our distinguished members.' }}</h2>
+										@if(!empty($block['data']['description']))
+											<div class="pbmit-heading-desc">
+												{{ $block['data']['description'] }}
+											</div>
+										@endif
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12 col-xl-7">
 								<div class="swiper-slider" data-autoplay="false" data-loop="false" data-dots="false" data-arrows="true" data-columns="1" data-margin="30" data-effect="slide">
 									<div class="swiper-wrapper">
-										<!-- Slide1 -->
-										<article class="pbmit-testimonial-style-2 swiper-slide">
-											<div class="pbminfotech-post-item">
-												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-01.jpg', 'section_background') }}')">
-														<div class="pbmit-featured-img-wrapper">
-															<div class="pbmit-featured-wrapper">
-																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-01.jpg', 'section_image') }}" class="img-fluid" alt="">
+										@foreach($block['data']['testimonials'] ?? [] as $testimonialIndex => $testimonial)
+											<article class="pbmit-testimonial-style-2 swiper-slide">
+												<div class="pbminfotech-post-item">
+													<div class="pbminfotech-box-content">
+														<div class="pbminfotech-box-img" style="background-image: url('{{ image($testimonial['author_background_image'] ?? $testimonial['author_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-0' . ($testimonialIndex + 1) . '.jpg', 'section_background', $loop->parent->iteration + $testimonialIndex) }}')">
+															<div class="pbmit-featured-img-wrapper">
+																<div class="pbmit-featured-wrapper">
+																	<img src="{{ image($testimonial['author_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-0' . ($testimonialIndex + 1) . '.jpg', 'section_image', $loop->parent->iteration + $testimonialIndex) }}" class="img-fluid" alt="{{ $testimonial['author_name'] ?? '' }}">
+																</div>
+															</div>
+														</div>
+														<div class="pbminfotech-box-content-inner">
+															<div class="pbminfotech-box-star-ratings">
+																@for($i = 1; $i <= 5; $i++)
+																	<i class="pbmit-base-icon-star-1 @if($i <= ($testimonial['rating'] ?? 5)) pbmit-active @endif"></i>
+																@endfor
+															</div>
+															<blockquote class="pbminfotech-testimonial-text">
+																<p>{{ $testimonial['content'] ?? '' }}</p>
+															</blockquote>
+															<div class="pbminfotech-box-author">
+																<h3 class="pbminfotech-box-title">{{ $testimonial['author_name'] ?? '' }}</h3>
+																@if(!empty($testimonial['author_position']))
+																	<div class="pbminfotech-testimonial-detail">{{ $testimonial['author_position'] }}</div>
+																@endif
 															</div>
 														</div>
 													</div>
-													<div class="pbminfotech-box-content-inner">
-														<div class="pbminfotech-box-star-ratings">
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-														</div>
-														<blockquote class="pbminfotech-testimonial-text">
-															<p>This workspace has fundamentally transformed how I conduct business. The environment exudes prestige and inspires excellence in every client meeting. My productivity has increased substantially since relocating here.</p>
-														</blockquote>
-														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Alexander Montgomery</h3>
-															<div class="pbminfotech-testimonial-detail">CEO, Investment Firm</div>
-														</div>
-													</div>
 												</div>
-											</div>
-										</article>
-										<!-- Slide2 -->
-										<article class="pbmit-testimonial-style-2 swiper-slide">
-											<div class="pbminfotech-post-item">
-												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-02.jpg', 'section_background') }}')">
-														<div class="pbmit-featured-img-wrapper">
-															<div class="pbmit-featured-wrapper">
-																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-02.jpg', 'section_image') }}" class="img-fluid" alt="">
-															</div>
-														</div>
-													</div>
-													<div class="pbminfotech-box-content-inner">
-														<div class="pbminfotech-box-star-ratings">
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-														</div>
-														<blockquote class="pbminfotech-testimonial-text">
-															<p>The sophisticated Italian design combined with cutting-edge technology creates an environment where billion-dollar decisions feel natural. The networking opportunities alone have been worth ten times the membership fee.</p>
-														</blockquote>
-														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Victoria Blackwood</h3>
-															<div class="pbminfotech-testimonial-detail">Managing Director, Private Equity</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</article>
-										<!-- Slide3 -->
-										<article class="pbmit-testimonial-style-2 swiper-slide">
-											<div class="pbminfotech-post-item">
-												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-03.jpg', 'section_background') }}')">
-														<div class="pbmit-featured-img-wrapper">
-															<div class="pbmit-featured-wrapper">
-																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-03.jpg', 'section_image') }}" class="img-fluid" alt="">
-															</div>
-														</div>
-													</div>
-													<div class="pbminfotech-box-content-inner">
-														<div class="pbminfotech-box-star-ratings">
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-														</div>
-														<blockquote class="pbminfotech-testimonial-text">
-															<p>Every detail reflects excellence I demand in my operations. From the hand-selected marble finishes to the impeccable five-star service, this is where success meets sophisticated business environments. Truly world-class.</p>
-														</blockquote>
-														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Marcus Chen</h3>
-															<div class="pbminfotech-testimonial-detail">Chairman, Global Ventures</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</article>
-										<!-- Slide4 -->
-										<article class="pbmit-testimonial-style-2 swiper-slide">
-											<div class="pbminfotech-post-item">
-												<div class="pbminfotech-box-content">
-													<div class="pbminfotech-box-img" style="background-image: url('{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-04.jpg', 'section_background') }}')">
-														<div class="pbmit-featured-img-wrapper">
-															<div class="pbmit-featured-wrapper">
-																<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-04.jpg', 'section_image') }}" class="img-fluid" alt="">
-															</div>
-														</div>
-													</div>
-													<div class="pbminfotech-box-content-inner">
-														<div class="pbminfotech-box-star-ratings">
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-															<i class="pbmit-base-icon-star-1 pbmit-active"></i>
-														</div>
-														<blockquote class="pbminfotech-testimonial-text">
-															<p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
-														</blockquote>
-														<div class="pbminfotech-box-author">
-															<h3 class="pbminfotech-box-title">Robert Gold</h3>
-															<div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</article>
+											</article>
+										@endforeach
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div class="ihbox-style-area">
@@ -144,7 +57,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-contents d-flex align-items-center">
 										<div class="pbmit-title-wrap">
-											<h2 class="pbmit-element-title">4.82</h2>
+											<h2 class="pbmit-element-title">{{ $block['data']['rating'] ?? '4.82' }}</h2>
 										</div>
 										<div class="pbmit-icon-wrap">
 											<div class="pbmit-ihbox-svg">
@@ -159,145 +72,38 @@
 												</div>
 											</div>
 											<h4 class="pbmit-element-heading">
-												2,488 Rating
+												{{ $block['data']['total_reviews'] ?? '2,488 Rating' }}
 											</h4>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slider client-two-area" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
-							<div class="swiper-wrapper">
-								<!-- Slide1 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-01.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-01.png', 'section_image') }}" class="img-fluid" alt="">
+						@if(!empty($block['data']['client_logos']) && count($block['data']['client_logos']) > 0)
+							<div class="swiper-slider client-two-area" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
+								<div class="swiper-wrapper">
+									@foreach($block['data']['client_logos'] ?? [] as $logoIndex => $logo)
+										<article class="pbmit-client-style-3 swiper-slide">
+											<div class="pbmit-border-wrapper">
+												<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+													<h4 class="pbmit-hide">{{ $logo['name'] ?? 'Client ' . ($logoIndex + 1) }}</h4>
+													@if(!empty($logo['logo_color']))
+														<div class="pbmit-client-hover-img">
+															<img src="{{ image($logo['logo_color'], 'section_image', $loop->parent->iteration + $logoIndex) }}" alt="{{ $logo['name'] ?? '' }}">
+														</div>
+													@endif
+													<div class="pbmit-featured-img-wrapper">
+														<div class="pbmit-featured-wrapper">
+															<img src="{{ image($logo['logo_white'] ?? $logo['logo_color'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-0' . ($logoIndex + 1) . '.png', 'section_image', $loop->parent->iteration + $logoIndex) }}" class="img-fluid" alt="{{ $logo['name'] ?? '' }}">
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide2 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-02.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-02.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide3 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-03.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-03.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide4 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-04.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-04.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide5 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-05.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-05.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide6 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-06.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-06.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide7 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-07.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-07.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
-								<!-- Slide8 -->
-								<article class="pbmit-client-style-3 swiper-slide">
-									<div class="pbmit-border-wrapper">
-										<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-											<h4 class="pbmit-hide">Client 07</h4>
-											<div class="pbmit-client-hover-img">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-global-08.png', 'section_image') }}" alt="">
-											</div>
-											<div class="pbmit-featured-img-wrapper">
-												<div class="pbmit-featured-wrapper">
-													<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-08.png', 'section_image') }}" class="img-fluid" alt="">
-												</div>
-											</div>
-										</div>
-									</div>
-								</article>
+										</article>
+									@endforeach
+								</div>
 							</div>
-						</div>
+						@endif
 					</div>
 				</div>
             </section>

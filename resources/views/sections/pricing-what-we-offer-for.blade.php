@@ -20,11 +20,7 @@
                                 <div class="pbmit-service-image-wrapper">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            @if(!empty($service['image']))
-                                            <img src="{{ Storage::url($service['image']) }}" class="img-fluid" alt="{{ $service['title'] ?? '' }}">
-                                            @else
-                                            <img src="{{ image(sprintf('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/service/service-%02d.jpg', $loop->iteration), 'section_image') }}" class="img-fluid" alt="{{ $service['title'] ?? '' }}">
-                                            @endif
+                                            <img src="{{ image($service['image'] ?? '', 'section_image', 'service-' . str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) . '.jpg') }}" class="img-fluid" alt="{{ $service['title'] ?? '' }}">
                                         </div>
                                     </div>
                                 </div>
