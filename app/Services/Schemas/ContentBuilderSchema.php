@@ -42,6 +42,24 @@ class ContentBuilderSchema
                         ->columnSpan(12),
                 ]),
 
+            Block::make('text_content')
+                ->label('Text Content Section')
+                ->icon('heroicon-o-document-text')
+                ->columns(12)
+                ->schema([
+                    RichEditor::make('content')
+                        ->label('Content')
+                        ->required()
+                        ->toolbarButtons([
+                            ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                            ['h1', 'h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
+                            ['blockquote', 'codeBlock', 'code', 'details', 'bulletList', 'orderedList'],
+                            ['textColor', 'highlight', 'horizontalRule', 'clearFormatting'],
+                            ['undo', 'redo'],
+                        ])
+                        ->columnSpan(12),
+                ]),
+
             Block::make('content_image')
                 ->icon('heroicon-o-photo')
                 ->label('Image')
@@ -330,13 +348,15 @@ class ContentBuilderSchema
                     Select::make('size')
                         ->label('Spacer Size')
                         ->options([
-                            'section-lgb' => 'Small',
-                            'section-lgt' => 'Medium',
-                            'section-lgx' => 'Large',
+                            'section-lgb' => 'Small (Bottom Padding)',
+                            'section-lgt' => 'Medium (Light Spacing)',
+                            'section-lgx' => 'Large (Extra Spacing)',
+                            'section-xl' => 'Extra Large (Maximum Spacing)',
                         ])
-                        ->default('section-lgt')
+                        ->default('section-xl')
                         ->required()
                         ->selectablePlaceholder(false)
+                        ->helperText('Choose the amount of vertical spacing to add')
                         ->columnSpan(12),
                 ]),
 
@@ -563,28 +583,93 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('about_variation_3')
-                ->label('About - Variation 3')
+                ->label('About - Variation 3 (We Design Thoughtful)')
                 ->icon('heroicon-o-information-circle')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('subtitle')->columnSpan(6),
-                    TextInput::make('title')->columnSpan(6),
-                    RichEditor::make('content')->columnSpan(12),
-                    FileUpload::make('image')->image()->disk('public')->directory('blocks')->columnSpan(12),
-                    Repeater::make('list_items')
+                    FileUpload::make('background_image')
+                        ->label('Left Section Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    Select::make('left_icon')
+                        ->label('Left Section Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->required()
+                        ->default('pbmit-xinterio-icon-award')
+                        ->placeholder('Search and select an icon')
+                        ->columnSpan(6),
+
+                    TextInput::make('left_title')
+                        ->label('Left Section Title')
+                        ->placeholder('Award-Winning Excellence')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->columnSpan(6),
+
+                    TextInput::make('subtitle')
+                        ->label('Right Section Subtitle')
+                        ->placeholder('Since 2015')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Right Section Title')
+                        ->placeholder('We architect premium, executive-caliber environments.')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->placeholder('Our design philosophy combines sophisticated aesthetics...')
+                        ->rows(3)
+                        ->columnSpan(12),
+
+                    Repeater::make('icon_boxes')
+                        ->label('Icon Boxes (4 items in 2x2 grid)')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('text')->columnSpan(8),
                                 Select::make('icon')
+                                    ->label('Icon')
                                     ->options(FlaticonList::getSelectOptions())
                                     ->searchable()
-                                    ->columnSpan(4),
+                                    ->required()
+                                    ->default('pbmit-xinterio-icon-tools')
+                                    ->placeholder('Search and select an icon')
+                                    ->columnSpan(6),
+
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->placeholder('Executive Suites')
+                                    ->required()
+                                    ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
                         ->collapsible()
-                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Item')
-                        ->defaultItems(4),
+                        ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Icon Box')
+                        ->defaultItems(4)
+                        ->minItems(1),
+
+                    TextInput::make('signature_name')
+                        ->label('Signature Name')
+                        ->placeholder('A. El Sherbiny')
+                        ->columnSpan(4),
+
+                    TextInput::make('signature_position')
+                        ->label('Signature Position')
+                        ->placeholder('Founder')
+                        ->columnSpan(4),
+
+                    FileUpload::make('signature_image')
+                        ->label('Signature Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(4),
                 ]),
 
             Block::make('about_variation_4')
@@ -775,22 +860,102 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('services_grid_variation_2')
-                ->label('Services Grid - Variation 2')
+                ->label('Services Grid - Variation 2 (Crafting Environments)')
                 ->icon('heroicon-o-squares-2x2')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('subtitle')->columnSpan(6),
-                    TextInput::make('title')->columnSpan(6),
-                    Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(3)->columnSpan(12),
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Our Expertise')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('Crafting environments for executive excellence.')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('counter_number')
+                        ->label('Counter Number')
+                        ->numeric()
+                        ->placeholder('460')
+                        ->required()
+                        ->columnSpan(4),
+
+                    TextInput::make('counter_suffix')
+                        ->label('Counter Suffix')
+                        ->placeholder('+')
+                        ->columnSpan(4),
+
+                    TextInput::make('counter_text')
+                        ->label('Counter Description')
+                        ->placeholder('Executive Workspace Solutions <br> Specialists at Your Service')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->required()
+                        ->columnSpan(4),
+
+                    FileUpload::make('background_image')
+                        ->label('Right Section Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
                     Repeater::make('services')
+                        ->label('Services')
                         ->schema([
                             Grid::make(12)->schema([
-                                Select::make('icon')->options(FlaticonList::getSelectOptions())->searchable()->columnSpan(12),
-                                TextInput::make('title')->columnSpan(12),
-                                Textarea::make('description')->columnSpan(12),
+                                FileUpload::make('image')
+                                    ->label('Service Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('blocks')
+                                    ->imageEditor()
+                                    ->columnSpan(12),
+
+                                TextInput::make('number')
+                                    ->label('Number')
+                                    ->placeholder('01')
+                                    ->columnSpan(6),
+
+                                TextInput::make('category')
+                                    ->label('Category')
+                                    ->placeholder('Executive Suite')
+                                    ->required()
+                                    ->columnSpan(6),
+
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->placeholder('Executive Office Design')
+                                    ->required()
+                                    ->columnSpan(12),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->placeholder('Premium workspace solutions for business leaders worldwide')
+                                    ->rows(2)
+                                    ->columnSpan(12),
+
+                                TextInput::make('link')
+                                    ->label('Link URL')
+                                    ->placeholder('service-details.html')
+                                    ->columnSpan(9),
+
+                                Select::make('button_icon')
+                                    ->label('Button Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->default('pbmit-base-icon-pbmit-up-arrow')
+                                    ->placeholder('Search and select an icon')
+                                    ->columnSpan(3),
                             ]),
                         ])
-                        ->columnSpan(12)->collapsible()->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Service')->defaultItems(3),
+                        ->columnSpan(12)
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => ($state['number'] ?? '').($state['number'] && $state['title'] ? ' - ' : '').($state['title'] ?? 'Service'))
+                        ->defaultItems(6)
+                        ->minItems(1),
                 ]),
 
             Block::make('services_grid_variation_3')
@@ -1251,34 +1416,135 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('pricing_variation_4')
-                ->label('Pricing - Variation 4')
+                ->label('Pricing - Variation 4 (Examination Package)')
                 ->icon('heroicon-o-currency-dollar')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Repeater::make('plans')
+                    FileUpload::make('background_image')
+                        ->label('Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    // Left Box
+                    TextInput::make('left_title')
+                        ->label('Left Box Title')
+                        ->placeholder('Executive <br> Member Support.')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('left_description')
+                        ->label('Left Box Description')
+                        ->placeholder('Dedicated assistance for business leaders...')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Select::make('left_icon')
+                        ->label('Left Box Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->required()
+                        ->default('pbmit-xinterio-icon-offer')
+                        ->placeholder('Search and select an icon')
+                        ->columnSpan(6),
+
+                    TextInput::make('left_button_text')
+                        ->label('Left Box Button Text')
+                        ->placeholder('View All Services')
+                        ->required()
+                        ->columnSpan(3),
+
+                    TextInput::make('left_button_link')
+                        ->label('Left Box Button Link')
+                        ->placeholder('faq.html')
+                        ->columnSpan(3),
+
+                    // Center Box
+                    TextInput::make('center_title')
+                        ->label('Center Box Title')
+                        ->placeholder('Premium Executive <br>Membership Package')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('center_description')
+                        ->label('Center Box Description')
+                        ->placeholder('Exclusive access to luxury workspaces...')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Repeater::make('center_features')
+                        ->label('Center Box Features List')
                         ->schema([
                             Grid::make(12)->schema([
-                                TextInput::make('name')->required()->columnSpan(6),
-                                TextInput::make('price')->required()->columnSpan(6),
-                                Repeater::make('features')
-                                    ->schema([
-                                        Grid::make(12)->schema([
-                                            TextInput::make('text')->required()->columnSpan(9),
-                                            Toggle::make('included')->default(true)->columnSpan(3),
-                                        ]),
-                                    ])
-                                    ->columnSpan(12)
-                                    ->collapsible()
-                                    ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
-                                    ->defaultItems(5),
-                                TextInput::make('button_text')->default('Get Started')->columnSpan(12),
+                                Select::make('icon')
+                                    ->label('Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->default('pbmit-base-icon-check-mark')
+                                    ->placeholder('Search and select an icon')
+                                    ->columnSpan(3),
+
+                                TextInput::make('text')
+                                    ->label('Feature Text')
+                                    ->placeholder('Dedicated executive concierge team')
+                                    ->required()
+                                    ->columnSpan(9),
                             ]),
                         ])
                         ->columnSpan(12)
                         ->collapsible()
-                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Plan')
-                        ->defaultItems(3),
+                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? 'Feature')
+                        ->defaultItems(3)
+                        ->minItems(1),
+
+                    TextInput::make('center_button_text')
+                        ->label('Center Box Button Text')
+                        ->placeholder('Explore Membership Tiers')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('center_button_link')
+                        ->label('Center Box Button Link')
+                        ->placeholder('contact-us.html')
+                        ->columnSpan(6),
+
+                    // Right Box
+                    TextInput::make('right_title')
+                        ->label('Right Box Title')
+                        ->placeholder('Discover Our <br>Luxury Workspaces')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('right_description')
+                        ->label('Right Box Description')
+                        ->placeholder('Explore our portfolio of prestigious locations...')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Select::make('right_icon')
+                        ->label('Right Box Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->required()
+                        ->default('pbmit-xinterio-icon-award')
+                        ->placeholder('Search and select an icon')
+                        ->columnSpan(6),
+
+                    TextInput::make('right_button_text')
+                        ->label('Right Box Button Text')
+                        ->placeholder('View All Locations')
+                        ->required()
+                        ->columnSpan(3),
+
+                    TextInput::make('right_button_link')
+                        ->label('Right Box Button Link')
+                        ->placeholder('portfolio-grid-col-3.html')
+                        ->columnSpan(3),
                 ]),
 
             Block::make('portfolio_grid')
@@ -1760,53 +2026,131 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('features_slider')
-                ->label('Features Slider')
+                ->label('Features Slider (Design Without Limits)')
+                ->icon('heroicon-o-queue-list')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(6),
-                    Select::make('columns')->options([2 => '2', 3 => '3', 4 => '4'])->default(4)->columnSpan(6),
+                    FileUpload::make('background_image')
+                        ->label('Background Pattern Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Why Executive Professionals Choose Us')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('Excellence without compromise, success guaranteed.')
+                        ->helperText('Use <br> for line breaks if needed')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Select::make('columns')
+                        ->label('Slider Columns')
+                        ->options([
+                            '2' => '2 Columns',
+                            '3' => '3 Columns',
+                            '4' => '4 Columns',
+                            '5' => '5 Columns',
+                        ])
+                        ->default('4')
+                        ->columnSpan(4),
+
+                    Toggle::make('autoplay')
+                        ->label('Enable Autoplay')
+                        ->default(false)
+                        ->columnSpan(4),
+
+                    Toggle::make('loop')
+                        ->label('Enable Loop')
+                        ->default(true)
+                        ->columnSpan(4),
+
                     Repeater::make('features')
+                        ->label('Feature Slides')
                         ->schema([
-                            Select::make('icon')
-                                ->label('Icon')
-                                ->options(FlaticonList::getSelectOptions())
-                                ->searchable()
-                                ->allowHtml()
-                                ->placeholder('Select an icon'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
+                            Grid::make(12)->schema([
+                                Select::make('icon')
+                                    ->label('Icon')
+                                    ->options(FlaticonList::getSelectOptions())
+                                    ->searchable()
+                                    ->required()
+                                    ->default('pbmit-xinterio-icon-living-room')
+                                    ->placeholder('Search and select an icon')
+                                    ->columnSpan(12),
+
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->placeholder('5 Years Premium Guarantee')
+                                    ->required()
+                                    ->columnSpan(9),
+
+                                TextInput::make('number')
+                                    ->label('Number')
+                                    ->placeholder('01')
+                                    ->columnSpan(3),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->placeholder('Our commitment to excellence ensures lasting quality...')
+                                    ->rows(3)
+                                    ->columnSpan(12),
+                            ]),
                         ])
                         ->columnSpan(12)
-                        ->defaultItems(4),
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => ($state['number'] ?? '').($state['number'] && $state['title'] ? ' - ' : '').($state['title'] ?? 'Feature'))
+                        ->defaultItems(5)
+                        ->minItems(1),
                 ]),
 
             Block::make('icon_box')
-                ->label('Icon Box')
+                ->label('Icon Box (The Advantages Of)')
+                ->icon('heroicon-o-information-circle')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Textarea::make('description')->columnSpan(12),
-                    Select::make('icon')
-                        ->label('Icon')
-                        ->options(FlaticonList::getSelectOptions())
-                        ->searchable()
-                        ->allowHtml()
-                        ->placeholder('Select an icon')
+                    FileUpload::make('background_image')
+                        ->label('Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
                         ->columnSpan(12),
-                    FileUpload::make('image')->image()->disk('public')->directory('blocks')->columnSpan(12),
-                    Repeater::make('features')
-                        ->schema([
-                            Select::make('icon')
-                                ->label('Icon')
-                                ->options(FlaticonList::getSelectOptions())
-                                ->searchable()
-                                ->allowHtml()
-                                ->placeholder('Select an icon'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
-                        ])
-                        ->columns(2)
-                        ->defaultItems(4)
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Since 2015')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('The distinction of our executive platform.')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Textarea::make('description_1')
+                        ->label('First Paragraph')
+                        ->placeholder('Executive workspace leadership represents...')
+                        ->rows(4)
+                        ->columnSpan(12),
+
+                    Textarea::make('description_2')
+                        ->label('Second Paragraph (Optional)')
+                        ->placeholder('Our portfolio encompasses...')
+                        ->rows(4)
+                        ->columnSpan(12),
+
+                    FileUpload::make('signature_image')
+                        ->label('Signature Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
                         ->columnSpan(12),
                 ]),
 
@@ -1814,22 +2158,62 @@ class ContentBuilderSchema
                 ->label('Icon Box - Variation 2')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    Textarea::make('description')->columnSpan(12),
-                    Repeater::make('advantages')
-                        ->schema([
-                            Select::make('icon')
-                                ->label('Icon')
-                                ->options(FlaticonList::getSelectOptions())
-                                ->searchable()
-                                ->allowHtml()
-                                ->placeholder('Select an icon'),
-                            TextInput::make('title'),
-                            Textarea::make('description'),
-                        ])
-                        ->columns(2)
-                        ->defaultItems(3)
+                    // Background Images
+                    FileUpload::make('background_image')
+                        ->label('Section Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->columnSpan(6),
+                    FileUpload::make('left_background_image')
+                        ->label('Left Box Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->columnSpan(6),
+
+                    // Video Section
+                    TextInput::make('video_url')
+                        ->label('Video URL')
+                        ->url()
+                        ->placeholder('https://www.youtube.com/watch?v=...')
+                        ->columnSpan(6),
+                    TextInput::make('video_title')
+                        ->label('Video Title')
+                        ->placeholder('Watch our showcase')
+                        ->columnSpan(6),
+                    Select::make('video_icon')
+                        ->label('Video Icon')
+                        ->options(FlaticonList::getSelectOptions())
+                        ->searchable()
+                        ->required()
+                        ->columnSpan(6)
+                        ->default('pbmit-base-icon-play-button-1')
+                        ->placeholder('Search and select an icon'),
+
+                    // Content Section
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Since 2015')
+                        ->columnSpan(6),
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('The distinction of our executive environment.')
                         ->columnSpan(12),
+                    Textarea::make('description_1')
+                        ->label('First Paragraph')
+                        ->rows(3)
+                        ->columnSpan(12),
+                    Textarea::make('description_2')
+                        ->label('Second Paragraph')
+                        ->rows(3)
+                        ->columnSpan(12),
+                    FileUpload::make('signature_image')
+                        ->label('Signature Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->columnSpan(6),
                 ]),
 
             Block::make('accordion')
@@ -2124,36 +2508,147 @@ class ContentBuilderSchema
                 ]),
 
             Block::make('before_after')
-                ->label('Before/After')
+                ->label('Before/After (We Design Thoughtful)')
+                ->icon('heroicon-o-arrow-path')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
-                    FileUpload::make('before_image')->image()->disk('public')->directory('blocks')->columnSpan(6),
-                    FileUpload::make('after_image')->image()->disk('public')->directory('blocks')->columnSpan(6),
-                    Textarea::make('description')->columnSpan(12),
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('Since 2015')
+                        ->columnSpan(6),
+
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->placeholder('We craft executive environments where leaders excel.')
+                        ->required()
+                        ->columnSpan(6),
+
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->placeholder('Empowering business professionals with premium workspace solutions...')
+                        ->rows(3)
+                        ->columnSpan(12),
+
+                    Repeater::make('statistics')
+                        ->label('Circular Statistics')
+                        ->schema([
+                            Grid::make(12)->schema([
+                                TextInput::make('percentage')
+                                    ->label('Percentage Value')
+                                    ->numeric()
+                                    ->placeholder('87')
+                                    ->required()
+                                    ->minValue(0)
+                                    ->maxValue(100)
+                                    ->columnSpan(4),
+
+                                TextInput::make('title')
+                                    ->label('Statistic Title')
+                                    ->placeholder('Executive Satisfaction')
+                                    ->required()
+                                    ->helperText('Use <br> for line breaks if needed')
+                                    ->columnSpan(8),
+
+                                TextInput::make('color')
+                                    ->label('Circle Color (Hex)')
+                                    ->placeholder('#bb9a65')
+                                    ->default('#bb9a65')
+                                    ->columnSpan(12),
+                            ]),
+                        ])
+                        ->columnSpan(12)
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => ($state['percentage'] ?? '').'% - '.($state['title'] ?? 'Statistic'))
+                        ->defaultItems(2)
+                        ->minItems(1)
+                        ->maxItems(2),
+
+                    FileUpload::make('before_image')
+                        ->label('Before Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->required()
+                        ->columnSpan(6),
+
+                    FileUpload::make('after_image')
+                        ->label('After Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->required()
+                        ->columnSpan(6),
                 ]),
 
             Block::make('cta')
-                ->label('Call to Action')
+                ->label('Call to Action (We Making Home)')
+                ->icon('heroicon-o-megaphone')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('subtitle')->columnSpan(6),
-                    TextInput::make('title')->columnSpan(6),
-                    TextInput::make('phone')->columnSpan(6),
+                    FileUpload::make('background_image')
+                        ->label('Section Background Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(12),
+
                     Select::make('phone_icon')
                         ->label('Phone Icon')
                         ->options(FlaticonList::getSelectOptions())
                         ->searchable()
-                        ->allowHtml()
-                        ->placeholder('Select an icon')
+                        ->required()
+                        ->default('pbmit-base-icon-phone-volume-solid-1')
+                        ->placeholder('Search and select an icon')
                         ->columnSpan(6),
-                    TextInput::make('badge_text')->columnSpan(12),
+
+                    TextInput::make('phone')
+                        ->label('Phone Number')
+                        ->placeholder('+125-8845-5421')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('subtitle')
+                        ->label('Subtitle')
+                        ->placeholder('EXCLUSIVE MEMBERSHIP OFFER')
+                        ->required()
+                        ->columnSpan(12),
+
+                    TextInput::make('title_prefix')
+                        ->label('Title Prefix (Before Rotating Words)')
+                        ->placeholder('We create executive spaces so')
+                        ->required()
+                        ->columnSpan(6),
+
+                    TextInput::make('title_suffix')
+                        ->label('Title Suffix (After Rotating Words)')
+                        ->placeholder("you'll elevate your business")
+                        ->required()
+                        ->columnSpan(6),
+
                     Repeater::make('rotating_words')
                         ->label('Rotating Words')
                         ->schema([
-                            TextInput::make('word'),
+                            Grid::make(12)->schema([
+                                TextInput::make('word')
+                                    ->label('Word')
+                                    ->required()
+                                    ->placeholder('distinguished')
+                                    ->columnSpan(12),
+                            ]),
                         ])
+                        ->columnSpan(12)
+                        ->collapsible()
+                        ->itemLabel(fn (array $state): ?string => $state['word'] ?? 'Word')
                         ->defaultItems(4)
+                        ->minItems(1),
+
+                    TextInput::make('badge_text')
+                        ->label('Badge Text')
+                        ->placeholder('Premium Access')
+                        ->required()
                         ->columnSpan(12),
                 ]),
 
