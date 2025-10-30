@@ -11,22 +11,22 @@ return [
             'title' => 'Discover Your Ideal Executive Space',
             'slides' => [
                 [
-                    'icon' => 'blocks/icon-luxury.png',
+                    'icon' => 'pbmit-xinterio-icon-premium',
                     'title' => 'Premium Workspace Solutions',
                     'description' => 'Meticulously designed private offices that embody sophistication and elevate your professional presence with Italian marble and hand-selected art.',
                 ],
                 [
-                    'icon' => 'blocks/icon-productivity.png',
+                    'icon' => 'pbmit-xinterio-icon-trophy',
                     'title' => 'Enhanced Productivity Environment',
                     'description' => 'State-of-the-art ergonomic furniture and advanced technology infrastructure that optimize your workflow and inspire excellence in every task.',
                 ],
                 [
-                    'icon' => 'blocks/icon-networking.png',
+                    'icon' => 'pbmit-xinterio-icon-people',
                     'title' => 'Exclusive Executive Network',
                     'description' => 'Join an elite community of visionary CEOs, successful entrepreneurs, and C-level executives in our prestigious business environment.',
                 ],
                 [
-                    'icon' => 'blocks/icon-location.png',
+                    'icon' => 'pbmit-xinterio-icon-placeholder',
                     'title' => 'Prime Business Districts',
                     'description' => 'Strategically situated in the most sought-after financial and business districts with unparalleled accessibility and commanding city views.',
                 ],
@@ -104,15 +104,15 @@ return [
             'image' => 'blocks/wellness-executive-lifestyle.jpg',
             'features' => [
                 [
-                    'icon' => 'flaticon-wellness',
+                    'icon' => 'pbmit-xinterio-icon-hard-hat',
                     'text' => 'Private fitness centers with certified personal trainers and yoga instructors',
                 ],
                 [
-                    'icon' => 'flaticon-meditation',
+                    'icon' => 'pbmit-xinterio-icon-cushions',
                     'text' => 'Tranquil meditation spaces with guided mindfulness sessions',
                 ],
                 [
-                    'icon' => 'flaticon-nutrition',
+                    'icon' => 'pbmit-xinterio-icon-trophy',
                     'text' => 'Organic nutrition programs curated by Michelin-starred chefs',
                 ],
             ],
@@ -128,17 +128,17 @@ return [
             'columns' => 3,
             'services' => [
                 [
-                    'icon' => 'flaticon-office-private',
+                    'icon' => 'pbmit-xinterio-icon-house',
                     'title' => 'Private Executive Offices',
                     'description' => 'Fully furnished corner offices with floor-to-ceiling panoramic windows, premium Poltrona Frau furnishings, dedicated meeting spaces, and private reception areas designed exclusively for C-suite professionals and senior partners.',
                 ],
                 [
-                    'icon' => 'flaticon-boardroom',
+                    'icon' => 'pbmit-xinterio-icon-living-room',
                     'title' => 'Boardroom Sanctuaries',
                     'description' => 'Impressive mahogany-appointed boardrooms equipped with holographic presentation systems, advanced audiovisual technology, full refreshment services, and executive seating for 4-20 distinguished guests with absolute privacy.',
                 ],
                 [
-                    'icon' => 'flaticon-event-space',
+                    'icon' => 'pbmit-xinterio-icon-world',
                     'title' => 'Event Pavilions',
                     'description' => 'Sophisticated 2,000+ sq ft event spaces perfect for product launches, press conferences, corporate galas, and investor presentations with full-service catering from award-winning chefs and professional audiovisual production.',
                 ],
@@ -192,15 +192,15 @@ return [
             'image' => 'blocks/transformation-luxury-design.jpg',
             'features' => [
                 [
-                    'icon' => 'flaticon-architecture',
+                    'icon' => 'pbmit-xinterio-icon-blueprint',
                     'text' => 'Award-winning architectural design by internationally renowned firms',
                 ],
                 [
-                    'icon' => 'flaticon-materials',
+                    'icon' => 'pbmit-xinterio-icon-brickwall',
                     'text' => 'Premium materials sourced from master craftsmen globally',
                 ],
                 [
-                    'icon' => 'flaticon-craftsmanship',
+                    'icon' => 'pbmit-xinterio-icon-tools',
                     'text' => 'Artisanal craftsmanship evident in every exquisite detail',
                 ],
             ],
@@ -242,25 +242,25 @@ return [
                     'number' => '01',
                     'title' => 'White Glove Cleaning',
                     'description' => 'Our professional housekeeping team maintains museum-quality showroom condition daily using eco-luxury certified products and meticulous five-star hotel standards with exceptional attention to every detail.',
-                    'icon' => 'flaticon-cleaning-luxury',
+                    'icon' => 'pbmit-xinterio-icon-satisfaction',
                 ],
                 [
                     'number' => '02',
                     'title' => 'Proactive Maintenance',
                     'description' => 'Weekly comprehensive inspections and immediate professional response to any maintenance needs ensure your prestigious workspace remains absolutely flawless without ever disrupting your important business operations.',
-                    'icon' => 'flaticon-maintenance-pro',
+                    'icon' => 'pbmit-xinterio-icon-tools',
                 ],
                 [
                     'number' => '03',
                     'title' => 'Bespoke Customization',
                     'description' => 'Our award-winning interior design team can thoughtfully modify your space quarterly to reflect seasonal aesthetic trends or perfectly align with your evolving brand identity and corporate image.',
-                    'icon' => 'flaticon-customization-design',
+                    'icon' => 'pbmit-xinterio-icon-paint',
                 ],
                 [
                     'number' => '04',
                     'title' => 'Continuous Enhancement',
                     'description' => 'We invest millions in ongoing upgrades to technology infrastructure, premium furnishings, and exclusive amenities to ensure your workspace remains at the absolute forefront of luxury and innovation.',
-                    'icon' => 'flaticon-upgrade-premium',
+                    'icon' => 'pbmit-xinterio-icon-premium',
                 ],
             ],
         ],
@@ -322,22 +322,22 @@ return [
             'columns' => 4,
             'features' => [
                 [
-                    'icon' => 'flaticon-flexible-terms',
+                    'icon' => 'pbmit-xinterio-icon-wallet',
                     'title' => 'Flexible Terms',
                     'description' => 'From daily hot-desking to comprehensive multi-year agreements tailored precisely to your strategic business planning and growth trajectory.',
                 ],
                 [
-                    'icon' => 'flaticon-scalable-space',
+                    'icon' => 'pbmit-xinterio-icon-house',
                     'title' => 'Scalable Spaces',
                     'description' => 'Expand your footprint or consolidate operations seamlessly as your enterprise evolves, without the capital constraints of traditional real estate ownership.',
                 ],
                 [
-                    'icon' => 'flaticon-global-network',
+                    'icon' => 'pbmit-xinterio-icon-world',
                     'title' => 'Global Network',
                     'description' => 'Exclusive access to 50+ prestigious locations in major cities worldwide with full reciprocal member privileges and seamless booking through our mobile app.',
                 ],
                 [
-                    'icon' => 'flaticon-exclusive-events',
+                    'icon' => 'pbmit-xinterio-icon-award',
                     'title' => 'Members Only Events',
                     'description' => 'Curated networking events, executive masterclasses, wine tastings, and exclusive cultural experiences designed specifically for our distinguished membership community.',
                 ],

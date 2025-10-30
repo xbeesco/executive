@@ -14,15 +14,15 @@ return [
             'image' => 'blocks/exceptional-design-mastery.jpg',
             'features' => [
                 [
-                    'icon' => 'flaticon-heritage',
+                    'icon' => 'pbmit-xinterio-icon-award',
                     'text' => 'Heritage craftsmanship with modern sensibility',
                 ],
                 [
-                    'icon' => 'flaticon-materials',
+                    'icon' => 'pbmit-xinterio-icon-brickwall',
                     'text' => 'Rare materials sourced from master artisans globally',
                 ],
                 [
-                    'icon' => 'flaticon-timeless',
+                    'icon' => 'pbmit-xinterio-icon-star',
                     'text' => 'Timeless aesthetics that transcend trends',
                 ],
             ],
@@ -38,17 +38,17 @@ return [
             'columns' => 3,
             'services' => [
                 [
-                    'icon' => 'flaticon-wellness-spa',
+                    'icon' => 'pbmit-xinterio-icon-bathtub',
                     'title' => 'Wellness & Rejuvenation',
                     'description' => 'On-site spa services, private meditation rooms, professional yoga studios, therapeutic massage therapy, and personal wellness consultants to maintain peak performance and work-life harmony.',
                 ],
                 [
-                    'icon' => 'flaticon-dining',
+                    'icon' => 'pbmit-xinterio-icon-kitchen',
                     'title' => 'Culinary Excellence',
                     'description' => 'Michelin-quality dining experiences, private executive chef services, expertly curated wine cellars, and sophisticated entertaining spaces perfect for client relations and business development.',
                 ],
                 [
-                    'icon' => 'flaticon-technology',
+                    'icon' => 'pbmit-xinterio-icon-3d',
                     'title' => 'Technology Ecosystem',
                     'description' => 'Cutting-edge IT infrastructure, dedicated 24/7 tech support team, smart office automation systems, and seamless integration with your existing business technology platforms.',
                 ],
@@ -63,25 +63,25 @@ return [
             'title' => 'Why Distinguished Leaders Choose Us',
             'features' => [
                 [
-                    'icon' => 'flaticon-trust',
+                    'icon' => 'pbmit-xinterio-icon-warranty',
                     'title' => 'Uncompromising Standards',
                     'description' => 'We never compromise on quality, service, or attention to detail. Excellence is not just our goal—it is our only acceptable standard in every interaction.',
                     'image' => 'blocks/feature-standards-excellence.jpg',
                 ],
                 [
-                    'icon' => 'flaticon-community',
+                    'icon' => 'pbmit-xinterio-icon-people',
                     'title' => 'Curated Community',
                     'description' => 'Our selective membership process ensures you\'re surrounded by accomplished, ethical, and inspiring professionals who share your values and ambitions.',
                     'image' => 'blocks/feature-community-curated.jpg',
                 ],
                 [
-                    'icon' => 'flaticon-flexibility',
+                    'icon' => 'pbmit-xinterio-icon-compass',
                     'title' => 'Ultimate Flexibility',
                     'description' => 'Scale your space as your organization evolves. Access our global network of locations. Customize every detail to match your exact preferences and requirements.',
                     'image' => 'blocks/feature-flexibility-ultimate.jpg',
                 ],
                 [
-                    'icon' => 'flaticon-value',
+                    'icon' => 'pbmit-xinterio-icon-wallet',
                     'title' => 'Exceptional Value',
                     'description' => 'When you consider the alternatives—purchasing real estate, furnishing, staffing, maintaining—our comprehensive turnkey solution delivers remarkable value and peace of mind.',
                     'image' => 'blocks/feature-value-exceptional.jpg',
@@ -97,7 +97,7 @@ return [
             'subtitle' => 'Your Success Deserves This',
             'title' => 'We\'re Making Excellence Accessible',
             'phone' => '+1 (555) 789-EXEC',
-            'phone_icon' => 'flaticon-phone-luxury',
+            'phone_icon' => 'pbmit-xinterio-icon-phone',
             'badge_text' => 'Immediate Response',
             'rotating_words' => [
                 ['word' => 'Remarkable'],
@@ -269,17 +269,17 @@ return [
             'content' => '<p>You didn\'t build your success by accepting mediocrity. Neither do we.</p>',
             'services' => [
                 [
-                    'icon' => 'flaticon-bespoke',
+                    'icon' => 'pbmit-xinterio-icon-paint',
                     'title' => 'Bespoke Design',
                     'description' => 'Every element customized to reflect your unique brand identity and personal preferences.',
                 ],
                 [
-                    'icon' => 'flaticon-innovation',
+                    'icon' => 'pbmit-xinterio-icon-3d',
                     'title' => 'Innovation Integration',
                     'description' => 'Latest technology seamlessly woven into classic design principles.',
                 ],
                 [
-                    'icon' => 'flaticon-sustainability',
+                    'icon' => 'pbmit-xinterio-icon-eco-home',
                     'title' => 'Sustainable Luxury',
                     'description' => 'Environmental responsibility without compromising aesthetic or comfort standards.',
                 ],
@@ -295,22 +295,22 @@ return [
             'columns' => 4,
             'services' => [
                 [
-                    'icon' => 'flaticon-library',
+                    'icon' => 'pbmit-xinterio-icon-armchair',
                     'title' => 'Private Library',
                     'description' => 'Curated collection of business literature and rare editions.',
                 ],
                 [
-                    'icon' => 'flaticon-cigar',
+                    'icon' => 'pbmit-xinterio-icon-cushions',
                     'title' => 'Cigar Lounge',
                     'description' => 'Temperature-controlled humidor with premium selection.',
                 ],
                 [
-                    'icon' => 'flaticon-golf',
+                    'icon' => 'pbmit-xinterio-icon-trophy',
                     'title' => 'Golf Simulator',
                     'description' => 'Practice your swing on virtual world-class courses.',
                 ],
                 [
-                    'icon' => 'flaticon-barber',
+                    'icon' => 'pbmit-xinterio-icon-engineer',
                     'title' => 'Grooming Suite',
                     'description' => 'Professional barber and styling services available.',
                 ],
@@ -368,17 +368,17 @@ return [
             'description' => 'When you join our community, you gain access to advantages that extend far beyond physical space.',
             'advantages' => [
                 [
-                    'icon' => 'flaticon-access',
+                    'icon' => 'pbmit-xinterio-icon-world',
                     'title' => 'Global Access',
                     'description' => 'Work from our prestigious locations in 50+ cities across 6 continents with the same level of luxury and impeccable service.',
                 ],
                 [
-                    'icon' => 'flaticon-network',
+                    'icon' => 'pbmit-xinterio-icon-people',
                     'title' => 'Elite Network',
                     'description' => 'Connect with fellow members who are industry leaders, successful entrepreneurs, and influential decision-makers.',
                 ],
                 [
-                    'icon' => 'flaticon-investment',
+                    'icon' => 'pbmit-xinterio-icon-portfolio',
                     'title' => 'Asset Efficiency',
                     'description' => 'Enjoy all benefits of owning premium real estate without capital tie-up, management headaches, or depreciation risk.',
                 ],

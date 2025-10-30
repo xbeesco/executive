@@ -1,234 +1,69 @@
-			<section class="pbmit-element-portfolio-style-4 portfolio-section-five">
-				<div class="container-fluid p-0">
-					<div class="pbmit-main-hover-faded">
-						<div class="pbmit-content-box">
-							<div class="swiper-slider swiper-hover-slide-nav" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="3" data-margin="0" data-effect="slide">
-								<div class="swiper-wrapper">
-									<!-- Slide1 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Executive Office</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Innovation</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide2 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Premium Furnishing</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Minimalism</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide3 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Workspace Design</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Lighting</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide4 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Conference Room</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Bold Finishes</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide5 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Private Suite</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Clean Lines</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide6 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Corporate Space</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Seamless</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide7 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Business Suite</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Productivity</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Slide8 -->
-									<div class="swiper-slide">
-										<div class="pbmit-content-box-inner">
-											<div class="pbmit-titlebox-wrap">
-												<div class="pbmit-titlebox">
-													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">Luxury Lounge</a>
-													</div>
-													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">Sophistication</a>
-													</h3>
-												</div>
-												<div class="pbmit-portfolio-btn">
-													<a href="portfolio-detail-style-1.html">
-														<i class="pbmit-base-icon-pbmit-up-arrow"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-hover-slide-images">
-							<div class="swiper-slider pbmit-hover-image-faded">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-01.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-01">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-02.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-02">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-03.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-03">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-04.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-04">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-05.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-05">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-06.jpg', 'section_image') }}" class="img-fluid" alt="portfolio-06">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-07.jpg', 'section_image') }}" class="" alt="portfolio-07">
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="pbmit-featured-img-wrapper">
-											<div class="pbmit-featured-wrapper">
-												<img src="{{ image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-08.jpg', 'section_image') }}" class="" alt="portfolio-08">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+@php
+    // Get configuration values
+    $columns = $block['data']['columns'] ?? '3';
+    $autoplay = $block['data']['autoplay'] ?? false;
+    $items = $block['data']['items'] ?? [];
+@endphp
+
+<section class="pbmit-element-portfolio-style-4 portfolio-section-five">
+    <div class="container-fluid p-0">
+        <div class="pbmit-main-hover-faded">
+            <div class="pbmit-content-box">
+                <div class="swiper-slider swiper-hover-slide-nav"
+                     data-autoplay="{{ $autoplay ? 'true' : 'false' }}"
+                     data-loop="true"
+                     data-dots="false"
+                     data-arrows="false"
+                     data-columns="{{ $columns }}"
+                     data-margin="0"
+                     data-effect="slide">
+                    <div class="swiper-wrapper">
+                        @foreach($items as $item)
+                            <!-- Slide{{ $loop->iteration }} -->
+                            <div class="swiper-slide">
+                                <div class="pbmit-content-box-inner">
+                                    <div class="pbmit-titlebox-wrap">
+                                        <div class="pbmit-titlebox">
+                                            <div class="pbmit-port-cat">
+                                                <a href="{{ $item['category_link'] ?? '#' }}" rel="tag">{{ $item['category'] ?? '' }}</a>
+                                            </div>
+                                            <h3 class="pbmit-portfolio-title">
+                                                <a href="{{ $item['link'] ?? '#' }}">{{ $item['title'] ?? '' }}</a>
+                                            </h3>
+                                        </div>
+                                        <div class="pbmit-portfolio-btn">
+                                            <a href="{{ $item['link'] ?? '#' }}">
+                                                <i class="{{ $item['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-hover-slide-images">
+                <div class="swiper-slider pbmit-hover-image-faded">
+                    <div class="swiper-wrapper">
+                        @foreach($items as $item)
+                            <div class="swiper-slide">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        @php
+                                            $imageNumber = str_pad($loop->iteration, 2, '0', STR_PAD_LEFT);
+                                            $defaultImage = "https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/portfolio/portfolio-{$imageNumber}.jpg";
+                                        @endphp
+                                        <img src="{{ image($item['image'] ?? $defaultImage, 'section_image') }}"
+                                             class="{{ $loop->iteration <= 6 ? 'img-fluid' : '' }}"
+                                             alt="{{ $item['title'] ?? 'portfolio-' . $imageNumber }}">
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

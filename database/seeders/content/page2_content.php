@@ -13,17 +13,17 @@ return [
             'columns' => 3,
             'services' => [
                 [
-                    'icon' => 'flaticon-strategy',
+                    'icon' => 'pbmit-xinterio-icon-blueprint',
                     'title' => 'Strategic Planning Rooms',
                     'description' => 'Confidential war rooms equipped with 85-inch interactive displays, encrypted secure communication systems, and ergonomic executive seating for extended strategic sessions and confidential board meetings.',
                 ],
                 [
-                    'icon' => 'flaticon-presentation',
+                    'icon' => 'pbmit-xinterio-icon-portfolio',
                     'title' => 'Presentation Theaters',
                     'description' => 'Cinema-quality auditoriums with tiered seating for 20-100 distinguished attendees, perfect for investor presentations, product unveilings, and shareholder meetings with professional AV production.',
                 ],
                 [
-                    'icon' => 'flaticon-collaboration',
+                    'icon' => 'pbmit-xinterio-icon-people',
                     'title' => 'Collaboration Lounges',
                     'description' => 'Informal yet refined spaces with modular Italian furniture, 75-inch digital whiteboards, and premium refreshment stations for creative brainstorming and innovation workshops.',
                 ],
@@ -37,26 +37,26 @@ return [
         'data' => [
             'title' => 'The Advantages of Our Distinguished Approach',
             'description' => 'We deliver more than workspace—we provide a comprehensive ecosystem designed to amplify your success and elevate your professional experience to unprecedented levels.',
-            'icon' => 'flaticon-excellence',
+            'icon' => 'pbmit-xinterio-icon-trophy',
             'image' => 'blocks/advantages-distinguished-approach.jpg',
             'features' => [
                 [
-                    'icon' => 'flaticon-reputation',
+                    'icon' => 'pbmit-xinterio-icon-award',
                     'title' => 'Prestigious Address',
                     'description' => 'Establish your business at globally recognized addresses that resonate with success and substantially enhance your corporate identity and market positioning.',
                 ],
                 [
-                    'icon' => 'flaticon-network',
+                    'icon' => 'pbmit-xinterio-icon-world',
                     'title' => 'Elite Network Access',
                     'description' => 'Connect with Fortune 500 C-suite executives, venture capital investors, and industry thought leaders through curated networking opportunities and exclusive events.',
                 ],
                 [
-                    'icon' => 'flaticon-service',
+                    'icon' => 'pbmit-xinterio-icon-satisfaction',
                     'title' => 'Unmatched Service',
                     'description' => 'Experience hospitality standards typically reserved for five-star hotels and exclusive private clubs, delivered with exceptional attention to your preferences.',
                 ],
                 [
-                    'icon' => 'flaticon-efficiency',
+                    'icon' => 'pbmit-xinterio-icon-premium',
                     'title' => 'Operational Excellence',
                     'description' => 'Focus exclusively on growing your business while we handle every operational detail with precision, discretion, and unwavering commitment to excellence.',
                 ],
@@ -116,25 +116,25 @@ return [
                     'number' => '01',
                     'title' => 'Private Consultation',
                     'description' => 'Schedule an exclusive personalized tour and discuss your specific requirements with our membership director in complete confidential privacy with no obligations.',
-                    'icon' => 'flaticon-consultation',
+                    'icon' => 'pbmit-xinterio-icon-conversation',
                 ],
                 [
                     'number' => '02',
                     'title' => 'Bespoke Proposal',
                     'description' => 'Receive a customized comprehensive proposal detailing premium space options, exclusive services, and distinguished membership benefits tailored precisely to your needs.',
-                    'icon' => 'flaticon-proposal',
+                    'icon' => 'pbmit-xinterio-icon-portfolio',
                 ],
                 [
                     'number' => '03',
                     'title' => 'Space Customization',
                     'description' => 'Work with our award-winning interior design team to personalize your office with your corporate branding, preferred furnishings, and advanced technology requirements.',
-                    'icon' => 'flaticon-customization',
+                    'icon' => 'pbmit-xinterio-icon-paint',
                 ],
                 [
                     'number' => '04',
                     'title' => 'Seamless Transition',
                     'description' => 'Move in immediately to your fully prepared and equipped workspace with IT infrastructure configured and concierge services activated on day one.',
-                    'icon' => 'flaticon-transition',
+                    'icon' => 'pbmit-xinterio-icon-check-mark',
                 ],
             ],
         ],
@@ -147,7 +147,7 @@ return [
             'subtitle' => 'Ready to Elevate Your Business?',
             'title' => 'We\'re Making Your Professional Dreams Reality',
             'phone' => '+1 (555) 789-EXEC',
-            'phone_icon' => 'flaticon-phone-luxury',
+            'phone_icon' => 'pbmit-xinterio-icon-phone',
             'badge_text' => '24/7 Concierge',
             'rotating_words' => [
                 ['word' => 'Prestigious'],
@@ -372,19 +372,19 @@ return [
             'list_items' => [
                 [
                     'text' => 'Evidence-based ergonomic design for sustained focus',
-                    'icon' => 'flaticon-ergonomics',
+                    'icon' => 'pbmit-xinterio-icon-armchair',
                 ],
                 [
                     'text' => 'Biophilic elements proven to enhance creativity',
-                    'icon' => 'flaticon-nature',
+                    'icon' => 'pbmit-xinterio-icon-eco-home',
                 ],
                 [
                     'text' => 'Acoustic engineering for confidential discussions',
-                    'icon' => 'flaticon-acoustics',
+                    'icon' => 'pbmit-xinterio-icon-warranty',
                 ],
                 [
                     'text' => 'Circadian lighting systems optimizing alertness',
-                    'icon' => 'flaticon-lighting',
+                    'icon' => 'pbmit-xinterio-icon-clock',
                 ],
             ],
         ],
