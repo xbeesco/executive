@@ -19,13 +19,13 @@ if (! function_exists('image')) {
     {
         // If value exists and not empty, process it
         if (! empty($value)) {
-            // Check if this is a Filament uploaded file (stored in public disk)
-            if (str_starts_with($value, 'images/')) {
-                return \Illuminate\Support\Facades\Storage::disk('public')->url($value);
+            // If it's already a full URL (e.g. External CDN ), return as-is
+            if (filter_var($value, FILTER_VALIDATE_URL)) {
+                return $value;
             }
 
-            // Otherwise, return the value as-is (external URL or full path)
-            return $value;
+            // Otherwise, it's a local storage path - convert to full URL
+            return \Illuminate\Support\Facades\Storage::disk('public')->url($value);
         }
 
         // Value is empty - return field-specific placeholder if configured
