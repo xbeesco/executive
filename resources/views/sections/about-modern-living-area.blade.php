@@ -12,13 +12,13 @@
                                     <div class="pbmit-ihbox-icon">
                                         <div class="pbmit-ihbox-icon-wrapper">
                                             <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon {{ $slide['icon'] ?? 'pbmit-xinterio-icon-tools' }}"></i>
+                                                <i class="{{ icon_class($slide['icon']) }}"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="pbmit-title-wrap">
                                         <h2 class="pbmit-element-title">
-                                            {{ $slide['title'] ?? 'Title Here' }}
+                                            {{ $slide['title'] }}
                                         </h2>
                                     </div>
                                 </div>

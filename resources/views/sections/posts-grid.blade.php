@@ -111,7 +111,7 @@
                                 @endif
                                 @if($item->icon && $contentType === 'services')
                                     <div class="pbmit-service-icon-overlay">
-                                        <i class="pbmit-xinterio-icon {{ $item->icon }}"></i>
+                                        <i class="{{ icon_class($item->icon) }}"></i>
                                     </div>
                                 @endif
                                 <a class="pbmit-blog-btn" href="{{ route($routeName, $item->slug) }}" title="{{ $item->title }}">

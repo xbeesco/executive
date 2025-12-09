@@ -4,11 +4,11 @@
 						<div class="col-md-5 width-100-tablet">
 							<div class="about-seven-left-box">
 								<div class="text-start">
-									<img src="{{ image($block['data']['main_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-01.jpg', 'section_image') }}" class="img-fluid first-img" alt="{{ $block['data']['title'] ?? '' }}">
+									<img src="{{ image($block['data']['main_image'], 'section_image') }}" class="img-fluid first-img" alt="">
 								</div>
 								<div class="about-img-second">
 									<div class="about-img-wrap">
-										<img src="{{ image($block['data']['second_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/about-02.jpg', 'section_image') }}" class="img-fluid" alt="{{ $block['data']['title'] ?? '' }}">
+										<img src="{{ image($block['data']['second_image'], 'section_image') }}" class="img-fluid" alt="">
 									</div>
 								</div>
 								@if(!empty($block['data']['stat_number']) || !empty($block['data']['stat_title']))
@@ -18,12 +18,12 @@
 											<div class="pbmit-fld-wrap">
 												<h4 class="pbmit-fid-inner">
 													<span class="pbmit-fid-before"></span>
-													<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $block['data']['stat_number'] ?? '25' }}" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">{{ $block['data']['stat_number'] ?? '25' }}</span>
+													<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $block['data']['stat_number'] }}" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">{{ $block['data']['stat_number'] }}</span>
 													@if(!empty($block['data']['stat_suffix']))
 													<span class="pbmit-fid"><span>{{ $block['data']['stat_suffix'] }}</span></span>
 													@endif
 												</h4>
-												<h3 class="pbmit-fid-title">{!! nl2br(e($block['data']['stat_title'] ?? 'Years of Excellence')) !!}</h3>
+												<h3 class="pbmit-fid-title">{!! str_replace("\n", " <br>", $block['data']['stat_title']) !!}</h3>
 											</div>
 										</div>
 									</div>
@@ -37,7 +37,7 @@
 									@if(!empty($block['data']['subtitle']))
 									<h4 class="pbmit-subtitle">{{ $block['data']['subtitle'] }}</h4>
 									@endif
-									<h2 class="pbmit-title">{{ $block['data']['title'] ?? 'Exceptional workspaces for exceptional leaders.' }}</h2>
+									<h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
 									@if(!empty($block['data']['description']))
 									<div class="pbmit-heading-desc">
 										{{ $block['data']['description'] }}
@@ -72,8 +72,8 @@
 								<div class="mt-2 mb-5">
 									<div class="row">
 										@foreach($block['data']['icon_boxes'] as $index => $iconBox)
-										<div class="col-md-{{ $index === 0 ? '5' : '7' }} {{ $index > 0 ? 'ps-xl-5' : '' }}">
-											<div class="pbmit-ihbox-style-{{ $index === 0 ? '23' : '24' }} {{ $index > 0 ? 'pt-md-0 pt-3' : '' }}">
+										<div class="col-md-{{ $index === 0 ? '5' : '7' }}{{ $index > 0 ? ' ps-xl-5' : '' }}">
+											<div class="pbmit-ihbox-style-{{ $index === 0 ? '23' : '24' }}{{ $index > 0 ? ' pt-md-0 pt-3' : '' }}">
 												@if($index === 0)
 												<div class="pbmit-ihbox-box">
 													@if(!empty($iconBox['icon_image']))
@@ -114,7 +114,7 @@
 								</div>
 								@endif
 								@if(!empty($block['data']['button_text']))
-								<a class="pbmit-btn pbmit-btn-outline" href="{{ $block['data']['button_link'] ?? 'about-us.html' }}">
+								<a class="pbmit-btn pbmit-btn-outline" href="{{ $block['data']['button_link'] }}">
 									<span class="pbmit-button-content-wrapper">
 										<span class="pbmit-button-text">{{ $block['data']['button_text'] }}</span>
 									</span>

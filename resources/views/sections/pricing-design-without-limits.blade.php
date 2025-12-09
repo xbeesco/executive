@@ -2,7 +2,7 @@
     // Default values
     $subtitle = $block['data']['subtitle'] ?? 'Why Executive Professionals Choose Us';
     $title = $block['data']['title'] ?? 'Excellence without compromise, success <br> guaranteed.';
-    $backgroundImage = $block['data']['background_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/pattern-bg-01.png';
+    $backgroundImage = $block['data']['background_image'] ?? '';
     $columns = $block['data']['columns'] ?? '4';
     $autoplay = $block['data']['autoplay'] ?? false;
     $enableLoop = $block['data']['loop'] ?? true;
@@ -34,12 +34,13 @@
                                 $number = $feature['number'] ?? str_pad($index + 1, 2, '0', STR_PAD_LEFT);
                             @endphp
 
+                            <!-- Slide{{ $loop->iteration }} -->
                             <article class="pbmit-miconheading-style-17 swiper-slide">
                                 <div class="pbmit-ihbox-style-17">
                                     <div class="pbmit-ihbox-box">
                                         <div class="pbmit-ihbox-icon">
                                             <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon {{ $icon }}"></i>
+                                                <i class="{{ icon_class($icon) }}"></i>
                                             </div>
                                         </div>
                                         @if($featureTitle)
@@ -48,7 +49,7 @@
                                             </h2>
                                         @endif
                                         @if($description)
-                                            <div class="pbmit-heading-desc">{!! $description !!}</div>
+                                            <div class="pbmit-heading-desc">{!! $description !!} </div>
                                         @endif
                                     </div>
                                     <div class="pbmit-box-number-wrap">

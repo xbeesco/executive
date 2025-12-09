@@ -25,7 +25,7 @@
 													<div class="pbmit-fld-contents d-flex align-items-center">
 														<div class="pbmit-circle-outer"
 															data-digit="{{ $stat['percentage'] }}"
-															data-fill="{{ $stat['color'] ?? '#bb9a65' }}"
+															data-fill="{{ $stat['color'] }}"
 															data-emptyfill=""
 															data-before=""
 															data-after="<span>%</span>"
@@ -60,8 +60,8 @@
 						</div>
 						<div class="col-md-12 col-xl-6">
 							<div class="twentytwenty-container">
-								<img src="{{ image($data['after_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/after.png', 'section_image') }}" alt="After">
-								<img src="{{ image($data['before_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/before.png', 'section_image') }}" alt="Before">
+								<img src="{{ image($data['after_image'], 'section_image') }}" alt="After">
+								<img src="{{ image($data['before_image'], 'section_image') }}" alt="Before">
 							</div>
 						</div>
 					</div>

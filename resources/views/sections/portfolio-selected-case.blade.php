@@ -27,14 +27,13 @@
 								@foreach($slideItems as $itemIndex => $item)
 									@php
 										$imageNumber = str_pad(($slideIndex * 2) + $itemIndex + 1, 2, '0', STR_PAD_LEFT);
-										$defaultImage = "https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/portfolio/portfolio-{$imageNumber}.jpg";
 										$isEven = $itemIndex === 1;
 									@endphp
 									<article class="pbmit-portfolio-style-6{{ $isEven ? ' pbmit-even' : '' }}">
 										<div class="pbminfotech-post-content">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="{{ image($item['image'] ?? $defaultImage, 'section_image') }}" class="img-fluid" alt="{{ $item['title'] ?? '' }}">
+													<img src="{{ image($item["image"], 'section_image') }}" class="img-fluid" alt="{{ $item['title'] ?? '' }}">
 												</div>
 											</div>
 											<div class="pbminfotech-box-content">
@@ -49,10 +48,10 @@
 												@endif
 												@endif
 												<h3 class="pbmit-portfolio-title">
-													<a href="{{ $item['link'] ?? '#' }}">{{ $item['title'] ?? 'Portfolio Item' }}</a>
+													<a href="{{ $item['link'] ?? 'portfolio-detail-style-1.html' }}">{{ $item['title'] }}</a>
 												</h3>
 											</div>
-											<a href="{{ $item['link'] ?? '#' }}" class="pbmit-link"></a>
+											<a href="{{ $item['link'] ?? 'portfolio-detail-style-1.html' }}" class="pbmit-link"></a>
 										</div>
 									</article>
 								@endforeach

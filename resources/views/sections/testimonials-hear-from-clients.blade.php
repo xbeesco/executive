@@ -5,7 +5,7 @@
 							<div class="col-md-12 col-xl-5">
 								<div class="pbmit-testimonialbox-left">
 									<div class="pbmit-heading-subheading animation-style3">
-										<h2 class="pbmit-title">{{ $block['data']['title'] ?? 'Hear from our distinguished members.' }}</h2>
+										<h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
 										@if(!empty($block['data']['description']))
 											<div class="pbmit-heading-desc">
 												{{ $block['data']['description'] }}
@@ -18,13 +18,14 @@
 								<div class="swiper-slider" data-autoplay="false" data-loop="false" data-dots="false" data-arrows="true" data-columns="1" data-margin="30" data-effect="slide">
 									<div class="swiper-wrapper">
 										@foreach($block['data']['testimonials'] ?? [] as $testimonialIndex => $testimonial)
-											<article class="pbmit-testimonial-style-2 swiper-slide">
+										<!-- Slide{{ $testimonialIndex + 1 }} -->
+										<article class="pbmit-testimonial-style-2 swiper-slide">
 												<div class="pbminfotech-post-item">
 													<div class="pbminfotech-box-content">
-														<div class="pbminfotech-box-img" style="background-image: url('{{ image($testimonial['author_background_image'] ?? $testimonial['author_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-0' . ($testimonialIndex + 1) . '.jpg', 'section_background', $loop->parent->iteration + $testimonialIndex) }}')">
+														<div class="pbminfotech-box-img" style="background-image: url('{{ image($testimonial['author_image'], 'section_background') }}')">
 															<div class="pbmit-featured-img-wrapper">
 																<div class="pbmit-featured-wrapper">
-																	<img src="{{ image($testimonial['author_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/reviewer/reviewer-0' . ($testimonialIndex + 1) . '.jpg', 'section_image', $loop->parent->iteration + $testimonialIndex) }}" class="img-fluid" alt="{{ $testimonial['author_name'] ?? '' }}">
+																	<img src="{{ image($testimonial['author_image'], 'section_image') }}" class="img-fluid" alt="">
 																</div>
 															</div>
 														</div>
@@ -57,7 +58,7 @@
 								<div class="pbmit-ihbox-headingicon">
 									<div class="pbmit-ihbox-contents d-flex align-items-center">
 										<div class="pbmit-title-wrap">
-											<h2 class="pbmit-element-title">{{ $block['data']['rating'] ?? '4.82' }}</h2>
+											<h2 class="pbmit-element-title">{{ $block['data']['rating'] }}</h2>
 										</div>
 										<div class="pbmit-icon-wrap">
 											<div class="pbmit-ihbox-svg">
@@ -72,7 +73,7 @@
 												</div>
 											</div>
 											<h4 class="pbmit-element-heading">
-												{{ $block['data']['total_reviews'] ?? '2,488 Rating' }}
+												{{ $block['data']['total_reviews'] }}
 											</h4>
 										</div>
 									</div>
@@ -83,18 +84,19 @@
 							<div class="swiper-slider client-two-area" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
 								<div class="swiper-wrapper">
 									@foreach($block['data']['client_logos'] ?? [] as $logoIndex => $logo)
-										<article class="pbmit-client-style-3 swiper-slide">
+								<!-- Slide{{ $logoIndex + 1 }} -->
+								<article class="pbmit-client-style-3 swiper-slide">
 											<div class="pbmit-border-wrapper">
 												<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-													<h4 class="pbmit-hide">{{ $logo['name'] ?? 'Client ' . ($logoIndex + 1) }}</h4>
+													<h4 class="pbmit-hide">{{ $logo['name'] }}</h4>
 													@if(!empty($logo['logo_color']))
 														<div class="pbmit-client-hover-img">
-															<img src="{{ image($logo['logo_color'], 'section_image', $loop->parent->iteration + $logoIndex) }}" alt="{{ $logo['name'] ?? '' }}">
+															<img src="{{ image($logo['logo_color'], 'section_image') }}" alt="">
 														</div>
 													@endif
 													<div class="pbmit-featured-img-wrapper">
 														<div class="pbmit-featured-wrapper">
-															<img src="{{ image($logo['logo_white'] ?? $logo['logo_color'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-2/client/client-white-0' . ($logoIndex + 1) . '.png', 'section_image', $loop->parent->iteration + $logoIndex) }}" class="img-fluid" alt="{{ $logo['name'] ?? '' }}">
+															<img src="{{ image($logo['logo_grey'] ?? $logo['logo_white'] ?? $logo['logo_color'], 'section_image') }}" class="img-fluid" alt="">
 														</div>
 													</div>
 												</div>

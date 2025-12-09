@@ -21,7 +21,7 @@
                             aria-controls="collapse-{{ $itemId }}"
                         >
                             @if(!empty($item['icon']))
-                                <i class="{{ $item['icon'] }} me-2"></i>
+                                <i class="{{ icon_class($item['icon']) }} me-2"></i>
                             @endif
                             {{ $item['title'] }}
                         </button>

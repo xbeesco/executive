@@ -3,7 +3,7 @@
     @if(!empty($block['data']['image']))
         <figure class="image-figure {{ $block['data']['alignment'] ?? 'text-center' }}">
             <img
-                src="{{ asset('storage/' . $block['data']['image']) }}"
+                src="{{ image($block['data']['image']) }}"
                 alt="{{ $block['data']['alt_text'] ?? '' }}"
                 class="img-fluid rounded {{ $block['data']['size'] ?? 'w-100' }}"
             >

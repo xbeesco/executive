@@ -22,14 +22,14 @@
 														<span class="pbmit-fid"><span>{{ $block['data']['counter_suffix'] }}</span></span>
 														@endif
 													</h4>
-													<span class="pbmit-fid-title">{!! nl2br(str_replace('<br>', "\n", $block['data']['counter_text'] ?? '')) !!}</span>
+													<span class="pbmit-fid-title">{!! $block['data']['counter_text'] ?? '' !!}</span>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-12 col-lg-9 service-five-right-col" @if(!empty($block['data']['background_image'])) style="background-image: url('{{ image($block['data']['background_image'], 'section_background') }}')" @endif>
+							<div class="col-md-12 col-lg-9 service-five-right-col" style="background-image: url('{{ image($block['data']['background_image'] ?? '', 'section_background') }}')">
 								<div class="swiper-slider" data-arrows-class="service-five-arrow" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="true" data-columns="2.6" data-margin="30" data-effect="slide">
 									<div class="swiper-wrapper">
 										@foreach($block['data']['services'] ?? [] as $service)
@@ -41,7 +41,7 @@
 													<div class="pbmit-service-image-wrapper">
 														<div class="pbmit-featured-img-wrapper">
 															<div class="pbmit-featured-wrapper">
-																<img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="{{ $service['title'] ?? '' }}">
+																<img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="">
 															</div>
 														</div>
 													</div>

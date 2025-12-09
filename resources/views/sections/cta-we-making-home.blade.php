@@ -5,7 +5,7 @@
     // Prepare background image
     $backgroundImage = !empty($data['background_image'])
         ? image($data['background_image'])
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-5/bg/about-us-bg.jpg', 'section_background');
+        : '';
 
     // Prepare phone data
     $phoneIcon = $data['phone_icon'] ?? 'pbmit-base-icon-phone-volume-solid-1';

@@ -5,20 +5,20 @@
     // Left Section Images
     $leftImage1 = !empty($data['left_image_1'])
         ? image($data['left_image_1'], 'section_image')
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-img-01.jpg', 'section_image');
+        : '';
 
     $leftImage2 = !empty($data['left_image_2'])
         ? image($data['left_image_2'], 'section_image')
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/about-02.jpg', 'section_image');
+        : '';
 
-    $leftImageFrame = !empty($data['left_image_frame'])
-        ? image($data['left_image_frame'], 'section_image')
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/frame-img.png', 'section_image');
+    $leftImageFrame = !empty($data['frame_image'])
+        ? image($data['frame_image'], 'section_image')
+        : '';
 
     // Right Section Background
-    $rightBackgroundPattern = !empty($data['right_background_pattern'])
-        ? image($data['right_background_pattern'], 'section_background')
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/bg/about-pattern-bg.png', 'section_background');
+    $rightBackgroundPattern = !empty($data['background_pattern'])
+        ? image($data['background_pattern'], 'section_background')
+        : '';
 
     // Content
     $subtitle = $data['subtitle'] ?? '';
@@ -31,7 +31,7 @@
     // Clock Image
     $clockImage = !empty($data['clock_image'])
         ? image($data['clock_image'], 'section_image')
-        : image('https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/clock.png', 'section_image');
+        : '';
 
     // Icon Boxes
     $iconBoxes = $data['icon_boxes'] ?? [];
@@ -90,7 +90,7 @@
                             <div class="pbmit-ihbox-box d-flex">
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                        <i class="pbmit-xinterio-icon {{ $box['icon'] }}"></i>
+                                        <i class="{{ icon_class($box['icon']) }}"></i>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">

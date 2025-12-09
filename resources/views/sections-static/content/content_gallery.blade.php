@@ -6,7 +6,7 @@
                 <div class="col-md-{{ $block['data']['columns'] ?? '4' }}">
                     <div class="gallery-item">
                         <img
-                            src="{{ asset('storage/' . $image['image']) }}"
+                            src="{{ image($image['image'] ?? '') }}"
                             alt="{{ $image['alt_text'] ?? '' }}"
                             class="img-fluid rounded"
                         >

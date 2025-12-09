@@ -12,13 +12,13 @@
 											@else
 											<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
 											@endif
-												<h4 class="pbmit-hide">{{ $client['name'] ?? 'Corporate Partner' }}</h4>
+												<h4 class="pbmit-hide">{{ $client['name'] }}</h4>
 												<div class="pbmit-client-hover-img">
-													<img src="{{ image($client['logo_color'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-global-' . str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) . '.png', 'section_image') }}" class="img-fluid" alt="{{ $client['name'] ?? '' }}">
+													<img src="{{ image($client['logo_color'] . str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) . '.png', 'section_image') }}" class="img-fluid" alt>
 												</div>
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image($client['logo_grey'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-8/client/client-grey-' . str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) . '.png', 'section_image') }}" class="img-fluid" alt="{{ $client['name'] ?? '' }}">
+														<img src="{{ image($client['logo_grey'] . str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) . '.png', 'section_image') }}" class="img-fluid" alt>
 													</div>
 												</div>
 											@if(!empty($client['url']))
@@ -39,10 +39,10 @@
 										<div class="pbmit-fld-wrap">
 											<h4 class="pbmit-fid-inner">
 												<span class="pbmit-fid-before"></span>
-												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $block['data']['counter_number'] ?? '120' }}" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">{{ $block['data']['counter_number'] ?? '120' }}</span>
-												<span class="pbmit-fid"><span>{{ $block['data']['counter_suffix'] ?? '+' }}</span></span>
+												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $block['data']['counter_number'] }}" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">{{ $block['data']['counter_number'] }}</span>
+												<span class="pbmit-fid"><span>{{ $block['data']['counter_suffix'] }}</span></span>
 											</h4>
-											<span class="pbmit-fid-title">{{ $block['data']['counter_text'] ?? 'Join the enterprises that trust Executive to elevate their business operations.' }}</span>
+											<span class="pbmit-fid-title">{{ $block['data']['counter_text'] }}</span>
 										</div>
 									</div>
 								</div>

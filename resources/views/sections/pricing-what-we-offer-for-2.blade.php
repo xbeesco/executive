@@ -16,14 +16,14 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image($service['image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-7/service/service-0' . $loop->iteration . '.jpg', 'section_image') }}" class="img-fluid" alt="{{ $service['title'] ?? 'service' }}">
+														<img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="service-04">
 													</div>
 												</div>
 												@if(!empty($service['link']))
 												<div class="pbmit-service-btn-wrapper">
 													<a class="pbmit-service-btn" href="{{ $service['link'] }}" title="{{ $service['title'] ?? '' }}">
 														<span class="pbmit-button-icon">
-															<i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-angle-right' }}"></i>
+															<i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
 														</span>
 													</a>
 												</div>
@@ -55,7 +55,7 @@
 												@endif
 												@if(!empty($service['icon']))
 												<div class="pbmit-service-icon">
-													<i class="pbmit-xinterio-icon {{ $service['icon'] }}"></i>
+													<i class="{{ icon_class($service['icon']) }}"></i>
 												</div>
 												@endif
 											</div>

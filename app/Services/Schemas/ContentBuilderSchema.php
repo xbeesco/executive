@@ -101,7 +101,15 @@ class ContentBuilderSchema
                         ->directory('images/content')
                         ->imageEditor()
                         ->required()
-                        ->columnSpan(12),
+                        ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                     TextInput::make('alt_text')
                         ->label('Alt Text')
@@ -151,7 +159,15 @@ class ContentBuilderSchema
                                     ->directory('images/gallery')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                                 TextInput::make('alt_text')
                                     ->label('Alt Text')
                                     ->columnSpan(6),
@@ -505,7 +521,15 @@ class ContentBuilderSchema
                         ->disk('public')
                         ->directory('blocks')
                         ->imageEditor()
-                        ->columnSpan(12),
+                        ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                     TextInput::make('year')
                         ->label('Started Year')
@@ -856,7 +880,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 TextInput::make('number')
                                     ->label('Number')
@@ -949,7 +981,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 TextInput::make('number')
                                     ->label('Number')
@@ -1017,7 +1057,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 TextInput::make('number')
                                     ->label('Number')
@@ -1149,7 +1197,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 Select::make('category')
                                     ->label('Category')
@@ -1216,7 +1272,15 @@ class ContentBuilderSchema
                                     ->image()
                                     ->disk('public')
                                     ->directory('blocks')
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
@@ -1246,7 +1310,15 @@ class ContentBuilderSchema
                         ->image()
                         ->disk('public')
                         ->directory('blocks')
-                        ->columnSpan(12),
+                        ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                     Repeater::make('features')
                         ->label('Features')
                         ->schema([
@@ -1979,7 +2051,15 @@ class ContentBuilderSchema
                                     ->directory('images/sections')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 TextInput::make('title')
                                     ->label('Project Title')
@@ -2038,7 +2118,15 @@ class ContentBuilderSchema
                                     ->directory('blocks')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 Select::make('category')
                                     ->label('Category')
@@ -2119,7 +2207,15 @@ class ContentBuilderSchema
                                     ->directory('blocks')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 Select::make('category')
                                     ->label('Category')
@@ -2198,7 +2294,15 @@ class ContentBuilderSchema
                                     ->directory('blocks')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 Select::make('category')
                                     ->label('Category')
@@ -2489,7 +2593,15 @@ class ContentBuilderSchema
                                 ->directory('images/sections')
                                 ->imageEditor()
                                 ->required()
-                                ->columnSpan(12),
+                                ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                         ])
                         ->columns(12)
                         ->columnSpan(12)
@@ -2547,7 +2659,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('images/sections')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
@@ -2595,7 +2715,15 @@ class ContentBuilderSchema
                                     ->directory('images/sections')
                                     ->imageEditor()
                                     ->required()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                             ]),
                         ])
                         ->columnSpan(12)
@@ -2695,7 +2823,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                             ]),
                         ])
                         ->collapsible()
@@ -2996,7 +3132,15 @@ class ContentBuilderSchema
                                     ->disk('public')
                                     ->directory('blocks')
                                     ->imageEditor()
-                                    ->columnSpan(12),
+                                    ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
 
                                 TextInput::make('content_title')
                                     ->label('Content Title')
@@ -3143,7 +3287,15 @@ class ContentBuilderSchema
                 ->label('Awards')
                 ->columns(12)
                 ->schema([
-                    TextInput::make('title')->columnSpan(12),
+                    TextInput::make('title')->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                     Repeater::make('awards')
                         ->schema([
                             TextInput::make('title'),
@@ -3153,7 +3305,15 @@ class ContentBuilderSchema
                         ])
                         ->columns(2)
                         ->defaultItems(4)
-                        ->columnSpan(12),
+                        ->columnSpan(6),
+
+                    FileUpload::make('image_2')
+                        ->label('Second Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('blocks')
+                        ->imageEditor()
+                        ->columnSpan(6),
                 ]),
 
             Block::make('awards-award-achievement')

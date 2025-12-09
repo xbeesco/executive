@@ -15,8 +15,8 @@
 						<ul class="nav nav-tabs" role="tablist">
 							@foreach($block['data']['tabs'] as $index => $tab)
 							<li class="nav-item" role="presentation">
-								<a class="nav-link {{ $loop->first ? 'active' : '' }}" data-bs-toggle="tab" href="#tab-2-{{ $loop->iteration }}" aria-selected="{{ $loop->first ? 'true' : 'false' }}" role="tab" @if(!$loop->first) tabindex="-1" @endif>
-									<span>{{ $tab['label'] ?? 'Tab ' . $loop->iteration }}</span>
+								<a class="nav-link{{ $loop->first ? ' active' : '' }}" data-bs-toggle="tab" href="#tab-2-{{ $loop->iteration }}" aria-selected="{{ $loop->first ? 'true' : 'false' }}" role="tab"@if(!$loop->first) tabindex="-1"@endif>
+									<span>{!! $tab['title'] !!}</span>
 									@if($tab['icon'] ?? null)
 									<i class="{{ $tab['icon'] }}"></i>
 									@else
@@ -28,12 +28,12 @@
 						</ul>
 						<div class="tab-content">
 							@foreach($block['data']['tabs'] as $index => $tab)
-							<div class="tab-pane {{ $loop->first ? 'show active' : '' }}" id="tab-2-{{ $loop->iteration }}" role="tabpanel">
+							<div class="tab-pane{{ $loop->first ? ' show active' : '' }}" id="tab-2-{{ $loop->iteration }}" role="tabpanel">
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">
-										<div class="col-xl-5 col-md-12 pbmit-tab-img">
+										<div class="col-xl-5 pbmit-tab-img">
 											@php
-												$fallbackImage = 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-3/tab-img' . $loop->iteration . '.jpg';
+												$fallbackImage = '' . $loop->iteration . '.jpg';
 											@endphp
 											<img src="{{ image($tab['image'] ?? $fallbackImage, 'section_image') }}" class="img-fluid" alt="{{ $tab['label'] ?? '' }}">
 										</div>
@@ -50,12 +50,12 @@
 												<li class="list-group-item">
 													<span class="pbmit-icon-list-icon">
 														@if($feature['icon'] ?? null)
-														<i aria-hidden="true" class="pbmit-xinterio-icon {{ $feature['icon'] }}"></i>
+														<i aria-hidden="true" class="{{ icon_class($feature['icon']) }}"></i>
 														@else
 														<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
 														@endif
 													</span>
-													<span class="pbmit-icon-list-text">{{ $feature['text'] ?? '' }}</span>
+													<span class="pbmit-icon-list-text">{{ is_array($feature) ? ($feature['text'] ?? '') : $feature }}</span>
 												</li>
 												@endforeach
 											</ul>

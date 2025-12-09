@@ -1,7 +1,7 @@
 @php
 	$data = $block['data'] ?? $block;
 @endphp
-			<section class="about-us-nine-bg" style="background-image: url('{{ image($data['background_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-9/bg/bg-img-01.jpg', 'section_background') }}')">
+			<section class="about-us-nine-bg" style="background-image: url('{{ image($data['background_image'], 'section_background') }}')">
 				<div class="container p-0">
 					<div class="row g-0">
 						<div class="col-md-12 col-xl-6 pbmit-col1"></div>
@@ -11,21 +11,21 @@
 									@if(!empty($data['subtitle']))
 										<h4 class="pbmit-subtitle">{{ $data['subtitle'] }}</h4>
 									@endif
-									<h2 class="pbmit-title">{!! nl2br(e($data['title'] ?? 'The distinction of our executive platform.')) !!}</h2>
+									<h2 class="pbmit-title">{!! $data['title'] !!}</h2>
 									<div class="pbmit-heading-desc">
 										@if(!empty($data['description_1']))
-											{!! nl2br(e($data['description_1'])) !!}
+											{!! nl2br(e($data['description_1'], false)) !!}
 										@endif
 										@if(!empty($data['description_2']))
 											<br>
 											<br>
-											{!! nl2br(e($data['description_2'])) !!}
+											{!! nl2br(e($data['description_2'], false)) !!}
 										@endif
 									</div>
 								</div>
 								@if(!empty($data['signature_image']))
 									<div class="mt-5">
-										<img src="{{ image($data['signature_image'], 'section_image') }}" alt="{{ $data['title'] ?? 'Signature' }}">
+										<img src="{{ image($data['signature_image'], 'section_image') }}" alt="">
 									</div>
 								@endif
 							</div>

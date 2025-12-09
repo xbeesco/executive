@@ -32,7 +32,8 @@
         },
         "files": [
             "app/Helpers/ImageHelper.php",
-            "app/Helpers/BlockPreviewHelper.php"
+            "app/Helpers/BlockPreviewHelper.php",
+            "app/Helpers/IconHelper.php"
         ]
     },
     "autoload-dev": {

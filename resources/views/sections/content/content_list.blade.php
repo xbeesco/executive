@@ -11,7 +11,7 @@
                 @foreach($block['data']['items'] as $item)
                     <li class="mb-2">
                         @if(!empty($item['icon']))
-                            <i class="{{ $item['icon'] }} me-2"></i>
+                            <i class="{{ icon_class($item['icon']) }} me-2"></i>
                         @endif
                         {{ $item['text'] }}
                     </li>
@@ -22,7 +22,7 @@
                 @foreach($block['data']['items'] as $item)
                     <li class="mb-2">
                         @if(!empty($item['icon']))
-                            <i class="{{ $item['icon'] }} me-2"></i>
+                            <i class="{{ icon_class($item['icon']) }} me-2"></i>
                         @endif
                         {{ $item['text'] }}
                     </li>

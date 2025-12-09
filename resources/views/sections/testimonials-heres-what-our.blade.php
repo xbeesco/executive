@@ -1,20 +1,23 @@
+@php
+    $data = $block["data"] ?? $block;
+@endphp
 <section class="section-lgt overflow-hidden">
     <div class="container pbmit-col-stretched-yes pbmit-col-left p-0">
         <div class="row g-0">
             <div class="col-md-12 col-xl-7">
                 <div class="testimonial-four-box pbmit-col-stretched-left">
-                    <div class="testimonial-four-bg" style="background-image: url('{{ image($data['background_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/testimonial-bg-01.jpg', 'section_background') }}')"></div>
-                    @if(!empty($data['video_url']))
+                    <div class="testimonial-four-bg" style="background-image: url('{{ image($data['background_image'], 'section_background') }}')"></div>
+                    @if(!empty($data['video_link']))
                     <div class="ihbox-style-area pbmit-iconbox-20-new">
                         <div class="pbmit-ihbox-style-20">
                             <div class="pbmit-ihbox-headingicon">
-                                <a class="pbmin-lightbox-video d-flex align-items-center" href="{{ $data['video_url'] }}">
+                                <a class="pbmin-lightbox-video  d-flex align-items-center" href="{{ $data['video_link'] }}">
                                     <div class="pbmit-ihbox-icon">
                                         <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
                                             <i class="pbmit-base-icon-play-button-1"></i>
                                         </div>
                                     </div>
-                                    <h2 class="pbmit-element-title">{{ $data['video_title'] ?? 'Experience excellence' }}</h2>
+                                    <h2 class="pbmit-element-title">{{ $data['video_title'] }}</h2>
                                 </a>
                                 <div class="pbmit-ihbox-contents"></div>
                             </div>
@@ -26,6 +29,7 @@
                             <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="true" data-columns="1" data-margin="30" data-effect="slide">
                                 <div class="swiper-wrapper">
                                     @foreach($data['testimonials'] ?? [] as $testimonial)
+                                    <!-- Slide{{ $loop->iteration }} -->
                                     <article class="pbmit-testimonial-style-4 swiper-slide">
                                         <div class="pbminfotech-post-item">
                                             <div class="pbmit-box-content-wrap">
@@ -48,7 +52,7 @@
                                                     <div class="pbminfotech-box-img">
                                                         <div class="pbmit-featured-img-wrapper">
                                                             <div class="pbmit-featured-wrapper">
-                                                                <img src="{{ image($testimonial['author_image'], 'section_image', 'reviewer-0' . $loop->iteration . '.jpg') }}" class="img-fluid" alt="{{ $testimonial['author_name'] ?? '' }}">
+                                                                <img src="{{ image($testimonial['author_image'], 'section_image', 'reviewer-0' . $loop->iteration . '.jpg') }}" class="img-fluid" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -71,18 +75,18 @@
                 </div>
             </div>
             <div class="col-md-12 col-xl-5 pbmit-col-stretched-yes pbmit-col-right">
-                <div class="testimonial-four-rightbox" style="background-image: url('{{ image($data['pattern_image'] ?? 'https://xinterio-demo.pbminfotech.com/html-demo/images/homepage-4/bg/pattern-bg-02.png', 'section_background') }}')">
+                <div class="testimonial-four-rightbox" style="background-image: url('{{ image($data['pattern_image'], 'section_background') }}')">
                     <div class="pbmit-col-stretched-right"></div>
                     <div class="pbmit-heading-subheading animation-style4">
-                        <h4 class="pbmit-subtitle">{{ $data['subtitle'] ?? 'Executive testimonials' }}</h4>
-                        <h2 class="pbmit-title">{{ $data['title'] ?? 'Trusted by business leaders worldwide' }}</h2>
+                        <h4 class="pbmit-subtitle">{{ $data['subtitle'] }}</h4>
+                        <h2 class="pbmit-title">{{ $data['title'] }}</h2>
                     </div>
                     <div class="ihbox-style-2-area">
                         <div class="pbmit-ihbox-style-2">
                             <div class="pbmit-ihbox-headingicon">
                                 <div class="pbmit-ihbox-contents d-flex align-items-center">
                                     <div class="pbmit-title-wrap">
-                                        <h2 class="pbmit-element-title">{{ $data['rating'] ?? '4.82' }}</h2>
+                                        <h2 class="pbmit-element-title">{{ $data['rating'] }}</h2>
                                     </div>
                                     <div class="pbmit-icon-wrap">
                                         <div class="pbmit-ihbox-svg">
@@ -97,7 +101,7 @@
                                             </div>
                                         </div>
                                         <h4 class="pbmit-element-heading">
-                                            {{ $data['total_reviews'] ?? '3,247 Reviews' }}
+                                            {{ $data['total_reviews'] }}
                                         </h4>
                                     </div>
                                 </div>
