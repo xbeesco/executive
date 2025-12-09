@@ -70,6 +70,10 @@ class FlaticonList
             'pbmit-xinterio-icon-magnifying-glass' => 'Search / Magnifying Glass',
             'pbmit-xinterio-icon-trolley' => 'Shopping Cart / Trolley',
             'pbmit-xinterio-icon-client' => 'Client / Customer',
+            'pbmit-xinterio-icon-architect' => 'Architect',
+            'pbmit-xinterio-icon-help' => 'Help / Question',
+            'pbmit-xinterio-icon-office' => 'Office',
+            'pbmit-xinterio-icon-wardrobe' => 'Wardrobe',
         ];
     }
 
