@@ -8,10 +8,10 @@
 							@if(!empty($block['data']['subtitle']))
 								<h4 class="pbmit-subtitle">{{ $block['data']['subtitle'] }}</h4>
 							@endif
-							<h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
-							@if(!empty($block['data']['description']))
+							<h2 class="pbmit-title">{{ $block['data']['title'] ?? '' }}</h2>
+							@if(!empty($block['data']['description'] ?? ''))
 								<div class="pbmit-heading-desc">
-									{{ $block['data']['description'] }}
+									{{ $block['data']['description'] ?? '' }}
 								</div>
 							@endif
 						</div>
@@ -34,11 +34,11 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="">
+														<img src="{{ image($service['image'] ?? '', 'section_image') }}" class="img-fluid" alt="">
 													</div>
 												</div>
 											</div>
-											<div class="pbminfotech-box-number">{{ $service['number'] ?? str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</div>
+											<div class="pbminfotech-box-number">{{ $service['number'] ?? '' ?? str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</div>
 											@if(!empty($service['icon']))
 												<div class="pbmit-service-icon elementor-icon">
 													<i class="{{ $service['icon'] }}"></i>
@@ -50,14 +50,14 @@
 											@endif
 											<div class="pbmit-content-box">
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">{{ $service['category'] ?? '' }}</a>
+													<a href="#" rel="tag">{{ $service['category'] ?? '' ?? '' }}</a>
 												</div>
 												<h3 class="pbmit-service-title">
-													<a href="{{ $service['link'] }}">{{ $service['title'] ?? '' }}</a>
+													<a href="{{ $service['link'] ?? '#' }}">{{ $service['title'] ?? '' ?? '' }}</a>
 												</h3>
 											</div>
 										</div>
-										<a class="pbmit-service-btn" href="{{ $service['link'] }}" title="{{ $service['button_title'] ?? $service['title'] ?? '' }}">
+										<a class="pbmit-service-btn" href="{{ $service['link'] ?? '#' }}" title="{{ $service['button_title'] ?? $service['title'] ?? '' ?? '' }}">
 											<span class="pbmit-button-icon">
 												<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 											</span>

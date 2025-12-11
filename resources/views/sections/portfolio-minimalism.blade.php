@@ -9,16 +9,19 @@
 							<div class="swiper-slider swiper-hover-slide-nav" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="3" data-margin="0" data-effect="slide">
 								<div class="swiper-wrapper">
 @foreach($items as $index => $item)
+					@if(empty($item['title']) && empty($item['category']))
+						@continue
+					@endif
 									<!-- Slide{{ $index + 1 }} -->
 									<div class="swiper-slide">
 										<div class="pbmit-content-box-inner">
 											<div class="pbmit-titlebox-wrap">
 												<div class="pbmit-titlebox">
 													<div class="pbmit-port-cat">
-														<a href="portfolio-grid-col-3.html" rel="tag">{{ $item['category'] }}</a>
+														<a href="portfolio-grid-col-3.html" rel="tag">{{ $item['category'] ?? '' }}</a>
 													</div>
 													<h3 class="pbmit-portfolio-title">
-														<a href="portfolio-detail-style-1.html">{{ $item['title'] }}</a>
+														<a href="portfolio-detail-style-1.html">{{ $item['title'] ?? '' }}</a>
 													</h3>
 												</div>
 												<div class="pbmit-portfolio-btn">
@@ -37,6 +40,9 @@
 							<div class="swiper-slider pbmit-hover-image-faded">
 								<div class="swiper-wrapper">
 @foreach($items as $index => $item)
+					@if(empty($item['title']) && empty($item['category']))
+						@continue
+					@endif
 									<div class="swiper-slide">
 										<div class="pbmit-featured-img-wrapper">
 											<div class="pbmit-featured-wrapper">

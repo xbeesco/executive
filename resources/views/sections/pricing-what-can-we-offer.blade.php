@@ -50,7 +50,7 @@
                 <div class="service-nine-right-box">
                     <div class="pbmit-heading-subheading animation-style4">
                         <h4 class="pbmit-subtitle">{{ $block['data']['subtitle'] }}</h4>
-                        <h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
+                        <h2 class="pbmit-title">{{ $block['data']['title'] ?? '' }}</h2>
                     </div>
                     <div class="row">
                         @foreach(($block['data']['services'] ?? []) as $service)
@@ -60,7 +60,7 @@
                                         <div class="pbmit-service-image-wrapper">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="">
+                                                    <img src="{{ image($service['image'] ?? '', 'section_image') }}" class="img-fluid" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,19 +69,19 @@
                                         </div>
                                         <div class="pbmit-content-box">
                                             <div class="pbmit-serv-cat">
-                                                <a href="#" rel="tag">{{ $service['category'] ?? '' }}</a>
+                                                <a href="#" rel="tag">{{ $service['category'] ?? '' ?? '' }}</a>
                                             </div>
                                             <h3 class="pbmit-service-title">
-                                                <a href="{{ $service['link'] }}">{{ $service['title'] ?? '' }}</a>
+                                                <a href="{{ $service['link'] ?? '#' }}">{{ $service['title'] ?? '' ?? '' }}</a>
                                             </h3>
-                                            @if(!empty($service['description']))
+                                            @if(!empty($service['description'] ?? ''))
                                                 <div class="pbmit-service-description">
-                                                    <p>{{ $service['description'] }}</p>
+                                                    <p>{{ $service['description'] ?? '' }}</p>
                                                 </div>
                                             @endif
                                         </div>
                                     </div>
-                                    <a class="pbmit-service-btn" href="{{ $service['link'] }}" title="{{ $service['title'] ?? '' }}">
+                                    <a class="pbmit-service-btn" href="{{ $service['link'] ?? '#' }}" title="{{ $service['title'] ?? '' ?? '' }}">
                                         <span class="pbmit-button-icon">
                                             <i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
                                         </span>

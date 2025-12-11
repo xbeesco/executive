@@ -1,8 +1,8 @@
             <section class="service-section-seven">
 				<div class="container p-0">
-					@if(!empty($block['data']['title']))
+					@if(!empty($block['data']['title'] ?? ''))
 					<div class="pbmit-heading animation-style4">
-						<h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
+						<h2 class="pbmit-title">{{ $block['data']['title'] ?? '' }}</h2>
 					</div>
 					@endif
 					<div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="3" data-margin="30" data-effect="slide">
@@ -16,41 +16,41 @@
 											<div class="pbmit-service-image-wrapper">
 												<div class="pbmit-featured-img-wrapper">
 													<div class="pbmit-featured-wrapper">
-														<img src="{{ image($service['image'], 'section_image') }}" class="img-fluid" alt="service-04">
+														<img src="{{ image($service['image'] ?? '', 'section_image') }}" class="img-fluid" alt="service-04">
 													</div>
 												</div>
-												@if(!empty($service['link']))
+												@if(!empty($service['link'] ?? '#'))
 												<div class="pbmit-service-btn-wrapper">
-													<a class="pbmit-service-btn" href="{{ $service['link'] }}" title="{{ $service['title'] ?? '' }}">
+													<a class="pbmit-service-btn" href="{{ $service['link'] ?? '#' }}" title="{{ $service['title'] ?? '' ?? '' }}">
 														<span class="pbmit-button-icon">
 															<i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
 														</span>
 													</a>
 												</div>
-												<a class="pbmit-link" href="{{ $service['link'] }}"></a>
+												<a class="pbmit-link" href="{{ $service['link'] ?? '#' }}"></a>
 												@endif
 											</div>
 											<div class="pbmit-content-box">
-												@if(!empty($service['number']))
-												<div class="pbminfotech-box-number">{{ $service['number'] }}</div>
+												@if(!empty($service['number'] ?? ''))
+												<div class="pbminfotech-box-number">{{ $service['number'] ?? '' }}</div>
 												@endif
-												@if(!empty($service['category']))
+												@if(!empty($service['category'] ?? ''))
 												<div class="pbmit-serv-cat">
-													<a href="#" rel="tag">{{ $service['category'] }}</a>
+													<a href="#" rel="tag">{{ $service['category'] ?? '' }}</a>
 												</div>
 												@endif
-												@if(!empty($service['title']))
+												@if(!empty($service['title'] ?? ''))
 												<h3 class="pbmit-service-title">
-													@if(!empty($service['link']))
-													<a href="{{ $service['link'] }}">{{ $service['title'] }}</a>
+													@if(!empty($service['link'] ?? '#'))
+													<a href="{{ $service['link'] ?? '#' }}">{{ $service['title'] ?? '' }}</a>
 													@else
-													{{ $service['title'] }}
+													{{ $service['title'] ?? '' }}
 													@endif
 												</h3>
 												@endif
-												@if(!empty($service['description']))
+												@if(!empty($service['description'] ?? ''))
 												<div class="pbmit-service-description">
-													<p>{{ $service['description'] }}</p>
+													<p>{{ $service['description'] ?? '' }}</p>
 												</div>
 												@endif
 												@if(!empty($service['icon']))

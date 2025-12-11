@@ -14,9 +14,12 @@
 					<div class="pbmit-tab">
 						<ul class="nav nav-tabs" role="tablist">
 							@foreach($block['data']['tabs'] as $index => $tab)
+							@if(empty($tab['title']))
+								@continue
+							@endif
 							<li class="nav-item" role="presentation">
 								<a class="nav-link{{ $loop->first ? ' active' : '' }}" data-bs-toggle="tab" href="#tab-2-{{ $loop->iteration }}" aria-selected="{{ $loop->first ? 'true' : 'false' }}" role="tab"@if(!$loop->first) tabindex="-1"@endif>
-									<span>{!! $tab['title'] !!}</span>
+									<span>{!! $tab['title'] ?? '' !!}</span>
 									@if($tab['icon'] ?? null)
 									<i class="{{ $tab['icon'] }}"></i>
 									@else
@@ -28,6 +31,9 @@
 						</ul>
 						<div class="tab-content">
 							@foreach($block['data']['tabs'] as $index => $tab)
+							@if(empty($tab['title']))
+								@continue
+							@endif
 							<div class="tab-pane{{ $loop->first ? ' show active' : '' }}" id="tab-2-{{ $loop->iteration }}" role="tabpanel">
 								<div class="pbmit-column-inner">
 									<div class="row g-0 align-items-center">

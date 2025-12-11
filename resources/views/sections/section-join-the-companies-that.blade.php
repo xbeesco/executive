@@ -5,23 +5,26 @@
                 <div class="client-style-area">
                     <div class="row">
                         @foreach($block['data']['clients'] ?? [] as $client)
+                        @if(empty($client['name']) && empty($client['logo_color']) && empty($client['logo_grey']))
+                            @continue
+                        @endif
                         <article class="pbmit-client-style-1 col-md-6 col-lg-3">
                             <div class="pbmit-border-wrapper">
-                                @if(!empty($client['url']) || !empty($client['link']))
-                                <a href="{{ $client['url'] ?? $client['link'] }}" target="_blank" rel="noopener" class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                @if(!empty($client['url']) || !empty($client['link'] ?? '#'))
+                                <a href="{{ $client['url'] ?? $client['link'] ?? '#' }}" target="_blank" rel="noopener" class="pbmit-client-wrapper pbmit-client-with-hover-img">
                                 @else
                                 <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                                 @endif
-                                    <h4 class="pbmit-hide">{{ $client['name'] }}</h4>
+                                    <h4 class="pbmit-hide">{{ $client['name'] ?? '' }}</h4>
                                     <div class="pbmit-client-hover-img">
-                                        <img src="{{ image($client['logo_color'] ?? $client['image'], 'section_image') }}" class="img-fluid" alt>
+                                        <img src="{{ image($client['logo_color'] ?? $client['image'] ?? '', 'section_image') }}" class="img-fluid" alt>
                                     </div>
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="{{ image($client['logo_grey'] ?? $client['image'], 'section_image') }}" class="img-fluid" alt>
+                                            <img src="{{ image($client['logo_grey'] ?? $client['image'] ?? '', 'section_image') }}" class="img-fluid" alt>
                                         </div>
                                     </div>
-                                @if(!empty($client['url']) || !empty($client['link']))
+                                @if(!empty($client['url']) || !empty($client['link'] ?? '#'))
                                 </a>
                                 @else
                                 </div>

@@ -1,7 +1,7 @@
 @php
     // Extract block data
     $data = $block['data'] ?? [];
-    $title = $data['title'] ?? 'Explore Our Executive Workspace Portfolio';
+    $title = $data['title'] ?? '' ?? 'Explore Our Executive Workspace Portfolio';
     $showSortable = $data['show_sortable'] ?? true;
     $columns = $data['columns'] ?? '4';
     $categories = $data['categories'] ?? [];
@@ -35,11 +35,11 @@
         <div class="pbmit-element-posts-wrapper row g-0 pbmit-column-three">
             @foreach($items as $index => $item)
                 @php
-                    $itemImage = $item['image'] ?? null;
-                    $itemCategory = $item['category'] ?? '';
+                    $itemImage = $item['image'] ?? '' ?? null;
+                    $itemCategory = $item['category'] ?? '' ?? '';
                     $itemCategoryName = $item['category_name'] ?? '';
-                    $itemTitle = $item['title'] ?? '';
-                    $itemLink = $item['link'] ?? '#';
+                    $itemTitle = $item['title'] ?? '' ?? '';
+                    $itemLink = $item['link'] ?? '#' ?? '#';
                     $buttonIcon = $item['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow';
 
                     // Fallback image based on loop iteration

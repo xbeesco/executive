@@ -13,8 +13,8 @@
 					@if(!empty($block['data']['subtitle']))
 						<h4 class="pbmit-subtitle">{{ $block['data']['subtitle'] }}</h4>
 					@endif
-					@if(!empty($block['data']['title']))
-						<h2 class="pbmit-title">{{ $block['data']['title'] }}</h2>
+					@if(!empty($block['data']['title'] ?? ''))
+						<h2 class="pbmit-title">{{ $block['data']['title'] ?? '' }}</h2>
 					@endif
 				</div>
 			</div>
@@ -33,13 +33,13 @@
 										<div class="pbminfotech-post-content">
 											<div class="pbmit-featured-img-wrapper">
 												<div class="pbmit-featured-wrapper">
-													<img src="{{ image($item["image"], 'section_image') }}" class="img-fluid" alt="{{ $item['title'] ?? '' }}">
+													<img src="{{ image($item["image"], 'section_image') }}" class="img-fluid" alt="{{ $item['title'] ?? '' ?? '' }}">
 												</div>
 											</div>
 											<div class="pbminfotech-box-content">
-												@if(!empty($item['category']))
+												@if(!empty($item['category'] ?? ''))
 												@php
-													$categoryModel = \App\Models\Category::where('slug', $item['category'])->first();
+													$categoryModel = \App\Models\Category::where('slug', $item['category'] ?? '')->first();
 												@endphp
 												@if($categoryModel)
 												<div class="pbmit-port-cat">
@@ -48,10 +48,10 @@
 												@endif
 												@endif
 												<h3 class="pbmit-portfolio-title">
-													<a href="{{ $item['link'] ?? 'portfolio-detail-style-1.html' }}">{{ $item['title'] }}</a>
+													<a href="{{ $item['link'] ?? '#' ?? 'portfolio-detail-style-1.html' }}">{{ $item['title'] ?? '' }}</a>
 												</h3>
 											</div>
-											<a href="{{ $item['link'] ?? 'portfolio-detail-style-1.html' }}" class="pbmit-link"></a>
+											<a href="{{ $item['link'] ?? '#' ?? 'portfolio-detail-style-1.html' }}" class="pbmit-link"></a>
 										</div>
 									</article>
 								@endforeach

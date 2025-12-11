@@ -88,7 +88,7 @@
 								<article class="pbmit-client-style-3 swiper-slide">
 											<div class="pbmit-border-wrapper">
 												<div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-													<h4 class="pbmit-hide">{{ $logo['name'] }}</h4>
+													<h4 class="pbmit-hide">{{ $logo['name'] ?? '' }}</h4>
 													@if(!empty($logo['logo_color']))
 														<div class="pbmit-client-hover-img">
 															<img src="{{ image($logo['logo_color'], 'section_image') }}" alt="">

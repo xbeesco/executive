@@ -29,6 +29,9 @@
                             <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="true" data-columns="1" data-margin="30" data-effect="slide">
                                 <div class="swiper-wrapper">
                                     @foreach($data['testimonials'] ?? [] as $testimonial)
+                                    @if(empty($testimonial['content']))
+                                        @continue
+                                    @endif
                                     <!-- Slide{{ $loop->iteration }} -->
                                     <article class="pbmit-testimonial-style-4 swiper-slide">
                                         <div class="pbminfotech-post-item">
@@ -44,7 +47,7 @@
                                                 </div>
                                                 <div class="pbminfotech-box-desc">
                                                     <blockquote class="pbminfotech-testimonial-text">
-                                                        <p>{{ $testimonial['content'] }}</p>
+                                                        <p>{{ $testimonial['content'] ?? '' }}</p>
                                                     </blockquote>
                                                 </div>
                                                 <div class="pbminfotech-box-author d-flex align-items-center">
@@ -58,9 +61,9 @@
                                                     </div>
                                                     @endif
                                                     <div class="pbmit-auther-content">
-                                                        <h3 class="pbminfotech-box-title">{{ $testimonial['author_name'] }}</h3>
-                                                        @if(!empty($testimonial['author_position']))
-                                                        <div class="pbminfotech-testimonial-detail">{{ $testimonial['author_position'] }}</div>
+                                                        <h3 class="pbminfotech-box-title">{{ $testimonial['author_name'] ?? '' }}</h3>
+                                                        @if(!empty($testimonial['author_position'] ?? ''))
+                                                        <div class="pbminfotech-testimonial-detail">{{ $testimonial['author_position'] ?? '' }}</div>
                                                         @endif
                                                     </div>
                                                 </div>
