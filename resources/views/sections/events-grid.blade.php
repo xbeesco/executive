@@ -110,7 +110,7 @@
                                             <div class="pbmit-meta-date-wrapper pbmit-meta-line">
                                                 <div class="pbmit-meta-date">
                                                     <span class="pbmit-post-date">
-                                                        <i class="{{ $item['meta']['icon'] }}"></i>{{ $item['meta']['primary'] }}
+                                                        <i class="{{ icon_class($item['meta']['icon']) }}"></i>{{ $item['meta']['primary'] }}
                                                     </span>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                         @if($item['meta']['secondary'])
                                             <div class="pbmit-meta-author pbmit-meta-line">
                                                 <span class="pbmit-post-author">
-                                                    <i class="{{ $item['meta']['secondary_icon'] }}"></i>{{ $item['meta']['secondary'] }}
+                                                    <i class="{{ icon_class($item['meta']['secondary_icon']) }}"></i>{{ $item['meta']['secondary'] }}
                                                 </span>
                                             </div>
                                         @endif

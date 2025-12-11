@@ -23,7 +23,7 @@
 												<div class="pbmit-service-btn-wrapper">
 													<a class="pbmit-service-btn" href="{{ $service['link'] ?? '#' }}" title="{{ $service['title'] ?? '' ?? '' }}">
 														<span class="pbmit-button-icon">
-															<i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
+															<i class="{{ icon_class($service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow') }}"></i>
 														</span>
 													</a>
 												</div>

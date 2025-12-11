@@ -42,7 +42,7 @@
 										<div class="pbmit-ihbox-box d-flex">
 											<div class="pbmit-ihbox-icon">
 												<div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-													<i class="{{ $feature['icon'] }}"></i>
+													<i class="{{ icon_class($feature['icon']) }}"></i>
 												</div>
 											</div>
 											<div class="pbmit-ihbox-contents">

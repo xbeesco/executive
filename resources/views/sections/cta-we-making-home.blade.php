@@ -39,7 +39,7 @@
             <div class="pbmit-ihbox-headingicon d-flex align-items-center">
                 <div class="pbmit-ihbox-icon">
                     <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                        <i class="{{ $phoneIcon }}"></i>
+                        <i class="{{ icon_class($phoneIcon) }}"></i>
                     </div>
                 </div>
                 <div class="pbmit-ihbox-contents">

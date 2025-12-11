@@ -40,7 +40,7 @@
 									]) as $feature)
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
-											<i aria-hidden="true" class="{{ $feature['icon'] }}"></i>
+											<i aria-hidden="true" class="{{ icon_class($feature['icon']) }}"></i>
 										</span>
 										<span class="pbmit-icon-list-text">{{ $feature['text'] ?? '' }}</span>
 									</li>

@@ -66,7 +66,7 @@
                             </div>
                             <div class="pbmit-portfolio-btn">
                                 <a href="{{ $itemLink }}">
-                                    <i class="{{ $buttonIcon }}"></i>
+                                    <i class="{{ icon_class($buttonIcon) }}"></i>
                                 </a>
                             </div>
                         </div>

@@ -41,7 +41,7 @@
 											<div class="pbminfotech-box-number">{{ $service['number'] ?? '' ?? str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</div>
 											@if(!empty($service['icon']))
 												<div class="pbmit-service-icon elementor-icon">
-													<i class="{{ $service['icon'] }}"></i>
+													<i class="{{ icon_class($service['icon']) }}"></i>
 												</div>
 											@else
 												<div class="pbmit-service-icon elementor-icon">

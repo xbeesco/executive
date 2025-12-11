@@ -28,7 +28,7 @@
                                 <div class="pbmit-ihbox-headingicon d-flex align-items-center">
                                     <div class="pbmit-ihbox-icon">
                                         <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                            <i class="{{ $block['data']['phone_icon'] }}"></i>
+                                            <i class="{{ icon_class($block['data']['phone_icon']) }}"></i>
                                         </div>
                                     </div>
                                     <div class="pbmit-ihbox-contents">
@@ -83,7 +83,7 @@
                                     </div>
                                     <a class="pbmit-service-btn" href="{{ $service['link'] ?? '#' }}" title="{{ $service['title'] ?? '' ?? '' }}">
                                         <span class="pbmit-button-icon">
-                                            <i class="{{ $service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow' }}"></i>
+                                            <i class="{{ icon_class($service['button_icon'] ?? 'pbmit-base-icon-pbmit-up-arrow') }}"></i>
                                         </span>
                                     </a>
                                 </div>

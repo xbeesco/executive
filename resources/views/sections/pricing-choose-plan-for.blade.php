@@ -63,7 +63,7 @@
 @foreach($benefits as $benefit)
 									<li class="list-group-item">
 										<span class="pbmit-icon-list-icon">
-											<i aria-hidden="true" class="{{ $benefit['icon'] }}"></i>
+											<i aria-hidden="true" class="{{ icon_class($benefit['icon']) }}"></i>
 										</span>
 										<span class="pbmit-icon-list-text">{{ $benefit['text'] }}</span>
 									</li>

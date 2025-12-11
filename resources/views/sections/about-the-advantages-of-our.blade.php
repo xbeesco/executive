@@ -9,7 +9,7 @@
 											<a class="pbmin-lightbox-video  d-flex align-items-center" href="{{ $block['data']['video_url'] }}">
 												<div class="pbmit-ihbox-icon">
 													<div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-														<i class="{{ $block['data']['video_icon'] }}"></i>
+														<i class="{{ icon_class($block['data']['video_icon']) }}"></i>
 													</div>
 												</div>
 												<h2 class="pbmit-element-title">{{ $block['data']['video_title'] }}</h2>

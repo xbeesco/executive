@@ -21,7 +21,7 @@
 								<a class="nav-link{{ $loop->first ? ' active' : '' }}" data-bs-toggle="tab" href="#tab-2-{{ $loop->iteration }}" aria-selected="{{ $loop->first ? 'true' : 'false' }}" role="tab"@if(!$loop->first) tabindex="-1"@endif>
 									<span>{!! $tab['title'] ?? '' !!}</span>
 									@if($tab['icon'] ?? null)
-									<i class="{{ $tab['icon'] }}"></i>
+									<i class="{{ icon_class($tab['icon']) }}"></i>
 									@else
 									<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 									@endif
