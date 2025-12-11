@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Events\Pages;
 
+use App\Filament\Concerns\HasBlockClipboard;
 use App\Filament\Resources\Events\EventResource;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
@@ -10,6 +11,8 @@ use Filament\Support\Icons\Heroicon;
 
 class EditEvent extends EditRecord
 {
+    use HasBlockClipboard;
+
     protected static string $resource = EventResource::class;
 
     protected function getHeaderActions(): array
@@ -27,6 +30,11 @@ class EditEvent extends EditRecord
     {
         return [
             $this->getSaveFormAction(),
+            Action::make('pasteBlock')
+                ->label('Paste Block')
+                ->icon(Heroicon::ClipboardDocumentCheck)
+                ->color('gray')
+                ->action(fn () => $this->dispatch('request-paste-from-clipboard')),
             Action::make('view')
                 ->label('View')
                 ->icon(Heroicon::OutlinedEye)

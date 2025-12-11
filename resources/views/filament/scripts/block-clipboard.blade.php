@@ -1,7 +1,7 @@
 <script>
 /**
  * Block Clipboard Handler
- * Handles copying and pasting blocks between pages using Clipboard API
+ * Handles copying and pasting blocks between content types using Clipboard API
  */
 document.addEventListener('livewire:init', () => {
 
@@ -26,7 +26,7 @@ document.addEventListener('livewire:init', () => {
      */
     Livewire.on('request-paste-from-clipboard', async () => {
         console.log('[BlockClipboard] Paste requested, reading clipboard...');
-        
+
         try {
             // Request clipboard read permission
             const text = await navigator.clipboard.readText();
@@ -51,18 +51,23 @@ document.addEventListener('livewire:init', () => {
 
             console.log('[BlockClipboard] Valid block found, type:', parsed.type);
 
-            // Find the correct Livewire component (edit-page or create-page)
+            // Find the correct Livewire component (edit or create for any resource type)
             const components = Livewire.all();
-            const pageComponent = components.find(c => 
-                c.name && (c.name.includes('edit-page') || c.name.includes('create-page'))
+            const targetComponent = components.find(c =>
+                c.name && (
+                    c.name.includes('edit-page') || c.name.includes('create-page') ||
+                    c.name.includes('edit-post') || c.name.includes('create-post') ||
+                    c.name.includes('edit-event') || c.name.includes('create-event') ||
+                    c.name.includes('edit-service') || c.name.includes('create-service')
+                )
             );
-            
-            if (pageComponent && pageComponent.$wire) {
-                console.log('[BlockClipboard] Calling pasteBlockFromClipboard on:', pageComponent.name);
-                pageComponent.$wire.pasteBlockFromClipboard(text);
+
+            if (targetComponent && targetComponent.$wire) {
+                console.log('[BlockClipboard] Calling pasteBlockFromClipboard on:', targetComponent.name);
+                targetComponent.$wire.pasteBlockFromClipboard(text);
             } else {
-                console.error('[BlockClipboard] No page component found');
-                alert('Error: Could not find page component');
+                console.error('[BlockClipboard] No compatible component found');
+                alert('Error: Could not find a compatible content builder component');
             }
 
         } catch (err) {
@@ -79,11 +84,16 @@ document.addEventListener('livewire:init', () => {
                     const parsed = JSON.parse(manualInput);
                     if (parsed.type && parsed.data) {
                         const components = Livewire.all();
-                        const pageComponent = components.find(c => 
-                            c.name && (c.name.includes('edit-page') || c.name.includes('create-page'))
+                        const targetComponent = components.find(c =>
+                            c.name && (
+                                c.name.includes('edit-page') || c.name.includes('create-page') ||
+                                c.name.includes('edit-post') || c.name.includes('create-post') ||
+                                c.name.includes('edit-event') || c.name.includes('create-event') ||
+                                c.name.includes('edit-service') || c.name.includes('create-service')
+                            )
                         );
-                        if (pageComponent && pageComponent.$wire) {
-                            pageComponent.$wire.pasteBlockFromClipboard(manualInput);
+                        if (targetComponent && targetComponent.$wire) {
+                            targetComponent.$wire.pasteBlockFromClipboard(manualInput);
                         }
                     } else {
                         alert('Invalid block structure');
