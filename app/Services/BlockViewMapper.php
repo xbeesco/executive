@@ -89,6 +89,9 @@ class BlockViewMapper
         'content_accordion' => 'sections.content.content_accordion',
         'content_video' => 'sections.content.content_video',
         'content_divider' => 'sections.content.content_divider',
+        // Form Block
+        'form' => 'sections.form-section',
+
     ];
 
     /**

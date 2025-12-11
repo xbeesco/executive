@@ -4,6 +4,7 @@ namespace App\Services\Schemas;
 
 use App\Models\Category;
 use App\Services\Icons\FlaticonList;
+use App\Models\Form;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -3616,6 +3617,30 @@ class ContentBuilderSchema
                     TextInput::make('title')
                         ->label('Section Title (Optional)')
                         ->placeholder('Leave empty if not needed')
+                        ->columnSpan(12),
+                ]),
+
+
+            Block::make('form')
+                ->label('Form Section')
+                ->icon('heroicon-o-document-text')
+                ->columns(12)
+                ->schema([
+                    Select::make('form_id')
+                        ->label('Select Form')
+                        ->options(Form::query()->pluck('title', 'id'))
+                        ->required()
+                        ->searchable()
+                        ->columnSpan(12),
+
+                    TextInput::make('title')
+                        ->label('Section Title (Optional)')
+                        ->placeholder('Contact Us')
+                        ->columnSpan(12),
+
+                    Textarea::make('description')
+                        ->label('Description (Optional)')
+                        ->rows(2)
                         ->columnSpan(12),
                 ]),
         ];
