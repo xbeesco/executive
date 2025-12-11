@@ -6,9 +6,10 @@ use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class FormSubmissionForm
 {
@@ -17,7 +18,7 @@ class FormSubmissionForm
         return $schema
             ->columns(12)
             ->components([
-                // Main Content Section - 8 Columns
+                // Main Content Section - 7 Columns
                 Section::make('Submitted Data')
                     ->description('Data submitted from the form')
                     ->schema([
@@ -25,38 +26,47 @@ class FormSubmissionForm
                             ->label('')
                             ->disabled(),
                     ])
-                    ->columnSpan(8),
+                    ->columnSpan(7),
 
-                // Sidebar Section - 4 Columns
-                Section::make('Submission Details')
-                    ->schema([
-                        // Form Information
-                        Fieldset::make('Form Information')
+                // Sidebar - 5 Columns with Tabs
+                Tabs::make('Settings')
+                    ->columnSpan(5)
+                    ->columns(12)
+                    ->tabs([
+                        // Form Information Tab
+                        Tabs\Tab::make('Form Information')
+                            ->icon(Heroicon::DocumentText)
+                            ->columns(12)
                             ->schema([
                                 Select::make('form_id')
                                     ->label('Form')
                                     ->relationship('form', 'title')
                                     ->disabled()
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan(12),
 
                                 Toggle::make('read')
                                     ->label('Mark as Read')
-                                    ->default(false),
+                                    ->default(false)
+                                    ->columnSpan(12),
                             ]),
 
-                        // Technical Details
-                        Fieldset::make('Technical Details')
+                        // Technical Details Tab
+                        Tabs\Tab::make('Technical Details')
+                            ->icon(Heroicon::Cog6Tooth)
+                            ->columns(12)
                             ->schema([
                                 TextInput::make('ip_address')
                                     ->label('IP Address')
-                                    ->disabled(),
+                                    ->disabled()
+                                    ->columnSpan(6),
 
                                 TextInput::make('user_agent')
                                     ->label('User Agent')
-                                    ->disabled(),
+                                    ->disabled()
+                                    ->columnSpan(12),
                             ]),
-                    ])
-                    ->columnSpan(4),
+                    ]),
             ]);
     }
 }

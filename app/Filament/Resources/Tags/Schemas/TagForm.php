@@ -5,7 +5,10 @@ namespace App\Filament\Resources\Tags\Schemas;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class TagForm
 {
@@ -16,7 +19,6 @@ class TagForm
             ->components([
                 // Main Content Section - 8 Columns
                 Section::make('Tag Information')
-                    ->description('Basic information about the tag')
                     ->schema([
                         Fieldset::make('Details')
                             ->columns(2)
@@ -26,6 +28,12 @@ class TagForm
                                     ->required()
                                     ->maxLength(255)
                                     ->live(onBlur: true)
+                                    ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
+                                        if (($get('slug') ?? '') !== Str::slug($old)) {
+                                            return;
+                                        }
+                                        $set('slug', Str::slug($state));
+                                    })
                                     ->columnSpan(2),
 
                                 TextInput::make('slug')
@@ -33,7 +41,6 @@ class TagForm
                                     ->required()
                                     ->unique('tags', 'slug', ignoreRecord: true)
                                     ->maxLength(255)
-                                    ->helperText('Auto-generated from name')
                                     ->columnSpan(2),
                             ]),
                     ])

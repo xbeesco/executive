@@ -17,7 +17,10 @@ use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 use Filament\Support\Enums\Size;
 use Filament\Support\Icons\Heroicon;
 
@@ -28,14 +31,13 @@ class PageForm
         return $schema
             ->columns(12)
             ->components([
-                // Content Builder Section - 8 Columns
-                Section::make('Page Content')
+                Section::make('Content Builder')
                     ->schema([
                         Builder::make('content')
                             ->blocks(ContentBuilderSchema::getBlocks())
+                            ->hiddenLabel()
                             ->cloneable()
                             ->collapsed()
-                            ->collapsible()
                             ->extraItemActions([
                                 Action::make('copyToClipboard')
                                     ->label('Copy Block')
@@ -68,208 +70,248 @@ class PageForm
                             ])
                             ->addActionLabel('Add Block'),
                     ])
-                    ->columnSpan(8),
+                    ->columnSpan(7),
 
-                // Sidebar - 4 Columns with Tabs (no Section wrapper)
+                // Sidebar - 4 Columns with Tabs
                 Tabs::make('Settings')
-                    ->columnSpan(4)
+                    ->columnSpan(5)
+                    ->columns(12)
                     ->tabs([
                         // General Tab
                         Tabs\Tab::make('General')
                             ->icon(Heroicon::Cog6Tooth)
+                            ->columns(12)
                             ->schema([
-                                        TextInput::make('title')
-                                            ->label('Title')
-                                            ->required()
-                                            ->maxLength(255)
-                                            ->live(onBlur: true),
+                                TextInput::make('title')
+                                    ->label('Title')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
+                                        if (($get("slug") ?? "") !== Str::slug($old)) {
+                                            return;
+                                        }
+                                        $set("slug", Str::slug($state));
+                                    })
+                                    ->columnSpan(6),
 
-                                        TextInput::make('slug')
-                                            ->label('Slug')
+                                TextInput::make('slug')
+                                    ->label('Slug')
+                                    ->required()
+                                    ->unique('pages', 'slug', ignoreRecord: true)
+                                    ->maxLength(255)
+                                    ->columnSpan(6),
+
+                                Select::make('status')
+                                    ->label('Status')
+                                    ->options(ContentStatus::class)
+                                    ->required()
+                                    ->selectablePlaceholder(false)
+                                    ->columnSpan(6),
+
+                                Select::make('settings.is_archive')
+                                    ->label('Archive Page')
+                                    ->options([
+                                        0 => 'No',
+                                        1 => 'Yes',
+                                    ])
+                                    ->default(0)
+                                    ->selectablePlaceholder(false)
+                                    ->live()
+                                    ->columnSpan(6),
+
+                                Select::make('settings.archive_content_type')
+                                    ->label('Archive Content')
+                                    ->options(ArchiveContentType::class)
+                                    ->selectablePlaceholder(false)
+                                    ->hidden(fn ($get) => ! $get('settings.is_archive'))
+                                    ->columnSpan(6),
+
+                                Select::make('settings.archive_template')
+                                    ->label('Archive Template')
+                                    ->options(ArchiveTemplate::class)
+                                    ->selectablePlaceholder(false)
+                                    ->hidden(fn ($get) => ! $get('settings.is_archive'))
+                                    ->columnSpan(12),
+
+                                FileUpload::make('featured_image')
+                                    ->label('Featured Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/pages')
+                                    ->columnSpan(12),
+                                
+                                Toggle::make('settings.use_demo_sections')
+                                    ->label('Enable Demo Version of Sections')
+                                    ->default(false)
+                                    ->columnSpan(12),
+
+                            ]),
+
+                        // Design Tab
+                        Tabs\Tab::make('Design')
+                            ->icon(Heroicon::PaintBrush)
+                            ->columns(12)
+                            ->schema([
+                                Select::make('settings.header_style')
+                                    ->label('Header Style')
+                                    ->options([
+                                        3 => '1',
+                                        4 => '2',
+                                        8 => '3',
+                                    ])
+                                    ->required()
+                                    ->default(3)
+                                    ->selectablePlaceholder(false)
+                                    ->columnSpan(6),
+
+                                Select::make('settings.header_area_type')
+                                    ->label('Header Area')
+                                    ->options([
+                                        'none' => 'None',
+                                        'slider' => 'Slider',
+                                    ])
+                                    ->required()
+                                    ->default('none')
+                                    ->selectablePlaceholder(false)
+                                    ->live()
+                                    ->columnSpan(6),
+
+                                Repeater::make('settings.slider_items')
+                                    ->label('Slider Items')
+                                    ->hiddenLabel()
+                                    ->schema([
+                                        TextInput::make('title')
+                                            ->label('Main Title1')
                                             ->required()
-                                            ->unique('pages', 'slug', ignoreRecord: true)
+                                            ->columnSpan(5)
+                                            ->maxLength(255),
+                                        
+                                        TextInput::make('sub_title')
+                                            ->label('Sub Title')
+                                            ->columnSpan(7)
                                             ->maxLength(255),
 
-                                        Select::make('status')
-                                            ->label('Status')
-                                            ->options(ContentStatus::class)
-                                            ->required()
-                                            ->selectablePlaceholder(false),
-
-                                        Select::make('settings.is_archive')
-                                            ->label('Archive Page')
-                                            ->options([
-                                                0 => 'No',
-                                                1 => 'Yes',
-                                            ])
-                                            ->default(0)
-                                            ->selectablePlaceholder(false)
-                                            ->live(),
-
-                                        Select::make('settings.archive_content_type')
-                                            ->label('Archive Content')
-                                            ->options(ArchiveContentType::class)
-                                            ->selectablePlaceholder(false)
-                                            ->hidden(fn ($get) => ! $get('settings.is_archive')),
-
-                                        Select::make('settings.archive_template')
-                                            ->label('Archive Template')
-                                            ->options(ArchiveTemplate::class)
-                                            ->selectablePlaceholder(false)
-                                            ->hidden(fn ($get) => ! $get('settings.is_archive')),
-
-                                        FileUpload::make('featured_image')
-                                            ->label('Featured Image')
+                                        FileUpload::make('background_image')
+                                            ->label('Background Image')
                                             ->image()
+                                            ->columnSpan(12)
                                             ->disk('public')
-                                            ->directory('images/pages'),
-                                    ]),
+                                            ->directory('sliders'),
 
-                                // Design Tab
-                                Tabs\Tab::make('Design')
-                                    ->icon(Heroicon::PaintBrush)
-                                    ->schema([
-                                        Select::make('settings.header_style')
-                                            ->label('Header Style')
-                                            ->options([
-                                                3 => '1',
-                                                4 => '2',
-                                                8 => '3',
-                                            ])
-                                            ->required()
-                                            ->default(3)
-                                            ->selectablePlaceholder(false),
+                                        Textarea::make('description')
+                                            ->label('Description')
+                                            ->maxLength(500)
+                                            ->trim()
+                                            ->rows(1)
+                                            ->columnSpan(12)
+                                            ->autosize(),
 
-                                        Select::make('settings.header_area_type')
-                                            ->label('Header Area')
-                                            ->options([
-                                                'none' => 'None',
-                                                'slider' => 'Slider',
-                                            ])
-                                            ->required()
-                                            ->default('none')
-                                            ->selectablePlaceholder(false)
-                                            ->live(),
+                                        TextInput::make('button_text')
+                                            ->label('Button Text')
+                                            ->columnSpan(6)
+                                            ->maxLength(100),
 
-                                        Repeater::make('settings.slider_items')
-                                            ->label('Slider Items')
-                                            ->schema([
-                                                TextInput::make('title')
-                                                    ->label('Main Title')
-                                                    ->required()
-                                                    ->maxLength(255),
+                                        TextInput::make('button_url')
+                                            ->label('Button URL')
+                                            ->url()
+                                            ->columnSpan(6)
+                                            ->maxLength(255),
+                                    ])
+                                    ->minItems(2)
+                                    ->maxItems(3)
+                                    ->cloneable()
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')
+                                    ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider')
+                                    ->columns(12)
+                                    ->columnSpan(12),
 
-                                                FileUpload::make('background_image')
-                                                    ->label('Background Image')
-                                                    ->image()
-                                                    ->disk('public')
-                                                    ->directory('sliders'),
+                                Select::make('settings.footer_style')
+                                    ->label('Footer Style')
+                                    ->options([
+                                        1 => '1',
+                                        2 => '2',
+                                        3 => '3',
+                                    ])
+                                    ->required()
+                                    ->default(2)
+                                    ->selectablePlaceholder(false)
+                                    ->columnSpan(6),
 
-                                                TextInput::make('sub_title')
-                                                    ->label('Sub Title')
-                                                    ->maxLength(255),
+                                Select::make('settings.footer_bg_color')
+                                    ->label('Footer Color')
+                                    ->options([
+                                        'secondary' => 'Secondary',
+                                        'light' => 'Light',
+                                        'dark' => 'Dark',
+                                    ])
+                                    ->required()
+                                    ->default('secondary')
+                                    ->selectablePlaceholder(false)
+                                    ->columnSpan(6),
 
-                                                Textarea::make('description')
-                                                    ->label('Description')
-                                                    ->maxLength(500)
-                                                    ->trim()
-                                                    ->rows(1)
-                                                    ->autosize(),
+                                Select::make('settings.container_type')
+                                    ->label('Container Type')
+                                    ->options([
+                                        'container' => 'Container',
+                                        'container-fluid' => 'Container Fluid',
+                                    ])
+                                    ->default('container')
+                                    ->selectablePlaceholder(false)
+                                    ->columnSpan(6),
 
-                                                TextInput::make('button_text')
-                                                    ->label('Button Text')
-                                                    ->maxLength(100),
+                                Select::make('settings.show_sidebar')
+                                    ->label('Show Sidebar')
+                                    ->options([
+                                        0 => 'No',
+                                        1 => 'Yes',
+                                    ])
+                                    ->default(0)
+                                    ->selectablePlaceholder(false)
+                                    ->live()
+                                    ->columnSpan(6),
 
-                                                TextInput::make('button_url')
-                                                    ->label('Button URL')
-                                                    ->url()
-                                                    ->maxLength(255),
-                                            ])
-                                            ->minItems(2)
-                                            ->maxItems(3)
-                                            ->cloneable()
-                                            ->collapsible()
-                                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'Slide')
-                                            ->hidden(fn ($get) => $get('settings.header_area_type') !== 'slider'),
+                                Select::make('settings.sidebar_position')
+                                    ->label('Sidebar Position')
+                                    ->options([
+                                        'left' => 'Left',
+                                        'right' => 'Right',
+                                    ])
+                                    ->default('right')
+                                    ->selectablePlaceholder(false)
+                                    ->hidden(fn ($get) => ! $get('settings.show_sidebar'))
+                                    ->columnSpan(6),
 
-                                        Select::make('settings.footer_style')
-                                            ->label('Footer Style')
-                                            ->options([
-                                                1 => '1',
-                                                2 => '2',
-                                                3 => '3',
-                                            ])
-                                            ->required()
-                                            ->default(2)
-                                            ->selectablePlaceholder(false),
-
-                                        Select::make('settings.footer_bg_color')
-                                            ->label('Footer Color')
-                                            ->options([
-                                                'secondary' => 'Secondary',
-                                                'light' => 'Light',
-                                                'dark' => 'Dark',
-                                            ])
-                                            ->required()
-                                            ->default('secondary')
-                                            ->selectablePlaceholder(false),
-
-                                        Select::make('settings.container_type')
-                                            ->label('Container Type')
-                                            ->options([
-                                                'container' => 'Container',
-                                                'container-fluid' => 'Container Fluid',
-                                            ])
-                                            ->default('container')
-                                            ->selectablePlaceholder(false),
-
-                                        Select::make('settings.show_sidebar')
-                                            ->label('Show Sidebar')
-                                            ->options([
-                                                0 => 'No',
-                                                1 => 'Yes',
-                                            ])
-                                            ->default(0)
-                                            ->selectablePlaceholder(false)
-                                            ->live(),
-
-                                        Select::make('settings.sidebar_position')
-                                            ->label('Sidebar Position')
-                                            ->options([
-                                                'left' => 'Left',
-                                                'right' => 'Right',
-                                            ])
-                                            ->default('right')
-                                            ->selectablePlaceholder(false)
-                                            ->hidden(fn ($get) => ! $get('settings.show_sidebar')),
-
-                                        Toggle::make('settings.use_demo_sections')
-                                            ->label('Enable Demo Version of Sections')
-                                            ->default(false),
-                                    ]),
-
-                                // SEO Tab
-                                Tabs\Tab::make('SEO')
-                                    ->icon(Heroicon::MagnifyingGlass)
-                                    ->schema([
-                                        TextInput::make('seo.meta_title')
-                                            ->label('Meta Title')
-                                            ->maxLength(60),
-
-                                        TextInput::make('seo.meta_keywords')
-                                            ->label('Meta Keywords'),
-
-                                        TextInput::make('seo.meta_description')
-                                            ->label('Meta Description')
-                                            ->maxLength(160),
-
-                                        FileUpload::make('seo.og_image')
-                                            ->label('Open Graph Image')
-                                            ->image()
-                                            ->disk('public')
-                                            ->directory('images/seo'),
-                                    ]),
                             ]),
+
+                        
+                        Tabs\Tab::make('SEO')
+                            ->icon(Heroicon::MagnifyingGlass)
+                            ->columns(12)
+                            ->schema([
+                                TextInput::make('seo.meta_title')
+                                    ->label('Meta Title')
+                                    ->maxLength(60)
+                                    ->columnSpan(12),
+
+                                TextInput::make('seo.meta_keywords')
+                                    ->label('Meta Keywords')
+                                    ->columnSpan(12),
+
+                                TextInput::make('seo.meta_description')
+                                    ->label('Meta Description')
+                                    ->maxLength(160)
+                                    ->columnSpan(12),
+
+                                FileUpload::make('seo.og_image')
+                                    ->label('Open Graph Image')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('images/seo')
+                                    ->columnSpan(12),
+                            ]),
+                    ]),
             ]);
     }
 }

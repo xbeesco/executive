@@ -8,9 +8,13 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
+use Filament\Support\Icons\Heroicon;
 
 class FormForm
 {
@@ -19,9 +23,8 @@ class FormForm
         return $schema
             ->columns(12)
             ->components([
-                // Main Content Section - 8 Columns
+                // Main Content Section - 7 Columns
                 Section::make('Form Fields')
-                    ->description('Build your form using field blocks')
                     ->schema([
                         Builder::make('fields')
                             ->label('')
@@ -165,21 +168,30 @@ class FormForm
                             ->collapsible()
                             ->addActionLabel('Add Field'),
                     ])
-                    ->columnSpan(8),
+                    ->columnSpan(7),
 
-                // Sidebar Section - 4 Columns
-                Section::make('Form Settings')
-                    ->schema([
-                        // Basic Information
-                        Fieldset::make('Basic Information')
-                            ->columns(2)
+                // Sidebar - 5 Columns with Tabs
+                Tabs::make('Settings')
+                    ->columnSpan(5)
+                    ->columns(12)
+                    ->tabs([
+                        // General Tab
+                        Tabs\Tab::make('General')
+                            ->icon(Heroicon::Cog6Tooth)
+                            ->columns(12)
                             ->schema([
                                 TextInput::make('title')
                                     ->label('Title')
                                     ->required()
                                     ->maxLength(255)
                                     ->live(onBlur: true)
-                                    ->columnSpan(2),
+                                    ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
+                                        if (($get("slug") ?? "") !== Str::slug($old)) {
+                                            return;
+                                        }
+                                        $set("slug", Str::slug($state));
+                                    })
+                                    ->columnSpan(6),
 
                                 TextInput::make('slug')
                                     ->label('Slug')
@@ -187,13 +199,7 @@ class FormForm
                                     ->unique('forms', 'slug', ignoreRecord: true)
                                     ->maxLength(255)
                                     ->helperText('Auto-generated from title')
-                                    ->columnSpan(2),
-
-                                Textarea::make('description')
-                                    ->label('Description')
-                                    ->rows(3)
-                                    ->helperText('Brief form description')
-                                    ->columnSpan(2),
+                                    ->columnSpan(6),
 
                                 Select::make('status')
                                     ->label('Status')
@@ -202,36 +208,43 @@ class FormForm
                                         'inactive' => 'Inactive',
                                     ])
                                     ->required()
-                                    ->default('active'),
+                                    ->default('active')
+                                    ->columnSpan(12),
+
+                                Textarea::make('description')
+                                    ->label('Description')
+                                    ->rows(3)
+                                    ->helperText('Brief form description')
+                                    ->columnSpan(12),
                             ]),
 
-                        // Form Configuration
-                        Fieldset::make('Form Configuration')
-                            ->columns(2)
+                        // Configuration Tab
+                        Tabs\Tab::make('Configuration')
+                            ->icon(Heroicon::AdjustmentsHorizontal)
+                            ->columns(12)
                             ->schema([
                                 TextInput::make('settings.submit_button_text')
                                     ->label('Submit Button Text')
                                     ->default('Submit')
-                                    ->columnSpan(2),
-
-                                TextInput::make('settings.success_message')
-                                    ->label('Success Message')
-                                    ->default('Form submitted successfully')
-                                    ->columnSpan(2),
-
-                                TextInput::make('settings.redirect_url')
-                                    ->label('Redirect URL')
-                                    ->helperText('Optional: redirect after submission')
-                                    ->columnSpan(2),
+                                    ->columnSpan(6),
 
                                 TextInput::make('settings.email_to')
                                     ->label('Send Email To')
                                     ->email()
                                     ->helperText('Optional: send form copy via email')
-                                    ->columnSpan(2),
+                                    ->columnSpan(6),
+
+                                TextInput::make('settings.success_message')
+                                    ->label('Success Message')
+                                    ->default('Form submitted successfully')
+                                    ->columnSpan(12),
+
+                                TextInput::make('settings.redirect_url')
+                                    ->label('Redirect URL')
+                                    ->helperText('Optional: redirect after submission')
+                                    ->columnSpan(12),
                             ]),
-                    ])
-                    ->columnSpan(4),
+                    ]),
             ]);
     }
 }
