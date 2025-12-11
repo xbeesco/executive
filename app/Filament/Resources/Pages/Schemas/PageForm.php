@@ -6,6 +6,7 @@ use App\Enums\ArchiveContentType;
 use App\Enums\ArchiveTemplate;
 use App\Enums\ContentStatus;
 use App\Services\Schemas\ContentBuilderSchema;
+use Filament\Actions\Action;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -13,9 +14,12 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\Size;
+use Filament\Support\Icons\Heroicon;
 
 class PageForm
 {
@@ -24,18 +28,52 @@ class PageForm
         return $schema
             ->columns(12)
             ->components([
-                // Content Builder Section - 9 Columns
+                // Content Builder Section - 8 Columns
                 Section::make('Page Content')
                     ->schema([
                         Builder::make('content')
                             ->blocks(ContentBuilderSchema::getBlocks())
                             ->cloneable()
                             ->collapsed()
-                            ->collapsible(),
+                            ->collapsible()
+                            // Copy Block to Clipboard Action
+                            ->extraItemActions([
+                                Action::make('copyToClipboard')
+                                    ->label('Copy Block')
+                                    ->icon(Heroicon::ClipboardDocument)
+                                    ->color('gray')
+                                    ->size(Size::Small)
+                                    ->action(function (array $arguments, Builder $component): void {
+                                        $items = $component->getRawState();
+                                        $blockData = $items[$arguments['item']] ?? null;
+
+                                        if (!$blockData) {
+                                            Notification::make()
+                                                ->danger()
+                                                ->title('Error')
+                                                ->body('Block not found')
+                                                ->send();
+                                            return;
+                                        }
+
+                                        // Dispatch event to JavaScript to copy to clipboard
+                                        $component->getLivewire()->dispatch(
+                                            'copy-block-to-clipboard',
+                                            blockData: json_encode($blockData, JSON_UNESCAPED_UNICODE)
+                                        );
+
+                                        Notification::make()
+                                            ->success()
+                                            ->title('Block Copied!')
+                                            ->send();
+                                    }),
+                            ])
+                            // Customize Add Action label to include paste hint
+                            ->addActionLabel('Add Block'),
                     ])
                     ->columnSpan(8),
 
-                // Sidebar Section - 3 Columns
+                // Sidebar Section - 4 Columns
                 Section::make('Page Settings')
                     ->schema([
                         // General Settings
